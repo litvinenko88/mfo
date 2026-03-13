@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /drafts/
+
+Sitemap: https://zaimtop.ru/sitemap.xml
