@@ -17,7 +17,8 @@
         initScrollTop();
         initCookieConsent();
         initSmoothScroll();
-        initSortButtons();
+        initMfoToggle();
+        initReviewsToggle();
     }
 
     /* ============================
@@ -246,61 +247,56 @@
     }
 
     /* ============================
-       Table Sort Buttons
+       MFO Cards Toggle (show more / collapse)
        ============================ */
-    function initSortButtons() {
-        var buttons = document.querySelectorAll('.compare__sort-btn');
-        if (!buttons.length) return;
+    function initMfoToggle() {
+        var btn = document.getElementById('mfo-toggle-btn');
+        var extraGrid = document.getElementById('mfo-grid-extra');
+        if (!btn || !extraGrid) return;
 
-        buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                buttons.forEach(function (b) { b.classList.remove('compare__sort-btn--active'); });
-                btn.classList.add('compare__sort-btn--active');
+        var expanded = false;
 
-                var sortBy = btn.getAttribute('data-sort');
-                sortTable(sortBy);
-            });
+        btn.addEventListener('click', function () {
+            expanded = !expanded;
+            if (expanded) {
+                extraGrid.classList.add('is-visible');
+                btn.textContent = 'Скрыть';
+            } else {
+                extraGrid.classList.remove('is-visible');
+                btn.textContent = 'Показать ещё 19 МФО';
+                var section = document.getElementById('compare');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     }
 
-    function sortTable(criteria) {
-        /* Sort both desktop table rows and mobile cards */
-        sortDesktopTable(criteria);
-        sortMobileCards(criteria);
-    }
+    /* ============================
+       Reviews Toggle (show all / collapse)
+       ============================ */
+    function initReviewsToggle() {
+        var btn = document.getElementById('reviews-toggle');
+        var grid = document.getElementById('reviews-grid');
+        if (!btn || !grid) return;
 
-    function sortDesktopTable(criteria) {
-        var tbody = document.querySelector('.compare__table tbody');
-        if (!tbody) return;
+        var expanded = false;
 
-        var rows = Array.from(tbody.querySelectorAll('tr'));
-
-        rows.sort(function (a, b) {
-            var valA = parseFloat(a.getAttribute('data-' + criteria)) || 0;
-            var valB = parseFloat(b.getAttribute('data-' + criteria)) || 0;
-
-            if (criteria === 'rate') return valA - valB;
-            return valB - valA;
+        btn.addEventListener('click', function () {
+            expanded = !expanded;
+            if (expanded) {
+                grid.classList.add('reviews--expanded');
+                btn.textContent = 'Скрыть отзывы';
+            } else {
+                grid.classList.remove('reviews--expanded');
+                btn.textContent = 'Показать все 50 отзывов';
+                /* Scroll reviews section into view */
+                var section = document.getElementById('reviews');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
-
-        rows.forEach(function (row) { tbody.appendChild(row); });
-    }
-
-    function sortMobileCards(criteria) {
-        var container = document.querySelector('.compare__cards');
-        if (!container) return;
-
-        var cards = Array.from(container.querySelectorAll('.compare-card'));
-
-        cards.sort(function (a, b) {
-            var valA = parseFloat(a.getAttribute('data-' + criteria)) || 0;
-            var valB = parseFloat(b.getAttribute('data-' + criteria)) || 0;
-
-            if (criteria === 'rate') return valA - valB;
-            return valB - valA;
-        });
-
-        cards.forEach(function (card) { container.appendChild(card); });
     }
 
 })();
