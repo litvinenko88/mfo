@@ -19,6 +19,7 @@
         initSmoothScroll();
         initMfoToggle();
         initReviewsToggle();
+        initMfoDetails();
     }
 
     /* ============================
@@ -296,6 +297,29 @@
                     section.scrollIntoView({ behavior: 'smooth' });
                 }
             }
+        });
+    }
+
+    /* ============================
+       MFO Card Info Toggle
+       ============================ */
+    function initMfoDetails() {
+        var toggles = document.querySelectorAll('.mfo-card__info-toggle');
+        if (!toggles.length) return;
+
+        toggles.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var info = btn.closest('.mfo-card__info');
+                var isOpen = info.classList.contains('is-open');
+
+                if (isOpen) {
+                    info.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    info.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
         });
     }
 
