@@ -304,60 +304,53 @@
 
                     <!-- Calculator -->
                     <div class="calculator" id="calculator">
-                        <div class="calculator__title">Калькулятор займа</div>
+                        <div class="calculator__title">Подобрать займ</div>
 
-                        <div class="calculator__group">
-                            <div class="calculator__label">
-                                <span>Сумма займа</span>
-                                <span class="calculator__value" id="calc-amount-value">10 000 ₽</span>
+                        <div class="calculator__row">
+                            <div class="calculator__group calculator__group--half">
+                                <div class="calculator__label">
+                                    <span>Сумма</span>
+                                    <span class="calculator__value" id="calc-amount-value">10 000 ₽</span>
+                                </div>
+                                <input type="range" class="calculator__slider" id="calc-amount" min="1000" max="100000" step="1000" value="10000">
                             </div>
-                            <input type="range" class="calculator__slider" id="calc-amount" min="1000" max="100000" step="1000" value="10000">
-                            <div class="calculator__range-labels">
-                                <span>1 000 ₽</span>
-                                <span>100 000 ₽</span>
+                            <div class="calculator__group calculator__group--half">
+                                <div class="calculator__label">
+                                    <span>Срок</span>
+                                    <span class="calculator__value" id="calc-term-value">30 дней</span>
+                                </div>
+                                <input type="range" class="calculator__slider" id="calc-term" min="5" max="365" step="1" value="30">
                             </div>
                         </div>
 
-                        <div class="calculator__group">
-                            <div class="calculator__label">
-                                <span>Срок</span>
-                                <span class="calculator__value" id="calc-term-value">30 дней</span>
-                            </div>
-                            <input type="range" class="calculator__slider" id="calc-term" min="5" max="365" step="1" value="30">
-                            <div class="calculator__range-labels">
-                                <span>5 дней</span>
-                                <span>365 дней</span>
-                            </div>
+                        <div class="calculator__toggle" id="calc-client-toggle">
+                            <button class="calculator__toggle-btn calculator__toggle-btn--active" data-client="new" type="button">Новый клиент</button>
+                            <button class="calculator__toggle-btn" data-client="repeat" type="button">Повторный</button>
                         </div>
 
-                        <div class="calculator__group">
-                            <div class="calculator__label">
-                                <span>Тип клиента</span>
-                            </div>
-                            <div class="calculator__toggle" id="calc-client-toggle">
-                                <button class="calculator__toggle-btn calculator__toggle-btn--active" data-client="new" type="button">Новый</button>
-                                <button class="calculator__toggle-btn" data-client="repeat" type="button">Повторный</button>
-                            </div>
-                        </div>
-
-                        <div class="calculator__result">
-                            <div class="calculator__result-row">
+                        <div class="calculator__result calculator__result--inline">
+                            <div class="calculator__result-item">
                                 <span class="calculator__result-label">Переплата</span>
                                 <span class="calculator__result-value" id="calc-result-overpay">0 ₽</span>
                             </div>
-                            <div class="calculator__result-row">
-                                <span class="calculator__result-label">Итого к возврату</span>
+                            <div class="calculator__result-item">
+                                <span class="calculator__result-label">К возврату</span>
                                 <span class="calculator__result-value calculator__result-value--accent" id="calc-result-total">10 000 ₽</span>
                             </div>
-                            <div class="calculator__result-row">
-                                <span class="calculator__result-label">Подходит МФО</span>
+                            <div class="calculator__result-item">
+                                <span class="calculator__result-label">МФО</span>
                                 <span class="calculator__result-value" id="calc-result-count">0</span>
                             </div>
                         </div>
 
-                        <div class="calculator__matches" id="calc-matches"></div>
+                        <div class="calculator__matches-wrap">
+                            <button class="calculator__matches-toggle" id="calc-matches-toggle" type="button">
+                                Посмотреть предложения <span class="calculator__matches-arrow">&#9660;</span>
+                            </button>
+                            <div class="calculator__matches calculator__matches--hidden" id="calc-matches"></div>
+                        </div>
 
-                        <div class="calculator__disclaimer">Расчёт примерный. Точные условия уточняйте на сайте МФО.</div>
+                        <div class="calculator__disclaimer">Расчёт примерный. Точные условия — на сайте МФО.</div>
                     </div>
                 </div>
 
@@ -415,11 +408,28 @@
                     <p class="section__subtitle">31 проверенная микрофинансовая организация и сервис подбора займов. Актуальные условия и ставки.</p>
                 </div>
 
+                <div class="mfo-sort" id="mfo-sort">
+                    <label class="mfo-sort__label" for="mfo-sort-select">Сортировка:</label>
+                    <div class="mfo-sort__select-wrap">
+                        <select class="mfo-sort__select" id="mfo-sort-select">
+                            <option value="rating-desc" selected>По рейтингу ↓</option>
+                            <option value="rating-asc">По рейтингу ↑</option>
+                            <option value="amount-desc">Макс. сумма ↓</option>
+                            <option value="amount-asc">Макс. сумма ↑</option>
+                            <option value="rate-asc">Ставка ↑ (дешевле)</option>
+                            <option value="rate-desc">Ставка ↓ (дороже)</option>
+                            <option value="term-desc">Макс. срок ↓</option>
+                            <option value="term-asc">Макс. срок ↑</option>
+                        </select>
+                        <svg class="mfo-sort__arrow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+                    </div>
+                </div>
+
                 <div class="mfo-grid" id="mfo-grid">
 
 
                     <!-- 1. Срочно Деньги -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#1</span>
                             <img src="logos/08-srochnodengi.svg" alt="Срочно Деньги" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -490,7 +500,7 @@
                     </div>
 
                     <!-- 2. еКапуста -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.99" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#2</span>
                             <img src="logos/31-ekapusta.svg" alt="еКапуста" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -560,7 +570,7 @@
                     </div>
 
                     <!-- 3. MoneyMan -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="126">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#3</span>
                             <img src="logos/20-moneyman.svg" alt="MoneyMan" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -639,7 +649,7 @@
                     </div>
 
                     <!-- 4. Займер -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#4</span>
                             <img src="logos/01-zajmer.svg" alt="Займер" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -730,7 +740,7 @@
                     </div>
 
                     <!-- 5. Надо Денег -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0.8" data-term="168">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#5</span>
                             <img src="logos/11-nado-deneg.svg" alt="Надо Денег" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -801,7 +811,7 @@
                     </div>
 
                     <!-- 6. Деньги Сразу -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#6</span>
                             <img src="logos/15-dengi-srazu.svg" alt="Деньги Сразу" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -870,7 +880,7 @@
                     </div>
 
                     <!-- 7. Свои Люди -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#7</span>
                             <img src="logos/16-svoi-lyudi.svg" alt="Свои Люди" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -938,7 +948,7 @@
                     </div>
 
                     <!-- 8. Бери Беру -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.7" data-amount="50000" data-rate="0.8" data-term="0">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#8</span>
                             <img src="logos/03-beriberu.svg" alt="Бери Беру" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1015,7 +1025,7 @@
                     </div>
 
                     <!-- 9. Joymoney -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="10">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#9</span>
                             <img src="logos/19-joymoney.svg" alt="Joymoney" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1086,7 +1096,7 @@
                     </div>
 
                     <!-- 10. Credit7 -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.6" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#10</span>
                             <img src="logos/04-credit7.svg" alt="Credit7" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1164,7 +1174,7 @@
                     </div>
 
                     <!-- 11. BelkaCredit -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.6" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#11</span>
                             <img src="logos/07-belkacredit.svg" alt="BelkaCredit" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1234,7 +1244,7 @@
                     </div>
 
                     <!-- 12. Быстроденьги -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.6" data-amount="100000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#12</span>
                             <img src="logos/02-bystrodengi.svg" alt="Быстроденьги" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1323,7 +1333,7 @@
                 <div class="mfo-grid mfo-grid--hidden" id="mfo-grid-extra">
 
                     <!-- 13. Умные Наличные -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#13</span>
                             <img src="logos/10-umnye-nalichnye.svg" alt="Умные Наличные" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1392,7 +1402,7 @@
                     </div>
 
                     <!-- 14. Cash To You -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="0">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#14</span>
                             <img src="logos/32-cash-to-you.svg" alt="Cash To You" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1460,7 +1470,7 @@
                     </div>
 
                     <!-- 15. Boostra -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#15</span>
                             <img src="logos/06-boostra.svg" alt="Boostra" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1530,7 +1540,7 @@
                     </div>
 
                     <!-- 16. Лайк Мани -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#16</span>
                             <img src="logos/05-like-money.svg" alt="Like Money" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1600,7 +1610,7 @@
                     </div>
 
                     <!-- 17. Доброзайм -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="720">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#17</span>
                             <img src="logos/12-dobrozajm.svg" alt="Доброзайм" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1672,7 +1682,7 @@
                     </div>
 
                     <!-- 18. Фин5 -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#18</span>
                             <img src="logos/14-fin5.svg" alt="Фин5" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1734,7 +1744,7 @@
                     </div>
 
                     <!-- 19. EcoZaym -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.4" data-amount="100000" data-rate="0" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#19</span>
                             <img src="logos/24-ecozaym.svg" alt="EcoZaym" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1796,7 +1806,7 @@
                     </div>
 
                     <!-- 20. До зарплаты -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.4" data-amount="30000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#20</span>
                             <img src="logos/34-do-zarplaty.svg" alt="До зарплаты" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1868,7 +1878,7 @@
                     </div>
 
                     <!-- 21. Кредиска -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="0">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#21</span>
                             <img src="logos/17-krediska.svg" alt="Кредиска" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -1937,7 +1947,7 @@
                     </div>
 
                     <!-- 22. HurmaCredit -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="0">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#22</span>
                             <img src="logos/09-hurmacredit.svg" alt="HurmaCredit" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2006,7 +2016,7 @@
                     </div>
 
                     <!-- 23. Kviku -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#23</span>
                             <img src="logos/22-kviku.svg" alt="Kviku" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2075,7 +2085,7 @@
                     </div>
 
                     <!-- 24. Займиго -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.3" data-amount="50000" data-rate="0.8" data-term="0">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#24</span>
                             <img src="logos/18-zaymigo.svg" alt="Займиго" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2143,7 +2153,7 @@
                     </div>
 
                     <!-- 25. OneClickMoney -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.3" data-amount="200000" data-rate="0.8" data-term="735">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#25</span>
                             <img src="logos/13-oneclickmoney.svg" alt="OneClickMoney" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2211,7 +2221,7 @@
                     </div>
 
                     <!-- 26. Гринмани -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="364">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#26</span>
                             <img src="logos/29-grinmani.svg" alt="Гринмани" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2279,7 +2289,7 @@
                     </div>
 
                     <!-- 27. Лайкзайм -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.2" data-amount="30000" data-rate="0.8" data-term="14">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#27</span>
                             <img src="logos/21-likezaim.svg" alt="Лайкзайм" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2347,7 +2357,7 @@
                     </div>
 
                     <!-- 28. Небус -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.2" data-amount="50000" data-rate="0.8" data-term="113">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#28</span>
                             <img src="logos/33-nebus.svg" alt="Небус" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2414,7 +2424,7 @@
                     </div>
 
                     <!-- 29. Max.Credit -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.2" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#29</span>
                             <img src="logos/27-max-credit.svg" alt="Max.Credit" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2480,7 +2490,7 @@
                     </div>
 
                     <!-- 30. Вебзайм -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.1" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#30</span>
                             <img src="logos/26-webzaim.svg" alt="Вебзайм" class="mfo-card__logo" loading="lazy" width="120" height="40">
@@ -2549,7 +2559,7 @@
                     </div>
 
                     <!-- 31. Bunny Money -->
-                    <div class="mfo-card">
+                    <div class="mfo-card" data-rating="4.1" data-amount="30000" data-rate="0.8" data-term="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#31</span>
                             <img src="logos/23-bunny-money.svg" alt="Bunny Money" class="mfo-card__logo" loading="lazy" width="120" height="40">

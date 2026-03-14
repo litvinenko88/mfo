@@ -20,6 +20,7 @@
         initMfoToggle();
         initReviewsToggle();
         initMfoDetails();
+        initMfoSort();
     }
 
     /* ============================
@@ -174,7 +175,7 @@
                 return;
             }
 
-            var html = '<div class="calc-match__title">Лучшие предложения</div>';
+            var html = '';
             for (var i = 0; i < shown.length; i++) {
                 var m = shown[i];
                 var badge = m.isZero ? '<span class="calc-match__badge calc-match__badge--green">0%</span>' : '';
@@ -256,6 +257,15 @@
 
         amountSlider.addEventListener('input', updateCalculator);
         termSlider.addEventListener('input', updateCalculator);
+
+        /* Toggle matches visibility */
+        var matchesToggle = document.getElementById('calc-matches-toggle');
+        if (matchesToggle) {
+            matchesToggle.addEventListener('click', function() {
+                var wrap = this.closest('.calculator__matches-wrap');
+                if (wrap) wrap.classList.toggle('is-open');
+            });
+        }
 
         updateCalculator();
     }
@@ -425,6 +435,54 @@
                     section.scrollIntoView({ behavior: 'smooth' });
                 }
             }
+        });
+    }
+
+    /* ============================
+       MFO Sort
+       ============================ */
+    function initMfoSort() {
+        var select = document.getElementById('mfo-sort-select');
+        var grid1 = document.getElementById('mfo-grid');
+        var grid2 = document.getElementById('mfo-grid-extra');
+        if (!select || !grid1) return;
+
+        select.addEventListener('change', function () {
+            var val = select.value;
+            var parts = val.split('-');
+            var key = parts[0];
+            var dir = parts[1];
+
+            // Collect all cards from both grids
+            var cards = [];
+            var allCards = document.querySelectorAll('.mfo-card');
+            allCards.forEach(function (card) { cards.push(card); });
+
+            // Sort
+            cards.sort(function (a, b) {
+                var aVal = parseFloat(a.dataset[key]) || 0;
+                var bVal = parseFloat(b.dataset[key]) || 0;
+                return dir === 'desc' ? bVal - aVal : aVal - bVal;
+            });
+
+            // Determine how many visible (first grid)
+            var visibleCount = 12;
+
+            // Clear grids
+            grid1.innerHTML = '';
+            if (grid2) grid2.innerHTML = '';
+
+            // Re-insert cards with updated ranks
+            cards.forEach(function (card, i) {
+                var rank = card.querySelector('.mfo-card__rank');
+                if (rank) rank.textContent = '#' + (i + 1);
+
+                if (i < visibleCount) {
+                    grid1.appendChild(card);
+                } else if (grid2) {
+                    grid2.appendChild(card);
+                }
+            });
         });
     }
 
