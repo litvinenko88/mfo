@@ -42,6 +42,48 @@
 
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
+
+        /* Horizontal wheel scroll for categories bar */
+        var categoriesNav = document.querySelector('.categories-nav');
+        if (categoriesNav) {
+            categoriesNav.addEventListener('wheel', function (e) {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                    e.preventDefault();
+                    categoriesNav.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+
+            /* Drag scroll with mouse */
+            var isDown = false;
+            var startX;
+            var scrollLeft;
+
+            categoriesNav.addEventListener('mousedown', function (e) {
+                isDown = true;
+                categoriesNav.style.cursor = 'grabbing';
+                startX = e.pageX - categoriesNav.offsetLeft;
+                scrollLeft = categoriesNav.scrollLeft;
+            });
+
+            categoriesNav.addEventListener('mouseleave', function () {
+                isDown = false;
+                categoriesNav.style.cursor = 'grab';
+            });
+
+            categoriesNav.addEventListener('mouseup', function () {
+                isDown = false;
+                categoriesNav.style.cursor = 'grab';
+            });
+
+            categoriesNav.addEventListener('mousemove', function (e) {
+                if (!isDown) return;
+                e.preventDefault();
+                var x = e.pageX - categoriesNav.offsetLeft;
+                categoriesNav.scrollLeft = scrollLeft - (x - startX);
+            });
+
+            categoriesNav.style.cursor = 'grab';
+        }
     }
 
     /* ============================
