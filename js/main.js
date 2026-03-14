@@ -78,9 +78,47 @@
 
         var amountDisplay = document.getElementById('calc-amount-value');
         var termDisplay = document.getElementById('calc-term-value');
-        var resultFirst = document.getElementById('calc-result-first');
-        var resultRepeat = document.getElementById('calc-result-repeat');
+        var resultOverpay = document.getElementById('calc-result-overpay');
         var resultTotal = document.getElementById('calc-result-total');
+        var resultCount = document.getElementById('calc-result-count');
+        var matchesContainer = document.getElementById('calc-matches');
+        var clientToggle = document.getElementById('calc-client-toggle');
+        var isNewClient = true;
+
+        /* MFO database — real offers from documentation */
+        var mfoList = [
+            {n:"Займер",logo:"logos/01-zajmer.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[7,30],trmR:[7,30],rateN:0,rateR:0.8,z:true,zd:30,url:"https://pxl.leads.su/click/95cecac27d1faca720a8981dbc34748e?erid=2W5zFGRgkqW"},
+            {n:"Быстроденьги",logo:"logos/02-bystrodengi.svg",amtN:[1000,30000],amtR:[1000,500000],trmN:[1,21],trmR:[1,1080],rateN:0,rateR:0.8,z:true,zd:10,url:"https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?erid=2W5zFHRnKXf"},
+            {n:"Бери Беру",logo:"logos/03-beriberu.svg",amtN:[1000,50000],amtR:[1000,50000],trmN:[5,31],trmR:[5,31],rateN:0,rateR:0.8,z:true,zd:21,url:"https://pxl.leads.su/click/4e60ee94de113b15d5fbc7bed4e6ed12?erid=2W5zFGqH8AU"},
+            {n:"Credit7",logo:"logos/04-credit7.svg",amtN:[1000,30000],amtR:[1000,100000],trmN:[7,30],trmR:[7,30],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/f676af6bb07f68d706c6053669efcfbe?erid=2W5zFHAu736"},
+            {n:"Лайк Мани",logo:"logos/05-like-money.svg",amtN:[2000,100000],amtR:[2000,100000],trmN:[1,180],trmR:[1,180],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/77307f82112c60903718f3a5208b16e2?erid=2W5zFJEVzd6"},
+            {n:"Boostra",logo:"logos/06-boostra.svg",amtN:[1000,100000],amtR:[1000,100000],trmN:[1,180],trmR:[1,180],rateN:0,rateR:0.8,z:true,zd:null,url:"https://pxl.leads.su/click/b5b01b9d38dc1fed50cd70ebdb5c05e7?erid=2W5zFHzPkun"},
+            {n:"BelkaCredit",logo:"logos/07-belkacredit.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[7,30],trmR:[7,30],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/1e72b15a212a832a32c5daa5b4734e25?erid=2W5zFK9wF9A"},
+            {n:"Срочно Деньги",logo:"logos/08-srochnodengi.svg",amtN:[2000,100000],amtR:[2000,100000],trmN:[1,360],trmR:[1,360],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?erid=2W5zFJkUBEY"},
+            {n:"HurmaCredit",logo:"logos/09-hurmacredit.svg",amtN:[1000,50000],amtR:[1000,50000],trmN:[5,31],trmR:[5,31],rateN:0,rateR:0.8,z:true,zd:21,url:"https://pxl.leads.su/click/bc55d263b3dd36189299a5528d41e2d7?erid=2W5zFH7Yxqn"},
+            {n:"Умные Наличные",logo:"logos/10-umnye-nalichnye.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[1,30],trmR:[1,30],rateN:0,rateR:0.8,z:true,zd:null,url:"https://pxl.leads.su/click/7d30ad52043887efd2e33ee89ea41e62?erid=2W5zFJSTEz4"},
+            {n:"Надо Денег",logo:"logos/11-nado-deneg.svg",amtN:[1000,100000],amtR:[1000,100000],trmN:[7,168],trmR:[7,168],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?erid=2W5zFHdCTFv"},
+            {n:"Доброзайм",logo:"logos/12-dobrozajm.svg",amtN:[1000,100000],amtR:[1000,1000000],trmN:[4,720],trmR:[4,720],rateN:0,rateR:0.8,z:true,zd:7,url:"https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?erid=2W5zFJSXfu2"},
+            {n:"OneClickMoney",logo:"logos/13-oneclickmoney.svg",amtN:[500,200000],amtR:[500,200000],trmN:[15,735],trmR:[15,735],rateN:0,rateR:0.8,z:true,zd:null,url:"https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?erid=2W5zFH7Qc5v"},
+            {n:"Деньги Сразу",logo:"logos/15-dengi-srazu.svg",amtN:[1000,30000],amtR:[1000,100000],trmN:[16,16],trmR:[17,365],rateN:0.8,rateR:0.8,z:false,zd:null,url:"https://pxl.leads.su/click/174ea44bddaf32da6dd1bfe047b83a80?erid=2W5zFGDsBp4"},
+            {n:"Свои Люди",logo:"logos/16-svoi-lyudi.svg",amtN:[5000,30000],amtR:[5000,30000],trmN:[3,30],trmR:[3,30],rateN:0.8,rateR:0.8,z:false,zd:null,url:"https://pxl.leads.su/click/8bae555126c05cbc61c4c2f72d4eb3b6?erid=2W5zFHDfLCg"},
+            {n:"Кредиска",logo:"logos/17-krediska.svg",amtN:[1000,50000],amtR:[1000,50000],trmN:[5,31],trmR:[5,31],rateN:0,rateR:0.8,z:true,zd:21,url:"https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?erid=2W5zFHywXyi"},
+            {n:"Займиго",logo:"logos/18-zaymigo.svg",amtN:[5000,50000],amtR:[5000,50000],trmN:[5,31],trmR:[5,31],rateN:0,rateR:0.8,z:true,zd:21,url:"https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?erid=2W5zFK44HXE"},
+            {n:"Joymoney",logo:"logos/19-joymoney.svg",amtN:[3000,30000],amtR:[11000,100000],trmN:[10,30],trmR:[10,168],rateN:0,rateR:0.8,z:true,zd:14,url:"https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?erid=2W5zFK1Gnqv"},
+            {n:"MoneyMan",logo:"logos/20-moneyman.svg",amtN:[1000,30000],amtR:[1000,100000],trmN:[5,33],trmR:[10,126],rateN:0,rateR:0.8,z:true,zd:21,url:"https://vldmnt.ru/go/ssm7xv7ihi"},
+            {n:"Лайкзайм",logo:"logos/21-likezaim.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[1,14],trmR:[1,14],rateN:0,rateR:0.8,z:true,zd:null,url:"https://vldmnt.ru/go/snuwwxsc8v"},
+            {n:"Kviku",logo:"logos/22-kviku.svg",amtN:[1000,100000],amtR:[1000,100000],trmN:[60,365],trmR:[60,365],rateN:0.8,rateR:0.8,z:true,zd:50,url:"https://vldmnt.ru/go/s995xwjrn6"},
+            {n:"Bunny Money",logo:"logos/23-bunny-money.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[3,30],trmR:[3,30],rateN:0,rateR:0.8,z:false,zd:null,url:"https://vldmnt.ru/go/sgtta83y0f"},
+            {n:"Вебзайм",logo:"logos/26-webzaim.svg",amtN:[3000,30000],amtR:[3000,30000],trmN:[7,30],trmR:[7,30],rateN:0,rateR:0.8,z:true,zd:14,url:"https://vldmnt.ru/go/s59sfd2drp"},
+            {n:"Max.Credit",logo:"logos/27-max-credit.svg",amtN:[5000,30000],amtR:[5000,30000],trmN:[3,30],trmR:[3,30],rateN:0.8,rateR:0.8,z:false,zd:null,url:"https://vldmnt.ru/go/s03s3xmmdj"},
+            {n:"Гринмани",logo:"logos/29-grinmani.svg",amtN:[3000,30000],amtR:[3000,100000],trmN:[7,21],trmR:[7,364],rateN:0,rateR:0.41,z:true,zd:21,url:"https://vldmnt.ru/go/stjejc0nuh"},
+            {n:"еКапуста",logo:"logos/31-ekapusta.svg",amtN:[1000,30000],amtR:[1000,30000],trmN:[7,30],trmR:[7,30],rateN:0,rateR:0.99,z:true,zd:30,url:"https://vldmnt.ru/go/s2sanlbasa"},
+            {n:"Cash To You",logo:"logos/32-cash-to-you.svg",amtN:[500,30000],amtR:[500,30000],trmN:[6,31],trmR:[6,31],rateN:0.8,rateR:0.8,z:false,zd:null,url:"https://vldmnt.ru/go/sqp7uapj7b"},
+            {n:"Небус",logo:"logos/33-nebus.svg",amtN:[1000,50000],amtR:[1000,50000],trmN:[1,113],trmR:[1,113],rateN:0.8,rateR:0.8,z:false,zd:null,url:"https://vldmnt.ru/go/s7h430n94n"},
+            {n:"До зарплаты",logo:"logos/34-do-zarplaty.svg",amtN:[1000,20000],amtR:[1000,30000],trmN:[7,180],trmR:[7,180],rateN:0,rateR:0.8,z:true,zd:null,url:"https://vldmnt.ru/go/s8uxolnvnr"},
+            {n:"Фин5",logo:"logos/14-fin5.svg",amtN:[1000,100000],amtR:[1000,100000],trmN:[1,365],trmR:[1,365],rateN:0,rateR:0.8,z:true,zd:null,url:"https://pxl.leads.su/click/a2b141f8039bcd39f2efcc172d6fd11c?erid=2W5zFGbcPc5",agg:true},
+            {n:"EcoZaym",logo:"logos/24-ecozaym.svg",amtN:[1000,100000],amtR:[1000,100000],trmN:[1,365],trmR:[1,365],rateN:0,rateR:0.8,z:true,zd:null,url:"https://vldmnt.ru/go/szhcpcvb8i",agg:true}
+        ];
 
         function formatNumber(n) {
             return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -95,6 +133,72 @@
             return 'дней';
         }
 
+        function findMatches(amount, term, isNew) {
+            var results = [];
+            for (var i = 0; i < mfoList.length; i++) {
+                var m = mfoList[i];
+                var amt = isNew ? m.amtN : m.amtR;
+                var trm = isNew ? m.trmN : m.trmR;
+                if (amount >= amt[0] && amount <= amt[1] && term >= trm[0] && term <= trm[1]) {
+                    var rate = isNew ? m.rateN : m.rateR;
+                    var isZero = isNew && m.z && (m.zd === null || term <= m.zd);
+                    var effectiveRate = isZero ? 0 : rate;
+                    var overpay = Math.round(amount * (effectiveRate / 100) * term);
+                    results.push({
+                        name: m.n,
+                        logo: m.logo,
+                        url: m.url,
+                        rate: effectiveRate,
+                        overpay: overpay,
+                        total: amount + overpay,
+                        isZero: isZero,
+                        isAgg: m.agg || false
+                    });
+                }
+            }
+            /* Sort: 0% first, then by lowest overpay */
+            results.sort(function(a, b) {
+                if (a.isZero !== b.isZero) return a.isZero ? -1 : 1;
+                return a.overpay - b.overpay;
+            });
+            return results;
+        }
+
+        function renderMatches(matches) {
+            if (!matchesContainer) return;
+            var max = 3;
+            var shown = matches.slice(0, max);
+
+            if (shown.length === 0) {
+                matchesContainer.innerHTML = '<div class="calc-match calc-match--empty">Нет подходящих предложений. Попробуйте изменить сумму или срок.</div>';
+                return;
+            }
+
+            var html = '<div class="calc-match__title">Лучшие предложения</div>';
+            for (var i = 0; i < shown.length; i++) {
+                var m = shown[i];
+                var badge = m.isZero ? '<span class="calc-match__badge calc-match__badge--green">0%</span>' : '';
+                if (m.isAgg) badge = '<span class="calc-match__badge calc-match__badge--blue">Подбор</span>';
+                html += '<div class="calc-match">' +
+                    '<div class="calc-match__left">' +
+                        '<img src="' + m.logo + '" alt="' + m.name + '" class="calc-match__logo" width="80" height="28">' +
+                        badge +
+                    '</div>' +
+                    '<div class="calc-match__center">' +
+                        '<div class="calc-match__overpay">' + (m.isZero ? '0 ₽' : formatNumber(m.overpay) + ' ₽') + '</div>' +
+                        '<div class="calc-match__overpay-label">переплата</div>' +
+                    '</div>' +
+                    '<a href="' + m.url + '" class="btn btn--primary btn--xs calc-match__btn" rel="nofollow noopener" target="_blank">Получить</a>' +
+                '</div>';
+            }
+
+            if (matches.length > max) {
+                html += '<a href="#compare" class="calc-match__more">Ещё ' + (matches.length - max) + ' предложений ↓</a>';
+            }
+
+            matchesContainer.innerHTML = html;
+        }
+
         function updateCalculator() {
             var amount = parseInt(amountSlider.value, 10);
             var term = parseInt(termSlider.value, 10);
@@ -102,18 +206,27 @@
             amountDisplay.textContent = formatNumber(amount) + ' \u20BD';
             termDisplay.textContent = term + ' ' + getDaysWord(term);
 
-            /* First loan = 0% */
-            resultFirst.textContent = '0 \u20BD';
+            var matches = findMatches(amount, term, isNewClient);
 
-            /* Repeat: average 0.8% per day */
-            var dailyRate = 0.008;
-            var interest = Math.round(amount * dailyRate * term);
-            var total = amount + interest;
+            /* Overpay: use avg rate or best match */
+            var bestRate = isNewClient ? 0 : 0.8;
+            if (matches.length > 0 && !matches[0].isAgg) {
+                bestRate = matches[0].rate;
+            }
+            var overpay = Math.round(amount * (bestRate / 100) * term);
+            var total = amount + overpay;
 
-            resultRepeat.textContent = formatNumber(interest) + ' \u20BD';
+            resultOverpay.textContent = formatNumber(overpay) + ' \u20BD';
+            if (overpay === 0) {
+                resultOverpay.className = 'calculator__result-value calculator__result-value--green';
+            } else {
+                resultOverpay.className = 'calculator__result-value';
+            }
             resultTotal.textContent = formatNumber(total) + ' \u20BD';
+            resultCount.textContent = matches.length;
 
-            /* Update slider track fill */
+            renderMatches(matches);
+
             updateSliderFill(amountSlider);
             updateSliderFill(termSlider);
         }
@@ -124,6 +237,21 @@
             var val = parseFloat(slider.value);
             var pct = ((val - min) / (max - min)) * 100;
             slider.style.background = 'linear-gradient(to right, #FF6B35 0%, #FF6B35 ' + pct + '%, #E2E8F0 ' + pct + '%, #E2E8F0 100%)';
+        }
+
+        /* Client type toggle */
+        if (clientToggle) {
+            var toggleBtns = clientToggle.querySelectorAll('.calculator__toggle-btn');
+            for (var i = 0; i < toggleBtns.length; i++) {
+                toggleBtns[i].addEventListener('click', function() {
+                    for (var j = 0; j < toggleBtns.length; j++) {
+                        toggleBtns[j].classList.remove('calculator__toggle-btn--active');
+                    }
+                    this.classList.add('calculator__toggle-btn--active');
+                    isNewClient = this.getAttribute('data-client') === 'new';
+                    updateCalculator();
+                });
+            }
         }
 
         amountSlider.addEventListener('input', updateCalculator);
