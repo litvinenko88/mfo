@@ -1377,15 +1377,19 @@ table {
 .reviews__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
 }
 
 .review-card {
     background: var(--color-white);
     border-radius: var(--radius-md);
-    padding: 20px;
-    box-shadow: var(--shadow-sm);
+    padding: 18px 20px;
     border: 1px solid var(--color-border-light);
+    transition: border-color var(--transition);
+}
+
+.review-card:hover {
+    border-color: var(--color-primary);
 }
 
 .review-card__header {
@@ -1399,12 +1403,7 @@ table {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--color-white);
+    object-fit: cover;
     flex-shrink: 0;
 }
 
@@ -1414,7 +1413,7 @@ table {
 
 .review-card__name {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--color-primary);
 }
 
@@ -1430,7 +1429,7 @@ table {
 }
 
 .review-card__text {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     color: var(--color-text-light);
     line-height: 1.5;
 }
@@ -2997,11 +2996,16 @@ table {
 
     /* Reviews */
     .review-card {
-        padding: 16px;
+        padding: 14px 14px;
+    }
+
+    .review-card__avatar {
+        width: 36px;
+        height: 36px;
     }
 
     .review-card__text {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     /* FAQ */
