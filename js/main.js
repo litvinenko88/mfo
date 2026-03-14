@@ -45,7 +45,46 @@
 
         /* Horizontal wheel scroll for categories bar */
         var categoriesNav = document.querySelector('.categories-nav');
+        var arrowLeft = document.querySelector('.categories-arrow--left');
+        var arrowRight = document.querySelector('.categories-arrow--right');
+
         if (categoriesNav) {
+            /* Update arrow visibility based on scroll position */
+            function updateArrows() {
+                if (!arrowLeft || !arrowRight) return;
+                var scrollL = categoriesNav.scrollLeft;
+                var maxScroll = categoriesNav.scrollWidth - categoriesNav.clientWidth;
+
+                if (scrollL <= 2) {
+                    arrowLeft.classList.add('categories-arrow--hidden');
+                } else {
+                    arrowLeft.classList.remove('categories-arrow--hidden');
+                }
+
+                if (scrollL >= maxScroll - 2) {
+                    arrowRight.classList.add('categories-arrow--hidden');
+                } else {
+                    arrowRight.classList.remove('categories-arrow--hidden');
+                }
+            }
+
+            /* Arrow click handlers */
+            var scrollStep = 200;
+            if (arrowLeft) {
+                arrowLeft.addEventListener('click', function () {
+                    categoriesNav.scrollLeft -= scrollStep;
+                });
+            }
+            if (arrowRight) {
+                arrowRight.addEventListener('click', function () {
+                    categoriesNav.scrollLeft += scrollStep;
+                });
+            }
+
+            categoriesNav.addEventListener('scroll', updateArrows, { passive: true });
+            window.addEventListener('resize', updateArrows);
+            updateArrows();
+
             categoriesNav.addEventListener('wheel', function (e) {
                 if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                     e.preventDefault();
