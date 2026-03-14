@@ -634,6 +634,67 @@ table {
 }
 
 /* ============================
+   REQUIREMENTS
+   ============================ */
+.requirements__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.requirement-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+}
+
+.requirement-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.requirement-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+}
+
+.requirement-card__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.requirement-card__title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.requirement-card__value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.requirement-card__text {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+/* ============================
    STEPS (How it works)
    ============================ */
 .steps__grid {
@@ -1469,6 +1530,10 @@ table {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .requirements__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .steps__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -1554,6 +1619,10 @@ table {
 
     .advantage-card {
         padding: 24px 16px;
+    }
+
+    .requirements__grid {
+        grid-template-columns: repeat(6, 1fr);
     }
 
     .steps__grid {
