@@ -1,4 +1,4 @@
-# Документация по МФО — 31 партнёрская программа (leads.su + vldmnt.ru)
+﻿# Документация по МФО — 31 партнёрская программа (leads.su + vldmnt.ru)
 
 > Дата сбора: 13 марта 2026  
 > Источник: официальные сайты МФО, сервис Сравни.ру, rusprofile.ru  
@@ -67,8 +67,8 @@
 - Работает круглосуточно
 
 ### Партнёрская ссылка
-- leads.su: `https://pxl.leads.su/click/95cecac27d1faca720a8981dbc34748e?erid=2W5zFGRgkqW`
-- vldmnt.ru: `https://vldmnt.ru/go/sgkf2g0mjd`
+- leads.su: `https://pxl.leads.su/click/95cecac27d1faca720a8981dbc34748e?source=site&aff_sub1=glavnaya&aff_sub2=zaymer&erid=2W5zFGRgkqW`
+- vldmnt.ru: `https://vldmnt.ru/go/sgkf2g0mjd?subid1=site&subid2=click2&subid3=glavnaya&subid4=zaymer-new`
 
 ---
 
@@ -169,7 +169,7 @@
 - Авторизация через Госуслуги и Т-Банк
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?erid=2W5zFHRnKXf`
+`https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?source=site&aff_sub1=glavnaya&aff_sub2=bystrodengi&erid=2W5zFHRnKXf`
 
 ---
 
@@ -217,7 +217,7 @@
 - Продление при трудностях с возвратом
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/4e60ee94de113b15d5fbc7bed4e6ed12?erid=2W5zFGqH8AU`
+`https://pxl.leads.su/click/4e60ee94de113b15d5fbc7bed4e6ed12?source=site&aff_sub1=glavnaya&aff_sub2=beri-beru&erid=2W5zFGqH8AU`
 
 ---
 
@@ -288,8 +288,8 @@
 - Скидки до 50% подписчикам Telegram-канала
 
 ### Партнёрская ссылка
-- leads.su: `https://pxl.leads.su/click/f676af6bb07f68d706c6053669efcfbe?erid=2W5zFHAu736`
-- vldmnt.ru: `https://vldmnt.ru/go/sywxk31f7u`
+- leads.su: `https://pxl.leads.su/click/f676af6bb07f68d706c6053669efcfbe?source=site&aff_sub1=glavnaya&aff_sub2=Credit7&erid=2W5zFHAu736`
+- vldmnt.ru: `https://vldmnt.ru/go/sywxk31f7u?subid1=site&subid2=click2&subid3=glavnaya&subid4=Credit7`
 
 ---
 
@@ -344,7 +344,7 @@
 - Через СЗНГБ (Сургутнефтегазбанк)
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/77307f82112c60903718f3a5208b16e2?erid=2W5zFJEVzd6`
+`https://pxl.leads.su/click/77307f82112c60903718f3a5208b16e2?source=site&aff_sub1=glavnaya&aff_sub2=layk-mani&erid=2W5zFJEVzd6`
 
 ---
 
@@ -411,7 +411,7 @@
 - Google Play, RuStore, NashStore, APK
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/b5b01b9d38dc1fed50cd70ebdb5c05e7?erid=2W5zFHzPkun`
+`https://pxl.leads.su/click/b5b01b9d38dc1fed50cd70ebdb5c05e7?source=site&aff_sub1=glavnaya&aff_sub2=Boostra&erid=2W5zFHzPkun`
 
 ---
 
@@ -483,7 +483,7 @@
 - RuStore, App Store, Google Play
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/1e72b15a212a832a32c5daa5b4734e25?erid=2W5zFK9wF9A`
+`https://pxl.leads.su/click/1e72b15a212a832a32c5daa5b4734e25?source=site&aff_sub1=glavnaya&aff_sub2=BelkaCredit&erid=2W5zFK9wF9A`
 
 ---
 
@@ -553,7 +553,7 @@
 - RuStore, Google Play, App Store, APK
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?erid=2W5zFJkUBEY`
+`https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?source=site&aff_sub1=glavnaya&aff_sub2=srochno-dengi&erid=2W5zFJkUBEY`
 
 ---
 
@@ -600,8 +600,8 @@
 - Cookie для персонализации сервиса
 
 ### Партнёрская ссылка
-- leads.su: `https://pxl.leads.su/click/bc55d263b3dd36189299a5528d41e2d7?erid=2W5zFH7Yxqn`
-- vldmnt.ru: `https://vldmnt.ru/go/sw1tmmjgbb`
+- leads.su: `https://pxl.leads.su/click/bc55d263b3dd36189299a5528d41e2d7?source=site&aff_sub1=glavnaya&aff_sub2=Hurmacredit&erid=2W5zFH7Yxqn`
+- vldmnt.ru: `https://vldmnt.ru/go/sw1tmmjgbb?subid1=site&subid2=click2&subid3=glavnaya&subid4=Hurmacredit`
 
 ---
 
@@ -678,8 +678,8 @@
 - Горячая линия: 8-800-333-02-73
 
 ### Партнёрские ссылки
-- leads.su: `https://pxl.leads.su/click/7d30ad52043887efd2e33ee89ea41e62?erid=2W5zFJSTEz4`
-- vldmnt.ru: `https://vldmnt.ru/go/ss3rfl13xq`
+- leads.su: `https://pxl.leads.su/click/7d30ad52043887efd2e33ee89ea41e62?source=site&aff_sub1=glavnaya&aff_sub2=umnyye-nalichnyye&erid=2W5zFJSTEz4`
+- vldmnt.ru: `https://vldmnt.ru/go/ss3rfl13xq?subid1=site&subid2=click2&subid3=glavnaya&subid4=umnyye-nalichnyye`
 
 ---
 
@@ -749,7 +749,7 @@
 - Реструктуризация просроченной задолженности при наступлении жизненных обстоятельств
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?erid=2W5zFHdCTFv`
+`https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?source=site&aff_sub1=glavnaya&aff_sub2=nado-deneg&erid=2W5zFHdCTFv`
 
 ---
 
@@ -827,8 +827,8 @@
 - Вход через Госуслуги или Тинькофф ID
 
 ### Партнёрская ссылка
-- leads.su: `https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?erid=2W5zFJSXfu2`
-- vldmnt.ru: `https://vldmnt.ru/go/svgea9n07v`
+- leads.su: `https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?source=site&aff_sub1=glavnaya&aff_sub2=dobrozaym&erid=2W5zFJSXfu2`
+- vldmnt.ru: `https://vldmnt.ru/go/svgea9n07v?subid1=site&subid2=click2&subid3=glavnaya&subid4=dobrozaym`
 
 ---
 
@@ -887,8 +887,8 @@
 - Мобильное приложение (Google Play, RuStore, AppGallery)
 
 ### Партнёрские ссылки
-- leads.su: `https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?erid=2W5zFH7Qc5v`
-- vldmnt.ru: `https://vldmnt.ru/go/sykhqqg125`
+- leads.su: `https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?source=site&aff_sub1=glavnaya&aff_sub2=OneClickMone&erid=2W5zFH7Qc5v`
+- vldmnt.ru: `https://vldmnt.ru/go/sykhqqg125?subid1=site&subid2=click2&subid3=glavnaya&subid4=OneClickMoney`
 
 ---
 
@@ -907,7 +907,7 @@
 Фин5 не является микрофинансовой организацией. Сайт fin5.ru перенаправляет на агрегатор займов. Это маркетплейс, который подбирает предложения от различных МФО. Аналогично Boostra — IT-платформа, а не кредитор. Рекомендуется при размещении на сайте указывать, что это сервис подбора займов, а не МФО.
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/a2b141f8039bcd39f2efcc172d6fd11c?erid=2W5zFGbcPc5`
+`https://pxl.leads.su/click/a2b141f8039bcd39f2efcc172d6fd11c?source=site&aff_sub1=glavnaya&aff_sub2=fin5&erid=2W5zFGbcPc5`
 
 ---
 
@@ -968,7 +968,7 @@
 - Мобильное приложение (Android, iOS)
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/174ea44bddaf32da6dd1bfe047b83a80?erid=2W5zFGDsBp4`
+`https://pxl.leads.su/click/174ea44bddaf32da6dd1bfe047b83a80?source=site&aff_sub1=glavnaya&aff_sub2=dengi-srazu&erid=2W5zFGDsBp4`
 
 ---
 
@@ -1025,7 +1025,7 @@
 - Перевод по СБП
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/8bae555126c05cbc61c4c2f72d4eb3b6?erid=2W5zFHDfLCg`
+`https://pxl.leads.su/click/8bae555126c05cbc61c4c2f72d4eb3b6?source=site&aff_sub1=glavnaya&aff_sub2=svoi-lyudi&erid=2W5zFHDfLCg`
 
 ---
 
@@ -1088,7 +1088,7 @@
 - Под контролем ЦБ РФ
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?erid=2W5zFHywXyi`
+`https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=glavnaya&aff_sub2=Krediska&erid=2W5zFHywXyi`
 
 ---
 
@@ -1147,7 +1147,7 @@
 - Работает 24/7
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?erid=2W5zFK44HXE`
+`https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?source=site&aff_sub1=glavnaya&aff_sub2=Zaymigo&erid=2W5zFK44HXE`
 
 ---
 
@@ -1225,7 +1225,7 @@
 - Награды: «За развитие ИИ» (Выберу.ру), «Золотой рубль», «Выбор потребителя»
 
 ### Партнёрская ссылка
-`https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?erid=2W5zFK1Gnqv`
+`https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?source=site&aff_sub1=glavnaya&aff_sub2=Joymoney&erid=2W5zFK1Gnqv`
 
 ---
 
@@ -1302,7 +1302,7 @@
 - Соцсети: ВКонтакте, Facebook, Одноклассники
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/ssm7xv7ihi`
+`https://vldmnt.ru/go/ssm7xv7ihi?subid1=site&subid2=click2&subid3=glavnaya&subid4=Moneyman-VIP`
 
 ---
 
@@ -1352,7 +1352,7 @@
 - Работа 24/7
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/snuwwxsc8v`
+`https://vldmnt.ru/go/snuwwxsc8v?subid1=site&subid2=click2&subid3=glavnaya&subid4=laykzaym`
 
 ---
 
@@ -1418,7 +1418,7 @@
 - Соцсети: ВКонтакте, Facebook
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s995xwjrn6`
+`https://vldmnt.ru/go/s995xwjrn6?subid1=site&subid2=click2&subid3=glavnaya&subid4=Kviku`
 
 ---
 
@@ -1468,7 +1468,7 @@
 - Малое количество отзывов — компания «новичок»
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/sgtta83y0f`
+`https://vldmnt.ru/go/sgtta83y0f?subid1=site&subid2=click2&subid3=glavnaya&subid4=Bunny-Money`
 
 ---
 
@@ -1488,7 +1488,7 @@
 На витрине представлены предложения от: Займер, Быстроденьги, Credit7, MoneyMan, Joymoney и других МФО с перенаправлением через leads.su.
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/szhcpcvb8i`
+`https://vldmnt.ru/go/szhcpcvb8i?subid1=site&subid2=click2&subid3=glavnaya&subid4=EcoZaym`
 
 ---
 
@@ -1547,7 +1547,7 @@
 - Мобильное приложение (App Store, RuStore, Google Play)
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s59sfd2drp`
+`https://vldmnt.ru/go/s59sfd2drp?subid1=site&subid2=click2&subid3=glavnaya&subid4=vebzaym`
 
 ---
 
@@ -1600,7 +1600,7 @@
 - Можно оплатить без входа в ЛК
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s03s3xmmdj`
+`https://vldmnt.ru/go/s03s3xmmdj?subid1=site&subid2=click2&subid3=glavnaya&subid4=Max-Credit`
 
 ---
 
@@ -1657,7 +1657,7 @@
 - Бывший член СРО «Единство» (прекратила деятельность), с 28.12.2021 — в «Микрофинансирование и Развитие»
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/stjejc0nuh`
+`https://vldmnt.ru/go/stjejc0nuh?subid1=site&subid2=click2&subid3=glavnaya&subid4=grinmani-zaym-pod-0`
 
 ---
 
@@ -1721,7 +1721,7 @@
 - Техподдержка: круглосуточно (телефон, email, форма обратной связи, ВКонтакте)
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s2sanlbasa`
+`https://vldmnt.ru/go/s2sanlbasa?subid1=site&subid2=click2&subid3=glavnaya&subid4=Ekapusta`
 
 ---
 
@@ -1782,7 +1782,7 @@
 - Скорость рассмотрения: ~20 минут для новых клиентов
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/sqp7uapj7b`
+`https://vldmnt.ru/go/sqp7uapj7b?subid1=site&subid2=click2&subid3=glavnaya&subid4=cash-to-you`
 
 ---
 
@@ -1834,7 +1834,7 @@
 - Работает онлайн по всей России
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s7h430n94n`
+`https://vldmnt.ru/go/s7h430n94n?subid1=site&subid2=click2&subid3=glavnaya&subid4=nebus`
 
 ---
 
@@ -1891,7 +1891,7 @@
 - Техподдержка: телефон, email
 
 ### Партнёрская ссылка
-`https://vldmnt.ru/go/s8uxolnvnr`
+`https://vldmnt.ru/go/s8uxolnvnr?subid1=site&subid2=click2&subid3=glavnaya&subid4=do-zarplaty-ecom`
 
 ---
 

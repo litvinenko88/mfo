@@ -21,6 +21,7 @@
         initReviewsToggle();
         initMfoDetails();
         initMfoSort();
+        initAffiliateTracking();
     }
 
     /* ============================
@@ -587,6 +588,86 @@
                     btn.setAttribute('aria-expanded', 'true');
                 }
             });
+        });
+    }
+
+    /* ============================
+       Affiliate Link Tracking
+       Adds tracking params from pp.md
+       and sets page slug dynamically
+       ============================ */
+    function initAffiliateTracking() {
+        var path = window.location.pathname.replace(/^\/|\/$/g, '');
+        var pageSlug = path ? path.replace(/\//g, '-') : 'glavnaya';
+
+        var leadsNames = {
+            '95cecac27d1faca720a8981dbc34748e': 'zaymer',
+            '9b7c3f92632059651026c93817da5be4': 'bystrodengi',
+            '4e60ee94de113b15d5fbc7bed4e6ed12': 'beri-beru',
+            'f676af6bb07f68d706c6053669efcfbe': 'Credit7',
+            '77307f82112c60903718f3a5208b16e2': 'layk-mani',
+            'b5b01b9d38dc1fed50cd70ebdb5c05e7': 'Boostra',
+            '1e72b15a212a832a32c5daa5b4734e25': 'BelkaCredit',
+            '38d67604feb85b28ab4090610ea5bbba': 'srochno-dengi',
+            'bc55d263b3dd36189299a5528d41e2d7': 'Hurmacredit',
+            '7d30ad52043887efd2e33ee89ea41e62': 'umnyye-nalichnyye',
+            '9d9fc0e645501c612c6cfa1055214b42': 'nado-deneg',
+            '97d69622e4f8b11f0af2747944c4a311': 'dobrozaym',
+            'df029d65324cad9b3579f8b1034cab21': 'OneClickMone',
+            'a2b141f8039bcd39f2efcc172d6fd11c': 'fin5',
+            '174ea44bddaf32da6dd1bfe047b83a80': 'dengi-srazu',
+            '8bae555126c05cbc61c4c2f72d4eb3b6': 'svoi-lyudi',
+            '05d217c2c615daf5286328e1249f9301': 'Krediska',
+            '034e966f88817730c36d8275cae1b4dd': 'Zaymigo',
+            '4f1a5e421ae9b0afb91d49ef85946fba': 'Joymoney'
+        };
+
+        var vldmntNames = {
+            'ssm7xv7ihi': 'Moneyman-VIP',
+            'snuwwxsc8v': 'laykzaym',
+            's995xwjrn6': 'Kviku',
+            'sgtta83y0f': 'Bunny-Money',
+            'szhcpcvb8i': 'EcoZaym',
+            's59sfd2drp': 'vebzaym',
+            's03s3xmmdj': 'Max-Credit',
+            'stjejc0nuh': 'grinmani-zaym-pod-0',
+            's2sanlbasa': 'Ekapusta',
+            'sqp7uapj7b': 'cash-to-you',
+            's7h430n94n': 'nebus',
+            's8uxolnvnr': 'do-zarplaty-ecom'
+        };
+
+        function addTracking(href) {
+            if (href.indexOf('pxl.leads.su') !== -1) {
+                if (href.indexOf('aff_sub1=') !== -1) {
+                    return href.replace(/aff_sub1=[^&]+/, 'aff_sub1=' + pageSlug);
+                }
+                var m = href.match(/click\/([a-f0-9]+)/);
+                if (m && leadsNames[m[1]]) {
+                    return href.replace('?erid=', '?source=site&aff_sub1=' + pageSlug + '&aff_sub2=' + leadsNames[m[1]] + '&erid=');
+                }
+            }
+            if (href.indexOf('vldmnt.ru') !== -1) {
+                if (href.indexOf('subid3=') !== -1) {
+                    return href.replace(/subid3=[^&]+/, 'subid3=' + pageSlug);
+                }
+                var m = href.match(/go\/([a-z0-9]+)/);
+                if (m && vldmntNames[m[1]]) {
+                    var base = href.split('?')[0];
+                    return base + '?subid1=site&subid2=click2&subid3=' + pageSlug + '&subid4=' + vldmntNames[m[1]];
+                }
+            }
+            return href;
+        }
+
+        var links = document.querySelectorAll('a[href*="pxl.leads.su"], a[href*="vldmnt.ru"]');
+        for (var i = 0; i < links.length; i++) {
+            links[i].href = addTracking(links[i].href);
+        }
+
+        document.addEventListener('mousedown', function(e) {
+            var link = e.target.closest('a[href*="pxl.leads.su"], a[href*="vldmnt.ru"]');
+            if (link) link.href = addTracking(link.href);
         });
     }
 
