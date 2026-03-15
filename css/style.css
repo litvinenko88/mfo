@@ -2659,6 +2659,13 @@ table {
     line-height: 1.4;
 }
 
+/* Filter submit button */
+.btn--filter-submit {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+}
+
 /* Calculator Toggle */
 .calculator__toggle {
     display: flex;
