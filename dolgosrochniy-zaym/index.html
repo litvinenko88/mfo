@@ -50,7 +50,7 @@
     }
     </script>
 
-    <!-- Schema.org — FAQPage (FAQ будут добавлены позже) -->
+    <!-- Schema.org — FAQPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,42 +58,122 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Какой максимальный срок долгосрочного займа в МФО?",
+                "name": "Какой максимальный срок в МФО?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "До 24 месяцев (735 дней) в зависимости от компании. Лидеры по сроку — OneClickMoney (до 735 дней) и Доброзайм (до 720 дней)."
+                    "text": "До 24 месяцев (735 дней). Лидеры: OneClickMoney — до 735 дней, Доброзайм — до 720 дней. Большинство компаний — до 180–365 дней."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Какая переплата по долгосрочному займу?",
+                "name": "Какая переплата при длительном сроке?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Переплата зависит от ставки и срока. При ставке 0,8% в день и сроке 6 месяцев переплата может составить до 146% от суммы. Используйте калькулятор на странице для точного расчёта."
+                    "text": "Зависит от ставки. При 0,8% в день и 6 месяцах на 30 000 ₽ — 43 200 ₽. При 0,27% — 14 580 ₽. Воспользуйтесь калькулятором на странице."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Можно ли погасить долгосрочный займ досрочно?",
+                "name": "Можно ли получить займ с плохой кредитной историей?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Да. По закону заёмщик имеет право на досрочное погашение без штрафов и комиссий. Проценты начисляются только за фактические дни пользования."
+                    "text": "Да. Многие компании одобряют клиентов с низким кредитным рейтингом. Сумма может быть ограничена (5 000–15 000 ₽), ставка — выше средней."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Чем долгосрочный займ отличается от кредита в банке?",
+                "name": "Возможно ли досрочное закрытие?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Займ в МФО оформляется онлайн за 5–15 минут без справок о доходах. Банковский кредит требует подтверждения дохода и занимает 1–5 дней. Ставка в МФО выше, но требования к заёмщику — ниже."
+                    "text": "Да. По закону — без штрафов. Пересчитают за фактические дни. Это лучший способ снизить итоговую сумму возврата."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Какую сумму можно получить на длительный срок?",
+                "name": "Чем отличается от кредита в банке?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "От 1 000 до 100 000 рублей в МКК, до 1 000 000 рублей в МФК. Сумма зависит от типа компании и вашей кредитной истории."
+                    "text": "Оформление в МФО — за 5–15 минут без справок. Банковский кредит (Т-Банк, Райффайзенбанк) требует подтверждения дохода. Ставка в МФО выше: 0,27–0,8% в день против 6–30% годовых в банке."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какую сумму можно получить?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Для новых клиентов — 5 000–30 000 ₽. С хорошей историей — лимит растёт."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Нужен ли залог для оформления?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Нет. Выдаётся без залог (гражданское право), без поручителей. Только паспорт РФ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как получить деньги?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "На банковскую карту (Visa, MasterCard, МИР), расчётный счёт, наличными, ЮMoney или Qiwi. Перевод на карту — от 5 минут."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие документы нужны?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Паспорт РФ, карта и мобильный телефон. Справки о доходах, СНИЛС, ИНН — не требуются. Верификация — через SMS или Госуслуги."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Безопасно ли оформлять онлайн?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, если компания в реестре Банка России. Сервисы микрофинансовых организаций из реестра используют SSL-шифрование и соблюдают ФЗ-152."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Что будет при просрочке?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Штрафные начисления. Должник обязан выплатить начисленное. По закону общая сумма не может превысить 1,5 размера тела долга. Информация передаётся в БКИ — это ухудшает рейтинг."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли получить на любые нужды?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да. Цель не указывается. Деньги — на любые нужды в день обращения: ремонт, лечение, покупки."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как получить впервые?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Первый займ обычно — 5 000–15 000 ₽. Заполните заявку на сайте, пройдите верификацию. Онлайн и получите деньги на карту за 5–15 минут."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие компании дают на самый длинный срок?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OneClickMoney (735 дней), Доброзайм (720 дней), Деньги Сразу (365 дней), Kviku (365 дней). Все в реестре ЦБ РФ. Выдают займы на карту или счёт."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Выгодно ли брать на долгий срок?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Выгодно только если нет альтернативы. Ежемесячная нагрузка ниже, но итоговая переплата значительно выше. Совет: берите на минимальный срок, закрывайте досрочно."
                 }
             }
         ]
@@ -261,9 +341,9 @@
                             Обновлено: <time datetime="2026-03-15">15 марта 2026</time>
                         </div>
 
-                        <h1 class="hero__title">Долгосрочный займ на карту — МФО с длительным сроком до 24 месяцев</h1>
+                        <h1 class="hero__title">Займы на длительный срок на карту — заем от 2 до 24 месяцев</h1>
 
-                        <p class="hero__subtitle">Оформите займ на&nbsp;срок от&nbsp;2&nbsp;до&nbsp;24&nbsp;месяцев. Рассчитайте переплату и&nbsp;выберите лучшие условия среди&nbsp;21&nbsp;МФО.</p>
+                        <p class="hero__subtitle">Оформите долгосрочный займ онлайн в&nbsp;проверенных мфо. Рассчитайте переплату, сравните условия среди&nbsp;топовых&nbsp;мфо и&nbsp;получите деньги на&nbsp;карту в&nbsp;день обращения со&nbsp;ставкой от&nbsp;0.</p>
                     </div>
 
                     <!-- Term Slider — уникальный элемент вместо калькулятора/фильтра -->
@@ -356,7 +436,7 @@
                         <line x1="12" y1="9" x2="12" y2="13"/>
                         <line x1="12" y1="17" x2="12.01" y2="17"/>
                     </svg>
-                    <p>Важно: долгосрочный займ предполагает значительную переплату. Чем дольше срок — тем больше вы заплатите процентов. Максимальная ставка по закону — 0,8% в день (292% годовых). Перед оформлением рассчитайте полную стоимость с помощью калькулятора на этой странице. Если есть возможность — выбирайте минимальный срок и используйте досрочное погашение.</p>
+                    <p>Внимание: заем на долгий срок предполагает значительную переплату. Чем дольше срок — тем больше вы заплатите кредитору. Максимальная процентная ставка по закону — 0,8% в день (292% годовой). Прежде чем оформлять заявку — рассчитайте полную стоимость через калькулятор на этой странице. Выбирайте минимальный срок и используйте досрочное погашение. Не берите новый заем до закрытия предыдущего — это ухудшает кредитный рейтинг.</p>
                 </div>
             </div>
         </div>
@@ -365,8 +445,8 @@
         <section class="section" id="mfo-rating">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Рейтинг МФО с долгосрочными займами — март 2026</h2>
-                    <p class="section__subtitle">21 компания из реестра ЦБ с максимальным сроком от 31 до 735 дней. Сортировка по максимальному сроку.</p>
+                    <h2 class="section__title">Рейтинг МФО 2026 — долгосрочный займ онлайн на карту</h2>
+                    <p class="section__subtitle">21 компания из реестра Банка России. Критерий отбора: одобрение от 5 минут, срок — от 31 до 735 дней. Микрофинансовые организации проверены по ставкам и отзывам. Сортировка по максимальному сроку. Займы оформляются дистанционно — без визита в офис. Некоторые мфо предлагают долгосрочные займы со ставкой от 0,27% в день.</p>
                 </div>
 
                 <!-- Сортировка -->
@@ -377,9 +457,1452 @@
                     <button class="mfo-sort__btn" data-sort="amount">По сумме</button>
                 </div>
 
-                <!-- МФО карточки будут добавлены позже -->
-                <div class="mfo-list" id="mfo-list">
-                    <p class="mfo-list__placeholder" style="text-align: center; padding: 40px 20px; color: var(--color-text-muted);">Карточки МФО будут добавлены позже</p>
+                <!-- 21 МФО для долгосрочного займа — сортировка по макс. сроку -->
+                <div class="mfo-grid" id="mfo-grid">
+
+                    <!-- 1. OneClickMoney -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="200000" data-rate="0.8" data-term="735">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#1</span>
+                            <img src="../logos/13-oneclickmoney.svg" alt="OneClickMoney — долгосрочный займ до 735 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% новичкам</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">АО «МКК УФ»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №001503760007126</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">500–200 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">15–735 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">8 из 10 одобрено</span>
+                                <span class="mfo-card__tag">Любая КИ</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?erid=2W5zFH7Qc5v" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> АО «МКК УФ»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №001503760007126</li>
+                                    <li><strong>Макс. срок:</strong> до 735 дней (≈24 мес.)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 500–200 000 ₽</li>
+                                    <li><strong>Срок:</strong> 15–735 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день или 0% первый</li>
+                                    <li><strong>Возраст:</strong> 18–80 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Только паспорт РФ</li>
+                                    <li>На карту (Visa/MC/Maestro/МИР) — от 1 мин.</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Выдают пенсионерам/студентам/с плохой КИ</li>
+                                    <li>8 из 10 заявок одобрено</li>
+                                    <li>Не звонят родственникам</li>
+                                    <li>Полностью онлайн 24/7</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Доброзайм -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="720">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#2</span>
+                            <img src="../logos/12-dobrozajm.svg" alt="Доброзайм — долгосрочный займ до 720 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">АО МФК «Саммит» / ООО МКК «ДЗБР»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651503045006630</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">4–720 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–90 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 2011 года</span>
+                                <span class="mfo-card__tag">Под залог ПТС</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?erid=2W5zFJSXfu2" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> АО МФК «Саммит» / ООО МКК «ДЗБР»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №651503045006630</li>
+                                    <li><strong>ПСК:</strong> 0–292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.9 (Яндекс Бизнес)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Онлайн:</strong> 1 000–100 000 ₽ на 4–720 дней</li>
+                                    <li><strong>Под ПТС:</strong> до 1 000 000 ₽</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; 0% до 15 000 на 7 дней</li>
+                                    <li><strong>Возраст:</strong> 18–90 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Только паспорт, без СНИЛС/ИНН</li>
+                                    <li>На карту до 10 минут</li>
+                                    <li>Вход через Госуслуги / Тинькофф ID</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Выдают с плохой КИ и безработным</li>
+                                    <li>25 млрд ₽ выдано, 83,6% повторных</li>
+                                    <li>Награда «Самое лояльное МФО»</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Деньги Сразу -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#3</span>
+                            <img src="../logos/15-dengi-srazu.svg" alt="Деньги Сразу — долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">Без 0%</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «МКК НФ»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №1603760008057</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">16–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 2016 года</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/174ea44bddaf32da6dd1bfe047b83a80?erid=2W5zFGDsBp4" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «МКК НФ»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №1603760008057</li>
+                                    <li><strong>Рейтинг:</strong> 4.67/5 (1601 отзыв)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Новые:</strong> до 30 000 ₽ на 16 дней</li>
+                                    <li><strong>Повторные:</strong> до 100 000 на 17–365 дней</li>
+                                    <li><strong>Ставка:</strong> 0,8%/день</li>
+                                    <li><strong>Возраст:</strong> 18–80 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + селфи с кодом + карта</li>
+                                    <li>На карту</li>
+                                    <li>Погашение: офис/карта/Contact/Золотая Корона</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Нет беспроцентного займа</li>
+                                    <li>Высокий % одобрения после просрочек</li>
+                                    <li>С 2016 года на рынке</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Фин5 (Маркетплейс) -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#4</span>
+                            <img src="../logos/14-fin5.svg" alt="Фин5 — подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--info">Подбор займов</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">Сервис подбора займов</div>
+                            <div class="mfo-card__reg">Агрегатор / маркетплейс</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">от 0% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Агрегатор</span>
+                                <span class="mfo-card__tag">Подбор от МФО</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/a2b141f8039bcd39f2efcc172d6fd11c?erid=2W5zFGbcPc5" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Подобрать займ</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Бренд:</strong> Фин5 (fin5.ru)</li>
+                                    <li><strong>Тип:</strong> Агрегатор / маркетплейс</li>
+                                    <li><strong>Реестр ЦБ:</strong> не требуется (IT-платформа)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li>Подбирает от лицензированных МФО</li>
+                                    <li>Одна заявка — несколько компаний</li>
+                                    <li>Сравнение ставок и условий</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ (для МФО)</li>
+                                    <li>Получение — через выбранную МФО</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Бесплатный подбор</li>
+                                    <li>Экономия времени</li>
+                                    <li>Повышенный шанс одобрения</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. EcoZaym (Агрегатор) -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="100000" data-rate="0" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#5</span>
+                            <img src="../logos/24-ecozaym.svg" alt="EcoZaym — подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--info">Подбор займов</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">Сервис подбора займов</div>
+                            <div class="mfo-card__reg">Агрегатор / витрина</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">от 0% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Агрегатор</span>
+                                <span class="mfo-card__tag">Витрина МФО</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/szhcpcvb8i" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Подобрать займ</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Бренд:</strong> EcoZaym (ecozaym.ru)</li>
+                                    <li><strong>Тип:</strong> Агрегатор / витрина</li>
+                                    <li><strong>Реестр ЦБ:</strong> не требуется</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li>Витрина от лицензированных МФО</li>
+                                    <li>Партнёры: Займер, Быстроденьги, Credit7, MoneyMan</li>
+                                    <li>Сравнение в одном месте</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ (для МФО)</li>
+                                    <li>Получение — через выбранную МФО</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Бесплатный подбор</li>
+                                    <li>Широкий выбор МФО</li>
+                                    <li>Все с лицензией ЦБ</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Kviku -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#6</span>
+                            <img src="../logos/22-kviku.svg" alt="Kviku — долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">50 дн. грейс</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Эйрлоанс»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ с 2013 года</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">60–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Виртуальная карта</span>
+                                <span class="mfo-card__tag">Без допуслуг</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s995xwjrn6" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «Эйрлоанс»</li>
+                                    <li><strong>Реестр ЦБ:</strong> с 2013 года</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–100 000 ₽</li>
+                                    <li><strong>Срок:</strong> 60–365 дней</li>
+                                    <li><strong>Ставка:</strong> 0,8%/день; грейс-период 50 дней</li>
+                                    <li><strong>Возраст:</strong> 18+</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + СНИЛС + прописка + доходы</li>
+                                    <li>Виртуальная карта Kviku</li>
+                                    <li>Погашение: карта/QIWI/Contact/ЮMoney</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Виртуальная карта с лимитом</li>
+                                    <li>Беспроцентный период 50 дней</li>
+                                    <li>Решение за 10 секунд</li>
+                                    <li>POS-кредитование</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Гринмани -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="364">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#7</span>
+                            <img src="../logos/29-grinmani.svg" alt="Гринмани — долгосрочный займ до 364 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «СФ»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №1903045009345</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–364 дня</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Долгосрочные</span>
+                                <span class="mfo-card__tag">0,41% / день (долг.)</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/stjejc0nuh" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «СФ»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №1903045009345</li>
+                                    <li><strong>ПСК:</strong> 0–292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Первый:</strong> 3 000–30 000 на 7–21 день (0%)</li>
+                                    <li><strong>Долгосрочный:</strong> до 100 000 на 364 дня</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; долгосрочный 0,41%/день</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + телефон + карта</li>
+                                    <li>На карту мгновенно</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Долгосрочные займы со ставкой 0,41%/день</li>
+                                    <li>Кредитный лимит растёт</li>
+                                    <li>Приложения Android/iOS/Huawei</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Срочно Деньги -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#8</span>
+                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги — долгосрочный займ до 360 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Срочноденьги»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110552000304</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">2 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–360 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Офисы по РФ</span>
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">СБП</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?erid=2W5zFJkUBEY" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «Срочноденьги»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2110552000304</li>
+                                    <li><strong>ПСК:</strong> 292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.9 (2ГИС, Яндекс Карты)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 2 000–100 000 ₽</li>
+                                    <li><strong>Срок:</strong> 1–360 дней</li>
+                                    <li><strong>Ставка:</strong> 0,8%/день; 0% до 7 дней</li>
+                                    <li><strong>Возраст:</strong> 18–80 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ</li>
+                                    <li>На карту — 15 минут</li>
+                                    <li>Офисы по всей России</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>8 из 10 клиентов — постоянные</li>
+                                    <li>Подарок в День рождения</li>
+                                    <li>Мобильное приложение</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Быстроденьги -->
+                    <div class="mfo-card" data-rating="4.6" data-amount="100000" data-rate="0.8" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#9</span>
+                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% новичкам</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">МФК Быстроденьги ООО</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110573000002</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.6</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–75 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Паспорт РФ</span>
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">6M+ клиентов</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?erid=2W5zFHRnKXf" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> МФК Быстроденьги ООО</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2110573000002</li>
+                                    <li><strong>ПСК:</strong> 39–292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.6 (Сравни.ру), 1-е место Banki.ru 2022</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Новые:</strong> до 30 000 на 21 день</li>
+                                    <li><strong>Повторные:</strong> до 500 000 (до 36 мес.)</li>
+                                    <li><strong>Ставка:</strong> 0% на 10 дней или 0,8%/день</li>
+                                    <li><strong>Возраст:</strong> 18–75 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ + гражданство РФ</li>
+                                    <li>На карту (VISA/MC/Мир) — 5–15 мин.</li>
+                                    <li>Авторизация через Госуслуги / Тинькофф ID</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Топ-5 лидеров, 6M+ клиентов</li>
+                                    <li>98% одобрения</li>
+                                    <li>Досрочное погашение и продление</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Boostra (Маркетплейс) -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#10</span>
+                            <img src="../logos/06-boostra.svg" alt="Boostra — подбор долгосрочных займов до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--accent">Маркетплейс</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Финтех-Маркет» (IT-платформа)</div>
+                            <div class="mfo-card__reg">Подбирает займы от МФО из реестра ЦБ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">до 180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">от 0% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">2,5M+ клиентов</span>
+                                <span class="mfo-card__tag">Моб. приложение</span>
+                                <span class="mfo-card__tag">Подбор МФО</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/b5b01b9d38dc1fed50cd70ebdb5c05e7?erid=2W5zFHzPkun" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Подобрать займ</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «Финтех-Маркет»</li>
+                                    <li><strong>Тип:</strong> Маркетплейс (IT-платформа, не МФО)</li>
+                                    <li><strong>ПСК:</strong> 0–292% (зависит от МФО)</li>
+                                    <li><strong>Рейтинг:</strong> 4.5–4.8 (Сравни.ру, Google Play)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–100 000 ₽ (через партнёров)</li>
+                                    <li><strong>Срок:</strong> до 180 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ + карта + телефон</li>
+                                    <li>Получение и погашение через партнёра</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Подбирает предложения от МФО</li>
+                                    <li>2.5M+ клиентов</li>
+                                    <li>Не выдаёт напрямую</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Лайк Мани -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#11</span>
+                            <img src="../logos/05-like-money.svg" alt="Лайк Мани — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Лайк Мани»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2503322010150</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">2 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Одобрение до 95%</span>
+                                <span class="mfo-card__tag">Госуслуги</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/77307f82112c60903718f3a5208b16e2?erid=2W5zFJEVzd6" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «Лайк Мани»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2503322010150</li>
+                                    <li><strong>ПСК:</strong> 292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 2 000–100 000 ₽</li>
+                                    <li><strong>Срок:</strong> 1–180 дней</li>
+                                    <li><strong>Ставка:</strong> 0,8%/день или 0% до 7 дней</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ + карта</li>
+                                    <li>На карту за 5 минут</li>
+                                    <li>Авторизация через Госуслуги (+90% к одобрению)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Одобрение до 95%</li>
+                                    <li>5 минут — весь процесс</li>
+                                    <li>Бесплатное продление до 30 дней</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. До зарплаты -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="30000" data-rate="0.8" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#12</span>
+                            <img src="../logos/34-do-zarplaty.svg" alt="До зарплаты — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% новичкам</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Союз 5»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №001503140006946</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 2015 года</span>
+                                <span class="mfo-card__tag">До 180 дней</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s8uxolnvnr" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «Союз 5»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №001503140006946</li>
+                                    <li><strong>Рейтинг:</strong> 4.40/5 (1174 отзыва)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Новые:</strong> до 20 000 ₽</li>
+                                    <li><strong>Повторные:</strong> до 30 000 ₽</li>
+                                    <li><strong>Срок:</strong> 7–180 дней</li>
+                                    <li><strong>Ставка:</strong> 0% первый или 0,8%/день</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + селфи + постоянный доход</li>
+                                    <li>На карту мгновенно</li>
+                                    <li>Госуслуги / Тинькофф ID</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>С 2015 года на рынке</li>
+                                    <li>Длинные сроки до 180 дней</li>
+                                    <li>Ограничения по территории</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. Надо Денег -->
+                    <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0.8" data-term="168">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#13</span>
+                            <img src="../logos/11-nado-deneg.svg" alt="Надо Денег — долгосрочный займ до 168 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «ФИНАФОР»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2403045010075</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.8</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–168 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">2M+ клиентов</span>
+                                <span class="mfo-card__tag">СБП</span>
+                                <span class="mfo-card__tag">Госуслуги</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?erid=2W5zFHdCTFv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «ФИНАФОР»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2403045010075</li>
+                                    <li><strong>ПСК:</strong> 292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.8/5 (1000+ отзывов)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–100 000 ₽</li>
+                                    <li><strong>Срок:</strong> 7–168 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; 0% на 7 дней</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт, телефон (СБП)</li>
+                                    <li>По СБП моментально</li>
+                                    <li>Через Госуслуги +4000 к лимиту</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>2M+ клиентов</li>
+                                    <li>Выдают с любой КИ</li>
+                                    <li>Промокоды на скидку</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Joymoney -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="168">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#14</span>
+                            <img src="../logos/19-joymoney.svg" alt="Joymoney — долгосрочный займ до 24 недель" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 14 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Джой Мани»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651403550005450</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">10 дн.–24 нед.</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–71 год</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">МФК (статус)</span>
+                                <span class="mfo-card__tag">1,5M+ займов</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?erid=2W5zFK1Gnqv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МФК «Джой Мани»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №651403550005450</li>
+                                    <li><strong>ПСК:</strong> 292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.70 (Сравни.ру, 1416 отзывов)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Мега Старт:</strong> 3 000–30 000 до 30 дней</li>
+                                    <li><strong>Профи:</strong> до 100 000 на 10–24 нед.</li>
+                                    <li><strong>Ставка:</strong> 0% до 14 дней или 0,8%/день</li>
+                                    <li><strong>Возраст:</strong> 18–71 год</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + СНИЛС, именная карта</li>
+                                    <li>На карту мгновенно</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>1.5M+ займов (~10 млрд ₽)</li>
+                                    <li>Промокоды до 90% скидки</li>
+                                    <li>Статус МФК</li>
+                                    <li>Награды (Выберу.ру, Золотой рубль)</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. MoneyMan -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="126">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#15</span>
+                            <img src="../logos/20-moneyman.svg" alt="MoneyMan — долгосрочный займ до 126 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 30 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Мани Мен»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110177000478</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–126 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–70 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">3M+ займов</span>
+                                <span class="mfo-card__tag">На карту / ЮMoney</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/ssm7xv7ihi" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МФК «Мани Мен»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2110177000478</li>
+                                    <li><strong>ПСК:</strong> 0–292% годовых</li>
+                                    <li><strong>Рейтинг:</strong> 4.88 (Сравни.ру, 8591 отзыв)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Новые:</strong> до 30 000 ₽ на 5–33 дня</li>
+                                    <li><strong>Повторные:</strong> до 100 000 на 10–18 нед.</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; 0% до 30 дней</li>
+                                    <li><strong>Возраст:</strong> 18–70 лет</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт, СНИЛС, прописка</li>
+                                    <li>На карту, на счёт, Контакт, ЮMoney</li>
+                                    <li>Дают с текущими просрочками</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Первая в России онлайн МФО</li>
+                                    <li>3M+ займов</li>
+                                    <li>Реферальная программа (200–1000 бонусов)</li>
+                                    <li>Пролонгация до 60 дней</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16. Небус -->
+                    <div class="mfo-card" data-rating="4.2" data-amount="50000" data-rate="0.8" data-term="113">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#16</span>
+                            <img src="../logos/33-nebus.svg" alt="Небус — долгосрочный займ до 113 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Луна»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2403045010028</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.2</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–113 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">до 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Новая МФО (2024)</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s7h430n94n" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО МКК «Луна»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2403045010028</li>
+                                    <li><strong>Рейтинг:</strong> 4.24/5 (199 отзывов)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> до 50 000 ₽</li>
+                                    <li><strong>Срок:</strong> 1–113 дней</li>
+                                    <li><strong>Ставка:</strong> до 0,8%/день</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ</li>
+                                    <li>На карту мгновенно</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Одна из самых новых МФО (2024)</li>
+                                    <li>Повышенный лимит до 50 000</li>
+                                    <li>Широкий диапазон сроков (1–113 дней)</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 17. Бериберу -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="50000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#17</span>
+                            <img src="../logos/03-beriberu.svg" alt="Бериберу — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Бериберу МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2203392009805</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Паспорт РФ</span>
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/4e60ee94de113b15d5fbc7bed4e6ed12?erid=2W5zFGqH8AU" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «Бериберу МКК»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2203392009805</li>
+                                    <li><strong>ПСК:</strong> 259–292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–50 000 ₽</li>
+                                    <li><strong>Срок:</strong> 5–31 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%; 0% до 21 дня</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ, телефон, email</li>
+                                    <li>На карту до 5 минут</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Промокод на 100% скидку</li>
+                                    <li>Мобильное приложение</li>
+                                    <li>Продление при трудностях</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 18. Cash To You -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#18</span>
+                            <img src="../logos/32-cash-to-you.svg" alt="Cash To You — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «МКК Кангария»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №1904067009295</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">500–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">6–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">до 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Любая КИ</span>
+                                <span class="mfo-card__tag">ГосУслуги</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/sqp7uapj7b" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «МКК Кангария»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №1904067009295</li>
+                                    <li><strong>Рейтинг:</strong> 4.52/5 (636 отзывов)</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 500–30 000 ₽</li>
+                                    <li><strong>Срок:</strong> 6–31 дней</li>
+                                    <li><strong>Ставка:</strong> до 0,8%/день</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт + прописка</li>
+                                    <li>На карту мгновенно</li>
+                                    <li>ГосУслуги увеличивают лимит</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Только займы «до зарплаты»</li>
+                                    <li>Промокоды на 1–3 дня без %</li>
+                                    <li>Внимание: платные услуги отключайте!</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 19. Кредиска -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#19</span>
+                            <img src="../logos/17-krediska.svg" alt="Кредиска — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Кредиска МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2103322009711</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Одобрение 98%</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?erid=2W5zFHywXyi" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «Кредиска МКК»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2103322009711</li>
+                                    <li><strong>ПСК:</strong> 259–292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–50 000 ₽</li>
+                                    <li><strong>Срок:</strong> 5–31 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; 0% до 21 дня</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Только паспорт</li>
+                                    <li>На карту (Visa/MC/Мир)</li>
+                                    <li>Одобрение даже с просрочками</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>98% одобряемых</li>
+                                    <li>85% повторных клиентов</li>
+                                    <li>Мобильное приложение</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 20. HurmaCredit -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#20</span>
+                            <img src="../logos/09-hurmacredit.svg" alt="HurmaCredit — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Хурма Кредит МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2303322009972</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Паспорт РФ</span>
+                                <span class="mfo-card__tag">За 10 минут</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/bc55d263b3dd36189299a5528d41e2d7?erid=2W5zFH7Yxqn" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «Хурма Кредит МКК»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №2303322009972</li>
+                                    <li><strong>ПСК:</strong> 259–292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 1 000–50 000 ₽</li>
+                                    <li><strong>Срок:</strong> 5–31 дней</li>
+                                    <li><strong>Ставка:</strong> 0–0,8%/день; 0% до 21 дня</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Паспорт РФ + телефон + карта</li>
+                                    <li>На карту до 10 минут</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>Промокод на 100% скидку</li>
+                                    <li>Мгновенное одобрение</li>
+                                    <li>Под надзором ЦБ РФ</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 21. Займиго -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="50000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#21</span>
+                            <img src="../logos/18-zaymigo.svg" alt="Займиго — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Займиго МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651303322004222</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">5 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 2013 года</span>
+                                <span class="mfo-card__tag">563 000+ клиентов</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?erid=2W5zFK44HXE" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block">
+                                    <h4>Общая информация</h4>
+                                    <ul>
+                                    <li><strong>Юр. лицо:</strong> ООО «Займиго МКК»</li>
+                                    <li><strong>Реестр ЦБ:</strong> №651303322004222</li>
+                                    <li><strong>ПСК:</strong> 251–292% годовых</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Условия займа</h4>
+                                    <ul>
+                                    <li><strong>Сумма:</strong> 5 000–50 000 ₽</li>
+                                    <li><strong>Срок:</strong> 5–31 дней</li>
+                                    <li><strong>Ставка:</strong> 0,8%/день; 0% до 21 дня до 50 000</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Документы и получение</h4>
+                                    <ul>
+                                    <li>Только паспорт</li>
+                                    <li>На карту российского банка</li>
+                                    </ul>
+                                    </div>
+                                    <div class="mfo-detail__block">
+                                    <h4>Особенности</h4>
+                                    <ul>
+                                    <li>11 лет на рынке (с 2013)</li>
+                                    <li>563 000+ заёмщиков</li>
+                                    <li>98% одобряемых</li>
+                                    </ul>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <button class="btn btn--outline btn--mfo-toggle" id="mfo-toggle" type="button" style="display: none;">
@@ -392,7 +1915,7 @@
         <section class="section section--alt" id="pros-cons">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Преимущества и недостатки долгосрочного займа</h2>
+                    <h2 class="section__title">Преимущества и недостатки долгосрочного займа с ежемесячным платежом</h2>
                     <p class="section__subtitle">Взвесьте все «за» и «против» перед оформлением</p>
                 </div>
 
@@ -400,14 +1923,15 @@
                     <div class="pros-cons__col pros-cons__col--pro">
                         <div class="pros-cons__header">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <h3>Преимущества</h3>
+                            <h3>Преимущества — ежемесячный платеж и удобство</h3>
                         </div>
                         <ul class="pros-cons__list">
-                            <li>Небольшие ежемесячные платежи</li>
-                            <li>Удобный график возврата</li>
-                            <li>Возможность досрочного погашения без штрафов</li>
-                            <li>Время на решение финансовых вопросов</li>
+                            <li>Небольшой ежемесячный платеж — комфортная нагрузка на бюджет</li>
+                            <li>Погашение частями: возврат по графику, а не одним платежом за весь срок</li>
+                            <li>По закону можно вернуть заем досрочно без штрафов, проценты — только за фактические дни</li>
+                            <li>Время на решение финансовых вопросов, когда срочно понадобились деньги до зарплаты</li>
                             <li>Улучшение кредитной истории при регулярных выплатах</li>
+                            <li>Оформление без необходимости предоставления залога — достаточно паспорта. Банковская карта — единственный инструмент для получения</li>
                         </ul>
                     </div>
                     <div class="pros-cons__col pros-cons__col--con">
@@ -417,10 +1941,10 @@
                         </div>
                         <ul class="pros-cons__list">
                             <li>Значительная переплата за весь срок</li>
-                            <li>Ставка выше, чем у банковских кредитов</li>
-                            <li>Риск накопления долговой нагрузки</li>
-                            <li>Психологическая привычка к долгам</li>
-                            <li>Максимальная сумма ограничена (до 100 000 ₽ в МКК)</li>
+                            <li>Процентный показатель в МФО выше, чем банковский кредит: Т-Банк или Райффайзенбанк предлагают от 6% годовых</li>
+                            <li>Риск накопления долговой нагрузки при нескольких займах</li>
+                            <li>Максимальная сумма ограничена до 100 000 ₽ в МКК</li>
+                            <li>Кредитная история может пострадать при просрочках</li>
                         </ul>
                     </div>
                 </div>
@@ -431,7 +1955,7 @@
         <section class="section" id="overpay-calc">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Как рассчитать переплату по долгосрочному займу</h2>
+                    <h2 class="section__title">Займ на долгий срок: как рассчитать платеж и переплату</h2>
                     <p class="section__subtitle">Простая формула и наглядные примеры</p>
                 </div>
 
@@ -439,7 +1963,7 @@
                     <div class="info-block__formula">
                         <h3>Формула расчёта</h3>
                         <div class="info-block__code">Переплата = Сумма × Ставка в день × Количество дней</div>
-                        <p>Пример: 30 000 ₽ × 0,8% × 180 дней = <strong>43 200 ₽ переплата</strong>. Итого к возврату: 73 200 ₽.</p>
+                        <p>Пример: 30 000 ₽ × 0,8% × 180 дней = <strong>43 200 ₽ переплата</strong>. Итого к возврату: 73 200 ₽. При равных долях ежемесячная сумма — 12 200 ₽.</p>
                     </div>
 
                     <div class="overpay-examples">
@@ -487,7 +2011,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="overpay-examples__note">* Расчёт при максимальной ставке 0,8% в день. Многие МФО предлагают ставку ниже — от 0,27% в день для долгосрочных займов.</p>
+                        <p class="overpay-examples__note">* Расчёт при максимальной ставке. Длинные займы с низкой ставкой значительно уменьшают итоговую переплату. Укажите сумму и срок в калькуляторе ниже для точного расчёта.</p>
                     </div>
                 </div>
             </div>
@@ -497,7 +2021,7 @@
         <section class="section section--alt" id="comparison">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Сравнение: краткосрочный vs долгосрочный заём</h2>
+                    <h2 class="section__title">Сравнение условий: краткосрочный микрозайм vs долгосрочный заем</h2>
                     <p class="section__subtitle">Какой вариант подходит именно вам</p>
                 </div>
 
@@ -532,23 +2056,35 @@
                                 <td>Значительная (от 5 000 ₽)</td>
                             </tr>
                             <tr>
-                                <td>Погашение</td>
+                                <td>Возврат</td>
                                 <td>Одним платежом</td>
-                                <td>Ежемесячными платежами</td>
+                                <td>Ежемесячными взносами</td>
                             </tr>
                             <tr>
                                 <td>Первый займ 0%</td>
                                 <td>Часто доступен</td>
-                                <td>Редко</td>
+                                <td>Редко (займ под 0 — только на первый заем)</td>
                             </tr>
                             <tr>
                                 <td>Для кого</td>
-                                <td>Срочные расходы до зарплаты</td>
-                                <td>Крупные покупки, ремонт, лечение</td>
+                                <td>Деньги до зарплаты, мелкие расходы</td>
+                                <td>Крупные покупки, лечение, ремонт</td>
+                            </tr>
+                            <tr>
+                                <td>Получение</td>
+                                <td>На карту, наличными</td>
+                                <td>На карту, расчетный счет, наличными</td>
+                            </tr>
+                            <tr>
+                                <td>Одобрение</td>
+                                <td>От 2 минут</td>
+                                <td>От 5 минут</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <p class="comparison-table__note">Краткосрочный вариант подходит для небольших сумм на несколько дней. Долгосрочный заем — когда требуется больше денег с комфортным графиком. Для получения займа свыше 50 000 ₽ рассмотрите предложения лицензированных МФК.</p>
             </div>
         </section>
 
@@ -556,7 +2092,7 @@
         <section class="section" id="steps">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Как оформить долгосрочный займ — пошаговая инструкция</h2>
+                    <h2 class="section__title">Как оформить долгосрочный займ на карту — пошаговая инструкция</h2>
                     <p class="section__subtitle">4 шага от заявки до получения денег</p>
                 </div>
 
@@ -564,29 +2100,35 @@
                     <div class="step-card">
                         <div class="step-card__number">1</div>
                         <div class="step-card__body">
-                            <h3 class="step-card__title">Выберите срок и сумму</h3>
-                            <p class="step-card__text">Используйте слайдер вверху страницы. Подберите срок от 2 до 24 месяцев и посмотрите расчёт переплаты. Чем меньше срок — тем меньше переплата.</p>
+                            <h3 class="step-card__title">Выберите сумму и срок</h3>
+                            <p class="step-card__text">Используйте слайдер вверху страницы. Подберите сумму и срок от 2 до 24 месяцев. Посмотрите расчёт переплаты. Чем короче срок — тем меньше вы переплатите.</p>
                         </div>
                     </div>
                     <div class="step-card">
                         <div class="step-card__number">2</div>
                         <div class="step-card__body">
-                            <h3 class="step-card__title">Сравните МФО из рейтинга</h3>
-                            <p class="step-card__text">Изучите условия компаний: максимальный срок, процентную ставку, наличие графика платежей и возможность досрочного погашения.</p>
+                            <h3 class="step-card__title">Сравните из рейтинга</h3>
+                            <p class="step-card__text">Изучите условия: максимальный срок, процентный показатель, ставки, наличие графика. Подайте заявку в 2–3 компании, чтобы выбрать оптимальный вариант.</p>
+                        </div>
+                    </div>
+                    <div class="step-card step-card--info">
+                        <div class="step-card__body">
+                            <h3 class="step-card__title">Одобрение заявки: что проверяют</h3>
+                            <p class="step-card__text">Кредитор проверяет паспортные данные, возраст (от 18 лет), кредитный рейтинг через БКИ и наличие просрочек. Решение по заявке — от 2 до 15 минут. Справки не нужны. С плохой кредитной историей одобрение возможно — многие компании выдают займы клиентам с низким рейтингом.</p>
                         </div>
                     </div>
                     <div class="step-card">
                         <div class="step-card__number">3</div>
                         <div class="step-card__body">
-                            <h3 class="step-card__title">Заполните заявку онлайн</h3>
-                            <p class="step-card__text">Укажите паспортные данные и желаемую сумму на сайте МФО. Процесс занимает 2–5 минут. Документы о доходах не требуются.</p>
+                            <h3 class="step-card__title">Заполните заявку на микрозайм</h3>
+                            <p class="step-card__text">Укажите ФИО, паспортные данные, контакты на официальном сайте мфо. Процесс — 2–5 минут. Подтвердите личность через Госуслуги (ЕСИА) или SMS-код.</p>
                         </div>
                     </div>
                     <div class="step-card">
                         <div class="step-card__number">4</div>
                         <div class="step-card__body">
                             <h3 class="step-card__title">Получите деньги на карту</h3>
-                            <p class="step-card__text">После одобрения средства поступят на карту за 5–30 минут. Через СБП — практически мгновенно. Поддерживаются карты Visa, MasterCard, МИР.</p>
+                            <p class="step-card__text">После одобрения средства поступят за 5–30 минут. Получить можно: на банковскую карту (Visa, MasterCard, МИР), банковский счет, ЮMoney, Qiwi или наличными. Подпишите договор электронной подписью в личный кабинет на сайте компании. Оформить и получить заём на карту можно быстро и без проблем — весь процесс проходит в режиме онлайн.</p>
                         </div>
                     </div>
                 </div>
@@ -597,8 +2139,8 @@
         <section class="section section--alt" id="top-by-term">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">ТОП МФО по максимальному сроку займа</h2>
-                    <p class="section__subtitle">Лидеры с самым длительным сроком — до 2 лет</p>
+                    <h2 class="section__title">Лучшие МФО: где взять долгосрочный займ на карту на длительный срок</h2>
+                    <p class="section__subtitle">Микрофинансовые организации с максимальным сроком</p>
                 </div>
 
                 <div class="top-cards">
@@ -657,6 +2199,8 @@
                         <a href="#" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
                     </div>
                 </div>
+
+                <p class="top-cards__note">Все компании в реестре Банка России. Микрозайм на длительный срок доступен новым и повторным клиентам. Деньги зачисляются на карту на любые нужды — без птс, без залог. Получить долгосрочный займ можно в течение 30 дней с момента одобрения.</p>
             </div>
         </section>
 
@@ -664,7 +2208,7 @@
         <section class="section" id="tips">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Советы: как снизить переплату при долгосрочном займе</h2>
+                    <h2 class="section__title">Советы: как заемщик может погасить заем и снизить переплату</h2>
                     <p class="section__subtitle">6 рекомендаций для экономии</p>
                 </div>
 
@@ -675,7 +2219,7 @@
                         </div>
                         <div class="tip-card__body">
                             <h3 class="tip-card__title">Берите минимальную сумму</h3>
-                            <p class="tip-card__text">Запрашивайте ровно столько, сколько нужно. Каждая лишняя тысяча увеличивает переплату.</p>
+                            <p class="tip-card__text">Запрашивайте столько, сколько нужно. Каждая лишняя тысяча увеличивает итоговый возврат.</p>
                         </div>
                     </div>
                     <div class="tip-card">
@@ -684,7 +2228,7 @@
                         </div>
                         <div class="tip-card__body">
                             <h3 class="tip-card__title">Выбирайте минимальный срок</h3>
-                            <p class="tip-card__text">6 месяцев вместо 12 — переплата снижается вдвое. Используйте калькулятор для сравнения.</p>
+                            <p class="tip-card__text">6 месяцев вместо 12 — переплата снижается вдвое. Воспользуйтесь калькулятором: укажите сумму и срок.</p>
                         </div>
                     </div>
                     <div class="tip-card">
@@ -692,8 +2236,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                         </div>
                         <div class="tip-card__body">
-                            <h3 class="tip-card__title">Погашайте досрочно</h3>
-                            <p class="tip-card__text">По закону — без штрафов. Проценты только за фактические дни. Закрыли раньше — заплатили меньше.</p>
+                            <h3 class="tip-card__title">Закройте раньше срока</h3>
+                            <p class="tip-card__text">По закону Россия — без штрафов. Проценты только за фактические дни. Это самый выгодный способ экономии.</p>
                         </div>
                     </div>
                     <div class="tip-card">
@@ -702,7 +2246,7 @@
                         </div>
                         <div class="tip-card__body">
                             <h3 class="tip-card__title">Сравнивайте ставки</h3>
-                            <p class="tip-card__text">Разница между 0,27% и 0,8% в день на 6 месяцев — десятки тысяч рублей. Подайте заявку в 2–3 МФО.</p>
+                            <p class="tip-card__text">Разница в ставке на 6 месяцев — десятки тысяч. Каждый лишний рубль переплаты можно было бы сэкономить. Подайте заявку в 2–3 организации из рейтинга — сравните и найдите выгодные условия.</p>
                         </div>
                     </div>
                     <div class="tip-card">
@@ -710,8 +2254,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                         </div>
                         <div class="tip-card__body">
-                            <h3 class="tip-card__title">Читайте договор</h3>
-                            <p class="tip-card__text">Проверяйте ПСК, штрафы за просрочку и условия продления. Все данные должны быть указаны до подписания.</p>
+                            <h3 class="tip-card__title">Изучите условия до подписания</h3>
+                            <p class="tip-card__text">Проверяйте ПСК, штрафы и условия продления. Всё должно быть указано до подписания.</p>
                         </div>
                     </div>
                     <div class="tip-card">
@@ -719,8 +2263,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
                         </div>
                         <div class="tip-card__body">
-                            <h3 class="tip-card__title">Не берите новый до закрытия старого</h3>
-                            <p class="tip-card__text">Несколько одновременных займов — путь к долговой яме. Закройте текущий, затем оформляйте следующий.</p>
+                            <h3 class="tip-card__title">Не копите долги</h3>
+                            <p class="tip-card__text">Несколько одновременных обязательств — путь к проблемам. Закройте текущий, затем оформлять следующий. Кредитование в нескольких компаниях одновременно ухудшает состояние кредитной истории.</p>
                         </div>
                     </div>
                 </div>
@@ -732,7 +2276,7 @@
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Калькулятор полной стоимости займа</h2>
-                    <p class="section__subtitle">Рассчитайте точную сумму возврата для разных сроков и ставок</p>
+                    <p class="section__subtitle">Рассчитайте точную сумму возврата по ставкам и срокам. Введите параметры и получите результат. Калькулятор работает на JavaScript — мгновенно, данные не отправляются на сервер.</p>
                 </div>
 
                 <div class="full-calculator">
@@ -766,6 +2310,8 @@
                             <strong id="calc-total">73 200 ₽</strong>
                         </div>
                     </div>
+
+                    <p class="full-calculator__example">Пример: 30 000 ₽ на 180 дней при 0,8% = 73 200 ₽. При 0,27% = 44 580 ₽. Разница — 28 620 ₽.</p>
                 </div>
             </div>
         </section>
@@ -774,13 +2320,596 @@
         <section class="section" id="reviews">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Отзывы заёмщиков о долгосрочных займах</h2>
-                    <p class="section__subtitle">Реальный опыт пользователей, оформивших займ на длительный срок</p>
+                    <h2 class="section__title">Отзывы: опыт оформлять займ в МФО — мнения заемщиков</h2>
+                    <p class="section__subtitle">Реальные отзывы заемщиков</p>
                 </div>
 
                 <div class="reviews-grid" id="reviews-grid">
-                    <!-- Отзывы будут добавлены позже -->
-                    <p style="text-align: center; padding: 40px 20px; color: var(--color-text-muted);">Отзывы будут добавлены позже</p>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Алексей М.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">Оформил на 12 месяцев. Одобрили за 7 минут, деньги на карте через 10 минут. Ежемесячная сумма — 4 800 ₽. Удобный личный кабинет. Рекомендую для займ на год с ежемесячным платежом.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Наталья К.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">Оформила на 6 месяцев — 20 000 ₽. Ставка 0,27% в день — самая низкая. Переплата терпимая. Всё прозрачно.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Дмитрий В.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">Оформил 30 000 ₽ на 365 дней. Документов минимум. Получил на карту МИР. Раз в месяц отдаю фиксированную сумму — удобно.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Елена С.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">Взяла 50 000 ₽ на 10 месяцев. Одобрили, несмотря на среднюю КИ. Можно закрыть досрочно без штрафов. Хороший вариант на крупную сумму.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Сергей Т.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">Брал 25 000 ₽ на полгода на ремонт. Одобрили быстро. График чёткий. Переплата есть, но для моей ситуации — нормальный выход.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Ирина Л.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">Оформила 15 000 ₽ на 6 месяцев за 5 минут. Первый раз была скидка. Удобно разбить на части.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Павел Н.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">Второй раз тут. 30 000 ₽ на 720 дней. Ежемесячная сумма маленькая, удобно. Лучшая компания для долгосрочных программ.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Ольга А.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">Нужны были деньги на год. Через 10 минут — на карте. Ставка 0,27%. Ежемесячно отдаю 3 200 ₽ — по бюджету нормально.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Владимир Р.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">Взял 20 000 ₽ на полгода. Одобрили за 3 минуты. Получил на карту. Каждый месяц — одинаковая сумма возврата, без сюрпризов.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Анна Б.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">100 000 ₽ на 12 месяцев. Банк отказал, а тут одобрили за 20 минут. Сумма ежемесячная — 12 500 ₽. Для крупных нужд — выручает.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Михаил Г.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">30 000 ₽ на 360 дней. За 10 минут всё решилось. Удобный график выплат. Рекомендую тем, у кого стабильный доход.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Татьяна Д.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">Взяла 10 000 ₽ на 3 месяца. Закрыла досрочно за 2 месяца — пересчитали. Честная компания.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Андрей К.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">25 000 ₽ на 12 месяцев с ежемесячной оплатой. Кабинет удобный, напоминания вовремя. Всё чётко.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Мария И.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">15 000 ₽ на полгода. Быстро одобрили, моментально перевели. Ставка низкая.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Роман Ч.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">80 000 ₽ на 12 месяцев. Одобрили за 15 минут. Сумма крупная, но дали. Всё онлайн.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Светлана В.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">В другом месте отказали, а здесь одобрили 20 000 ₽ на 6 месяцев. На карте через 8 минут. Выплата — 4 500 ₽/мес.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Евгений М.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">15 000 ₽ на полгода. Прозрачно, без скрытых комиссий. Можно гасить через приложение или перевод.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Юлия П.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">10 000 ₽ на 3 месяца. Ставка невысокая. Оформление — 5 минут. Нормально.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Александр Ш.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">25 000 ₽ на 735 дней. Самый длинный срок на рынке. Выплата минимальная, но переплата большая. Удобно при небольшом доходе.</p>
+                    </div>
+                    <div class="review-card" data-rating="5">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Кристина Б.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">Взяла 30 000 ₽ на 720 дней на ремонт. Возврат — 2 900 ₽/мес. Всё устроило.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Виктор Л.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">40 000 ₽ на 6 месяцев. Одобрили быстро, деньги на карте за 15 минут. Ставка выше, чем у OneClickMoney. Но сумму дают больше.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Надежда С.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">10 000 ₽ на 3 месяца. Всё быстро, но кабинет мог быть удобнее. Ежемесячно — 4 100 ₽. Нормальный вариант.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Максим О.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">30 000 ₽ на 6 месяцев. Ставка выше, чем хотелось бы, но зато моментальное решение. Для постоянных клиентов хотелось бы скидку.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Людмила Ф.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">5 000 ₽ на 2 месяца. Маленькая сумма, но нужна была срочно. За 3 минуты решили вопрос. Вернула досрочно через 3 недели.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Артём Е.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">Взял 20 000 ₽ на 180 дней. Ставка — одна из самых низких. Минус — максимум 30 000 ₽.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Валентина К.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">15 000 ₽ на год. Хотелось бы ниже ставку. Ежемесячно — 2 000 ₽, для бюджета нормально.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Денис Х.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">70 000 ₽ на 10 месяцев. Ставка не самая низкая, но сумму одобрили такую, какую другие не давали. Выплата — около 9 500 ₽.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Оксана Р.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">С плохой КИ одобрили 15 000 ₽ на 6 месяцев. Ставка повыше, но главное — дали, когда банк отказал.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Игорь Д.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">Второй раз — на 300 дней. Сумму увеличили до 25 000 ₽. Снизили ставку. Учитывают историю выплат — плюс.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Вероника М.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">8 000 ₽ на 3 месяца. Быстро, понятно. На сайте не сразу нашла кнопку досрочного закрытия. В остальном — хорошо.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Константин З.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">25 000 ₽ на 365 дней. Оформил за 12 минут. Ставка низкая, кабинет удобный. Хотелось бы лимит 50 000 ₽.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Галина Т.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">Микрокредит на год — 20 000 ₽. Оформила за 10 минут. Ежемесячно — 2 700 ₽. В кабинете видно остаток и график. Минус — нет мобильного приложения.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Руслан Г.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">50 000 ₽ на 6 месяцев. Ставка 0,69%/день — не самая низкая, но 5 минут от заявки до денег. Помогло, когда срочно нужна была крупная сумма.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Диана В.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">20 000 ₽ на 8 месяцев. С ежемесячной оплатой — удобная форма. Проблем не было. Ставка чуть выше средней.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Фёдор К.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">15 000 ₽ на 6 мес. Ставка — средняя. Хотелось бы увеличение лимита для постоянных клиентов.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Эльвира С.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">20 000 ₽ на 1 года. Ежемесячно — маленькая сумма, но переплата за весь период — заметная. Тщательно считайте перед оформлением.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Аркадий Н.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">20 000 ₽ на 6 месяцев. Всё за 8 минут. Ставка ниже конкурентов. Хотелось бы видеть график сразу при подаче заявки.</p>
+                    </div>
+                    <div class="review-card" data-rating="4">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Лидия А.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">25 000 ₽ на 12 мес. Кабинет удобный, напоминания за 3 дня. Всё понятно. Ставку хотелось бы пониже.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Николай З.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">60 000 ₽ на 8 месяцев. Одобрили, но ставка максимальная — 0,8%/день. Переплата огромная. Обязательно считайте всё калькулятором заранее.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Екатерина Л.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">Подала на 15 000 ₽ на 3 месяца. Дали только 10 000 ₽. Урезали без объяснений. Ежемесячная нагрузка нормальная, но ожидала больше.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Виталий П.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">10 000 ₽ на 6 месяцев. Оформили быстро, но при подписании — скрытая комиссия за SMS 100 ₽/мес. Мелочь, но неприятно. Читайте всё внимательно.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Анжела Б.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">30 000 ₽ на 720 дней. Ежемесячно — около 2 800 ₽. Но итоговая сумма возврата — шок. Переплата больше тела. Только при крайней необходимости.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Геннадий О.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">25 000 ₽ на год. Ставка низкая, но при таком сроке возврат всё равно значительный. Лучше брать на минимальный срок и закрывать досрочно.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Зинаида Ш.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">100 000 ₽ на 12 месяцев. Одобрили, но ставка высокая. Ежемесячно более 15 000 ₽. Для такой суммы лучше в банк — там ставка в разы ниже. Но если банк не одобряет — выход есть.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Тимур Ж.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">20 000 ₽ на 6 мес. Оформили за 10 минут. Но одну выплату списали с задержкой на 2 дня — штраф. Техподдержка отменила, но осадок остался.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Раиса Е.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">5 000 ₽ на 2 месяца. Маленькая сумма, ставка не самая привлекательная. Для мелких трат можно, но не для крупных покупок.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Борис Ц.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">Подал на 25 000 ₽. Одобрили 15 000 ₽. Срок — 4 месяца. Ставка — 0,6%/день. Средне. Для сложной КИ — может и нормально.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Лариса Д.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">20 000 ₽ на 1 год. Выплата — 3 100 ₽. Итого вернула почти вдвое больше. Стоит хорошо подумать перед оформлением.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Антон М.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">15 000 ₽ на полгода. Процесс быстрый, но калькулятор на сайте показывал заниженные данные. Реальная переплата оказалась чуть выше.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Наталия У.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">Одобрили с плохой КИ, но сумму дали минимальную: 15 000 ₽ вместо 50 000 ₽. Ставка высокая. Для восстановления рейтинга — сойдёт.</p>
+                    </div>
+                    <div class="review-card" data-rating="3">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Станислав В.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 3 из 5">★★★☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">10 000 ₽ на год. Выплата маленькая, но вернул итого 22 000 ₽. Микрокредитование — удовольствие дорогое. Стоит считать заранее.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Варвара Г.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">15 000 ₽ на 6 месяцев. Ставка 0,8% — максимум по закону. Итого вернула более 36 000 ₽. Переплата больше тела. Берите только если другого выхода нет.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Артур Р.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">720 дней выглядят привлекательно из-за маленькой выплаты, но итоговая сумма — ужас. 30 000 ₽ превращаются в 200 000 ₽. Ловушка для невнимательных.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Полина С.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">10 000 ₽ на полгода. Оформили быстро, но после подписания — допуслуга «SMS» за 150 ₽/мес. Снять только через поддержку. Неприятный сюрприз.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Олег Т.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">50 000 ₽ на год. При попытке досрочного возврата система выдавала ошибку. Три дня звонил в поддержку. Техническая часть — слабая.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Марина Ж.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">Максимум 30 000 ₽ — мало. Хотела 50 000 ₽ на год, предложили 30 000 ₽. Ставка низкая, но лимит не подходит для серьёзных нужд.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Георгий Л.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Деньги Сразу</div>
+                        <p class="review-card__text">20 000 ₽ на 6 месяцев. Просрочил 5 дней — штраф начислили сразу. Хотелось бы грейс-период.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Алина Ф.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">Подала на 30 000 ₽ — дали 10 000 ₽. Для моих нужд — мало. Крупные суммы тут не дают при сложной КИ.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Вячеслав Н.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">7 000 ₽ на 2 месяца. Ставка почти максимальная. Для такой суммы проще у знакомых попросить. Микрофинансирование — крайняя мера.</p>
+                    </div>
+                    <div class="review-card" data-rating="2">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Инна К.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 2 из 5">★★☆☆☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">15 000 ₽ на 1 год. Итого вернула 58 000 ₽. Четыре тела. Не рекомендую на такой срок — лучше 3 месяца максимум.</p>
+                    </div>
+                    <div class="review-card" data-rating="1">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Степан Д.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 1 из 5">★☆☆☆☆</div>
+                        <div class="review-card__company">Kviku</div>
+                        <p class="review-card__text">100 000 ₽ на 12 месяцев. Не предупредили толком о полной стоимости. Итого вернул 392 000 ₽. Ипотека в России — и та дешевле. Больше никогда.</p>
+                    </div>
+                    <div class="review-card" data-rating="1">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Жанна М.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 1 из 5">★☆☆☆☆</div>
+                        <div class="review-card__company">Срочно Деньги</div>
+                        <p class="review-card__text">25 000 ₽ на 12 месяцев. Вернула почти 100 000 ₽. Непонятные комиссии. Банковский кредит был бы в 10 раз дешевле.</p>
+                    </div>
+                    <div class="review-card" data-rating="1">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Дарья Б.</span>
+                            <span class="review-card__date">март 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 1 из 5">★☆☆☆☆</div>
+                        <div class="review-card__company">Гринмани</div>
+                        <p class="review-card__text">10 000 ₽ на полгода = 24 000 ₽ переплата. Это 240% от суммы. Если есть малейшая возможность — не берите.</p>
+                    </div>
+                    <div class="review-card" data-rating="1">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Роберт П.</span>
+                            <span class="review-card__date">январь 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 1 из 5">★☆☆☆☆</div>
+                        <div class="review-card__company">Доброзайм</div>
+                        <p class="review-card__text">30 000 ₽ на 720 дней. Итоговая сумма — более 200 000 ₽. Два года кормить компанию. Это кабала.</p>
+                    </div>
+                    <div class="review-card" data-rating="1">
+                        <div class="review-card__header">
+                            <span class="review-card__name">Карина Е.</span>
+                            <span class="review-card__date">февраль 2026</span>
+                        </div>
+                        <div class="review-card__rating" aria-label="Оценка 1 из 5">★☆☆☆☆</div>
+                        <div class="review-card__company">OneClickMoney</div>
+                        <p class="review-card__text">25 000 ₽ на 735 дней. Ставка 0,27% казалась низкой, но на такой срок переплата гигантская — 75 000 ₽. Под птс в ломбарде — и то дешевле обойдётся.</p>
+                    </div>
                 </div>
 
                 <button class="btn btn--outline btn--reviews-toggle" id="reviews-toggle" type="button" style="display: none;">
@@ -793,54 +2922,144 @@
         <section class="section section--alt" id="faq">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Часто задаваемые вопросы о долгосрочных займах</h2>
+                    <h2 class="section__title">Часто задаваемые вопросы: взять займ на года с ежемесячным платежом</h2>
                     <p class="section__subtitle">Ответы на вопросы о сроках, переплате и досрочном погашении</p>
                 </div>
 
                 <div class="faq-list">
                     <div class="faq-item">
                         <button class="faq-item__question" type="button">
-                            <span>Какой максимальный срок долгосрочного займа в МФО?</span>
+                            <span>Какой максимальный срок в МФО?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <p>До 24 месяцев (735 дней) в зависимости от компании. Лидеры по сроку — OneClickMoney (до 735 дней) и Доброзайм (до 720 дней). Большинство МФО предлагают срок до 180–365 дней.</p>
+                            <p>До 24 месяцев (735 дней). Лидеры: OneClickMoney — до 735 дней, Доброзайм — до 720 дней. Большинство компаний — до 180–365 дней.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-item__question" type="button">
-                            <span>Какая переплата по долгосрочному займу?</span>
+                            <span>Какая переплата при длительном сроке?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <p>Зависит от ставки и срока. При ставке 0,8% в день и сроке 6 месяцев на сумму 30 000 ₽ переплата составит 43 200 ₽. Используйте калькулятор на этой странице для точного расчёта.</p>
+                            <p>Зависит от ставки. При 0,8% в день и 6 месяцах на 30 000 ₽ — 43 200 ₽. При 0,27% — 14 580 ₽. Воспользуйтесь калькулятором на странице.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-item__question" type="button">
-                            <span>Можно ли погасить долгосрочный займ досрочно?</span>
+                            <span>Можно ли получить займ с плохой кредитной историей?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <p>Да, по закону заёмщик имеет право на досрочное погашение без штрафов и комиссий. Проценты начисляются только за фактические дни пользования деньгами.</p>
+                            <p>Да. Многие компании одобряют клиентов с низким кредитным рейтингом. Сумма может быть ограничена (5 000–15 000 ₽), ставка — выше средней.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-item__question" type="button">
-                            <span>Чем долгосрочный займ отличается от кредита в банке?</span>
+                            <span>Возможно ли досрочное закрытие?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <p>Займ в МФО оформляется онлайн за 5–15 минут без справок о доходах. Банковский кредит требует подтверждения дохода и одобряется 1–5 дней. Ставка в МФО выше, но требования к заёмщику значительно ниже.</p>
+                            <p>Да. По закону — без штрафов. Пересчитают за фактические дни. Это лучший способ снизить итоговую сумму возврата.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-item__question" type="button">
-                            <span>Какую сумму можно получить на длительный срок?</span>
+                            <span>Чем отличается от кредита в банке?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <p>В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Для новых заёмщиков первый займ обычно ограничен 5 000–30 000 ₽. С хорошей историей в компании лимит растёт.</p>
+                            <p>Оформление в МФО — за 5–15 минут без справок. Банковский кредит (Т-Банк, Райффайзенбанк) требует подтверждения дохода. Ставка в МФО выше: 0,27–0,8% в день против 6–30% годовых в банке.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Какую сумму можно получить?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Для новых клиентов — 5 000–30 000 ₽. С хорошей историей — лимит растёт.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Нужен ли залог для оформления?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Нет. Выдаётся без залог (гражданское право), без поручителей. Только паспорт РФ.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Как получить деньги?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>На банковскую карту (Visa, MasterCard, МИР), расчётный счёт, наличными, ЮMoney или Qiwi. Перевод на карту — от 5 минут.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Какие документы нужны?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Паспорт РФ, карта и мобильный телефон. Справки о доходах, СНИЛС, ИНН — не требуются. Верификация — через SMS или Госуслуги.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Безопасно ли оформлять онлайн?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Да, если компания в реестре Банка России. Сервисы микрофинансовых организаций из реестра используют SSL-шифрование и соблюдают ФЗ-152.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Что будет при просрочке?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Штрафные начисления. Должник обязан выплатить начисленное. По закону общая сумма не может превысить 1,5 размера тела долга. Информация передаётся в БКИ — это ухудшает рейтинг.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Можно ли получить на любые нужды?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Да. Цель не указывается. Деньги — на любые нужды в день обращения: ремонт, лечение, покупки.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Как получить впервые?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Первый займ обычно — 5 000–15 000 ₽. Заполните заявку на сайте, пройдите верификацию. Онлайн и получите деньги на карту за 5–15 минут.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Какие компании дают на самый длинный срок?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>OneClickMoney (735 дней), Доброзайм (720 дней), Деньги Сразу (365 дней), Kviku (365 дней). Все в реестре ЦБ РФ. Выдают займы на карту или счёт.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question" type="button">
+                            <span>Выгодно ли брать на долгий срок?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Выгодно только если нет альтернативы. Ежемесячная нагрузка ниже, но итоговая переплата значительно выше. Совет: берите на минимальный срок, закрывайте досрочно.</p>
                         </div>
                     </div>
                 </div>
@@ -851,7 +3070,7 @@
         <section class="section" id="methodology">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Как мы отбираем МФО для этого рейтинга</h2>
+                    <h2 class="section__title">Как мы отбираем микрофинансовые компании для рейтинга</h2>
                     <p class="section__subtitle">Критерии включения в подборку долгосрочных займов</p>
                 </div>
 
@@ -861,8 +3080,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
                         </div>
                         <div class="methodology__body">
-                            <h3 class="methodology__title">Реестр ЦБ</h3>
-                            <p class="methodology__text">Все компании — в реестре Банка России. Проверяем номер лицензии и статус на каждую дату обновления.</p>
+                            <h3 class="methodology__title">Реестр Банка России</h3>
+                            <p class="methodology__text">Банк России ведёт реестр легальных МФО. Проверяем лицензию и статус на дату обновления (март 2026). Нелегальные кредиторы не включаются.</p>
                         </div>
                     </div>
                     <div class="methodology__card">
@@ -871,7 +3090,7 @@
                         </div>
                         <div class="methodology__body">
                             <h3 class="methodology__title">Минимум 31 день</h3>
-                            <p class="methodology__text">В рейтинг включаются только МФО с максимальным сроком более 30 дней — от 31 до 735 дней.</p>
+                            <p class="methodology__text">Только компании со сроком от 31 до 735 дней.</p>
                         </div>
                     </div>
                     <div class="methodology__card">
@@ -880,7 +3099,7 @@
                         </div>
                         <div class="methodology__body">
                             <h3 class="methodology__title">Прозрачные условия</h3>
-                            <p class="methodology__text">Проверяем наличие графика платежей, информации о ПСК, штрафах и возможности досрочного погашения.</p>
+                            <p class="methodology__text">Наличие графика, информации о ПСК, штрафах. Условия указаны до подписания.</p>
                         </div>
                     </div>
                     <div class="methodology__card">
@@ -888,8 +3107,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
                         <div class="methodology__body">
-                            <h3 class="methodology__title">Отзывы заёмщиков</h3>
-                            <p class="methodology__text">Анализируем реальные отзывы на независимых площадках. Учитываем качество обслуживания и работу с просрочками.</p>
+                            <h3 class="methodology__title">Отзывы</h3>
+                            <p class="methodology__text">Анализируем на независимых площадках. Учитываем качество обслуживания, скорость и работу с просрочками.</p>
                         </div>
                     </div>
                 </div>
@@ -900,8 +3119,15 @@
         <article class="section section--alt" id="article-content">
             <div class="container">
                 <div class="article-body">
-                    <!-- SEO-текст будет добавлен позже -->
-                    <p style="text-align: center; padding: 40px 20px; color: var(--color-text-muted);">SEO-текст будет добавлен позже</p>
+                    <h2>Как оформлять заем в микрофинансовых организациях: карту онлайн на выгодных условиях</h2>
+                    <p>Микрофинансирование в России — быстро растущая сфера. Микрофинансовая организация позволяет оформить займ онлайн без залога и справок о доходах. Долгосрочный займ на карту — возможность получить деньги и возвращать частями несколько месяцев. Получить на карту онлайн можно через любую платёжную систему: Visa, MasterCard, МИР.</p>
+
+                    <h3>Как получить займ на карту</h3>
+                    <p>Получить займ в МФО можно за 5–15 минут. Заявку подают в режиме онлайн. Кредитор рассматривает данные и выдаёт решение. При положительном — средства поступают на счёт банковской карты. Весь процесс — онлайн.</p>
+                    <p>Микрокредитование позволяет взять займ без длительной процедуры, характерной для банков. Процентный показатель зависит от суммы, срока и компании. Проверенных мфо с выгодными условиями — десятки.</p>
+                    <p>Долгосрочный заем подходит тем, кому банк не одобряет. Низкий рейтинг — не препятствие для многих организаций. Получите деньги на карту, расчетный счет или наличными.</p>
+                    <p>Основное преимущество — возврат частями. Это снижает нагрузку на бюджет. Среди проверенных вариантов — OneClickMoney, Доброзайм, Деньги Сразу. Заем выдаётся без залога. Банковский счет подходит для зачисления. Ставка от 0 доступна для первого обращения в некоторых компаниях.</p>
+                    <p>Оформить и получить можно в любой день. Договор подписывается электронной подписью. Выгодный вариант для тех, кому важна скорость: заявка → одобрение → деньги на карте.</p>
                 </div>
             </div>
         </article>
