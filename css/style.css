@@ -1815,6 +1815,12 @@ table {
     color: var(--color-text-muted);
 }
 
+.review-card__date {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+}
+
 .review-card__stars {
     color: var(--color-star);
     font-size: 0.85rem;
@@ -1969,6 +1975,12 @@ table {
 
 .footer__link:hover {
     color: var(--color-white);
+}
+
+.footer__link--current {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.82rem;
+    cursor: default;
 }
 
 .footer__bottom {
