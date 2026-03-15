@@ -2728,6 +2728,45 @@ table {
 }
 
 /* ============================
+   COMPARISON TABLE
+   ============================ */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    font-size: 0.95rem;
+}
+
+.comparison-table thead {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.comparison-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.comparison-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--color-bg);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================
    METHODOLOGY SECTION
    ============================ */
 .methodology__grid {
