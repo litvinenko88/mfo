@@ -247,7 +247,7 @@
             <nav class="header__nav" aria-label="Основная навигация">
                 <a href="/" class="header__nav-link">Главная</a>
                 <a href="#mfo-rating" class="header__nav-link">Рейтинг МФО</a>
-                <a href="#term-calculator" class="header__nav-link">Калькулятор</a>
+                <a href="#overpay-calc" class="header__nav-link">Калькулятор</a>
                 <a href="/o-proekte/" class="header__nav-link">О проекте</a>
                 <a href="#faq" class="header__nav-link">FAQ</a>
             </nav>
@@ -300,7 +300,7 @@
     <nav class="mobile-nav" aria-label="Мобильная навигация">
         <a href="/" class="mobile-nav__link">Главная</a>
         <a href="#mfo-rating" class="mobile-nav__link">Рейтинг МФО</a>
-        <a href="#term-calculator" class="mobile-nav__link">Калькулятор</a>
+        <a href="#overpay-calc" class="mobile-nav__link">Калькулятор</a>
         <a href="/o-proekte/" class="mobile-nav__link">О проекте</a>
         <a href="#faq" class="mobile-nav__link">FAQ</a>
         <div class="mobile-nav__divider"></div>
@@ -1951,67 +1951,57 @@
             </div>
         </section>
 
-        <!-- ======================== 6. OVERPAY CALCULATION ======================== -->
+        <!-- ======================== 6. OVERPAY CALCULATION + CALCULATOR ======================== -->
         <section class="section" id="overpay-calc">
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Займ на долгий срок: как рассчитать платеж и переплату</h2>
-                    <p class="section__subtitle">Простая формула и наглядные примеры</p>
+                    <p class="section__subtitle">Формула, калькулятор и наглядные примеры с учётом ограничения 130%</p>
                 </div>
 
                 <div class="info-block">
                     <div class="info-block__formula">
                         <h3>Формула расчёта</h3>
-                        <div class="info-block__code">Переплата = Сумма × Ставка в день × Количество дней</div>
-                        <p>Пример: 30 000 ₽ × 0,8% × 180 дней = <strong>43 200 ₽ переплата</strong>. Итого к возврату: 73 200 ₽. При равных долях ежемесячная сумма — 12 200 ₽.</p>
+                        <div class="info-block__code">Переплата = Сумма × Ставка × Дни (макс. 130% от суммы)</div>
+                        <p>Максимальная дневная ставка по закону — 0,8%. С 1 июля 2023 г. общая переплата не может превышать 130% от суммы займа (ФЗ №554). Пример: 30 000 ₽ × 0,8% × 180 дней = 43 200 ₽, но с ограничением → <strong>39 000 ₽ переплата</strong>. Итого: 69 000 ₽.</p>
+
+                        <!-- Калькулятор встроен в формулу -->
+                        <div class="calc-inline" id="term-calculator">
+                            <div class="calc-inline__group">
+                                <label for="calc-amount">Сумма (₽)</label>
+                                <input type="number" id="calc-amount" class="calc-inline__input" value="30000" min="1000" max="1000000" step="1000">
+                            </div>
+                            <div class="calc-inline__group">
+                                <label for="calc-days">Срок (дней)</label>
+                                <input type="number" id="calc-days" class="calc-inline__input" value="180" min="1" max="730" step="1">
+                            </div>
+                            <div class="calc-inline__group">
+                                <label for="calc-rate">Ставка (%/день)</label>
+                                <input type="number" id="calc-rate" class="calc-inline__input" value="0.8" min="0" max="0.8" step="0.01">
+                            </div>
+                            <button class="btn btn--primary calc-inline__btn" id="calc-btn" type="button">Рассчитать</button>
+                        </div>
                     </div>
 
                     <div class="overpay-examples">
-                        <h3>Примеры переплаты при разных сроках</h3>
+                        <h3>График ежемесячных платежей</h3>
                         <div class="overpay-table">
-                            <table>
+                            <table id="calc-schedule-table">
                                 <thead>
                                     <tr>
-                                        <th>Сумма</th>
-                                        <th>Срок</th>
-                                        <th>Ставка</th>
-                                        <th>Переплата</th>
-                                        <th>Итого</th>
+                                        <th>Месяц</th>
+                                        <th>Платёж</th>
+                                        <th>Проценты</th>
+                                        <th>Тело долга</th>
+                                        <th>Остаток</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>10 000 ₽</td>
-                                        <td>3 мес.</td>
-                                        <td>0,8%/день</td>
-                                        <td>7 200 ₽</td>
-                                        <td>17 200 ₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30 000 ₽</td>
-                                        <td>6 мес.</td>
-                                        <td>0,8%/день</td>
-                                        <td>43 200 ₽</td>
-                                        <td>73 200 ₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td>50 000 ₽</td>
-                                        <td>12 мес.</td>
-                                        <td>0,8%/день</td>
-                                        <td>146 000 ₽</td>
-                                        <td>196 000 ₽</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30 000 ₽</td>
-                                        <td>24 мес.</td>
-                                        <td>0,8%/день</td>
-                                        <td>175 200 ₽</td>
-                                        <td>205 200 ₽</td>
-                                    </tr>
+                                <tbody id="calc-schedule-body">
+                                    <!-- JS генерирует строки + итоговую строку -->
                                 </tbody>
                             </table>
                         </div>
-                        <p class="overpay-examples__note">* Расчёт при максимальной ставке. Длинные займы с низкой ставкой значительно уменьшают итоговую переплату. Укажите сумму и срок в калькуляторе ниже для точного расчёта.</p>
+                        <p class="overpay-examples__note">* Расчёт приблизительный — равными долями с учётом ограничения 130% (ФЗ №554). Фактический график зависит от условий конкретной МФО.</p>
                     </div>
                 </div>
             </div>
@@ -2267,51 +2257,6 @@
                             <p class="tip-card__text">Несколько одновременных обязательств — путь к проблемам. Закройте текущий, затем оформлять следующий. Кредитование в нескольких компаниях одновременно ухудшает состояние кредитной истории.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================== 11. TERM CALCULATOR ======================== -->
-        <section class="section section--alt" id="term-calculator">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Калькулятор полной стоимости займа</h2>
-                    <p class="section__subtitle">Рассчитайте точную сумму возврата по ставкам и срокам. Введите параметры и получите результат. Калькулятор работает на JavaScript — мгновенно, данные не отправляются на сервер.</p>
-                </div>
-
-                <div class="full-calculator">
-                    <div class="full-calculator__inputs">
-                        <div class="full-calculator__group">
-                            <label for="calc-amount">Сумма займа (₽)</label>
-                            <input type="number" id="calc-amount" class="full-calculator__input" value="30000" min="1000" max="1000000" step="1000">
-                        </div>
-                        <div class="full-calculator__group">
-                            <label for="calc-days">Срок (дней)</label>
-                            <input type="number" id="calc-days" class="full-calculator__input" value="180" min="1" max="730" step="1">
-                        </div>
-                        <div class="full-calculator__group">
-                            <label for="calc-rate">Ставка (%/день)</label>
-                            <input type="number" id="calc-rate" class="full-calculator__input" value="0.8" min="0" max="1" step="0.01">
-                        </div>
-                        <button class="btn btn--primary" id="calc-btn" type="button">Рассчитать</button>
-                    </div>
-
-                    <div class="full-calculator__result" id="calc-result">
-                        <div class="full-calculator__row">
-                            <span>Тело займа:</span>
-                            <strong id="calc-body">30 000 ₽</strong>
-                        </div>
-                        <div class="full-calculator__row">
-                            <span>Начисленные проценты:</span>
-                            <strong id="calc-interest" class="term-result__accent">43 200 ₽</strong>
-                        </div>
-                        <div class="full-calculator__row full-calculator__row--total">
-                            <span>Итого к возврату:</span>
-                            <strong id="calc-total">73 200 ₽</strong>
-                        </div>
-                    </div>
-
-                    <p class="full-calculator__example">Пример: 30 000 ₽ на 180 дней при 0,8% = 73 200 ₽. При 0,27% = 44 580 ₽. Разница — 28 620 ₽.</p>
                 </div>
             </div>
         </section>

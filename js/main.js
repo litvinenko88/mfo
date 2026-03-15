@@ -848,21 +848,17 @@
     }
 
     /* ============================
-       Full Calculator (долгосрочный займ — секция 11)
+       Full Calculator (долгосрочный займ — помесячный график)
        ============================ */
     function initFullCalculator() {
         var amountInput = document.getElementById('calc-amount');
         var daysInput = document.getElementById('calc-days');
         var rateInput = document.getElementById('calc-rate');
         var calcBtn = document.getElementById('calc-btn');
-        /* Проверяем что это страница с полным калькулятором (не перекрывает основной) */
         if (!amountInput || !daysInput || !rateInput || !calcBtn) return;
-        /* Отличаем от основного калькулятора — у полного есть #calc-body */
-        var bodyEl = document.getElementById('calc-body');
-        if (!bodyEl) return;
 
-        var interestEl = document.getElementById('calc-interest');
-        var totalEl = document.getElementById('calc-total');
+        var scheduleBody = document.getElementById('calc-schedule-body');
+        if (!scheduleBody) return;
 
         function formatNum(n) {
             return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -873,23 +869,77 @@
             var days = parseInt(daysInput.value, 10) || 0;
             var rate = parseFloat(rateInput.value) || 0;
 
-            /* Ограничения */
             if (amount < 0) amount = 0;
-            if (days < 0) days = 0;
+            if (days < 1) days = 1;
             if (rate < 0) rate = 0;
-            if (rate > 1) rate = 1;
+            if (rate > 0.8) rate = 0.8;
 
-            var interest = Math.round(amount * (rate / 100) * days);
-            var total = amount + interest;
+            /* Общая переплата с кэпом 130% */
+            var totalInterest = Math.round(amount * (rate / 100) * days);
+            var cap = Math.round(amount * 1.3);
+            if (totalInterest > cap) totalInterest = cap;
+            var totalReturn = amount + totalInterest;
 
-            bodyEl.textContent = formatNum(amount) + ' ₽';
-            if (interestEl) interestEl.textContent = formatNum(interest) + ' ₽';
-            if (totalEl) totalEl.textContent = formatNum(total) + ' ₽';
+            /* Количество полных месяцев (30 дней = 1 мес.) */
+            var months = Math.max(1, Math.round(days / 30));
+            var monthlyPayment = Math.round(totalReturn / months);
+
+            /* Генерируем помесячный график */
+            var rows = '';
+            var remaining = amount;
+            var dailyRate = rate / 100;
+            var paidInterest = 0;
+            var sumPayments = 0;
+            var sumPrincipal = 0;
+
+            for (var m = 1; m <= months; m++) {
+                var daysInMonth = (m === months) ? (days - 30 * (months - 1)) : 30;
+                if (daysInMonth < 1) daysInMonth = 30;
+
+                var monthInterest = Math.round(remaining * dailyRate * daysInMonth);
+                if (paidInterest + monthInterest > totalInterest) {
+                    monthInterest = totalInterest - paidInterest;
+                }
+                paidInterest += monthInterest;
+
+                var payment, principal;
+                if (m === months) {
+                    principal = remaining;
+                    payment = principal + monthInterest;
+                } else {
+                    payment = monthlyPayment;
+                    principal = payment - monthInterest;
+                    if (principal < 0) principal = 0;
+                    if (principal > remaining) principal = remaining;
+                }
+
+                remaining = Math.max(0, remaining - principal);
+                sumPayments += Math.round(payment);
+                sumPrincipal += Math.round(principal);
+
+                rows += '<tr>' +
+                    '<td>' + m + '</td>' +
+                    '<td>' + formatNum(Math.round(payment)) + ' ₽</td>' +
+                    '<td>' + formatNum(monthInterest) + ' ₽</td>' +
+                    '<td>' + formatNum(Math.round(principal)) + ' ₽</td>' +
+                    '<td>' + formatNum(Math.round(remaining)) + ' ₽</td>' +
+                    '</tr>';
+            }
+
+            /* Итоговая строка */
+            rows += '<tr class="overpay-table__total">' +
+                '<td>Итого</td>' +
+                '<td>' + formatNum(sumPayments) + ' ₽</td>' +
+                '<td>' + formatNum(paidInterest) + ' ₽</td>' +
+                '<td>' + formatNum(sumPrincipal) + ' ₽</td>' +
+                '<td>0 ₽</td>' +
+                '</tr>';
+
+            scheduleBody.innerHTML = rows;
         }
 
         calcBtn.addEventListener('click', calculate);
 
-        /* Расчёт по Enter в любом поле */
         [amountInput, daysInput, rateInput].forEach(function(input) {
             input.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') { e.preventDefault(); calculate(); }
