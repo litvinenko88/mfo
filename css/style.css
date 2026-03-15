@@ -1006,8 +1006,144 @@ table {
 }
 
 /* ============================
+   HOWTO TIMELINE (dolgosrochniy-zaym)
+   ============================ */
+.howto {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.howto__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Вертикальная линия таймлайна */
+.howto__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.howto__marker {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Маркер информационной заметки */
+.howto__item--note .howto__marker {
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.howto__content {
+    flex: 1;
+    padding-top: 6px;
+}
+
+.howto__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.howto__text {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.55;
+}
+
+/* Карточка-заметка */
+.howto__item--note .howto__content {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+}
+
+.howto__item--note .howto__title {
+    font-size: 0.85rem;
+}
+
+/* ============================
    TIPS GRID
    ============================ */
+/* --- Advice List (dolgosrochniy-zaym tips) --- */
+.advice {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.advice__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.advice__item:last-child {
+    border-bottom: none;
+}
+
+.advice__num {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.advice__title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 3px;
+    line-height: 1.3;
+}
+
+.advice__text {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Legacy tips grid (main/zaym-s-plokhoy pages) */
 .tips-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -2029,6 +2165,15 @@ table {
         gap: 18px;
     }
 
+    .advice {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 32px;
+    }
+
+    .advice__item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
     .steps__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 28px 0;
@@ -2065,6 +2210,39 @@ table {
         height: 1px;
         background: var(--color-border);
         margin-left: 14px;
+    }
+
+    .howto {
+        max-width: 660px;
+    }
+
+    .howto__item {
+        gap: 16px;
+        padding-bottom: 22px;
+    }
+
+    .howto__marker {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 0.92rem;
+    }
+
+    .howto__item:not(:last-child)::before {
+        left: 17px;
+        top: 40px;
+    }
+
+    .howto__title {
+        font-size: 0.92rem;
+    }
+
+    .howto__text {
+        font-size: 0.84rem;
+    }
+
+    .howto__item--note .howto__content {
+        padding: 14px 16px;
     }
 
     .categories__grid {
@@ -2813,16 +2991,94 @@ table {
 }
 
 /* ============================
-   COMPARISON TABLE
+   COMPARISON BLOCK
    ============================ */
+.compare {
+    background: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+/* Header row */
+.compare__head {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.compare__label,
+.compare__col {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+.compare__col--long {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Data rows */
+.compare__row {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition);
+}
+
+.compare__row:last-child {
+    border-bottom: none;
+}
+
+.compare__row:hover {
+    background: var(--color-bg);
+}
+
+.compare__param {
+    padding: 13px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    background: rgba(15, 43, 70, 0.03);
+    border-right: 1px solid var(--color-border-light);
+    display: flex;
+    align-items: center;
+}
+
+.compare__val {
+    padding: 13px 20px;
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.compare__val--short {
+    border-right: 1px solid var(--color-border-light);
+}
+
+.compare__val--long {
+    background: rgba(15, 43, 70, 0.02);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.compare__note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-top: 16px;
+    font-style: italic;
+}
+
+/* Legacy comparison-table (used on other pages) */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--color-white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .comparison-table thead {
@@ -2831,15 +3087,15 @@ table {
 }
 
 .comparison-table th {
-    padding: 14px 16px;
+    padding: 12px 14px;
     text-align: left;
     font-weight: 600;
     white-space: nowrap;
 }
 
 .comparison-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--color-border);
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--color-border-light);
     vertical-align: middle;
 }
 
@@ -2849,6 +3105,74 @@ table {
 
 .comparison-table tbody tr:last-child td {
     border-bottom: none;
+}
+
+/* --- Comparison Responsive --- */
+@media (max-width: 768px) {
+    .compare__head,
+    .compare__row {
+        grid-template-columns: 130px 1fr 1fr;
+    }
+
+    .compare__label,
+    .compare__col,
+    .compare__param,
+    .compare__val {
+        padding: 11px 14px;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .compare__head {
+        display: none;
+    }
+
+    .compare__row {
+        grid-template-columns: 1fr;
+        padding: 14px 16px;
+        gap: 6px;
+    }
+
+    .compare__param {
+        background: none;
+        border-right: none;
+        padding: 0;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .compare__val {
+        padding: 0;
+        font-size: 0.85rem;
+    }
+
+    .compare__val--short {
+        border-right: none;
+    }
+
+    .compare__val--short::before {
+        content: "Краткоср.: ";
+        font-weight: 600;
+        color: var(--color-text-muted);
+        font-size: 0.78rem;
+        min-width: 85px;
+        flex-shrink: 0;
+    }
+
+    .compare__val--long {
+        background: none;
+    }
+
+    .compare__val--long::before {
+        content: "Долгоср.: ";
+        font-weight: 600;
+        color: var(--color-text-muted);
+        font-size: 0.78rem;
+        min-width: 85px;
+        flex-shrink: 0;
+    }
 }
 
 /* ============================
@@ -3698,6 +4022,64 @@ table {
         font-size: 0.72rem;
     }
 
+    .advice__item {
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .advice__num {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        font-size: 0.7rem;
+    }
+
+    .advice__title {
+        font-size: 0.8rem;
+    }
+
+    .advice__text {
+        font-size: 0.74rem;
+    }
+
+    .howto__item {
+        gap: 10px;
+        padding-bottom: 16px;
+    }
+
+    .howto__marker {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 0.8rem;
+    }
+
+    .howto__item:not(:last-child)::before {
+        left: 14px;
+        top: 34px;
+    }
+
+    .howto__content {
+        padding-top: 4px;
+    }
+
+    .howto__title {
+        font-size: 0.82rem;
+    }
+
+    .howto__text {
+        font-size: 0.76rem;
+    }
+
+    .howto__item--note .howto__content {
+        padding: 10px 12px;
+    }
+
+    .howto__item--note .howto__marker svg {
+        width: 14px;
+        height: 14px;
+    }
+
     .article-card {
         padding: 12px 10px;
         gap: 10px;
@@ -4130,75 +4512,153 @@ table {
     }
 }
 
-/* --- Top Cards (Leaders) --- */
-.top-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.top-card {
-    background: var(--color-white);
-    border-radius: var(--radius-md);
-    padding: 20px;
-    border: 1px solid var(--color-border-light);
+/* --- Top MFO List (Leaders) --- */
+.topmfo {
+    max-width: 740px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 0;
+}
+
+.topmfo__item {
+    display: grid;
+    grid-template-columns: 32px 1fr auto auto;
     align-items: center;
-    text-align: center;
-    gap: 12px;
-    transition: border-color var(--transition), box-shadow var(--transition);
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
-.top-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
+.topmfo__item:last-child {
+    border-bottom: none;
 }
 
-.top-card__rank {
-    width: 36px;
-    height: 36px;
+.topmfo__rank {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 800;
-    font-size: 1rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
 
-.top-card__body {
-    flex: 1;
+.topmfo__info {
+    min-width: 0;
 }
 
-.top-card__name {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 6px;
+.topmfo__name {
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--color-text);
+    margin: 0 0 2px;
+    line-height: 1.3;
 }
 
-.top-card__detail {
-    font-size: 0.95rem;
-    color: var(--color-accent);
-    margin-bottom: 4px;
-}
-
-.top-card__meta {
-    font-size: 0.8rem;
+.topmfo__meta {
+    font-size: 0.76rem;
     color: var(--color-text-muted);
 }
 
-@media (max-width: 768px) {
-    .top-cards {
-        grid-template-columns: repeat(2, 1fr);
+.topmfo__term {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    white-space: nowrap;
+    text-align: right;
+}
+
+.topmfo__term strong {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.topmfo__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background var(--transition);
+}
+
+.topmfo__btn:hover {
+    background: #163a56;
+    color: #fff;
+}
+
+.topmfo__note {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+    .topmfo__item {
+        grid-template-columns: 28px 1fr auto;
+        gap: 10px;
+        padding: 12px 0;
+    }
+
+    .topmfo__rank {
+        width: 26px;
+        height: 26px;
+        font-size: 0.74rem;
+    }
+
+    .topmfo__name {
+        font-size: 0.82rem;
+    }
+
+    .topmfo__meta {
+        font-size: 0.7rem;
+    }
+
+    .topmfo__term {
+        font-size: 0.78rem;
+    }
+
+    .topmfo__term strong {
+        font-size: 0.85rem;
+    }
+
+    .topmfo__btn {
+        grid-column: 2 / -1;
+        justify-self: start;
+        padding: 6px 14px;
+        font-size: 0.74rem;
     }
 }
 
-@media (max-width: 480px) {
-    .top-cards {
-        grid-template-columns: 1fr;
+@media (max-width: 400px) {
+    .topmfo__item {
+        grid-template-columns: 24px 1fr;
+        gap: 8px;
+    }
+
+    .topmfo__rank {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+
+    .topmfo__term {
+        grid-column: 2;
+    }
+
+    .topmfo__btn {
+        grid-column: 2;
+        justify-self: start;
     }
 }
