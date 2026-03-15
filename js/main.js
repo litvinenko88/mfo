@@ -22,6 +22,7 @@
         initReviewsToggle();
         initMfoDetails();
         initMfoSort();
+        initMfoSortButtons();
         initAffiliateTracking();
         initTermSlider();
         initFullCalculator();
@@ -693,6 +694,55 @@
     }
 
     /* ============================
+       MFO Sort Buttons (dolgosrochniy-zaym)
+       ============================ */
+    function initMfoSortButtons() {
+        var sortContainer = document.getElementById('mfo-sort');
+        if (!sortContainer) return;
+
+        var btns = sortContainer.querySelectorAll('.mfo-sort__btn');
+        if (!btns.length) return;
+
+        var grid = document.getElementById('mfo-grid');
+        if (!grid) return;
+
+        function sortCards(sortKey) {
+            var cards = [];
+            var allCards = grid.querySelectorAll('.mfo-card');
+            for (var i = 0; i < allCards.length; i++) {
+                cards.push(allCards[i]);
+            }
+
+            cards.sort(function (a, b) {
+                var aVal = parseFloat(a.getAttribute('data-' + sortKey)) || 0;
+                var bVal = parseFloat(b.getAttribute('data-' + sortKey)) || 0;
+                /* Ставка — по возрастанию (чем меньше, тем лучше) */
+                if (sortKey === 'rate') return aVal - bVal;
+                /* Срок и сумма — по убыванию (чем больше, тем лучше) */
+                return bVal - aVal;
+            });
+
+            for (var j = 0; j < cards.length; j++) {
+                var rank = cards[j].querySelector('.mfo-card__rank');
+                if (rank) rank.textContent = '#' + (j + 1);
+                grid.appendChild(cards[j]);
+            }
+        }
+
+        for (var k = 0; k < btns.length; k++) {
+            btns[k].addEventListener('click', (function (btn) {
+                return function () {
+                    for (var m = 0; m < btns.length; m++) {
+                        btns[m].classList.remove('mfo-sort__btn--active');
+                    }
+                    btn.classList.add('mfo-sort__btn--active');
+                    sortCards(btn.getAttribute('data-sort'));
+                };
+            })(btns[k]));
+        }
+    }
+
+    /* ============================
        MFO Card Info Toggle
        ============================ */
     function initMfoDetails() {
@@ -797,6 +847,8 @@
 
     /* ============================
        Term Slider (долгосрочный займ — hero)
+       Читает данные МФО из DOM, рассчитывает
+       переплату и подбирает лучшее предложение
        ============================ */
     function initTermSlider() {
         var amountSlider = document.getElementById('long-amount');
@@ -807,13 +859,35 @@
         var termDisplay = document.getElementById('long-term-value');
         var totalEl = document.getElementById('term-total');
         var overpayEl = document.getElementById('term-overpay');
+        var overpayMinEl = document.getElementById('term-overpay-min');
         var rateEl = document.getElementById('term-rate');
         var countEl = document.getElementById('term-filter-count');
-
-        var DAILY_RATE = 0.008; // 0,8% в день (средняя максимальная)
+        var showBtn = document.getElementById('term-show-btn');
+        var grid = document.getElementById('mfo-grid');
 
         function formatNum(n) {
             return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function calcOverpay(amount, days, ratePct) {
+            var interest = Math.round(amount * (ratePct / 100) * days);
+            var cap = Math.round(amount * 1.3);
+            if (interest > cap) interest = cap;
+            return interest;
+        }
+
+        function getMatching(amount, days) {
+            if (!grid) return [];
+            var cards = grid.querySelectorAll('.mfo-card');
+            var result = [];
+            for (var i = 0; i < cards.length; i++) {
+                var maxAmt = parseInt(cards[i].getAttribute('data-amount'), 10) || 0;
+                var maxTerm = parseInt(cards[i].getAttribute('data-term'), 10) || 0;
+                if (amount <= maxAmt && days <= maxTerm) {
+                    result.push(cards[i]);
+                }
+            }
+            return result;
         }
 
         function update() {
@@ -824,22 +898,90 @@
             if (amountDisplay) amountDisplay.textContent = formatNum(amount) + ' ₽';
             if (termDisplay) termDisplay.textContent = months + ' мес.';
 
-            var overpay = Math.round(amount * DAILY_RATE * days);
-            var total = amount + overpay;
+            var matching = getMatching(amount, days);
+            var count = matching.length;
 
-            if (totalEl) totalEl.textContent = formatNum(total) + ' ₽';
-            if (overpayEl) overpayEl.textContent = formatNum(overpay) + ' ₽';
-            if (rateEl) rateEl.textContent = '0,8% / день';
-
-            /* Подсчёт МФО, подходящих по сроку */
-            if (countEl) {
-                var mfoTerms = [735, 720, 365, 365, 365, 364, 360, 180, 180, 180, 168, 168, 126, 113, 113, 60, 31, 31, 31, 31, 33];
-                var count = 0;
-                for (var i = 0; i < mfoTerms.length; i++) {
-                    if (mfoTerms[i] >= days) count++;
-                }
-                countEl.textContent = count;
+            /* Найти мин/макс ставки среди подходящих */
+            var minRate = 999;
+            var maxRate = 0;
+            for (var i = 0; i < matching.length; i++) {
+                var r = parseFloat(matching[i].getAttribute('data-rate')) || 0;
+                if (r < minRate) minRate = r;
+                if (r > maxRate) maxRate = r;
             }
+            if (count === 0) { minRate = 0; maxRate = 0.8; }
+
+            var overpayMin = calcOverpay(amount, days, minRate);
+            var overpayMax = calcOverpay(amount, days, maxRate);
+            var totalMin = amount + overpayMin;
+            var totalMax = amount + overpayMax;
+
+            if (count === 0) {
+                if (overpayMinEl) overpayMinEl.textContent = '—';
+                if (overpayEl) overpayEl.textContent = '—';
+                if (totalEl) totalEl.textContent = '—';
+                if (rateEl) rateEl.textContent = 'Нет подходящих МФО';
+            } else {
+                if (overpayMinEl) overpayMinEl.textContent = formatNum(overpayMin) + ' ₽';
+                if (overpayEl) overpayEl.textContent = formatNum(overpayMax) + ' ₽';
+                if (totalEl) {
+                    if (totalMin === totalMax) {
+                        totalEl.textContent = formatNum(totalMax) + ' ₽';
+                    } else {
+                        totalEl.textContent = formatNum(totalMin) + ' – ' + formatNum(totalMax) + ' ₽';
+                    }
+                }
+                if (rateEl) {
+                    var minStr = minRate.toString().replace('.', ',');
+                    var maxStr = maxRate.toString().replace('.', ',');
+                    if (minRate === maxRate) {
+                        rateEl.textContent = minStr + '% / день';
+                    } else {
+                        rateEl.textContent = 'от ' + minStr + '% до ' + maxStr + '% / день';
+                    }
+                }
+            }
+
+            if (countEl) countEl.textContent = count;
+
+            /* Убрать затемнение при изменении слайдера */
+            if (grid) {
+                var all = grid.querySelectorAll('.mfo-card');
+                for (var j = 0; j < all.length; j++) {
+                    all[j].classList.remove('mfo-card--dimmed');
+                }
+            }
+        }
+
+        /* Кнопка: показать подходящие МФО */
+        if (showBtn) {
+            showBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var amount = parseInt(amountSlider.value, 10);
+                var months = parseInt(termSlider.value, 10);
+                var days = months * 30;
+
+                if (grid) {
+                    var allCards = grid.querySelectorAll('.mfo-card');
+                    for (var i = 0; i < allCards.length; i++) {
+                        var maxAmt = parseInt(allCards[i].getAttribute('data-amount'), 10) || 0;
+                        var maxTerm = parseInt(allCards[i].getAttribute('data-term'), 10) || 0;
+                        if (amount <= maxAmt && days <= maxTerm) {
+                            allCards[i].classList.remove('mfo-card--dimmed');
+                        } else {
+                            allCards[i].classList.add('mfo-card--dimmed');
+                        }
+                    }
+                }
+
+                var target = document.getElementById('mfo-rating');
+                if (target) {
+                    var hdr = document.querySelector('.header');
+                    var hH = hdr ? hdr.offsetHeight : 0;
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - hH - 16;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
         }
 
         amountSlider.addEventListener('input', update);

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -370,24 +370,28 @@
                         <!-- Результат расчёта -->
                         <div class="term-result" id="term-result">
                             <div class="term-result__row">
+                                <span>Переплата (мин.):</span>
+                                <strong id="term-overpay-min" class="term-result__good">0 ₽</strong>
+                            </div>
+                            <div class="term-result__row">
+                                <span>Переплата (при 0,8%):</span>
+                                <strong id="term-overpay" class="term-result__accent">43 200 ₽</strong>
+                            </div>
+                            <div class="term-result__row">
                                 <span>Сумма возврата:</span>
-                                <strong id="term-total">73 800 ₽</strong>
+                                <strong id="term-total">30 000 – 73 200 ₽</strong>
                             </div>
                             <div class="term-result__row">
-                                <span>Переплата:</span>
-                                <strong id="term-overpay" class="term-result__accent">43 800 ₽</strong>
-                            </div>
-                            <div class="term-result__row">
-                                <span>Ставка (средняя):</span>
-                                <span id="term-rate">0,8% / день</span>
+                                <span>Ставка:</span>
+                                <span id="term-rate">от 0% до 0,8% / день</span>
                             </div>
                         </div>
 
-                        <a href="#mfo-rating" class="btn btn--primary btn--filter-submit">
-                            Показать МФО на этот срок (<span id="term-filter-count">21</span>)
+                        <a href="#mfo-rating" class="btn btn--primary btn--filter-submit" id="term-show-btn">
+                            Показать <span id="term-filter-count">10</span> подходящих МФО ↓
                         </a>
 
-                        <div class="calculator__disclaimer">Расчёт приблизительный. Точные условия — на сайте МФО</div>
+                        <div class="calculator__disclaimer">Расчёт на основе реальных данных МФО. Точные условия — на сайте кредитора</div>
                     </div>
                 </div>
 
@@ -464,7 +468,7 @@
                     <div class="mfo-card" data-rating="4.3" data-amount="200000" data-rate="0.8" data-term="735">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#1</span>
-                            <img src="../logos/13-oneclickmoney.svg" alt="OneClickMoney — долгосрочный займ до 735 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/13-oneclickmoney.svg" alt="Долгосрочный займ до 735 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% новичкам</span>
                         </div>
                         <div class="mfo-card__body">
@@ -533,7 +537,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="720">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#2</span>
-                            <img src="../logos/12-dobrozajm.svg" alt="Доброзайм — долгосрочный займ до 720 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/12-dobrozajm.svg" alt="Долгосрочный займ до 720 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -604,7 +608,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#3</span>
-                            <img src="../logos/15-dengi-srazu.svg" alt="Деньги Сразу — долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/15-dengi-srazu.svg" alt="Долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--warning">Без 0%</span>
                         </div>
                         <div class="mfo-card__body">
@@ -673,7 +677,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#4</span>
-                            <img src="../logos/14-fin5.svg" alt="Фин5 — подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/14-fin5.svg" alt="Подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--info">Подбор займов</span>
                         </div>
                         <div class="mfo-card__body">
@@ -740,7 +744,7 @@
                     <div class="mfo-card" data-rating="4.4" data-amount="100000" data-rate="0" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#5</span>
-                            <img src="../logos/24-ecozaym.svg" alt="EcoZaym — подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/24-ecozaym.svg" alt="Подбор долгосрочных займов до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--info">Подбор займов</span>
                         </div>
                         <div class="mfo-card__body">
@@ -807,7 +811,7 @@
                     <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="365">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#6</span>
-                            <img src="../logos/22-kviku.svg" alt="Kviku — долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/22-kviku.svg" alt="Долгосрочный займ до 365 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">50 дн. грейс</span>
                         </div>
                         <div class="mfo-card__body">
@@ -876,7 +880,7 @@
                     <div class="mfo-card" data-rating="4.3" data-amount="100000" data-rate="0.8" data-term="364">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#7</span>
-                            <img src="../logos/29-grinmani.svg" alt="Гринмани — долгосрочный займ до 364 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/29-grinmani.svg" alt="Долгосрочный займ до 364 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -943,7 +947,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#8</span>
-                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги — долгосрочный займ до 360 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/08-srochnodengi.svg" alt="Долгосрочный займ до 360 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1014,7 +1018,7 @@
                     <div class="mfo-card" data-rating="4.6" data-amount="100000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#9</span>
-                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/02-bystrodengi.svg" alt="Долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% новичкам</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1085,7 +1089,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#10</span>
-                            <img src="../logos/06-boostra.svg" alt="Boostra — подбор долгосрочных займов до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/06-boostra.svg" alt="Подбор долгосрочных займов до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--accent">Маркетплейс</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1154,7 +1158,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#11</span>
-                            <img src="../logos/05-like-money.svg" alt="Лайк Мани — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/05-like-money.svg" alt="Долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1223,7 +1227,7 @@
                     <div class="mfo-card" data-rating="4.4" data-amount="30000" data-rate="0.8" data-term="180">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#12</span>
-                            <img src="../logos/34-do-zarplaty.svg" alt="До зарплаты — долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/34-do-zarplaty.svg" alt="Долгосрочный займ до 180 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% новичкам</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1292,7 +1296,7 @@
                     <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0.8" data-term="168">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#13</span>
-                            <img src="../logos/11-nado-deneg.svg" alt="Надо Денег — долгосрочный займ до 168 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/11-nado-deneg.svg" alt="Долгосрочный займ до 168 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1362,7 +1366,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="168">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#14</span>
-                            <img src="../logos/19-joymoney.svg" alt="Joymoney — долгосрочный займ до 24 недель" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/19-joymoney.svg" alt="Долгосрочный займ до 24 недель" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 14 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1432,7 +1436,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="126">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#15</span>
-                            <img src="../logos/20-moneyman.svg" alt="MoneyMan — долгосрочный займ до 126 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/20-moneyman.svg" alt="Долгосрочный займ до 126 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1503,7 +1507,7 @@
                     <div class="mfo-card" data-rating="4.2" data-amount="50000" data-rate="0.8" data-term="113">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#16</span>
-                            <img src="../logos/33-nebus.svg" alt="Небус — долгосрочный займ до 113 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/33-nebus.svg" alt="Долгосрочный займ до 113 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
                         </div>
                         <div class="mfo-card__body">
                             <div class="mfo-card__legal">ООО МКК «Луна»</div>
@@ -1569,7 +1573,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="50000" data-rate="0.8" data-term="31">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#17</span>
-                            <img src="../logos/03-beriberu.svg" alt="Бериберу — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/03-beriberu.svg" alt="Займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1637,7 +1641,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="31">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#18</span>
-                            <img src="../logos/32-cash-to-you.svg" alt="Cash To You — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/32-cash-to-you.svg" alt="Займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
                         </div>
                         <div class="mfo-card__body">
                             <div class="mfo-card__legal">ООО «МКК Кангария»</div>
@@ -1704,7 +1708,7 @@
                     <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="31">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#19</span>
-                            <img src="../logos/17-krediska.svg" alt="Кредиска — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/17-krediska.svg" alt="Займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1772,7 +1776,7 @@
                     <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0.8" data-term="31">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#20</span>
-                            <img src="../logos/09-hurmacredit.svg" alt="HurmaCredit — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/09-hurmacredit.svg" alt="Займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1840,7 +1844,7 @@
                     <div class="mfo-card" data-rating="4.3" data-amount="50000" data-rate="0.8" data-term="31">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#21</span>
-                            <img src="../logos/18-zaymigo.svg" alt="Займиго — займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/18-zaymigo.svg" alt="Займ до 31 дня" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -3058,140 +3062,140 @@
                     <p class="section__subtitle">Ответы на вопросы о сроках, переплате и досрочном погашении</p>
                 </div>
 
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                <div class="faq__list" id="faq-list">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Какой максимальный срок в МФО?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>До 24 месяцев (735 дней). Лидеры: OneClickMoney — до 735 дней, Доброзайм — до 720 дней. Большинство компаний — до 180–365 дней.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">До 24 месяцев (735 дней). Лидеры: OneClickMoney — до 735 дней, Доброзайм — до 720 дней. Большинство компаний — до 180–365 дней.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Какая переплата при длительном сроке?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Зависит от ставки. При 0,8% в день и 6 месяцах на 30 000 ₽ — 43 200 ₽. При 0,27% — 14 580 ₽. Воспользуйтесь калькулятором на странице.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Зависит от ставки. При 0,8% в день и 6 месяцах на 30 000 ₽ — 43 200 ₽. При 0,27% — 14 580 ₽. Воспользуйтесь калькулятором на странице.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Можно ли получить займ с плохой кредитной историей?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Да. Многие компании одобряют клиентов с низким кредитным рейтингом. Сумма может быть ограничена (5 000–15 000 ₽), ставка — выше средней.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Да. Многие компании одобряют клиентов с низким кредитным рейтингом. Сумма может быть ограничена (5 000–15 000 ₽), ставка — выше средней.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Возможно ли досрочное закрытие?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Да. По закону — без штрафов. Пересчитают за фактические дни. Это лучший способ снизить итоговую сумму возврата.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Да. По закону — без штрафов. Пересчитают за фактические дни. Это лучший способ снизить итоговую сумму возврата.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Чем отличается от кредита в банке?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Оформление в МФО — за 5–15 минут без справок. Банковский кредит (Т-Банк, Райффайзенбанк) требует подтверждения дохода. Ставка в МФО выше: 0,27–0,8% в день против 6–30% годовых в банке.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Оформление в МФО — за 5–15 минут без справок. Банковский кредит (Т-Банк, Райффайзенбанк) требует подтверждения дохода. Ставка в МФО выше: 0,27–0,8% в день против 6–30% годовых в банке.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Какую сумму можно получить?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Для новых клиентов — 5 000–30 000 ₽. С хорошей историей — лимит растёт.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Для новых клиентов — 5 000–30 000 ₽. С хорошей историей — лимит растёт.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Нужен ли залог для оформления?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Нет. Выдаётся без залог (гражданское право), без поручителей. Только паспорт РФ.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Нет. Выдаётся без залог (гражданское право), без поручителей. Только паспорт РФ.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Как получить деньги?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>На банковскую карту (Visa, MasterCard, МИР), расчётный счёт, наличными, ЮMoney или Qiwi. Перевод на карту — от 5 минут.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">На банковскую карту (Visa, MasterCard, МИР), расчётный счёт, наличными, ЮMoney или Qiwi. Перевод на карту — от 5 минут.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Какие документы нужны?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Паспорт РФ, карта и мобильный телефон. Справки о доходах, СНИЛС, ИНН — не требуются. Верификация — через SMS или Госуслуги.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Паспорт РФ, карта и мобильный телефон. Справки о доходах, СНИЛС, ИНН — не требуются. Верификация — через SMS или Госуслуги.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Безопасно ли оформлять онлайн?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Да, если компания в реестре Банка России. Сервисы микрофинансовых организаций из реестра используют SSL-шифрование и соблюдают ФЗ-152.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Да, если компания в реестре Банка России. Сервисы микрофинансовых организаций из реестра используют SSL-шифрование и соблюдают ФЗ-152.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Что будет при просрочке?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Штрафные начисления. Должник обязан выплатить начисленное. По закону общая сумма не может превысить 1,5 размера тела долга. Информация передаётся в БКИ — это ухудшает рейтинг.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Штрафные начисления. Должник обязан выплатить начисленное. По закону общая сумма не может превысить 1,5 размера тела долга. Информация передаётся в БКИ — это ухудшает рейтинг.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Можно ли получить на любые нужды?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Да. Цель не указывается. Деньги — на любые нужды в день обращения: ремонт, лечение, покупки.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Да. Цель не указывается. Деньги — на любые нужды в день обращения: ремонт, лечение, покупки.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Как получить впервые?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Первый займ обычно — 5 000–15 000 ₽. Заполните заявку на сайте, пройдите верификацию. Онлайн и получите деньги на карту за 5–15 минут.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Первый займ обычно — 5 000–15 000 ₽. Заполните заявку на сайте, пройдите верификацию. Онлайн и получите деньги на карту за 5–15 минут.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Какие компании дают на самый длинный срок?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>OneClickMoney (735 дней), Доброзайм (720 дней), Деньги Сразу (365 дней), Kviku (365 дней). Все в реестре ЦБ РФ. Выдают займы на карту или счёт.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">OneClickMoney (735 дней), Доброзайм (720 дней), Деньги Сразу (365 дней), Kviku (365 дней). Все в реестре ЦБ РФ. Выдают займы на карту или счёт.</div>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-item__question" type="button">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button">
                             <span>Выгодно ли брать на долгий срок?</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
-                        <div class="faq-item__answer">
-                            <p>Выгодно только если нет альтернативы. Ежемесячная нагрузка ниже, но итоговая переплата значительно выше. Совет: берите на минимальный срок, закрывайте досрочно.</p>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Выгодно только если нет альтернативы. Ежемесячная нагрузка ниже, но итоговая переплата значительно выше. Совет: берите на минимальный срок, закрывайте досрочно.</div>
                         </div>
                     </div>
                 </div>
@@ -3207,39 +3211,31 @@
                 </div>
 
                 <div class="methodology__grid">
-                    <div class="methodology__card">
-                        <div class="methodology__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-                        </div>
-                        <div class="methodology__body">
+                    <div class="methodology__item">
+                        <div class="methodology__number">01</div>
+                        <div class="methodology__content">
                             <h3 class="methodology__title">Реестр Банка России</h3>
                             <p class="methodology__text">Банк России ведёт реестр легальных МФО. Проверяем лицензию и статус на дату обновления (март 2026). Нелегальные кредиторы не включаются.</p>
                         </div>
                     </div>
-                    <div class="methodology__card">
-                        <div class="methodology__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
-                        <div class="methodology__body">
+                    <div class="methodology__item">
+                        <div class="methodology__number">02</div>
+                        <div class="methodology__content">
                             <h3 class="methodology__title">Минимум 31 день</h3>
                             <p class="methodology__text">Только компании со сроком от 31 до 735 дней.</p>
                         </div>
                     </div>
-                    <div class="methodology__card">
-                        <div class="methodology__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <div class="methodology__body">
+                    <div class="methodology__item">
+                        <div class="methodology__number">03</div>
+                        <div class="methodology__content">
                             <h3 class="methodology__title">Прозрачные условия</h3>
                             <p class="methodology__text">Наличие графика, информации о ПСК, штрафах. Условия указаны до подписания.</p>
                         </div>
                     </div>
-                    <div class="methodology__card">
-                        <div class="methodology__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div class="methodology__body">
-                            <h3 class="methodology__title">Отзывы</h3>
+                    <div class="methodology__item">
+                        <div class="methodology__number">04</div>
+                        <div class="methodology__content">
+                            <h3 class="methodology__title">Отзывы и поддержка</h3>
                             <p class="methodology__text">Анализируем на независимых площадках. Учитываем качество обслуживания, скорость и работу с просрочками.</p>
                         </div>
                     </div>
@@ -3354,6 +3350,6 @@
         </div>
     </div>
 
-    <script src="../js/main.js" defer></script>
+    <script src="../js/main.js?v=4" defer></script>
 </body>
 </html>
