@@ -620,7 +620,10 @@
         var grid = document.getElementById('reviews-grid');
         if (!btn || !grid) return;
 
+        var totalReviews = grid.querySelectorAll('.review-card').length;
         var expanded = false;
+
+        btn.textContent = 'Показать все ' + totalReviews + ' отзывов';
 
         btn.addEventListener('click', function () {
             expanded = !expanded;
@@ -629,7 +632,7 @@
                 btn.textContent = 'Скрыть отзывы';
             } else {
                 grid.classList.remove('reviews--expanded');
-                btn.textContent = 'Показать все 50 отзывов';
+                btn.textContent = 'Показать все ' + totalReviews + ' отзывов';
                 /* Scroll reviews section into view */
                 var section = document.getElementById('reviews');
                 if (section) {
