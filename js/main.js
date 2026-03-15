@@ -893,6 +893,8 @@
             var sumPrincipal = 0;
 
             for (var m = 1; m <= months; m++) {
+                if (remaining <= 0) break;
+
                 var daysInMonth = (m === months) ? (days - 30 * (months - 1)) : 30;
                 if (daysInMonth < 1) daysInMonth = 30;
 
@@ -903,7 +905,8 @@
                 paidInterest += monthInterest;
 
                 var payment, principal;
-                if (m === months) {
+                if (m === months || remaining <= monthlyPayment - monthInterest) {
+                    /* Последний месяц или остаток меньше платежа — закрываем */
                     principal = remaining;
                     payment = principal + monthInterest;
                 } else {
