@@ -23,6 +23,8 @@
         initMfoDetails();
         initMfoSort();
         initAffiliateTracking();
+        initTermSlider();
+        initFullCalculator();
     }
 
     /* ============================
@@ -791,6 +793,110 @@
             var link = e.target.closest('a[href*="pxl.leads.su"], a[href*="vldmnt.ru"]');
             if (link) link.href = addTracking(link.href);
         });
+    }
+
+    /* ============================
+       Term Slider (долгосрочный займ — hero)
+       ============================ */
+    function initTermSlider() {
+        var amountSlider = document.getElementById('long-amount');
+        var termSlider = document.getElementById('long-term');
+        if (!amountSlider || !termSlider) return;
+
+        var amountDisplay = document.getElementById('long-amount-value');
+        var termDisplay = document.getElementById('long-term-value');
+        var totalEl = document.getElementById('term-total');
+        var overpayEl = document.getElementById('term-overpay');
+        var rateEl = document.getElementById('term-rate');
+        var countEl = document.getElementById('term-filter-count');
+
+        var DAILY_RATE = 0.008; // 0,8% в день (средняя максимальная)
+
+        function formatNum(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function update() {
+            var amount = parseInt(amountSlider.value, 10);
+            var months = parseInt(termSlider.value, 10);
+            var days = months * 30;
+
+            if (amountDisplay) amountDisplay.textContent = formatNum(amount) + ' ₽';
+            if (termDisplay) termDisplay.textContent = months + ' мес.';
+
+            var overpay = Math.round(amount * DAILY_RATE * days);
+            var total = amount + overpay;
+
+            if (totalEl) totalEl.textContent = formatNum(total) + ' ₽';
+            if (overpayEl) overpayEl.textContent = formatNum(overpay) + ' ₽';
+            if (rateEl) rateEl.textContent = '0,8% / день';
+
+            /* Подсчёт МФО, подходящих по сроку */
+            if (countEl) {
+                var mfoTerms = [735, 720, 365, 365, 365, 364, 360, 180, 180, 180, 168, 168, 126, 113, 113, 60, 31, 31, 31, 31, 33];
+                var count = 0;
+                for (var i = 0; i < mfoTerms.length; i++) {
+                    if (mfoTerms[i] >= days) count++;
+                }
+                countEl.textContent = count;
+            }
+        }
+
+        amountSlider.addEventListener('input', update);
+        termSlider.addEventListener('input', update);
+        update();
+    }
+
+    /* ============================
+       Full Calculator (долгосрочный займ — секция 11)
+       ============================ */
+    function initFullCalculator() {
+        var amountInput = document.getElementById('calc-amount');
+        var daysInput = document.getElementById('calc-days');
+        var rateInput = document.getElementById('calc-rate');
+        var calcBtn = document.getElementById('calc-btn');
+        /* Проверяем что это страница с полным калькулятором (не перекрывает основной) */
+        if (!amountInput || !daysInput || !rateInput || !calcBtn) return;
+        /* Отличаем от основного калькулятора — у полного есть #calc-body */
+        var bodyEl = document.getElementById('calc-body');
+        if (!bodyEl) return;
+
+        var interestEl = document.getElementById('calc-interest');
+        var totalEl = document.getElementById('calc-total');
+
+        function formatNum(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function calculate() {
+            var amount = parseFloat(amountInput.value) || 0;
+            var days = parseInt(daysInput.value, 10) || 0;
+            var rate = parseFloat(rateInput.value) || 0;
+
+            /* Ограничения */
+            if (amount < 0) amount = 0;
+            if (days < 0) days = 0;
+            if (rate < 0) rate = 0;
+            if (rate > 1) rate = 1;
+
+            var interest = Math.round(amount * (rate / 100) * days);
+            var total = amount + interest;
+
+            bodyEl.textContent = formatNum(amount) + ' ₽';
+            if (interestEl) interestEl.textContent = formatNum(interest) + ' ₽';
+            if (totalEl) totalEl.textContent = formatNum(total) + ' ₽';
+        }
+
+        calcBtn.addEventListener('click', calculate);
+
+        /* Расчёт по Enter в любом поле */
+        [amountInput, daysInput, rateInput].forEach(function(input) {
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') { e.preventDefault(); calculate(); }
+            });
+        });
+
+        calculate();
     }
 
 })();
