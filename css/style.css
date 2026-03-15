@@ -1192,6 +1192,13 @@ table {
     margin-top: auto;
 }
 
+/* Filter dimmed state */
+.mfo-card--dimmed {
+    opacity: 0.4;
+    order: 99;
+    transition: opacity 0.3s;
+}
+
 .mfo-card__tags {
     display: flex;
     flex-wrap: wrap;

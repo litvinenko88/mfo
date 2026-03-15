@@ -13,6 +13,7 @@
         initHeader();
         initMobileMenu();
         initCalculator();
+        initFilter();
         initFAQ();
         initScrollTop();
         initCookieConsent();
@@ -350,6 +351,124 @@
         }
 
         updateCalculator();
+    }
+
+    /* ============================
+       Sub-page Filter (подбор займа)
+       ============================ */
+    function initFilter() {
+        var amountSlider = document.getElementById('filter-amount');
+        var termSlider = document.getElementById('filter-term');
+        if (!amountSlider || !termSlider) return;
+
+        var amountDisplay = document.getElementById('filter-amount-value');
+        var termDisplay = document.getElementById('filter-term-value');
+        var kiToggle = document.getElementById('filter-ki-toggle');
+        var filterBtn = document.getElementById('filter-submit');
+        var filterCount = document.getElementById('filter-count');
+        var mfoGrid = document.getElementById('mfo-grid');
+
+        function formatNumber(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function getDaysWord(n) {
+            var abs = Math.abs(n) % 100;
+            var last = abs % 10;
+            if (abs > 10 && abs < 20) return 'дней';
+            if (last > 1 && last < 5) return 'дня';
+            if (last === 1) return 'день';
+            return 'дней';
+        }
+
+        function updateSliderFill(slider) {
+            var min = parseFloat(slider.min);
+            var max = parseFloat(slider.max);
+            var val = parseFloat(slider.value);
+            var pct = ((val - min) / (max - min)) * 100;
+            slider.style.background = 'linear-gradient(to right, #FF6B35 0%, #FF6B35 ' + pct + '%, #E2E8F0 ' + pct + '%, #E2E8F0 100%)';
+        }
+
+        function filterCards() {
+            if (!mfoGrid) return 0;
+            var cards = mfoGrid.querySelectorAll('.mfo-card');
+            var amount = parseInt(amountSlider.value, 10);
+            var term = parseInt(termSlider.value, 10);
+            var count = 0;
+
+            for (var i = 0; i < cards.length; i++) {
+                var cardMaxAmount = parseInt(cards[i].getAttribute('data-amount'), 10) || 0;
+                var cardMaxTerm = parseInt(cards[i].getAttribute('data-term'), 10) || 0;
+                var match = amount <= cardMaxAmount && (cardMaxTerm === 0 || term <= cardMaxTerm);
+
+                if (match) {
+                    cards[i].style.display = '';
+                    cards[i].classList.remove('mfo-card--dimmed');
+                    count++;
+                } else {
+                    cards[i].classList.add('mfo-card--dimmed');
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function updateFilter() {
+            var amount = parseInt(amountSlider.value, 10);
+            var term = parseInt(termSlider.value, 10);
+
+            amountDisplay.textContent = formatNumber(amount) + ' \u20BD';
+            termDisplay.textContent = term + ' ' + getDaysWord(term);
+
+            updateSliderFill(amountSlider);
+            updateSliderFill(termSlider);
+
+            /* Count matching cards for the counter */
+            if (mfoGrid && filterCount) {
+                var cards = mfoGrid.querySelectorAll('.mfo-card');
+                var matchCount = 0;
+                for (var i = 0; i < cards.length; i++) {
+                    var cardMaxAmount = parseInt(cards[i].getAttribute('data-amount'), 10) || 0;
+                    var cardMaxTerm = parseInt(cards[i].getAttribute('data-term'), 10) || 0;
+                    var match = amount <= cardMaxAmount && (cardMaxTerm === 0 || term <= cardMaxTerm);
+                    if (match) matchCount++;
+                }
+                filterCount.textContent = matchCount;
+            }
+        }
+
+        /* KI toggle buttons */
+        if (kiToggle) {
+            var toggleBtns = kiToggle.querySelectorAll('.calculator__toggle-btn');
+            for (var i = 0; i < toggleBtns.length; i++) {
+                toggleBtns[i].addEventListener('click', function() {
+                    for (var j = 0; j < toggleBtns.length; j++) {
+                        toggleBtns[j].classList.remove('calculator__toggle-btn--active');
+                    }
+                    this.classList.add('calculator__toggle-btn--active');
+                });
+            }
+        }
+
+        /* Filter submit — scroll to rating + apply filter */
+        if (filterBtn) {
+            filterBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                filterCards();
+                var target = document.getElementById('mfo-rating');
+                if (target) {
+                    var headerHeight = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        }
+
+        amountSlider.addEventListener('input', updateFilter);
+        termSlider.addEventListener('input', updateFilter);
+
+        /* Init state */
+        updateFilter();
     }
 
     /* ============================
