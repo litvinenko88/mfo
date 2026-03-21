@@ -26,6 +26,7 @@
         initAffiliateTracking();
         initTermSlider();
         initFullCalculator();
+        initBenefitCalc();
     }
 
     /* ============================
@@ -763,6 +764,149 @@
                 }
             });
         });
+    }
+
+    /* ============================
+       Benefit Compare Calculator
+       ============================ */
+    function initBenefitCalc() {
+        var amountSlider = document.getElementById('benefit-amount');
+        var termSlider = document.getElementById('benefit-term');
+        if (!amountSlider || !termSlider) return;
+
+        var amountLabel = document.getElementById('benefit-amount-value');
+        var termLabel = document.getElementById('benefit-term-value');
+        var approvalWithout = document.getElementById('bc-approval-without');
+        var approvalWith = document.getElementById('bc-approval-with');
+        var countWithout = document.getElementById('bc-count-without');
+        var countWith = document.getElementById('bc-count-with');
+        var timeWithout = document.getElementById('bc-time-without');
+        var timeWith = document.getElementById('bc-time-with');
+        var bestMfo = document.getElementById('bc-best-mfo');
+        var bestBonus = document.getElementById('bc-best-bonus');
+        var matchCount = document.getElementById('bc-match-count');
+
+        /* Реальные данные 9 МФО: max — макс. сумма, term — макс. срок (дни) */
+        var mfoList = [
+            { name: 'Займер',       max: 30000,  term: 30,  bonus: '+5 000 ₽ к сумме, 0%',   approvalBoost: 70 },
+            { name: 'Быстроденьги', max: 100000, term: 180, bonus: 'до 100 000 ₽, 0%',       approvalBoost: 60 },
+            { name: 'Лайк Мани',    max: 100000, term: 180, bonus: '+90% одобрение, 0%',      approvalBoost: 90 },
+            { name: 'Надо Денег',   max: 100000, term: 168, bonus: '+4 000 ₽ к сумме, 0%',   approvalBoost: 65 },
+            { name: 'ДоброЗайм',   max: 100000, term: 720, bonus: 'до 720 дней, 0%',        approvalBoost: 55 },
+            { name: 'Вебзайм',     max: 30000,  term: 30,  bonus: '+40% одобрение, 0%',      approvalBoost: 40 },
+            { name: 'еКапуста',    max: 30000,  term: 30,  bonus: 'рейтинг 4.9, 0%',        approvalBoost: 35 },
+            { name: 'КэшТуЮ',     max: 30000,  term: 31,  bonus: 'увелич. лимит',           approvalBoost: 45 },
+            { name: 'До зарплаты', max: 30000,  term: 180, bonus: 'до 180 дней, 0%',        approvalBoost: 50 }
+        ];
+
+        function fmt(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+        }
+
+        function termFmt(d) {
+            if (d < 30) return d + ' ' + declDays(d);
+            var m = Math.floor(d / 30);
+            var extra = d % 30;
+            if (extra === 0) return m + ' мес.';
+            return m + ' мес. ' + extra + ' дн.';
+        }
+
+        function declDays(n) {
+            var a = n % 10, b = n % 100;
+            if (a === 1 && b !== 11) return 'день';
+            if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return 'дня';
+            return 'дней';
+        }
+
+        function update() {
+            var amount = parseInt(amountSlider.value, 10);
+            var term = parseInt(termSlider.value, 10);
+            amountLabel.textContent = fmt(amount);
+            termLabel.textContent = termFmt(term);
+
+            /* Подходящие МФО: сумма <= max И срок <= term */
+            var matched = [];
+            for (var i = 0; i < mfoList.length; i++) {
+                if (amount <= mfoList[i].max && term <= mfoList[i].term) {
+                    matched.push(mfoList[i]);
+                }
+            }
+            var matchedCount = matched.length;
+
+            /* Без Госуслуг — одобрение зависит от суммы */
+            var approvalW;
+            if (amount <= 10000) approvalW = 50;
+            else if (amount <= 30000) approvalW = 40;
+            else if (amount <= 50000) approvalW = 30;
+            else approvalW = 25;
+            approvalWithout.textContent = '~' + approvalW + '%';
+
+            /* Без Госуслуг: все МФО подходящие по сумме+сроку доступны */
+            countWithout.textContent = matchedCount;
+
+            var timeW = amount <= 15000 ? '15–25 мин' : amount <= 50000 ? '20–30 мин' : '25–40 мин';
+            timeWithout.textContent = timeW;
+
+            /* С Госуслугами — одобрение выше */
+            var approvalG;
+            if (amount <= 10000) approvalG = 95;
+            else if (amount <= 30000) approvalG = 90;
+            else if (amount <= 50000) approvalG = 80;
+            else approvalG = 70;
+            approvalWith.textContent = 'до ' + approvalG + '%';
+
+            countWith.textContent = matchedCount;
+
+            var timeG = amount <= 15000 ? '2–3 мин' : amount <= 50000 ? '3–5 мин' : '5–10 мин';
+            timeWith.textContent = timeG;
+
+            /* Лучшее предложение — выбираем по релевантности к запросу */
+            if (matchedCount > 0) {
+                var best = matched[0];
+                var bestScore = -1;
+                for (var j = 0; j < matched.length; j++) {
+                    var m = matched[j];
+                    var score = 0;
+                    /* Бонус за точное попадание по сумме (чем ближе max к запросу — тем лучше) */
+                    var amountFit = 1 - Math.abs(m.max - amount) / 100000;
+                    score += amountFit * 40;
+                    /* Бонус за попадание по сроку */
+                    var termFit = 1 - Math.abs(m.term - term) / 720;
+                    score += termFit * 30;
+                    /* Базовый бонус Госуслуг */
+                    score += m.approvalBoost * 0.3;
+                    /* Малая сумма ≤15к — приоритет Займер (+5к) и Вебзайм (+40%) */
+                    if (amount <= 15000 && (m.name === 'Займер' || m.name === 'Вебзайм')) score += 15;
+                    /* Средняя сумма 15-30к — приоритет КэшТуЮ и еКапуста */
+                    if (amount > 15000 && amount <= 30000 && (m.name === 'КэшТуЮ' || m.name === 'еКапуста')) score += 12;
+                    /* Большая сумма >30к — приоритет Надо Денег и Быстроденьги */
+                    if (amount > 30000 && (m.name === 'Надо Денег' || m.name === 'Быстроденьги')) score += 15;
+                    /* Длинный срок >60 — приоритет До зарплаты и ДоброЗайм */
+                    if (term > 60 && (m.name === 'До зарплаты' || m.name === 'ДоброЗайм')) score += 15;
+                    /* Очень длинный срок >180 — ДоброЗайм явный лидер */
+                    if (term > 180 && m.name === 'ДоброЗайм') score += 20;
+                    /* Короткий срок ≤14 — приоритет Вебзайм (0% до 14 дн) */
+                    if (term <= 14 && m.name === 'Вебзайм') score += 18;
+                    /* Средний срок 31-90 — приоритет Надо Денег */
+                    if (term > 30 && term <= 90 && m.name === 'Надо Денег') score += 12;
+                    if (score > bestScore) {
+                        bestScore = score;
+                        best = m;
+                    }
+                }
+                bestMfo.textContent = best.name;
+                bestBonus.textContent = best.bonus;
+            } else {
+                bestMfo.textContent = 'ДоброЗайм';
+                bestBonus.textContent = 'до 720 дней, макс. срок';
+            }
+
+            matchCount.textContent = matchedCount > 0 ? matchedCount : 9;
+        }
+
+        amountSlider.addEventListener('input', update);
+        termSlider.addEventListener('input', update);
+        update();
     }
 
     /* ============================
