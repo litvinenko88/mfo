@@ -14,6 +14,7 @@
         initMobileMenu();
         initCalculator();
         initFilter();
+        initWalletSelector();
         initFAQ();
         initScrollTop();
         initCookieConsent();
@@ -473,6 +474,134 @@
 
         /* Init state */
         updateFilter();
+    }
+
+    /* ============================
+       Wallet Selector (na-elektronnyj-koshelek)
+       Фильтрует карточки МФО по типу кошелька и сумме
+       ============================ */
+    function initWalletSelector() {
+        var walletTypes = document.getElementById('wallet-types');
+        var amountSlider = document.getElementById('wallet-amount');
+        if (!walletTypes || !amountSlider) return;
+
+        var amountDisplay = document.getElementById('wallet-amount-value');
+        var matchCount = document.getElementById('wallet-match-count');
+        var filterCount = document.getElementById('wallet-filter-count');
+        var speedEl = document.getElementById('wallet-speed');
+        var feeEl = document.getElementById('wallet-fee');
+        var submitBtn = document.getElementById('wallet-submit-btn');
+        var mfoGrid = document.getElementById('mfo-grid');
+        var activeWallet = 'all';
+
+        /* Данные о комиссиях и скорости по типу кошелька */
+        var walletInfo = {
+            all:      { speed: 'от 1 мин', fee: '0–1,6%' },
+            qiwi:     { speed: 'от 1 мин', fee: '0–1%' },
+            yoomoney: { speed: 'от 1 мин', fee: '0–0,5%' },
+            webmoney: { speed: 'от 3 мин', fee: '0,8–1,6%' }
+        };
+
+        function formatNumber(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function updateSliderFill(slider) {
+            var min = parseFloat(slider.min);
+            var max = parseFloat(slider.max);
+            var val = parseFloat(slider.value);
+            var pct = ((val - min) / (max - min)) * 100;
+            slider.style.background = 'linear-gradient(to right, #FF6B35 0%, #FF6B35 ' + pct + '%, #E2E8F0 ' + pct + '%, #E2E8F0 100%)';
+        }
+
+        function walletMatches(cardWallet, selectedWallet) {
+            if (selectedWallet === 'all') return true;
+            if (cardWallet === 'all') return true;
+            return cardWallet.indexOf(selectedWallet) !== -1;
+        }
+
+        function countMatching() {
+            if (!mfoGrid) return 0;
+            var cards = mfoGrid.querySelectorAll('.mfo-card');
+            var amount = parseInt(amountSlider.value, 10);
+            var count = 0;
+            for (var i = 0; i < cards.length; i++) {
+                var cardWallet = cards[i].getAttribute('data-wallet') || '';
+                var cardAmount = parseInt(cards[i].getAttribute('data-amount'), 10) || 0;
+                if (walletMatches(cardWallet, activeWallet) && amount <= cardAmount) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function applyFilter() {
+            if (!mfoGrid) return;
+            var cards = mfoGrid.querySelectorAll('.mfo-card');
+            var amount = parseInt(amountSlider.value, 10);
+            var visibleIdx = 0;
+            for (var i = 0; i < cards.length; i++) {
+                var cardWallet = cards[i].getAttribute('data-wallet') || '';
+                var cardAmount = parseInt(cards[i].getAttribute('data-amount'), 10) || 0;
+                var match = walletMatches(cardWallet, activeWallet) && amount <= cardAmount;
+                if (match) {
+                    cards[i].classList.remove('mfo-card--hidden-wallet');
+                    cards[i].classList.remove('mfo-card--dimmed');
+                    visibleIdx++;
+                    var rank = cards[i].querySelector('.mfo-card__rank');
+                    if (rank) rank.textContent = '#' + visibleIdx;
+                } else {
+                    cards[i].classList.add('mfo-card--hidden-wallet');
+                }
+            }
+        }
+
+        function update() {
+            var amount = parseInt(amountSlider.value, 10);
+            if (amountDisplay) amountDisplay.textContent = formatNumber(amount) + ' \u20BD';
+            updateSliderFill(amountSlider);
+
+            var count = countMatching();
+            if (matchCount) matchCount.textContent = count;
+            if (filterCount) filterCount.textContent = count;
+
+            var info = walletInfo[activeWallet] || walletInfo.all;
+            if (speedEl) speedEl.textContent = info.speed;
+            if (feeEl) feeEl.textContent = info.fee;
+        }
+
+        /* Wallet type buttons */
+        var btns = walletTypes.querySelectorAll('.wallet-type');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function() {
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].classList.remove('wallet-type--active');
+                }
+                this.classList.add('wallet-type--active');
+                activeWallet = this.getAttribute('data-wallet');
+                update();
+            });
+        }
+
+        /* Amount slider */
+        amountSlider.addEventListener('input', update);
+
+        /* Submit button — apply filter + scroll */
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                applyFilter();
+                var target = document.getElementById('mfo-rating');
+                if (target) {
+                    var headerHeight = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
+                    var top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        }
+
+        /* Init */
+        update();
     }
 
     /* ============================
