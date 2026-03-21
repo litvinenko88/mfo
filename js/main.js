@@ -1367,4 +1367,31 @@
         calculate();
     }
 
+    /* ===========================
+       LIVE STATUS WIDGET (kruglosutochno)
+       =========================== */
+    function initLiveWidget() {
+        var timeEl = document.getElementById('current-time');
+        var chartEl = document.getElementById('activity-chart');
+        if (!timeEl || !chartEl) return;
+
+        function updateTime() {
+            var now = new Date();
+            var h = String(now.getHours()).padStart(2, '0');
+            var m = String(now.getMinutes()).padStart(2, '0');
+            timeEl.textContent = h + ':' + m;
+
+            var bars = chartEl.querySelectorAll('.live-activity__bar');
+            bars.forEach(function(bar) {
+                var barHour = parseInt(bar.getAttribute('data-hour'), 10);
+                bar.classList.toggle('is-current', barHour === now.getHours());
+            });
+        }
+
+        updateTime();
+        setInterval(updateTime, 30000);
+    }
+
+    initLiveWidget();
+
 })();
