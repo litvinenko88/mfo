@@ -753,7 +753,7 @@
         var grid = document.getElementById('reviews-grid');
         if (!btn || !grid) return;
 
-        var totalReviews = grid.querySelectorAll('.review-card').length;
+        var totalReviews = grid.querySelectorAll('.reviews__card, .review-card').length;
         var expanded = false;
 
         btn.textContent = 'Показать все ' + totalReviews + ' отзывов';
