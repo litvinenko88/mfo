@@ -1034,9 +1034,6 @@
 
                 </div>
 
-                <button class="btn btn--outline btn--show-more" id="show-more-btn" type="button">
-                    Показать ещё
-                </button>
             </div>
         </section>
 
@@ -1148,13 +1145,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Лимит</td><td>До 100 000 ₽ (+5 000 ₽ бонус)</td><td>До 30 000 ₽ стандарт</td></tr>
-                            <tr><td>Скорость</td><td>2–5 минут</td><td>15–30 минут</td></tr>
-                            <tr><td>Процент одобрение</td><td>До 97% (бонус +40–90%)</td><td>60–75%</td></tr>
-                            <tr><td>Документы</td><td>Автозаполнение из профиля</td><td>Фото паспорта + селфи</td></tr>
-                            <tr><td>Заполнение</td><td>Автоматически</td><td>Вручную все поля</td></tr>
+                            <tr><td>Лимит</td><td>До 100 000 ₽ (бонус до +5 000 ₽)</td><td>До 100 000 ₽ (стандартный)</td></tr>
+                            <tr><td>Скорость оформления</td><td>2–5 минут</td><td>15–30 минут</td></tr>
+                            <tr><td>Одобрение</td><td>До 95% (повышенное на +40–90%)</td><td>60–75%</td></tr>
+                            <tr><td>Документы</td><td>Автозаполнение из профиля</td><td>Ввод вручную + фото паспорта</td></tr>
+                            <tr><td>Заполнение анкеты</td><td>Автоматически из ЕСИА</td><td>Вручную все поля</td></tr>
                             <tr><td>Первый займ 0%</td><td>Доступен</td><td>Доступен</td></tr>
-                            <tr><td>Кредитная история</td><td>Проверяется</td><td>Проверяется</td></tr>
+                            <tr><td>Верификация личности</td><td>Не требуется (подтверждена)</td><td>Селфи с паспортом</td></tr>
                             <tr><td>Погашение</td><td>Любым способом</td><td>Любым способом</td></tr>
                         </tbody>
                     </table>
@@ -1170,48 +1167,54 @@
                     <p class="section__subtitle">6 шагов от входа до зачисления средств. Весь процесс занимает 5–10 минут. Заем зачисляется на карту моментально.</p>
                 </div>
 
-                <div class="steps">
-                    <div class="step">
-                        <div class="step__number">1</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Проверьте учётную запись</h3>
-                            <p class="step__text">Зайдите на gosuslugi.ru и убедитесь, что аккаунт имеет статус «Подтверждённая». Если нет — подтвердите через МФЦ или банк.</p>
+                <div class="steps__grid steps__grid--3col">
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">1</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Проверьте учётную запись</h3>
+                        <p class="step-card__text">Зайдите на gosuslugi.ru и убедитесь, что аккаунт имеет статус «Подтверждённая». Если нет — подтвердите через МФЦ или банк.</p>
                     </div>
-                    <div class="step">
-                        <div class="step__number">2</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Выберите компанию из рейтинга</h3>
-                            <p class="step__text">В нашем рейтинге — 9 компаний с лицензией Банка России. Обратите внимание на бонус за вход.</p>
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">2</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Выберите компанию из рейтинга</h3>
+                        <p class="step-card__text">В нашем рейтинге — 9 компаний с лицензией Банка России. Обратите внимание на бонус за вход через Госуслуги.</p>
                     </div>
-                    <div class="step">
-                        <div class="step__number">3</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Войдите через Госуслуги</h3>
-                            <p class="step__text">На сайте компании нажмите «Войти через Госуслуги». Подтвердите передачу данных. Канал безопасный — данные шифруются.</p>
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">3</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Войдите через Госуслуги</h3>
+                        <p class="step-card__text">На сайте МФО нажмите «Войти через Госуслуги». Подтвердите передачу данных. Канал безопасный — данные шифруются по ГОСТ.</p>
                     </div>
-                    <div class="step">
-                        <div class="step__number">4</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Заполните данные</h3>
-                            <p class="step__text">Информация подтянется автоматически: ФИО, паспорт, СНИЛС. Укажите желаемую сумму и срок. Добавьте реквизиты карты.</p>
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">4</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Заполните анкету</h3>
+                        <p class="step-card__text">ФИО, паспорт и СНИЛС подтянутся автоматически. Укажите сумму, срок и реквизиты карты для получения.</p>
                     </div>
-                    <div class="step">
-                        <div class="step__number">5</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Дождитесь ответа</h3>
-                            <p class="step__text">Решение — за 2–10 минут. При подтверждённой записи одобрение выше на 40–90%. Если кредитной истории положительная — шанс ещё выше.</p>
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">5</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Дождитесь решения</h3>
+                        <p class="step-card__text">Ответ — за 2–10 минут. При подтверждённой записи одобрение выше на 40–90%. Положительная кредитная история повышает шанс.</p>
                     </div>
-                    <div class="step">
-                        <div class="step__number">6</div>
-                        <div class="step__content">
-                            <h3 class="step__title">Получите деньги на карту</h3>
-                            <p class="step__text">Подпишите договор SMS-кодом. Можно получить деньги на карту через СБП или банковский перевод — от 1 до 15 минут. Процентная ставка для повторных клиентов — 0,8% в день.</p>
+                    <div class="step-card">
+                        <div class="step-card__header">
+                            <span class="step-card__number">6</span>
+                            <span class="step-card__line"></span>
                         </div>
+                        <h3 class="step-card__title">Получите деньги на карту</h3>
+                        <p class="step-card__text">Подпишите договор SMS-кодом. Деньги поступят на карту через СБП или банковский перевод — от 1 до 15 минут.</p>
                     </div>
                 </div>
             </div>
@@ -1230,16 +1233,16 @@
                         <div class="top-card__rank">1</div>
                         <div class="top-card__content">
                             <h3 class="top-card__title">Лайк Мани</h3>
-                            <div class="top-card__bonus">+90% к одобрение</div>
-                            <p class="top-card__text">Заявка одобряется до 97%. Сумма заем от 2 000 до 100 000 ₽. Срок — до 180 дней. Новым клиентам под 0% на 7 дней. Оформление займа — за 5 минут. Работает круглосуточно.</p>
+                            <div class="top-card__bonus">+90% к одобрению</div>
+                            <p class="top-card__text">Максимальный бонус среди всех МФО. Сумма от 2 000 до 100 000 ₽, срок до 180 дней. Новым клиентам — 0% на 7 дней. Оформление за 5 минут, круглосуточно.</p>
                         </div>
                     </div>
                     <div class="top-card">
                         <div class="top-card__rank">2</div>
                         <div class="top-card__content">
                             <h3 class="top-card__title">Вебзайм</h3>
-                            <div class="top-card__bonus">+40% к одобрение</div>
-                            <p class="top-card__text">Сумма — до 30 000 ₽ на срок до 30 дней. Первый заем под 0% на 14 дней. Не требуется — выдают всем. Бонус +40% к шансу. Рассмотрение за 1 минуту.</p>
+                            <div class="top-card__bonus">+40% к одобрению</div>
+                            <p class="top-card__text">До 30 000 ₽ на срок до 30 дней. Первый заём под 0% на 14 дней. Выдают с любой кредитной историей. Рассмотрение заявки — за 1 минуту.</p>
                         </div>
                     </div>
                     <div class="top-card">
@@ -1247,7 +1250,7 @@
                         <div class="top-card__content">
                             <h3 class="top-card__title">Займер</h3>
                             <div class="top-card__bonus">+5 000 ₽ к сумме</div>
-                            <p class="top-card__text">Помощью аккаунта сумма увеличивается на 5 000 ₽. Заем до 30 000 ₽ на 7–30 дней. Рейтинг 4.88 на Сравни.ру. ПАО МКК «Займер» — работает с 2013 года. Рассмотрение за 2 минуты.</p>
+                            <p class="top-card__text">С аккаунтом Госуслуг сумма увеличивается на 5 000 ₽. Заём до 30 000 ₽ на 7–30 дней. Рейтинг 4.88 на Сравни.ру. Работает с 2013 года. Рассмотрение за 2 минуты.</p>
                         </div>
                     </div>
                 </div>
