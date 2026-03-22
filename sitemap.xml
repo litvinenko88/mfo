@@ -55,6 +55,18 @@
         <priority>0.3</priority>
     </url>
     <url>
+        <loc>https://zaimtop.ru/kruglosutochno/</loc>
+        <lastmod>2026-03-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://zaimtop.ru/na-elektronnyj-koshelek/</loc>
+        <lastmod>2026-03-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://zaimtop.ru/dengi-v-dolg/</loc>
         <lastmod>2026-03-22</lastmod>
         <changefreq>weekly</changefreq>
