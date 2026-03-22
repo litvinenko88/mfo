@@ -1402,26 +1402,61 @@
         if (!btns.length) return;
 
         var goals = {
-            repair:   { amount: '50 000 ₽', term: '90 дней',  count: '8'  },
-            medical:  { amount: '30 000 ₽', term: '60 дней',  count: '11' },
-            salary:   { amount: '15 000 ₽', term: '14 дней',  count: '14' },
-            purchase: { amount: '80 000 ₽', term: '180 дней', count: '6'  }
+            repair:   { amount: 50000, term: 90,  label: '50 000 ₽', termLabel: '90 дней'  },
+            medical:  { amount: 30000, term: 60,  label: '30 000 ₽', termLabel: '60 дней'  },
+            salary:   { amount: 15000, term: 14,  label: '15 000 ₽', termLabel: '14 дней'  },
+            purchase: { amount: 80000, term: 180, label: '80 000 ₽', termLabel: '180 дней' }
         };
+
+        var activeGoal = 'repair';
+
+        function filterCards(goalKey) {
+            var g = goals[goalKey];
+            if (!g) return;
+            var cards = document.querySelectorAll('.mfo-card');
+            var count = 0;
+
+            cards.forEach(function(card) {
+                var maxAmount = parseInt(card.getAttribute('data-amount'), 10) || 0;
+                var maxTerm = parseInt(card.getAttribute('data-term'), 10) || 0;
+                var fits = maxAmount >= g.amount && maxTerm >= g.term;
+
+                if (fits) {
+                    card.classList.remove('mfo-card--dimmed');
+                    count++;
+                } else {
+                    card.classList.add('mfo-card--dimmed');
+                }
+            });
+
+            var amEl = document.getElementById('goal-amount');
+            var tmEl = document.getElementById('goal-term');
+            var cnEl = document.getElementById('goal-count');
+            if (amEl) amEl.textContent = g.label;
+            if (tmEl) tmEl.textContent = g.termLabel;
+            if (cnEl) cnEl.textContent = count;
+        }
 
         btns.forEach(function(btn) {
             btn.addEventListener('click', function() {
                 btns.forEach(function(b) { b.classList.remove('goal-selector__btn--active'); });
                 btn.classList.add('goal-selector__btn--active');
-                var g = goals[btn.getAttribute('data-goal')];
-                if (!g) return;
-                var amEl = document.getElementById('goal-amount');
-                var tmEl = document.getElementById('goal-term');
-                var cnEl = document.getElementById('goal-count');
-                if (amEl) amEl.textContent = g.amount;
-                if (tmEl) tmEl.textContent = g.term;
-                if (cnEl) cnEl.textContent = g.count;
+                activeGoal = btn.getAttribute('data-goal');
+                filterCards(activeGoal);
             });
         });
+
+        var showBtn = document.querySelector('.btn--filter-submit');
+        if (showBtn) {
+            showBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                filterCards(activeGoal);
+                var target = document.getElementById('mfo-rating');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+
+        filterCards(activeGoal);
     })();
 
     /* ===========================
