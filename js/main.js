@@ -1394,4 +1394,123 @@
 
     initLiveWidget();
 
+    /* ===========================
+       GOAL SELECTOR (dengi-v-dolg)
+       =========================== */
+    (function initGoalSelector() {
+        var btns = document.querySelectorAll('.goal-selector__btn');
+        if (!btns.length) return;
+
+        var goals = {
+            repair:   { amount: '50 000 ₽', term: '90 дней',  count: '8'  },
+            medical:  { amount: '30 000 ₽', term: '60 дней',  count: '11' },
+            salary:   { amount: '15 000 ₽', term: '14 дней',  count: '14' },
+            purchase: { amount: '80 000 ₽', term: '180 дней', count: '6'  }
+        };
+
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                btns.forEach(function(b) { b.classList.remove('goal-selector__btn--active'); });
+                btn.classList.add('goal-selector__btn--active');
+                var g = goals[btn.getAttribute('data-goal')];
+                if (!g) return;
+                var amEl = document.getElementById('goal-amount');
+                var tmEl = document.getElementById('goal-term');
+                var cnEl = document.getElementById('goal-count');
+                if (amEl) amEl.textContent = g.amount;
+                if (tmEl) tmEl.textContent = g.term;
+                if (cnEl) cnEl.textContent = g.count;
+            });
+        });
+    })();
+
+    /* ===========================
+       CHECKLIST (dengi-v-dolg)
+       =========================== */
+    (function initChecklist() {
+        var checks = document.querySelectorAll('.checklist__checkbox');
+        if (!checks.length) return;
+        var total = checks.length;
+        var bar = document.getElementById('checklist-progress');
+        var txt = document.getElementById('checklist-text');
+
+        function update() {
+            var done = 0;
+            checks.forEach(function(c) { if (c.checked) done++; });
+            var pct = Math.round(done / total * 100);
+            if (bar) bar.style.width = pct + '%';
+            if (txt) txt.textContent = done + ' из ' + total + ' выполнено';
+        }
+
+        checks.forEach(function(c) {
+            c.addEventListener('change', update);
+        });
+    })();
+
+    /* ===========================
+       DEBT LOAD CALCULATOR — ПДН (dengi-v-dolg)
+       =========================== */
+    (function initDebtCalc() {
+        var incomeSlider = document.getElementById('monthly-income');
+        var paymentsSlider = document.getElementById('current-payments');
+        var loanSlider = document.getElementById('new-loan');
+        var termSlider = document.getElementById('loan-term-calc');
+        if (!incomeSlider) return;
+
+        var incomeVal = document.getElementById('income-value');
+        var paymentsVal = document.getElementById('payments-value');
+        var loanVal = document.getElementById('loan-value');
+        var termVal = document.getElementById('term-value');
+        var pdnEl = document.getElementById('pdn-value');
+        var monthlyEl = document.getElementById('monthly-payment');
+        var overpayEl = document.getElementById('overpay-value');
+        var statusEl = document.getElementById('pdn-status');
+
+        function fmt(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function calc() {
+            var income = parseInt(incomeSlider.value, 10);
+            var payments = parseInt(paymentsSlider.value, 10);
+            var loan = parseInt(loanSlider.value, 10);
+            var term = parseInt(termSlider.value, 10);
+
+            if (incomeVal) incomeVal.textContent = fmt(income) + ' ₽';
+            if (paymentsVal) paymentsVal.textContent = fmt(payments) + ' ₽';
+            if (loanVal) loanVal.textContent = fmt(loan) + ' ₽';
+            if (termVal) termVal.textContent = term + ' дней';
+
+            var dailyRate = 0.008;
+            var overpay = Math.round(loan * dailyRate * term);
+            var totalReturn = loan + overpay;
+            var monthlyPayment = Math.round(totalReturn / Math.max(term / 30, 1));
+            var pdn = income > 0 ? Math.round((payments + monthlyPayment) / income * 100) : 0;
+
+            if (pdnEl) pdnEl.textContent = pdn + '%';
+            if (monthlyEl) monthlyEl.textContent = fmt(monthlyPayment) + ' ₽';
+            if (overpayEl) overpayEl.textContent = fmt(overpay) + ' ₽';
+
+            if (statusEl) {
+                statusEl.className = 'debt-calc__result-status';
+                if (pdn <= 30) {
+                    statusEl.classList.add('debt-calc__result-status--ok');
+                    statusEl.textContent = '✓ Низкая нагрузка — высокая вероятность одобрения';
+                } else if (pdn <= 50) {
+                    statusEl.classList.add('debt-calc__result-status--warning');
+                    statusEl.textContent = '⚠ Средняя нагрузка — одобрение возможно с ограничениями';
+                } else {
+                    statusEl.classList.add('debt-calc__result-status--danger');
+                    statusEl.textContent = '✗ Высокая нагрузка — есть риск отказа';
+                }
+            }
+        }
+
+        [incomeSlider, paymentsSlider, loanSlider, termSlider].forEach(function(s) {
+            s.addEventListener('input', calc);
+        });
+
+        calc();
+    })();
+
 })();

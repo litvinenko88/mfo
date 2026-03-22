@@ -7530,6 +7530,650 @@ table {
     color: var(--color-primary);
 }
 
+
+/* ================================================================
+   DENGI-V-DOLG — уникальные блоки
+   ================================================================ */
+
+/* --- Goal Selector (подбор по цели займа) --- */
+.goal-selector__options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.goal-selector__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 13px;
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+.goal-selector__btn svg {
+    width: 28px;
+    height: 28px;
+    color: var(--color-text-muted);
+    transition: var(--transition);
+}
+
+.goal-selector__btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.goal-selector__btn:hover svg {
+    color: var(--color-accent);
+}
+
+.goal-selector__btn--active {
+    border-color: var(--color-accent);
+    background: rgba(255, 107, 53, 0.06);
+    color: var(--color-text);
+}
+
+.goal-selector__btn--active svg {
+    color: var(--color-accent);
+}
+
+.goal-selector__result {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+}
+
+.goal-selector__result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal-selector__result-label {
+    font-size: 14px;
+    color: var(--color-text-light);
+}
+
+.goal-selector__result-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .goal-selector__options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Market Stats (статистика рынка) --- */
+.market-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.market-stats__card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.market-stats__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.market-stats__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: rgba(15, 43, 70, 0.06);
+    color: var(--color-primary);
+}
+
+.market-stats__value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.market-stats__label {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.market-stats__trend {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+}
+
+.market-stats__trend--up {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.market-stats__trend--down {
+    background: #FEE2E2;
+    color: var(--color-danger);
+}
+
+@media (max-width: 900px) {
+    .market-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .market-stats__grid {
+        grid-template-columns: 1fr;
+    }
+    .market-stats__value {
+        font-size: 24px;
+    }
+}
+
+/* --- Borrowing Methods (способы получения) --- */
+.borrowing-methods__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.borrowing-methods__card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.borrowing-methods__card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.borrowing-methods__card--highlight {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.borrowing-methods__card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.borrowing-methods__card-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.borrowing-methods__card-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.borrowing-methods__card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.borrowing-methods__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.borrowing-methods__detail:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.borrowing-methods__detail-label {
+    font-size: 13px;
+    color: var(--color-text-light);
+}
+
+.borrowing-methods__detail-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: right;
+}
+
+.borrowing-methods__detail-value--success {
+    color: var(--color-success);
+}
+
+.borrowing-methods__detail-value--danger {
+    color: var(--color-danger);
+}
+
+.borrowing-methods__card-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 12px;
+    text-align: center;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.borrowing-methods__card-btn:hover {
+    background: var(--color-accent-hover);
+}
+
+@media (max-width: 900px) {
+    .borrowing-methods__grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    .borrowing-methods__card--highlight {
+        order: -1;
+    }
+}
+
+/* --- Checklist (чек-лист заёмщика) --- */
+.checklist__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 700px;
+    margin: 0 auto 24px;
+}
+
+.checklist__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.checklist__item:hover {
+    border-color: var(--color-accent);
+}
+
+.checklist__checkbox {
+    display: none;
+}
+
+.checklist__checkmark {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+    transition: var(--transition);
+}
+
+.checklist__checkmark svg {
+    opacity: 0;
+    transition: var(--transition);
+    color: var(--color-white);
+}
+
+.checklist__checkbox:checked ~ .checklist__checkmark {
+    background: var(--color-success);
+    border-color: var(--color-success);
+}
+
+.checklist__checkbox:checked ~ .checklist__checkmark svg {
+    opacity: 1;
+}
+
+.checklist__checkbox:checked ~ .checklist__text {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+}
+
+.checklist__text {
+    font-size: 15px;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.checklist__progress {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.checklist__progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.checklist__progress-fill {
+    height: 100%;
+    background: var(--color-success);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.checklist__progress-text {
+    font-size: 13px;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* --- Debt Calculator (калькулятор ПДН) --- */
+.debt-calc__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.debt-calc__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.debt-calc__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.debt-calc__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.debt-calc__input-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.debt-calc__input-row .calculator__slider {
+    flex: 1;
+}
+
+.debt-calc__value {
+    min-width: 100px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+.debt-calc__result {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    position: sticky;
+    top: 100px;
+}
+
+.debt-calc__result-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.debt-calc__result-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.debt-calc__result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.debt-calc__result-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.debt-calc__result-label {
+    font-size: 14px;
+    color: var(--color-text-light);
+}
+
+.debt-calc__result-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.debt-calc__result-status {
+    padding: 14px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.debt-calc__result-status--ok {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.debt-calc__result-status--warning {
+    background: #FEF3C7;
+    color: var(--color-warning);
+}
+
+.debt-calc__result-status--danger {
+    background: #FEE2E2;
+    color: var(--color-danger);
+}
+
+@media (max-width: 768px) {
+    .debt-calc__wrapper {
+        grid-template-columns: 1fr;
+    }
+    .debt-calc__result {
+        position: static;
+    }
+}
+
+/* --- Common Mistakes (типичные ошибки) --- */
+.common-mistakes__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.common-mistakes__card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.common-mistakes__card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.common-mistakes__number {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-danger);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.common-mistakes__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-bottom: 14px;
+}
+
+.common-mistakes__icon--danger {
+    background: #FEE2E2;
+    color: var(--color-danger);
+}
+
+.common-mistakes__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.common-mistakes__text {
+    font-size: 14px;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .common-mistakes__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .common-mistakes__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Legal (юридические аспекты) --- */
+.legal__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.legal__card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    transition: var(--transition);
+}
+
+.legal__card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.legal__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: rgba(15, 43, 70, 0.06);
+    color: var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.legal__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.legal__text {
+    font-size: 14px;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .legal__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .schedule-compare__card--highlight .schedule-compare__card-icon {
     background: rgba(255, 255, 255, 0.15);
     color: var(--color-white);
