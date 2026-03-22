@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +55,88 @@
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": []
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Что такое онлайн-заём?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Это короткий заем от микрофинансовой компании из списка ЦБ РФ. Оформление — онлайн за 5–15 минут. Нужен паспорт. Лимит — от 1 000 до 100 000 ₽, срок — от 5 до 365 дней."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие документы нужны для оформления?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Паспорт РФ. Справка, СНИЛС и другие документы не требуются. Заполняется онлайн за 2–5 минут."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Сколько можно получить?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Новым — от 3 000 до 20 000 ₽. С каждым повторным обращением лимит растёт."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как быстро приходят средства?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Решение — от 5 минут. Зачисление — 5–15 минут. Зависит от эмитента карты. Большинство компаний работают через СБП — моментально."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Одобрят ли с плохой историей?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да. Многие компании работают с любым скорингом. Лимит может быть ограничен — от 3 000 до 10 000 ₽."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какая максимальная ставка?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "0,8% в день — это предел, установленный ЦБ РФ. Первый — от 0% на 7–30 дней. Итоговые начисления не могут превышать 130% от тела."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как вернуть досрочно?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Через личный кабинет, картой или в платёжных терминалах. Досрочный возврат — без штрафов. Обязаны пересчитать за фактические дни."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Безопасно ли оформлять онлайн?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, если компания проверена ЦБ РФ. Все данные защищены SSL-шифрованием. Обработка информации — по ФЗ-152."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Чем отличается от кредита?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Заем — быстро (5–15 минут), без справок, но ставка выше: до 0,8% в день. Кредит — дольше (1–5 дней), нужны документы, но ставка ниже: 6–30% годовых. Подходит для небольших лимитов на короткий срок."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли вернуть досрочно?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, по закону — без штрафов и комиссий. Обязаны пересчитать за фактические дни использования. Это лучший способ снизить итоговую стоимость."
+                }
+            }
+        ]
     }
     </script>
 
@@ -195,9 +276,9 @@
                             Обновлено: <time datetime="2026-03-22">22 марта 2026</time>
                         </div>
 
-                        <h1 class="hero__title"><!-- H1 заголовок — добавить позже --></h1>
+                        <h1 class="hero__title">Заем на любые цели - деньги в долг ТОП рейтинг банков МФО 2026</h1>
 
-                        <p class="hero__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                        <p class="hero__subtitle">Быстрый заем на карту в день обращения. Займ на любые нужды — от 5 000 до 100 000 ₽. Быстрое решение — одобрение за 5 минут. Нужен только паспорт. Используйте виджет подбора: ремонт, лечение, до зарплаты, крупная покупка. Все компании из списка Банка России.</p>
                     </div>
 
                     <!-- Уникальный виджет: подбор по цели займа -->
@@ -247,53 +328,8 @@
             </div>
         </section>
 
-        <!-- ======================== 3. СТАТИСТИКА РЫНКА МИКРОЗАЙМОВ РФ — инфографика ======================== -->
-        <section class="section section--alt market-stats" id="market-stats">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
-                </div>
-
-                <div class="market-stats__grid">
-                    <div class="market-stats__card">
-                        <div class="market-stats__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div class="market-stats__value">14,2 млн</div>
-                        <div class="market-stats__label">заёмщиков в России</div>
-                        <div class="market-stats__trend market-stats__trend--up">+8% за год</div>
-                    </div>
-                    <div class="market-stats__card">
-                        <div class="market-stats__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <div class="market-stats__value">18 500 ₽</div>
-                        <div class="market-stats__label">средняя сумма займа</div>
-                        <div class="market-stats__trend market-stats__trend--up">+12% к 2025</div>
-                    </div>
-                    <div class="market-stats__card">
-                        <div class="market-stats__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                        </div>
-                        <div class="market-stats__value">0,8%</div>
-                        <div class="market-stats__label">макс. ставка / день</div>
-                        <div class="market-stats__trend market-stats__trend--down">снижена ЦБ</div>
-                    </div>
-                    <div class="market-stats__card">
-                        <div class="market-stats__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        </div>
-                        <div class="market-stats__value">1 316</div>
-                        <div class="market-stats__label">МФО в реестре ЦБ</div>
-                        <div class="market-stats__trend">данные на март 2026</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================== 4. РЕЙТИНГ МФО — деньги в долг, март 2026 ======================== -->
-        <section class="section" id="mfo-rating">
+        <!-- ======================== 3. РЕЙТИНГ МФО — деньги в долг, март 2026 ======================== -->
+        <section class="section section--alt" id="mfo-rating">
             <div class="container">
                 <div class="rating-header">
                     <div class="rating-header__top">
@@ -306,8 +342,8 @@
                             Все из реестра ЦБ РФ
                         </span>
                     </div>
-                    <h2 class="rating-header__title"><!-- Заголовок рейтинга — добавить позже --></h2>
-                    <p class="rating-header__subtitle"><!-- Описание рейтинга — добавить позже --></p>
+                    <h2 class="rating-header__title">Рейтинг — оформить онлайн заем, март 2026</h2>
+                    <p class="rating-header__subtitle">Актуальный — 12 компаний из списка ЦБ. Одобрение от 5 минут. Условие — с любой кредитной историей. Онлайн займ на карту. Клиентам с хорошей историей — до 100 000 рублей. Первый — от 0%, до 30 000 ₽.</p>
                     <div class="rating-header__stats">
                         <div class="rating-header__stat">
                             <span class="rating-header__stat-value">12</span>
@@ -1222,12 +1258,57 @@
             </div>
         </section>
 
+        <!-- ======================== 4. СТАТИСТИКА РЫНКА МИКРОЗАЙМОВ РФ — инфографика ======================== -->
+        <section class="section market-stats" id="market-stats">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Рынок микрозаймов в России: статистика 2026</h2>
+                    <p class="section__subtitle">Данные ЦБ по рынку микрофинансовых организаций за 2025–2026 год. Средний лимит вырос на 12%. Микрофинансирование доступно в каждом регионе — от Москвы до Дальнего Востока. Микрокредитование пользуется спросом у 14,2 млн человек. Максимальная ставка по закону — 0,8% в день. В списке ЦБ на март 2026 — более 1 316 компаний.</p>
+                </div>
+
+                <div class="market-stats__grid">
+                    <div class="market-stats__card">
+                        <div class="market-stats__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="market-stats__value">14,2 млн</div>
+                        <div class="market-stats__label">заёмщиков в России</div>
+                        <div class="market-stats__trend market-stats__trend--up">+8% за год</div>
+                    </div>
+                    <div class="market-stats__card">
+                        <div class="market-stats__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div class="market-stats__value">18 500 ₽</div>
+                        <div class="market-stats__label">средняя сумма займа</div>
+                        <div class="market-stats__trend market-stats__trend--up">+12% к 2025</div>
+                    </div>
+                    <div class="market-stats__card">
+                        <div class="market-stats__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        </div>
+                        <div class="market-stats__value">0,8%</div>
+                        <div class="market-stats__label">макс. ставка / день</div>
+                        <div class="market-stats__trend market-stats__trend--down">снижена ЦБ</div>
+                    </div>
+                    <div class="market-stats__card">
+                        <div class="market-stats__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <div class="market-stats__value">1 316</div>
+                        <div class="market-stats__label">МФО в реестре ЦБ</div>
+                        <div class="market-stats__trend">данные на март 2026</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ======================== 5. СПОСОБЫ ПОЛУЧЕНИЯ: МФО vs банк vs частный заём ======================== -->
         <section class="section section--alt" id="borrowing-methods">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                    <h2 class="section__title">Как выбирать — заём или кредит наличными</h2>
+                    <p class="section__subtitle">Три способа получить деньги. Сравните сумма расходов, скорость и требования. Т-Банк, отделения Сбербанка и другие учреждения выдают кредит — нужны справок о доходах и пакет документов. Помимо этого предлагают вклад и дебетовый карты. Наличными — от 50 000 до 3 000 000 ₽ под 6–30% годовых. Заем предоставляется ооо мфк и мкк — без залогов и без поручитель. Здесь не нужна справка. Лимит — от 1 000 до 500 000 ₽, перевод на Банковскую карту за 5 минут. Получить деньги можно на электронный кошелёк. Частный долг — высокий риск мошенничества. Нет контроля со стороны ЦБ. Документы не регулируются. Не рекомендуем.</p>
                 </div>
 
                 <div class="borrowing-methods__grid">
@@ -1330,8 +1411,8 @@
         <section class="section" id="checklist">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                    <h2 class="section__title">Заявка на заем — чек-лист заёмщика</h2>
+                    <p class="section__subtitle">7 пунктов, которые стоит проверить перед подачи заявки.</p>
                 </div>
 
                 <div class="checklist__grid">
@@ -1340,49 +1421,49 @@
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 1 — добавить позже --></span>
+                        <span class="checklist__text">Компания в списке ЦБ — инн, огрн и допуск подтверждены</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 2 — добавить позже --></span>
+                        <span class="checklist__text">На сайте указаны реквизиты юридического лица — ао, адрес, контакты</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 3 — добавить позже --></span>
+                        <span class="checklist__text">Условие прозрачно: ставка, срок займа, итоговая сумма возврата</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 4 — добавить позже --></span>
+                        <span class="checklist__text">Дополнительная услуга не навязана, обслуживание — бесплатно</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 5 — добавить позже --></span>
+                        <span class="checklist__text">Свидетельство о включении в список ЦБ — проверяйте на cbr.ru</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 6 — добавить позже --></span>
+                        <span class="checklist__text">В приложении и личном кабинете виден каждый платеж</span>
                     </label>
                     <label class="checklist__item">
                         <input type="checkbox" class="checklist__checkbox">
                         <span class="checklist__checkmark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
                         </span>
-                        <span class="checklist__text"><!-- Пункт 7 — добавить позже --></span>
+                        <span class="checklist__text">Конфиденциальность: личная информация защищена по ФЗ-152</span>
                     </label>
                 </div>
 
@@ -1399,8 +1480,8 @@
         <section class="section section--alt" id="debt-calc">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                    <h2 class="section__title">Калькулятор ПДН — рассчитайте сумму и срок</h2>
+                    <p class="section__subtitle">Укажите ежемесячный доход и текущие обязательства. Калькулятор покажет размер ежемесячного платежа и допустимую нагрузку. Если ПДН выше 50% — могут ограничить выдачу или отказать. Оптимальная нагрузка — не более 30% от заработка.</p>
                 </div>
 
                 <div class="debt-calc__wrapper">
@@ -1463,8 +1544,8 @@
         <section class="section" id="common-mistakes">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                    <h2 class="section__title">Типичные ошибки — как оформлять заем правильно</h2>
+                    <p class="section__subtitle">6 ошибок, из-за которых растёт переплата. Не рискуйте репутацией.</p>
                 </div>
 
                 <div class="common-mistakes__grid">
@@ -1473,48 +1554,48 @@
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 1 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Не проверяют список ЦБ</h3>
+                        <p class="common-mistakes__text">Оформлять только в проверенных компаниях. Финансовый надзор ведёт Банк России — ищите номер на сайте организации.</p>
                     </div>
                     <div class="common-mistakes__card">
                         <div class="common-mistakes__number">2</div>
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 2 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Берут на максимальный срок</h3>
+                        <p class="common-mistakes__text">Чем больше срок — тем выше проценты. Можно погасить досрочно без штрафов.</p>
                     </div>
                     <div class="common-mistakes__card">
                         <div class="common-mistakes__number">3</div>
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 3 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Не считают полную стоимость</h3>
+                        <p class="common-mistakes__text">Рассчитайте итоговую стоимость заранее. Используйте калькулятор на этой странице.</p>
                     </div>
                     <div class="common-mistakes__card">
                         <div class="common-mistakes__number">4</div>
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 4 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Берут повторно до закрытия текущего</h3>
+                        <p class="common-mistakes__text">Пользоваться деньгами из нескольких источников — серьёзный риск. Закройте текущий, потом оформляйте новый.</p>
                     </div>
                     <div class="common-mistakes__card">
                         <div class="common-mistakes__number">5</div>
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 5 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Указывать ложные данные</h3>
+                        <p class="common-mistakes__text">Компания проверяет информацию через базы. Ложные данные — нарушение закона.</p>
                     </div>
                     <div class="common-mistakes__card">
                         <div class="common-mistakes__number">6</div>
                         <div class="common-mistakes__icon common-mistakes__icon--danger">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
-                        <h3 class="common-mistakes__title"><!-- Ошибка 6 — добавить позже --></h3>
-                        <p class="common-mistakes__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="common-mistakes__title">Не следят за графиком</h3>
+                        <p class="common-mistakes__text">Каждый платеж нужно возвращать в срок. Просрочка ведёт к штрафам и коллекторам.</p>
                     </div>
                 </div>
             </div>
@@ -1523,7 +1604,7 @@
         <!-- ======================== 9. ПОШАГОВАЯ ИНСТРУКЦИЯ — как взять деньги в долг ======================== -->
         <section class="section section--alt how-to-get" id="steps">
             <div class="container">
-                <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
+                <h2 class="section__title">Как получить деньги в долг — 5 шагов</h2>
 
                 <div class="how-to-get__steps">
                     <div class="how-to-get__step">
@@ -1536,8 +1617,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                             </div>
                             <div class="how-to-get__step-content">
-                                <h3><!-- Шаг 1 — добавить позже --></h3>
-                                <p><!-- Описание — добавить позже --></p>
+                                <h3>Шаг 1: Изучите предложения</h3>
+                                <p>Сравните параметры компаний. Обратите внимание на ставку, лимит и длительность.</p>
                             </div>
                         </div>
                     </div>
@@ -1551,8 +1632,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                             </div>
                             <div class="how-to-get__step-content">
-                                <h3><!-- Шаг 2 — добавить позже --></h3>
-                                <p><!-- Описание — добавить позже --></p>
+                                <h3>Шаг 2: Заполните заявку</h3>
+                                <p>Укажите паспортные данные и выберите параметры. Процедура занимает 2–5 минут.</p>
                             </div>
                         </div>
                     </div>
@@ -1566,8 +1647,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             </div>
                             <div class="how-to-get__step-content">
-                                <h3><!-- Шаг 3 — добавить позже --></h3>
-                                <p><!-- Описание — добавить позже --></p>
+                                <h3>Шаг 3: Получите одобрение</h3>
+                                <p>Автоматическая проверка данных. Решение — от 5 минут. Доступно с любой историей.</p>
                             </div>
                         </div>
                     </div>
@@ -1581,8 +1662,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                             </div>
                             <div class="how-to-get__step-content">
-                                <h3><!-- Шаг 4 — добавить позже --></h3>
-                                <p><!-- Описание — добавить позже --></p>
+                                <h3>Шаг 4: Средства на карту</h3>
+                                <p>Зачисление на карту за 5–15 минут. Другие способы — на электронный кошелёк.</p>
                             </div>
                         </div>
                     </div>
@@ -1595,8 +1676,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             </div>
                             <div class="how-to-get__step-content">
-                                <h3><!-- Шаг 5 — добавить позже --></h3>
-                                <p><!-- Описание — добавить позже --></p>
+                                <h3>Шаг 5: Возврат по графику</h3>
+                                <p>Контролируйте погашение через онлайн-сервис. Досрочный возврат — без штрафов. Каждый взнос — вовремя.</p>
                             </div>
                         </div>
                     </div>
@@ -1608,8 +1689,8 @@
         <section class="section" id="legal">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок — добавить позже --></p>
+                    <h2 class="section__title">Юридические аспекты МФО — кредит и заем: права заёмщика</h2>
+                    <p class="section__subtitle">Правовое регулирование в России.</p>
                 </div>
 
                 <div class="legal__grid">
@@ -1617,29 +1698,29 @@
                         <div class="legal__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
-                        <h3 class="legal__title"><!-- Пункт 1 — добавить позже --></h3>
-                        <p class="legal__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="legal__title">Защита по закону</h3>
+                        <p class="legal__text">Деятельность регулируется ФЗ-151. Реестр ведёт ЦБ РФ. Максимальная ставка — 0,8% в день. Общие начисления не могут превысить 130% от тела долга. Контроль — на стороне государства.</p>
                     </div>
                     <div class="legal__card">
                         <div class="legal__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                         </div>
-                        <h3 class="legal__title"><!-- Пункт 2 — добавить позже --></h3>
-                        <p class="legal__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="legal__title">Досрочный возврат</h3>
+                        <p class="legal__text">Заёмщик имеет право вернуть досрочно без штрафов. Обязаны пересчитать за фактические дни. Это снижает итоговую стоимость.</p>
                     </div>
                     <div class="legal__card">
                         <div class="legal__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
-                        <h3 class="legal__title"><!-- Пункт 3 — добавить позже --></h3>
-                        <p class="legal__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="legal__title">Право на информацию</h3>
+                        <p class="legal__text">Обязаны указать ПСК, все нюансы и комиссии до подписания договора. Финансовый параметры — в открытом доступе.</p>
                     </div>
                     <div class="legal__card">
                         <div class="legal__icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         </div>
-                        <h3 class="legal__title"><!-- Пункт 4 — добавить позже --></h3>
-                        <p class="legal__text"><!-- Описание — добавить позже --></p>
+                        <h3 class="legal__title">Защита данных</h3>
+                        <p class="legal__text">Обработка персональных данных — по ФЗ-152. Информация третьим лицам не передаётся.</p>
                     </div>
                 </div>
             </div>
@@ -1652,8 +1733,8 @@
                     <div class="reviews-header__icon">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     </div>
-                    <h2 class="reviews-header__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="reviews-header__desc"><!-- Описание — добавить позже --></p>
+                    <h2 class="reviews-header__title">Отзывы заёмщиков</h2>
+                    <p class="reviews-header__desc">45 отзывов от реальных заёмщиков. Средняя оценка 4.2 из 5.</p>
                     <div class="reviews-header__stats">
                         <div class="reviews-header__stat">
                             <span class="reviews-header__stat-value">45</span>
@@ -1671,7 +1752,501 @@
                 </div>
 
                 <div class="reviews__grid" id="reviews-grid">
-                    <!-- Отзывы — добавить позже -->
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-189.jpg" alt="Алексей" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Алексей К., Москва</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформил микрозайм на карту за 10 минут. Всё просто, средства пришли быстро. Без звонков и лишних вопросов.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-190.jpg" alt="Марина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Марина В., Новосибирск</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Нужны были средства срочно на лечение. Подала ночью, одобрили за 3 минуты. На карту пришло сразу.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-191.jpg" alt="Дмитрий" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Дмитрий Л., Екатеринбург</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Первый займ оформил под 0%. Никаких скрытых комиссий. Вернул через 2 недели — всё как обещали.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-192.jpg" alt="Ольга" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Ольга С., Казань</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получила займ по паспорту за 5 минут. Без справок и поручителей. Очень удобно, когда нужно до зарплаты.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-193.jpg" alt="Иван" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Иван П., Самара</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Одобрили быстро, средства на карте через 10 минут. Ставка не самая низкая, но для срочных нужд — нормально.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-194.jpg" alt="Елена" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Елена Р., Ростов-на-Дону</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформила ночью, средства пришли утром. Круглосуточная работа — это огромный плюс.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-195.jpg" alt="Сергей" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Сергей Н., Краснодар</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Взял микрозайм на ремонт. Всё прозрачно, расписано в договоре. Вернул досрочно — пересчитали без проблем.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-196.jpg" alt="Анна" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Анна Г., Челябинск</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Займ без отказа — реально работает. У меня не лучшая история, но одобрили. Лимит небольшой, но мне хватило.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-197.jpg" alt="Виктор" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Виктор Б., Уфа</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★☆☆</div>
+                        </div>
+                        <p class="reviews__text">Одобрили, но лимит меньше, чем просил. Видимо, из-за истории. В целом — нормально.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-198.jpg" alt="Наталья" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Наталья Д., Пермь</span>
+                                <span class="reviews__date">март 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получила на электронный кошелёк за 2 минуты. Заполнила с телефона. Просто и быстро.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-199.jpg" alt="Андрей" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Андрей М., Волгоград</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Оформил займ на карту мгновенно. Без визита в офис. Всё онлайн. Для экстренных ситуаций — отличный вариант.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-200.jpg" alt="Светлана" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Светлана Т., Воронеж</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Нужен был микрозайм до зарплаты. Оформила за 5 минут, вернула через неделю. Стоимость минимальная.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-201.jpg" alt="Роман" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Роман Ж., Саратов</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Пользуюсь уже третий раз. Лимит растёт с каждым разом. Удобный интерфейс, всё прозрачно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-202.jpg" alt="Татьяна" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Татьяна И., Тюмень</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Пришло на карту за 7 минут. Никаких дополнительных платных услуг. Досрочный возврат — без штрафов.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-203.jpg" alt="Павел" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Павел Е., Тольятти</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★☆☆☆</div>
+                        </div>
+                        <p class="reviews__text">Одобрили, но процент высокий. На 30 дней ещё терпимо, но на длительный срок — дороговато.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-204.jpg" alt="Людмила" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Людмила К., Ижевск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получила займ онлайн по паспорту. Быстро, без звонков на работу. Для меня это важно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-205.jpg" alt="Максим" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Максим О., Барнаул</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Займ оформил через приложение — удобно. На карте через 10 минут. Ставка стандартная.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-206.jpg" alt="Екатерина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Екатерина Ш., Хабаровск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Впервые оформила микрозайм. Всё понятно, без мелкого шрифта. Первый раз — под 0%, это приятно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-207.jpg" alt="Олег" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Олег Ф., Оренбург</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★☆☆</div>
+                        </div>
+                        <p class="reviews__text">Подойдёт, если нужно быстро и немного. Для крупных расходов — дорого, лучше другие варианты.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-208.jpg" alt="Ирина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Ирина В., Рязань</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформила на займ без справок. Одобрили мгновенно. На карту — 3 минуты.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-209.jpg" alt="Кирилл" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Кирилл Т., Пенза</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Занял до зарплаты. Вернул вовремя — стоимость небольшая. Удобно, что всё онлайн.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-210.jpg" alt="Валентина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Валентина М., Липецк</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получила на карту быстро. Заполнила за 3 минуты. Никаких скрытых нюансов.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-211.jpg" alt="Денис" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Денис А., Калининград</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Срочно нужны были средства на покупку. Оформил в 2 часа ночи, одобрили сразу. Круглосуточно — это реально.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-212.jpg" alt="Юлия" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Юлия С., Астрахань</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Пришло на карту быстро. Но хотелось бы ставку пониже. В целом — удобнее, чем ходить по отделениям.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-213.jpg" alt="Артём" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Артём Р., Томск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Первый займ бесплатно — проверил, работает. Вернул через 10 дней — 0 рублей стоимости.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-214.jpg" alt="Галина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Галина Н., Кемерово</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★☆☆</div>
+                        </div>
+                        <p class="reviews__text">Получила, но лимит маленький для первого раза. Говорят, потом вырастет.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-215.jpg" alt="Вадим" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Вадим Х., Тула</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформил микрозайм на карту. Без поручителей и справок. Паспорт и 5 минут времени.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-216.jpg" alt="Диана" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Диана Ж., Курск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Займ без отказа — подтверждаю. Есть просрочки в истории, но одобрили. Дали 10 000.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-217.jpg" alt="Михаил" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Михаил Б., Ставрополь</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Удобный интерфейс. Вижу график, могу вернуть досрочно. Сервис на уровне.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-218.jpg" alt="Зоя" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Зоя Л., Иваново</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★☆☆☆☆</div>
+                        </div>
+                        <p class="reviews__text">Процент высокий, не ожидала. Нужно внимательно читать договор. Для длительного срока — невыгодно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-219.jpg" alt="Григорий" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Григорий С., Брянск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">На карту за 5 минут. Оформил полностью онлайн. Проще, чем ходить по отделениям.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-220.jpg" alt="Надежда" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Надежда П., Владивосток</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Подала из дома. На карте через 12 минут. Для экстренных расходов — подходит.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-221.jpg" alt="Антон" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Антон Г., Сочи</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получил первый микрозайм под 0 процентов. Вернул через 2 недели, ничего лишнего. Рекомендую.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-222.jpg" alt="Лариса" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Лариса Ф., Мурманск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Нужны были средства на лечение. Одобрили ночью. На карте — через 5 минут.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-223.jpg" alt="Евгений" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Евгений К., Якутск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★☆☆☆</div>
+                        </div>
+                        <p class="reviews__text">Одобрили, но лимит минимальный. С моей историей — ожидаемо. Ставка тоже высокая.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-224.jpg" alt="Вера" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Вера Д., Калуга</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Микрозайм оформила онлайн за 7 минут. Без залога и поручителей. Всё честно и прозрачно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-225.jpg" alt="Станислав" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Станислав М., Орёл</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Пользуюсь второй раз. Лимит увеличили. Удобно продлить, если не успеваешь вернуть.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-226.jpg" alt="Алла" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Алла В., Смоленск</span>
+                                <span class="reviews__date">февраль 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Пришло на карту мгновенно. Подала с телефона. Первый раз — бесплатно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-227.jpg" alt="Тимур" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Тимур Н., Махачкала</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформил по паспорту. Без лишних документов. Всё быстро и понятно.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-228.jpg" alt="Оксана" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Оксана Е., Чебоксары</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★☆☆</div>
+                        </div>
+                        <p class="reviews__text">Быстро, но ставка кусается. Для небольших лимитов на короткий срок — нормально.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-229.jpg" alt="Руслан" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Руслан А., Нижний Новгород</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Получил займ с плохой историей. Дали 10 000. Для моей ситуации — хороший вариант.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-230.jpg" alt="Мария" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Мария Т., Ярославль</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★☆</div>
+                        </div>
+                        <p class="reviews__text">Оформила микрозайм без звонков работодателю. Быстрая проверка, на карту — моментально.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-231.jpg" alt="Александр" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Александр У., Белгород</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Срочно нужны были средства до зарплаты. Оформил за 5 минут. Зачисление — мгновенное.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-232.jpg" alt="Полина" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Полина И., Владимир</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★☆☆☆☆</div>
+                        </div>
+                        <p class="reviews__text">Слишком высокий процент. На месяц ещё можно, но на полгода — дороговато.</p>
+                    </div>
+                    <div class="reviews__card">
+                        <div class="reviews__header">
+                            <img class="reviews__avatar" src="../images/avatars/avatar-233.jpg" alt="Георгий" width="40" height="40" loading="lazy">
+                            <div class="reviews__meta">
+                                <span class="reviews__name">Георгий Р., Архангельск</span>
+                                <span class="reviews__date">январь 2026</span>
+                            </div>
+                            <div class="reviews__rating">★★★★★</div>
+                        </div>
+                        <p class="reviews__text">Оформил ночью, получил через 8 минут. Круглосуточный сервис — это удобно.</p>
+                    </div>
                 </div>
                 <button class="btn btn--outline reviews__toggle-btn" id="reviews-toggle" type="button">Показать все отзывы</button>
             </div>
@@ -1684,12 +2259,51 @@
                     <div class="faq-header__icon">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                     </div>
-                    <h2 class="faq-header__title"><!-- Заголовок — добавить позже --></h2>
-                    <p class="faq-header__desc"><!-- Описание — добавить позже --></p>
+                    <h2 class="faq-header__title">Часто задаваемые вопросы — заем на карту</h2>
+                    <p class="faq-header__desc">10 ответов на популярные вопросы заёмщиков</p>
                 </div>
 
                 <div class="faq">
-                    <!-- FAQ items — добавить позже -->
+                    <details class="faq__item">
+                        <summary class="faq__question">Что такое онлайн-заём?</summary>
+                        <div class="faq__answer"><p>Это короткий заем от микрофинансовой компании из списка ЦБ РФ. Оформление — онлайн за 5–15 минут. Нужен паспорт. Лимит — от 1 000 до 100 000 ₽, срок — от 5 до 365 дней.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Какие документы нужны для оформления?</summary>
+                        <div class="faq__answer"><p>Паспорт РФ. Справка, СНИЛС и другие документы не требуются. Заполняется онлайн за 2–5 минут.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Сколько можно получить?</summary>
+                        <div class="faq__answer"><p>В МКК — до 500 000 ₽, в МФК — до 1 000 000 ₽. Новым — от 3 000 до 20 000 ₽. С каждым повторным обращением лимит растёт.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Как быстро приходят средства?</summary>
+                        <div class="faq__answer"><p>Решение — от 5 минут. Зачисление — 5–15 минут. Зависит от эмитента карты. Большинство компаний работают через СБП — моментально.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Одобрят ли с плохой историей?</summary>
+                        <div class="faq__answer"><p>Да. Многие компании работают с любым скорингом. Лимит может быть ограничен — от 3 000 до 10 000 ₽.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Какая максимальная ставка?</summary>
+                        <div class="faq__answer"><p>0,8% в день — это предел, установленный ЦБ РФ. Первый — от 0% на 7–30 дней. Итоговые начисления не могут превышать 130% от тела.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Как вернуть досрочно?</summary>
+                        <div class="faq__answer"><p>Через личный кабинет, картой или в платёжных терминалах. Досрочный возврат — без штрафов. Обязаны пересчитать за фактические дни.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Безопасно ли оформлять онлайн?</summary>
+                        <div class="faq__answer"><p>Да, если компания проверена ЦБ РФ. Все данные защищены SSL-шифрованием. Обработка информации — по ФЗ-152.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Чем отличается от кредита?</summary>
+                        <div class="faq__answer"><p>Заем — быстро (5–15 минут), без справок, но ставка выше: до 0,8% в день. Кредит — дольше (1–5 дней), нужны документы, но ставка ниже: 6–30% годовых. Подходит для небольших лимитов на короткий срок.</p></div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">Можно ли вернуть досрочно?</summary>
+                        <div class="faq__answer"><p>Да, по закону — без штрафов и комиссий. Обязаны пересчитать за фактические дни использования. Это лучший способ снизить итоговую стоимость.</p></div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -1767,27 +2381,27 @@
                     <div class="methodology__item">
                         <div class="methodology__number">1</div>
                         <h3 class="methodology__item-title">Проверка лицензии</h3>
-                        <p class="methodology__item-desc"><!-- Текст — добавить позже --></p>
+                        <p class="methodology__item-desc">Каждую компанию проверяем по номеру свидетельства. Организации без допуска — не включаем.</p>
                     </div>
                     <div class="methodology__item">
                         <div class="methodology__number">2</div>
                         <h3 class="methodology__item-title">Анализ условий</h3>
-                        <p class="methodology__item-desc"><!-- Текст — добавить позже --></p>
+                        <p class="methodology__item-desc">Сравниваем ставки, лимиты, сроки, параметры для первого оформления. Учитываем ПСК и дополнительные комиссии.</p>
                     </div>
                     <div class="methodology__item">
                         <div class="methodology__number">3</div>
                         <h3 class="methodology__item-title">Тестирование</h3>
-                        <p class="methodology__item-desc"><!-- Текст — добавить позже --></p>
+                        <p class="methodology__item-desc">Проверяем скорость, качество интерфейса, удобство мобильного решения. Оцениваем время зачисления.</p>
                     </div>
                     <div class="methodology__item">
                         <div class="methodology__number">4</div>
                         <h3 class="methodology__item-title">Отзывы клиентов</h3>
-                        <p class="methodology__item-desc"><!-- Текст — добавить позже --></p>
+                        <p class="methodology__item-desc">Анализируем оценки на банки.ру, Сравни.ру, 2ГИС и Яндекс. Учитываем общий показатель и количество оценок.</p>
                     </div>
                     <div class="methodology__item">
                         <div class="methodology__number">5</div>
                         <h3 class="methodology__item-title">Обновление</h3>
-                        <p class="methodology__item-desc"><!-- Текст — добавить позже --></p>
+                        <p class="methodology__item-desc">Данные обновляем ежемесячно. Проверяем актуальность ставок, лимитов и статус в списке ЦБ.</p>
                     </div>
                 </div>
             </div>
@@ -1797,8 +2411,8 @@
         <section class="section seo-text" id="seo-text">
             <div class="container">
                 <article class="seo-text__content">
-                    <h2 class="seo-text__title"><!-- Заголовок — добавить позже --></h2>
-                    <!-- SEO-текст — добавить позже -->
+                    <h2 class="seo-text__title">Выгодный финансовый инструмент</h2>
+                    <p>Взять деньги через проверенные компании — способ решить финансовый вопрос. Доступно жителям Москвы и всех регионов. Для оформления — без справок, поручителей и обеспечения. Условие для новичков: ставка 0% на первый период до 100 000 ₽. Средства зачисляются на карту. Читайте отзывы, сравнивайте и делайте грамотный выбор.</p>
                 </article>
             </div>
         </section>
