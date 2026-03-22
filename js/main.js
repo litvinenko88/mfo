@@ -28,6 +28,7 @@
         initTermSlider();
         initFullCalculator();
         initBenefitCalc();
+        initAutoEstimator();
     }
 
     /* ============================
@@ -608,29 +609,15 @@
        FAQ Accordion
        ============================ */
     function initFAQ() {
-        var items = document.querySelectorAll('.faq__item');
+        var items = document.querySelectorAll('.faq-block__item');
         if (!items.length) return;
 
         items.forEach(function (item) {
-            var question = item.querySelector('.faq__question');
-            var answer = item.querySelector('.faq__answer');
-            if (!question || !answer) return;
-
-            question.addEventListener('click', function () {
-                var isActive = item.classList.contains('faq__item--active');
-
-                /* Close all */
+            item.addEventListener('toggle', function () {
+                if (!item.open) return;
                 items.forEach(function (el) {
-                    el.classList.remove('faq__item--active');
-                    var a = el.querySelector('.faq__answer');
-                    if (a) a.style.maxHeight = null;
+                    if (el !== item && el.open) el.open = false;
                 });
-
-                /* Open clicked if it was closed */
-                if (!isActive) {
-                    item.classList.add('faq__item--active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
             });
         });
     }
@@ -1036,6 +1023,577 @@
         amountSlider.addEventListener('input', update);
         termSlider.addEventListener('input', update);
         update();
+    }
+
+    /* ============================
+       Auto Estimator — Оценка залоговой стоимости авто
+       База средних рыночных цен РФ (2025–2026)
+       Алгоритм: базовая цена модели (нового авто) → коэфф. года → коэфф. пробега
+       ============================ */
+    function initAutoEstimator() {
+        var brandSelect = document.getElementById('car-brand');
+        var modelSelect = document.getElementById('car-model');
+        var yearSelect = document.getElementById('car-year');
+        var mileageInput = document.getElementById('car-mileage');
+        var mileageLabel = document.getElementById('mileage-value');
+        var carValueEl = document.getElementById('est-car-value');
+        var loanValueEl = document.getElementById('est-loan-value');
+        if (!brandSelect || !modelSelect) return;
+
+        /* ========== База данных: марки → модели → базовая цена нового (тыс. ₽) ========== */
+        var carDB = {
+            lada: {
+                name: 'LADA (ВАЗ)',
+                models: {
+                    granta:    { name: 'Granta',         price: 750 },
+                    vesta:     { name: 'Vesta',          price: 1250 },
+                    vesta_sw:  { name: 'Vesta SW Cross', price: 1450 },
+                    niva:      { name: 'Niva Travel',    price: 1200 },
+                    niva_leg:  { name: 'Niva Legend',    price: 850 },
+                    largus:    { name: 'Largus',         price: 1100 },
+                    priora:    { name: 'Priora',         price: 550 },
+                    kalina:    { name: 'Kalina',         price: 500 },
+                    x_ray:     { name: 'XRAY',           price: 1100 }
+                }
+            },
+            kia: {
+                name: 'Kia',
+                models: {
+                    rio:       { name: 'Rio',            price: 1600 },
+                    ceed:      { name: 'Ceed',           price: 2000 },
+                    cerato:    { name: 'Cerato',         price: 1900 },
+                    sportage:  { name: 'Sportage',       price: 2800 },
+                    sorento:   { name: 'Sorento',        price: 3500 },
+                    k5:        { name: 'K5',             price: 2500 },
+                    seltos:    { name: 'Seltos',         price: 2200 },
+                    soul:      { name: 'Soul',           price: 1800 },
+                    optima:    { name: 'Optima',         price: 2200 },
+                    mohave:    { name: 'Mohave',         price: 4200 }
+                }
+            },
+            hyundai: {
+                name: 'Hyundai',
+                models: {
+                    solaris:   { name: 'Solaris',        price: 1500 },
+                    creta:     { name: 'Creta',          price: 2200 },
+                    tucson:    { name: 'Tucson',         price: 2900 },
+                    santa_fe:  { name: 'Santa Fe',       price: 3800 },
+                    elantra:   { name: 'Elantra',        price: 2000 },
+                    sonata:    { name: 'Sonata',         price: 2700 },
+                    ix35:      { name: 'ix35',           price: 1800 },
+                    accent:    { name: 'Accent',         price: 1200 },
+                    palisade:  { name: 'Palisade',       price: 5000 }
+                }
+            },
+            toyota: {
+                name: 'Toyota',
+                models: {
+                    camry:     { name: 'Camry',          price: 3200 },
+                    corolla:   { name: 'Corolla',        price: 2300 },
+                    rav4:      { name: 'RAV4',           price: 3500 },
+                    land_cruiser: { name: 'Land Cruiser 300', price: 8500 },
+                    land_cruiser_prado: { name: 'Land Cruiser Prado', price: 5500 },
+                    hilux:     { name: 'Hilux',          price: 3800 },
+                    fortuner:  { name: 'Fortuner',       price: 4200 },
+                    alphard:   { name: 'Alphard',        price: 6000 },
+                    highlander:{ name: 'Highlander',     price: 4500 }
+                }
+            },
+            volkswagen: {
+                name: 'Volkswagen',
+                models: {
+                    polo:      { name: 'Polo',           price: 1700 },
+                    tiguan:    { name: 'Tiguan',         price: 3200 },
+                    golf:      { name: 'Golf',           price: 2500 },
+                    passat:    { name: 'Passat',         price: 2800 },
+                    touareg:   { name: 'Touareg',        price: 5500 },
+                    jetta:     { name: 'Jetta',          price: 2100 },
+                    taos:      { name: 'Taos',           price: 2600 },
+                    teramont:  { name: 'Teramont',       price: 4200 }
+                }
+            },
+            skoda: {
+                name: 'Škoda',
+                models: {
+                    rapid:     { name: 'Rapid',          price: 1600 },
+                    octavia:   { name: 'Octavia',        price: 2400 },
+                    kodiaq:    { name: 'Kodiaq',         price: 3200 },
+                    karoq:     { name: 'Karoq',          price: 2600 },
+                    superb:    { name: 'Superb',         price: 3000 },
+                    fabia:     { name: 'Fabia',          price: 1400 }
+                }
+            },
+            renault: {
+                name: 'Renault',
+                models: {
+                    logan:     { name: 'Logan',          price: 1200 },
+                    sandero:   { name: 'Sandero',        price: 1300 },
+                    duster:    { name: 'Duster',         price: 1800 },
+                    kaptur:    { name: 'Kaptur',         price: 1900 },
+                    arkana:    { name: 'Arkana',         price: 2100 },
+                    koleos:    { name: 'Koleos',         price: 2600 },
+                    megane:    { name: 'Megane',         price: 1700 },
+                    fluence:   { name: 'Fluence',        price: 1300 }
+                }
+            },
+            nissan: {
+                name: 'Nissan',
+                models: {
+                    qashqai:   { name: 'Qashqai',       price: 2500 },
+                    x_trail:   { name: 'X-Trail',        price: 2800 },
+                    almera:    { name: 'Almera',         price: 1100 },
+                    juke:      { name: 'Juke',           price: 1700 },
+                    murano:    { name: 'Murano',         price: 3500 },
+                    patrol:    { name: 'Patrol',         price: 6000 },
+                    teana:     { name: 'Teana',          price: 2000 },
+                    terrano:   { name: 'Terrano',        price: 1500 },
+                    pathfinder:{ name: 'Pathfinder',     price: 3000 }
+                }
+            },
+            bmw: {
+                name: 'BMW',
+                models: {
+                    series3:   { name: '3 серия',        price: 4000 },
+                    series5:   { name: '5 серия',        price: 5500 },
+                    series7:   { name: '7 серия',        price: 8500 },
+                    x1:        { name: 'X1',             price: 3800 },
+                    x3:        { name: 'X3',             price: 5000 },
+                    x5:        { name: 'X5',             price: 7000 },
+                    x6:        { name: 'X6',             price: 7500 },
+                    series1:   { name: '1 серия',        price: 2800 },
+                    x7:        { name: 'X7',             price: 9500 }
+                }
+            },
+            mercedes: {
+                name: 'Mercedes-Benz',
+                models: {
+                    c_class:   { name: 'C-Class',        price: 4500 },
+                    e_class:   { name: 'E-Class',        price: 6000 },
+                    s_class:   { name: 'S-Class',        price: 11000 },
+                    a_class:   { name: 'A-Class',        price: 3200 },
+                    gle:       { name: 'GLE',            price: 8000 },
+                    glc:       { name: 'GLC',            price: 5500 },
+                    gls:       { name: 'GLS',            price: 10000 },
+                    cla:       { name: 'CLA',            price: 3800 },
+                    glb:       { name: 'GLB',            price: 4200 }
+                }
+            },
+            audi: {
+                name: 'Audi',
+                models: {
+                    a3:        { name: 'A3',             price: 3200 },
+                    a4:        { name: 'A4',             price: 4000 },
+                    a6:        { name: 'A6',             price: 5500 },
+                    a8:        { name: 'A8',             price: 8500 },
+                    q3:        { name: 'Q3',             price: 3800 },
+                    q5:        { name: 'Q5',             price: 5000 },
+                    q7:        { name: 'Q7',             price: 7000 },
+                    q8:        { name: 'Q8',             price: 8000 }
+                }
+            },
+            mazda: {
+                name: 'Mazda',
+                models: {
+                    mazda3:    { name: 'Mazda3',         price: 2200 },
+                    mazda6:    { name: 'Mazda6',         price: 2700 },
+                    cx5:       { name: 'CX-5',           price: 2800 },
+                    cx9:       { name: 'CX-9',           price: 3800 },
+                    cx30:      { name: 'CX-30',          price: 2400 },
+                    cx3:       { name: 'CX-3',           price: 1800 }
+                }
+            },
+            ford: {
+                name: 'Ford',
+                models: {
+                    focus:     { name: 'Focus',          price: 1700 },
+                    mondeo:    { name: 'Mondeo',         price: 2200 },
+                    kuga:      { name: 'Kuga',           price: 2500 },
+                    explorer:  { name: 'Explorer',       price: 4500 },
+                    fiesta:    { name: 'Fiesta',         price: 1300 },
+                    ecosport:  { name: 'EcoSport',       price: 1600 }
+                }
+            },
+            chevrolet: {
+                name: 'Chevrolet',
+                models: {
+                    cruze:     { name: 'Cruze',          price: 1400 },
+                    aveo:      { name: 'Aveo',           price: 1000 },
+                    niva:      { name: 'Niva',           price: 1300 },
+                    captiva:   { name: 'Captiva',        price: 2000 },
+                    lacetti:   { name: 'Lacetti',        price: 900 },
+                    cobalt:    { name: 'Cobalt',         price: 1000 },
+                    tahoe:     { name: 'Tahoe',          price: 6000 },
+                    trailblazer:{ name: 'TrailBlazer',   price: 2400 }
+                }
+            },
+            mitsubishi: {
+                name: 'Mitsubishi',
+                models: {
+                    outlander: { name: 'Outlander',      price: 2800 },
+                    asx:       { name: 'ASX',            price: 2200 },
+                    pajero:    { name: 'Pajero',         price: 3200 },
+                    pajero_sport:{ name: 'Pajero Sport', price: 3500 },
+                    lancer:    { name: 'Lancer',         price: 1300 },
+                    l200:      { name: 'L200',           price: 3000 },
+                    eclipse:   { name: 'Eclipse Cross',  price: 2500 }
+                }
+            },
+            honda: {
+                name: 'Honda',
+                models: {
+                    civic:     { name: 'Civic',          price: 2100 },
+                    accord:    { name: 'Accord',         price: 2600 },
+                    crv:       { name: 'CR-V',           price: 3000 },
+                    hrv:       { name: 'HR-V',           price: 2200 },
+                    pilot:     { name: 'Pilot',          price: 4000 },
+                    fit:       { name: 'Fit / Jazz',     price: 1200 }
+                }
+            },
+            subaru: {
+                name: 'Subaru',
+                models: {
+                    forester:  { name: 'Forester',       price: 3200 },
+                    outback:   { name: 'Outback',        price: 3500 },
+                    xv:        { name: 'XV',             price: 2800 },
+                    impreza:   { name: 'Impreza',        price: 2200 },
+                    legacy:    { name: 'Legacy',         price: 2500 }
+                }
+            },
+            lexus: {
+                name: 'Lexus',
+                models: {
+                    rx:        { name: 'RX',             price: 5500 },
+                    nx:        { name: 'NX',             price: 4200 },
+                    es:        { name: 'ES',             price: 4500 },
+                    lx:        { name: 'LX',             price: 9000 },
+                    is:        { name: 'IS',             price: 4000 },
+                    gx:        { name: 'GX',             price: 6500 }
+                }
+            },
+            volvo: {
+                name: 'Volvo',
+                models: {
+                    xc60:      { name: 'XC60',           price: 4500 },
+                    xc90:      { name: 'XC90',           price: 6000 },
+                    xc40:      { name: 'XC40',           price: 3800 },
+                    s60:       { name: 'S60',            price: 3500 },
+                    s90:       { name: 'S90',            price: 4800 },
+                    v60:       { name: 'V60',            price: 3800 }
+                }
+            },
+            suzuki: {
+                name: 'Suzuki',
+                models: {
+                    vitara:    { name: 'Vitara',         price: 2100 },
+                    sx4:       { name: 'SX4',            price: 1600 },
+                    jimny:     { name: 'Jimny',          price: 2400 },
+                    swift:     { name: 'Swift',          price: 1400 },
+                    grand_vitara:{ name: 'Grand Vitara', price: 2600 }
+                }
+            },
+            peugeot: {
+                name: 'Peugeot',
+                models: {
+                    p308:      { name: '308',            price: 1800 },
+                    p408:      { name: '408',            price: 2000 },
+                    p3008:     { name: '3008',           price: 2500 },
+                    p5008:     { name: '5008',           price: 2800 },
+                    p208:      { name: '208',            price: 1500 }
+                }
+            },
+            citroen: {
+                name: 'Citroën',
+                models: {
+                    c4:        { name: 'C4',             price: 1800 },
+                    c5_air:    { name: 'C5 Aircross',    price: 2600 },
+                    c3_air:    { name: 'C3 Aircross',    price: 2000 },
+                    berlingo:  { name: 'Berlingo',       price: 1700 }
+                }
+            },
+            uaz: {
+                name: 'УАЗ',
+                models: {
+                    patriot:   { name: 'Patriot',        price: 1400 },
+                    hunter:    { name: 'Hunter',         price: 1000 },
+                    pickup:    { name: 'Pickup',         price: 1300 },
+                    bukhanka:  { name: 'Буханка',        price: 900 }
+                }
+            },
+            gaz: {
+                name: 'ГАЗ',
+                models: {
+                    gazel:     { name: 'ГАЗель Next',    price: 1800 },
+                    gazel_nn:  { name: 'ГАЗель NN',      price: 2500 },
+                    sobol:     { name: 'Соболь',         price: 1300 },
+                    volga:     { name: 'Волга',          price: 600 }
+                }
+            },
+            chery: {
+                name: 'Chery',
+                models: {
+                    tiggo4:    { name: 'Tiggo 4',        price: 1900 },
+                    tiggo7:    { name: 'Tiggo 7 Pro',    price: 2400 },
+                    tiggo8:    { name: 'Tiggo 8 Pro',    price: 2900 },
+                    arrizo8:   { name: 'Arrizo 8',       price: 2300 }
+                }
+            },
+            haval: {
+                name: 'Haval',
+                models: {
+                    jolion:    { name: 'Jolion',         price: 1900 },
+                    f7:        { name: 'F7 / F7x',      price: 2300 },
+                    h9:        { name: 'H9',             price: 3500 },
+                    dargo:     { name: 'Dargo',          price: 2800 },
+                    m6:        { name: 'M6',             price: 1600 }
+                }
+            },
+            geely: {
+                name: 'Geely',
+                models: {
+                    coolray:   { name: 'Coolray',        price: 1900 },
+                    atlas:     { name: 'Atlas Pro',      price: 2200 },
+                    monjaro:   { name: 'Monjaro',        price: 3200 },
+                    emgrand:   { name: 'Emgrand',        price: 1500 },
+                    tugella:   { name: 'Tugella',        price: 2600 }
+                }
+            },
+            changan: {
+                name: 'Changan',
+                models: {
+                    cs35:      { name: 'CS35 Plus',      price: 1700 },
+                    cs55:      { name: 'CS55 Plus',      price: 2100 },
+                    cs75:      { name: 'CS75 Plus',      price: 2500 },
+                    uni_v:     { name: 'UNI-V',          price: 2200 },
+                    uni_k:     { name: 'UNI-K',          price: 2800 }
+                }
+            },
+            omoda: {
+                name: 'OMODA',
+                models: {
+                    c5:        { name: 'C5',             price: 2200 },
+                    s5:        { name: 'S5',             price: 2000 }
+                }
+            },
+            exeed: {
+                name: 'EXEED',
+                models: {
+                    txl:       { name: 'TXL',            price: 3000 },
+                    vx:        { name: 'VX',             price: 3800 },
+                    lx:        { name: 'LX',             price: 2500 }
+                }
+            },
+            other: {
+                name: 'Другая марка',
+                models: {
+                    sedan:     { name: 'Седан (средний)', price: 1500 },
+                    suv:       { name: 'Кроссовер/SUV',  price: 2200 },
+                    premium:   { name: 'Премиум',        price: 4000 },
+                    economy:   { name: 'Эконом',         price: 800 },
+                    minivan:   { name: 'Минивэн',        price: 2500 },
+                    truck:     { name: 'Пикап/грузовой', price: 2000 }
+                }
+            }
+        };
+
+        /* ========== Заполняем <select> марок ========== */
+        var brandKeys = Object.keys(carDB);
+        for (var i = 0; i < brandKeys.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = brandKeys[i];
+            opt.textContent = carDB[brandKeys[i]].name;
+            brandSelect.appendChild(opt);
+        }
+
+        /* ========== При смене марки — заполняем модели ========== */
+        brandSelect.addEventListener('change', function () {
+            var brandKey = brandSelect.value;
+            modelSelect.innerHTML = '';
+
+            if (!brandKey || !carDB[brandKey]) {
+                modelSelect.disabled = true;
+                var ph = document.createElement('option');
+                ph.value = '';
+                ph.textContent = 'Сначала выберите марку';
+                modelSelect.appendChild(ph);
+                calculate();
+                return;
+            }
+
+            modelSelect.disabled = false;
+            var defOpt = document.createElement('option');
+            defOpt.value = '';
+            defOpt.textContent = 'Выберите модель';
+            modelSelect.appendChild(defOpt);
+
+            var models = carDB[brandKey].models;
+            var modelKeys = Object.keys(models);
+            for (var j = 0; j < modelKeys.length; j++) {
+                var mOpt = document.createElement('option');
+                mOpt.value = modelKeys[j];
+                mOpt.textContent = models[modelKeys[j]].name;
+                modelSelect.appendChild(mOpt);
+            }
+            calculate();
+        });
+
+        /* ========== Алгоритм расчёта ========== */
+        /*
+         * 1. Берём базовую цену модели (цена нового авто, тыс. ₽)
+         * 2. Применяем коэффициент амортизации по году выпуска:
+         *    - Каждый год авто теряет ~8–12% стоимости
+         *    - Первый год — максимальная потеря (~15%), далее замедляется
+         *    - Формула: K_год = e^(-0.09 × возраст) — экспоненциальная амортизация
+         *    - Минимум: 12% от новой цены для 20-летних авто
+         * 3. Применяем коэффициент по пробегу:
+         *    - Средний пробег ~15 тыс. км/год
+         *    - Если пробег выше нормы — снижение, ниже — бонус
+         *    - Формула: K_пробег = max(0.5, 1 - (пробег - норма) × 0.001)
+         * 4. Итог: цена = базовая × K_год × K_пробег
+         * 5. Максимальный займ = 80% от оценки
+         */
+        function calculate() {
+            var brandKey = brandSelect.value;
+            var modelKey = modelSelect.value;
+            var yearVal = parseInt(yearSelect.value, 10);
+            var mileage = parseInt(mileageInput.value, 10);
+
+            /* Обновляем лейбл пробега */
+            mileageLabel.textContent = mileage + ' тыс. км';
+
+            /* Если не все поля заполнены — показываем прочерк */
+            if (!brandKey || !modelKey || !yearVal) {
+                carValueEl.textContent = '— ₽';
+                loanValueEl.textContent = '— ₽';
+                return;
+            }
+
+            var brand = carDB[brandKey];
+            if (!brand || !brand.models[modelKey]) return;
+
+            var basePrice = brand.models[modelKey].price; /* тыс. ₽ */
+            var currentYear = 2026;
+            var age = currentYear - yearVal;
+            if (age < 0) age = 0;
+
+            /* Коэффициент амортизации по году */
+            var kYear;
+            if (age === 0) {
+                kYear = 0.95; /* Почти новый, лёгкая скидка */
+            } else if (age === 1) {
+                kYear = 0.82; /* Первый год — максимальная потеря */
+            } else {
+                /* Экспоненциальная амортизация: ~9% в год */
+                kYear = Math.exp(-0.09 * age);
+                /* Минимум 12% от новой цены */
+                if (kYear < 0.12) kYear = 0.12;
+            }
+
+            /* Коэффициент по пробегу */
+            /* Нормальный пробег = 15 тыс. км/год × возраст (мин. 1 год) */
+            var normalMileage = Math.max(15, 15 * Math.max(age, 1));
+            var mileageDiff = mileage - normalMileage; /* тыс. км отклонения */
+
+            var kMileage;
+            if (mileageDiff <= 0) {
+                /* Пробег ниже нормы — небольшой бонус (макс. +10%) */
+                kMileage = 1 + Math.min(0.10, Math.abs(mileageDiff) * 0.002);
+            } else {
+                /* Пробег выше нормы — снижение */
+                kMileage = 1 - mileageDiff * 0.0015;
+                if (kMileage < 0.50) kMileage = 0.50;
+            }
+
+            /* Премиум-марки меньше теряют в цене */
+            var premiumBrands = ['bmw', 'mercedes', 'audi', 'lexus', 'volvo'];
+            if (premiumBrands.indexOf(brandKey) !== -1 && age > 2) {
+                kYear *= 1.08; /* +8% удержание стоимости */
+                if (kYear > 0.95) kYear = 0.95;
+            }
+
+            /* Toyota / Lexus — лучшая ликвидность */
+            if (brandKey === 'toyota' || brandKey === 'lexus') {
+                kYear *= 1.05;
+                if (kYear > 0.95) kYear = 0.95;
+            }
+
+            /* Китайские авто — быстрее теряют */
+            var chineseBrands = ['chery', 'haval', 'geely', 'changan', 'omoda', 'exeed'];
+            if (chineseBrands.indexOf(brandKey) !== -1 && age > 1) {
+                kYear *= 0.92;
+            }
+
+            /* Итоговая цена */
+            var estimatedPrice = Math.round(basePrice * kYear * kMileage);
+            /* Округляем до 10 тыс. */
+            estimatedPrice = Math.round(estimatedPrice / 10) * 10;
+            if (estimatedPrice < 50) estimatedPrice = 50; /* Минимум 50 тыс. ₽ */
+
+            var maxLoan = Math.round(estimatedPrice * 0.8 / 10) * 10;
+
+            carValueEl.textContent = formatPrice(estimatedPrice) + ' ₽';
+            loanValueEl.textContent = formatPrice(maxLoan) + ' ₽';
+
+            /* Сохраняем для кнопки фильтрации */
+            currentLoanAmount = maxLoan * 1000; /* в рублях */
+        }
+
+        var currentLoanAmount = 0;
+
+        function formatPrice(thousands) {
+            /* thousands — в тысячах рублей, конвертируем в рубли */
+            var rub = thousands * 1000;
+            return rub.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        /* ========== Кнопка «Показать подходящие компании» ========== */
+        var ctaBtn = document.querySelector('.auto-estimator .btn--primary');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var cards = document.querySelectorAll('.mfo-card');
+                if (!cards.length) return;
+
+                var hasMatch = false;
+
+                for (var c = 0; c < cards.length; c++) {
+                    var card = cards[c];
+                    var cardMax = parseInt(card.getAttribute('data-amount'), 10) || 0;
+
+                    if (currentLoanAmount > 0 && cardMax >= currentLoanAmount) {
+                        /* Подходит — подсвечиваем */
+                        card.classList.add('mfo-card--match');
+                        card.classList.remove('mfo-card--dimmed');
+                        hasMatch = true;
+                    } else if (currentLoanAmount > 0) {
+                        /* Не подходит — приглушаем */
+                        card.classList.add('mfo-card--dimmed');
+                        card.classList.remove('mfo-card--match');
+                    } else {
+                        /* Нет расчёта — всё обычное */
+                        card.classList.remove('mfo-card--match', 'mfo-card--dimmed');
+                    }
+                }
+
+                /* Если ничего не подошло — показать все без фильтра */
+                if (!hasMatch && currentLoanAmount > 0) {
+                    for (var d = 0; d < cards.length; d++) {
+                        cards[d].classList.remove('mfo-card--dimmed', 'mfo-card--match');
+                    }
+                }
+
+                /* Скролл к рейтингу */
+                var target = document.getElementById('mfo-rating');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        /* ========== Слушатели событий ========== */
+        modelSelect.addEventListener('change', calculate);
+        yearSelect.addEventListener('change', calculate);
+        mileageInput.addEventListener('input', calculate);
+        calculate();
     }
 
     /* ============================
