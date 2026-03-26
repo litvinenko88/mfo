@@ -24,6 +24,7 @@
         initMfoDetails();
         initMfoSort();
         initMfoSortButtons();
+        initSortBar();
         initAffiliateTracking();
         initTermSlider();
         initFullCalculator();
@@ -853,6 +854,49 @@
                         btns[m].classList.remove('mfo-sort__btn--active');
                     }
                     btn.classList.add('mfo-sort__btn--active');
+                    sortCards(btn.getAttribute('data-sort'));
+                };
+            })(btns[k]));
+        }
+    }
+
+    /* ============================
+       Sort Bar (bez-procentov rating header)
+       ============================ */
+    function initSortBar() {
+        var bar = document.querySelector('.sort-bar');
+        if (!bar) return;
+
+        var btns = bar.querySelectorAll('.sort-bar__btn');
+        if (!btns.length) return;
+
+        var grid = document.getElementById('mfo-grid');
+        if (!grid) return;
+
+        function sortCards(sortKey) {
+            var cards = Array.prototype.slice.call(grid.querySelectorAll('.mfo-card'));
+
+            cards.sort(function (a, b) {
+                var aVal = parseFloat(a.getAttribute('data-' + sortKey)) || 0;
+                var bVal = parseFloat(b.getAttribute('data-' + sortKey)) || 0;
+                if (sortKey === 'rate') return aVal - bVal;
+                return bVal - aVal;
+            });
+
+            for (var j = 0; j < cards.length; j++) {
+                var rank = cards[j].querySelector('.mfo-card__rank');
+                if (rank) rank.textContent = '#' + (j + 1);
+                grid.appendChild(cards[j]);
+            }
+        }
+
+        for (var k = 0; k < btns.length; k++) {
+            btns[k].addEventListener('click', (function (btn) {
+                return function () {
+                    for (var m = 0; m < btns.length; m++) {
+                        btns[m].classList.remove('sort-bar__btn--active');
+                    }
+                    btn.classList.add('sort-bar__btn--active');
                     sortCards(btn.getAttribute('data-sort'));
                 };
             })(btns[k]));
@@ -2104,6 +2148,172 @@
         });
 
         calc();
+    })();
+
+    /* ============================
+       Promo Calc — Калькулятор переплаты после 0%
+       ============================ */
+    (function () {
+        var amountSlider = document.getElementById('promo-amount');
+        var freeDaysSlider = document.getElementById('promo-free-days');
+        var extraDaysSlider = document.getElementById('promo-extra-days');
+        if (!amountSlider || !freeDaysSlider || !extraDaysSlider) return;
+
+        var amountValue = document.getElementById('promo-amount-value');
+        var freeDaysValue = document.getElementById('promo-free-days-value');
+        var extraDaysValue = document.getElementById('promo-extra-days-value');
+        var resultFree = document.getElementById('promo-result-free');
+        var resultPaid = document.getElementById('promo-result-paid');
+
+        var RATE = 0.008; // 0.8% в день
+
+        function formatMoney(n) {
+            return n.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        function calc() {
+            var amount = parseInt(amountSlider.value, 10);
+            var freeDays = parseInt(freeDaysSlider.value, 10);
+            var extraDays = parseInt(extraDaysSlider.value, 10);
+
+            amountValue.textContent = formatMoney(amount);
+            freeDaysValue.textContent = freeDays + ' дней';
+            extraDaysValue.textContent = extraDays + ' дней';
+
+            // При возврате в срок — 0 переплата
+            resultFree.textContent = '0 ₽ переплата';
+
+            // При просрочке — проценты за все дни (льготный + просрочка)
+            if (extraDays > 0) {
+                var totalDays = freeDays + extraDays;
+                var interest = Math.round(amount * RATE * totalDays);
+                // Закон: переплата не более 1.5x тела
+                var maxInterest = Math.round(amount * 1.5);
+                if (interest > maxInterest) interest = maxInterest;
+                resultPaid.textContent = formatMoney(interest) + ' переплата';
+                resultPaid.classList.remove('promo-calc__result-value--success');
+                resultPaid.classList.add('promo-calc__result-value--warn');
+            } else {
+                resultPaid.textContent = '0 ₽';
+                resultPaid.classList.remove('promo-calc__result-value--warn');
+                resultPaid.classList.add('promo-calc__result-value--success');
+            }
+
+            // Подкрашиваем трек слайдеров
+            [amountSlider, freeDaysSlider, extraDaysSlider].forEach(function (s) {
+                var pct = ((s.value - s.min) / (s.max - s.min)) * 100;
+                s.style.background = 'linear-gradient(to right, var(--color-primary) ' + pct + '%, var(--color-border-light) ' + pct + '%)';
+            });
+        }
+
+        amountSlider.addEventListener('input', calc);
+        freeDaysSlider.addEventListener('input', calc);
+        extraDaysSlider.addEventListener('input', calc);
+
+        calc();
+    })();
+
+    /* ============================
+       Promo Ticker — auto month + rotation + countdown
+       ============================ */
+    (function () {
+        var MONTHS = [
+            'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+            'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'
+        ];
+
+        /* Заголовок с текущим месяцем */
+        var titleEl = document.getElementById('promo-ticker-title');
+        if (titleEl) {
+            var now = new Date();
+            var monthName = MONTHS[now.getMonth()];
+            var year = now.getFullYear();
+            titleEl.textContent = 'Действующие акции 0% — ' + monthName + ' ' + year;
+        }
+
+        /* Полный список МФО для ротации */
+        var ALL_MFO = [
+            { name: 'Kviku',           offer: '0% до 50 дней' },
+            { name: 'еКапуста',       offer: '0% до 30 дней' },
+            { name: 'Займер',          offer: '0% до 30 дней' },
+            { name: 'Бери Беру',       offer: '0% до 21 дня'  },
+            { name: 'HurmaCredit',     offer: '0% до 21 дня'  },
+            { name: 'Кредиска',        offer: '0% до 21 дня'  },
+            { name: 'Займиго',         offer: '0% до 21 дня'  },
+            { name: 'MoneyMan',        offer: '0% до 21 дня'  },
+            { name: 'Гринмани',        offer: '0% до 21 дня'  },
+            { name: 'Joymoney',        offer: '0% до 14 дней' },
+            { name: 'Вебзайм',         offer: '0% до 14 дней' },
+            { name: 'Быстроденьги',    offer: '0% до 10 дней' },
+            { name: 'Срочно Деньги',   offer: '0% до 7 дней'  },
+            { name: 'Лайк Мани',       offer: '0% до 7 дней'  },
+            { name: 'Credit7',         offer: '0% до 7 дней'  }
+        ];
+
+        /* Случайная выборка count элементов из массива */
+        function pickRandom(arr, count) {
+            var copy = arr.slice();
+            var result = [];
+            for (var i = 0; i < count && copy.length; i++) {
+                var idx = Math.floor(Math.random() * copy.length);
+                result.push(copy.splice(idx, 1)[0]);
+            }
+            return result;
+        }
+
+        /* Дата окончания акции — последний день текущего месяца */
+        function getEndOfMonth() {
+            var d = new Date();
+            var y = d.getFullYear();
+            var m = d.getMonth() + 1;
+            return y + '-' + (m < 10 ? '0' + m : m) + '-' +
+                   new Date(y, m, 0).getDate() + 'T23:59:59';
+        }
+
+        /* Генерируем 3 случайных МФО */
+        var listEl = document.getElementById('promo-ticker-list');
+        if (listEl) {
+            var picked = pickRandom(ALL_MFO, 3);
+            var endDate = getEndOfMonth();
+            var html = '';
+            picked.forEach(function (mfo) {
+                html +=
+                    '<div class="promo-ticker__item">' +
+                        '<div class="promo-ticker__company">' + mfo.name + '</div>' +
+                        '<div class="promo-ticker__offer">' + mfo.offer + '</div>' +
+                        '<div class="promo-ticker__countdown">' +
+                            '<span class="promo-ticker__countdown-label">До конца акции:</span>' +
+                            '<span class="promo-ticker__countdown-timer" data-end="' + endDate + '">-- дн. --:--:--</span>' +
+                        '</div>' +
+                    '</div>';
+            });
+            listEl.innerHTML = html;
+        }
+
+        /* Обратный отсчёт */
+        function pad(n) { return n < 10 ? '0' + n : n; }
+
+        function updateCountdowns() {
+            var timers = document.querySelectorAll('.promo-ticker__countdown-timer[data-end]');
+            if (!timers.length) return;
+            var now = Date.now();
+            timers.forEach(function (el) {
+                var end = new Date(el.getAttribute('data-end')).getTime();
+                var diff = end - now;
+                if (diff <= 0) {
+                    el.textContent = 'Акция завершена';
+                    return;
+                }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var s = Math.floor((diff % 60000) / 1000);
+                el.textContent = d + ' дн. ' + pad(h) + ':' + pad(m) + ':' + pad(s);
+            });
+        }
+
+        updateCountdowns();
+        setInterval(updateCountdowns, 1000);
     })();
 
 })();

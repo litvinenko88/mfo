@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -275,33 +275,10 @@
 
                     <!-- Уникальный виджет: Промо-счётчик акций 0% с обратным отсчётом -->
                     <div class="calculator promo-ticker" id="promo-ticker">
-                        <div class="calculator__title">Действующие акции 0% — март 2026</div>
+                        <div class="calculator__title" id="promo-ticker-title">Действующие акции 0%</div>
 
-                        <div class="promo-ticker__list">
-                            <div class="promo-ticker__item">
-                                <div class="promo-ticker__company">Kviku</div>
-                                <div class="promo-ticker__offer">0% до 50 дней</div>
-                                <div class="promo-ticker__countdown">
-                                    <span class="promo-ticker__countdown-label">До конца акции:</span>
-                                    <span class="promo-ticker__countdown-timer" data-end="2026-06-30T23:59:59">-- дн. --:--:--</span>
-                                </div>
-                            </div>
-                            <div class="promo-ticker__item">
-                                <div class="promo-ticker__company">еКапуста</div>
-                                <div class="promo-ticker__offer">0% до 30 дней</div>
-                                <div class="promo-ticker__countdown">
-                                    <span class="promo-ticker__countdown-label">До конца акции:</span>
-                                    <span class="promo-ticker__countdown-timer" data-end="2026-06-30T23:59:59">-- дн. --:--:--</span>
-                                </div>
-                            </div>
-                            <div class="promo-ticker__item">
-                                <div class="promo-ticker__company">Займер</div>
-                                <div class="promo-ticker__offer">0% до 30 дней</div>
-                                <div class="promo-ticker__countdown">
-                                    <span class="promo-ticker__countdown-label">До конца акции:</span>
-                                    <span class="promo-ticker__countdown-timer" data-end="2026-06-30T23:59:59">-- дн. --:--:--</span>
-                                </div>
-                            </div>
+                        <div class="promo-ticker__list" id="promo-ticker-list">
+                            <!-- МФО подставляются динамически из JS -->
                         </div>
 
                         <a href="#mfo-rating" class="btn btn--primary">Все предложения под 0% ↓</a>
@@ -321,52 +298,7 @@
             </div>
         </nav>
 
-        <!-- ======================== 3. КТО МОЖЕТ ПОЛУЧИТЬ БЕСПРОЦЕНТНЫЙ ЗАЙМ ======================== -->
-        <section class="section" id="who-eligible">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Кто может получить беспроцентный заем</h2>
-                    <p class="section__subtitle">Микрозайм под 0 доступен нескольким группам. Условия зависят от статуса клиента и конкретной компании.</p>
-                </div>
-
-                <div class="eligible-grid">
-                    <!-- Сегмент: Новые клиенты -->
-                    <div class="eligible-card">
-                        <div class="eligible-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-                        </div>
-                        <div class="eligible-card__title">Новые клиенты</div>
-                        <div class="eligible-card__text">МФО выдают займы под 0% для тех, кто обращается впервые. Сумма — от 1 000 до 30 000 ₽, срок 7–30 дней. Для оформления нужен только паспорт РФ — справка о доходах не требуется. Заявку онлайн подаёте на сайте за 3–5 минут. Одобрение автоматическое. Деньги на банковскую карту за 5–10 минут.</div>
-                    </div>
-                    <!-- Сегмент: Повторные клиенты -->
-                    <div class="eligible-card">
-                        <div class="eligible-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div class="eligible-card__title">Повторные клиенты</div>
-                        <div class="eligible-card__text">При возврата займа в установленный договором срок компания предлагает сниженную ставку или повторную акцию. Лимит увеличивается до 50 000–100 000 ₽. Кредитный рейтинг растёт с каждым своевременным закрытием долга.</div>
-                    </div>
-                    <!-- Сегмент: Студенты -->
-                    <div class="eligible-card">
-                        <div class="eligible-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                        </div>
-                        <div class="eligible-card__title">Студенты</div>
-                        <div class="eligible-card__text">Заем доступен с 18 лет. Оформить займ можно дистанционно, без визита в офис мфо. Займ онлайн за 5 минут. Деньги приходят на карту или электронный кошелёк. Наличными — через Золотую Корону.</div>
-                    </div>
-                    <!-- Сегмент: Пенсионеры -->
-                    <div class="eligible-card">
-                        <div class="eligible-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        </div>
-                        <div class="eligible-card__title">Пенсионеры</div>
-                        <div class="eligible-card__text">Возрастной порог — до 75–90 лет. Заемщик пенсионного возраста подаёт заявка на сайте. Достаточно паспорта и снилс. Получить деньги можно на карту Visa, Maestro или карты мир.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================== 4. РЕЙТИНГ МФО — ЗАЙМЫ БЕЗ ПРОЦЕНТОВ ======================== -->
+        <!-- ======================== 3. РЕЙТИНГ МФО — ЗАЙМЫ БЕЗ ПРОЦЕНТОВ ======================== -->
         <section class="section section--alt" id="mfo-rating">
             <div class="container">
                 <div class="rating-header">
@@ -420,7 +352,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="180" data-promo-days="50">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#1</span>
-                            <img src="../logos/22-kviku.svg" alt="Kviku — займ без процентов на 50 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/22-kviku.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 50 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -479,7 +411,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.99" data-term="30" data-promo-days="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#2</span>
-                            <img src="../logos/31-ekapusta.svg" alt="еКапуста — займ без процентов на 30 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/31-ekapusta.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -538,7 +470,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.8" data-term="30" data-promo-days="30">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#3</span>
-                            <img src="../logos/01-zajmer.svg" alt="Займер — займ без процентов на 30 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/01-zajmer.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -599,7 +531,7 @@
                     <div class="mfo-card" data-rating="4.6" data-amount="50000" data-rate="0.8" data-term="31" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#4</span>
-                            <img src="../logos/03-beriberu.svg" alt="Бери Беру — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/03-beriberu.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -657,7 +589,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="50000" data-rate="0.8" data-term="31" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#5</span>
-                            <img src="../logos/09-hurmacredit.svg" alt="HurmaCredit — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/09-hurmacredit.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -715,7 +647,7 @@
                     <div class="mfo-card" data-rating="4.6" data-amount="50000" data-rate="0.8" data-term="31" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#6</span>
-                            <img src="../logos/17-krediska.svg" alt="Кредиска — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/17-krediska.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -773,7 +705,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="50000" data-rate="0.8" data-term="31" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#7</span>
-                            <img src="../logos/18-zaymigo.svg" alt="Займиго — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/18-zaymigo.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -831,7 +763,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.8" data-term="33" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#8</span>
-                            <img src="../logos/20-moneyman.svg" alt="MoneyMan — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/20-moneyman.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -889,7 +821,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="30" data-promo-days="21">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#9</span>
-                            <img src="../logos/29-grinmani.svg" alt="Гринмани — займ без процентов на 21 день" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/29-grinmani.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -947,7 +879,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="30" data-promo-days="14">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#10</span>
-                            <img src="../logos/19-joymoney.svg" alt="Joymoney — займ без процентов на 14 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/19-joymoney.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 14 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1005,7 +937,7 @@
                     <div class="mfo-card" data-rating="4.1" data-amount="30000" data-rate="0.8" data-term="30" data-promo-days="14">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#11</span>
-                            <img src="../logos/26-webzaim.svg" alt="Вебзайм — займ без процентов на 14 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/26-webzaim.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 14 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1063,7 +995,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="21" data-promo-days="10">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#12</span>
-                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги — займ без процентов на 10 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/02-bystrodengi.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% на 10 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1121,7 +1053,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360" data-promo-days="7">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#13</span>
-                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги — займ без процентов на 7 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/08-srochnodengi.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1179,7 +1111,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="180" data-promo-days="7">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#14</span>
-                            <img src="../logos/05-like-money.svg" alt="Лайк Мани — займ без процентов на 7 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/05-like-money.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% на 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1237,7 +1169,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="30" data-promo-days="7">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#15</span>
-                            <img src="../logos/04-credit7.svg" alt="Credit7 — займ без процентов на 7 дней" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/04-credit7.svg" alt="Логотип МФО" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% на 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1291,6 +1223,51 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== 4. КТО МОЖЕТ ПОЛУЧИТЬ БЕСПРОЦЕНТНЫЙ ЗАЙМ ======================== -->
+        <section class="section" id="who-eligible">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Кто может получить беспроцентный заем</h2>
+                    <p class="section__subtitle">Микрозайм под 0 доступен нескольким группам. Условия зависят от статуса клиента и конкретной компании.</p>
+                </div>
+
+                <div class="eligible-grid">
+                    <!-- Сегмент: Новые клиенты -->
+                    <div class="eligible-card">
+                        <div class="eligible-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </div>
+                        <div class="eligible-card__title">Новые клиенты</div>
+                        <div class="eligible-card__text">МФО выдают займы под 0% для тех, кто обращается впервые. Сумма — от 1 000 до 30 000 ₽, срок 7–30 дней. Для оформления нужен только паспорт РФ — справка о доходах не требуется. Заявку онлайн подаёте на сайте за 3–5 минут. Одобрение автоматическое. Деньги на банковскую карту за 5–10 минут.</div>
+                    </div>
+                    <!-- Сегмент: Повторные клиенты -->
+                    <div class="eligible-card">
+                        <div class="eligible-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="eligible-card__title">Повторные клиенты</div>
+                        <div class="eligible-card__text">При возврата займа в установленный договором срок компания предлагает сниженную ставку или повторную акцию. Лимит увеличивается до 50 000–100 000 ₽. Кредитный рейтинг растёт с каждым своевременным закрытием долга.</div>
+                    </div>
+                    <!-- Сегмент: Студенты -->
+                    <div class="eligible-card">
+                        <div class="eligible-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <div class="eligible-card__title">Студенты</div>
+                        <div class="eligible-card__text">Заем доступен с 18 лет. Оформить займ можно дистанционно, без визита в офис мфо. Займ онлайн за 5 минут. Деньги приходят на карту или электронный кошелёк. Наличными — через Золотую Корону.</div>
+                    </div>
+                    <!-- Сегмент: Пенсионеры -->
+                    <div class="eligible-card">
+                        <div class="eligible-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="eligible-card__title">Пенсионеры</div>
+                        <div class="eligible-card__text">Возрастной порог — до 75–90 лет. Заемщик пенсионного возраста подаёт заявка на сайте. Достаточно паспорта и снилс. Получить деньги можно на карту Visa, Maestro или карты мир.</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1639,6 +1616,7 @@
                 <div class="reviews-grid" id="reviews-grid">
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-122.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Анна К.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-03-18">18 марта 2026</time>
@@ -1647,6 +1625,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-69.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Дмитрий В.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-03-15">15 марта 2026</time>
@@ -1655,6 +1634,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-52.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Елена С.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2026-03-12">12 марта 2026</time>
@@ -1663,6 +1643,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-70.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Максим Л.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-03-10">10 марта 2026</time>
@@ -1671,6 +1652,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-124.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Ольга Р.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-03-08">8 марта 2026</time>
@@ -1679,6 +1661,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-71.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Артём Н.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-03-05">5 марта 2026</time>
@@ -1687,6 +1670,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-54.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Ирина Г.</span>
                             <span class="review-card__stars">★★☆☆☆</span>
                             <time class="review-card__date" datetime="2026-03-03">3 марта 2026</time>
@@ -1695,6 +1679,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-72.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Сергей Т.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-03-01">1 марта 2026</time>
@@ -1703,6 +1688,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-130.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Наталья М.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-27">27 февраля 2026</time>
@@ -1711,6 +1697,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-73.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Алексей Д.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2026-02-25">25 февраля 2026</time>
@@ -1719,6 +1706,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-56.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Марина Б.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-22">22 февраля 2026</time>
@@ -1727,6 +1715,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-74.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Виктор П.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-02-20">20 февраля 2026</time>
@@ -1735,6 +1724,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-57.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Юлия К.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-18">18 февраля 2026</time>
@@ -1743,6 +1733,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-75.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Павел Ш.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2026-02-15">15 февраля 2026</time>
@@ -1751,6 +1742,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-58.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Татьяна В.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-12">12 февраля 2026</time>
@@ -1759,6 +1751,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-76.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Константин Р.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-02-10">10 февраля 2026</time>
@@ -1767,6 +1760,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-59.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Светлана А.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-08">8 февраля 2026</time>
@@ -1775,6 +1769,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-77.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Андрей Ф.</span>
                             <span class="review-card__stars">★★☆☆☆</span>
                             <time class="review-card__date" datetime="2026-02-05">5 февраля 2026</time>
@@ -1783,6 +1778,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-60.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Валентина И.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-02-03">3 февраля 2026</time>
@@ -1791,6 +1787,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-78.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Роман Г.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-02-01">1 февраля 2026</time>
@@ -1799,6 +1796,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-61.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Кристина О.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-01-28">28 января 2026</time>
@@ -1807,6 +1805,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-79.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Михаил Е.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2026-01-25">25 января 2026</time>
@@ -1815,6 +1814,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-62.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Людмила Т.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-01-22">22 января 2026</time>
@@ -1823,6 +1823,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-80.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Игорь С.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-01-20">20 января 2026</time>
@@ -1831,6 +1832,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-63.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Екатерина Н.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-01-17">17 января 2026</time>
@@ -1839,6 +1841,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-81.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Владимир К.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-01-15">15 января 2026</time>
@@ -1847,6 +1850,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-64.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Оксана М.</span>
                             <span class="review-card__stars">★★☆☆☆</span>
                             <time class="review-card__date" datetime="2026-01-12">12 января 2026</time>
@@ -1855,6 +1859,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-82.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Денис Р.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-01-10">10 января 2026</time>
@@ -1863,6 +1868,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-65.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Галина В.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2026-01-08">8 января 2026</time>
@@ -1871,6 +1877,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-83.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Евгений З.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2026-01-05">5 января 2026</time>
@@ -1879,6 +1886,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-166.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Анастасия П.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2026-01-03">3 января 2026</time>
@@ -1887,6 +1895,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-167.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Николай Л.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-30">30 декабря 2025</time>
@@ -1895,6 +1904,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-169.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Виктория Ж.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-12-28">28 декабря 2025</time>
@@ -1903,6 +1913,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-168.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Олег Б.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-25">25 декабря 2025</time>
@@ -1911,6 +1922,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-171.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Лариса Д.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2025-12-22">22 декабря 2025</time>
@@ -1919,6 +1931,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-170.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Станислав Х.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-20">20 декабря 2025</time>
@@ -1927,6 +1940,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-174.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Надежда Ф.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-12-18">18 декабря 2025</time>
@@ -1935,6 +1949,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-172.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Тимур А.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-15">15 декабря 2025</time>
@@ -1943,6 +1958,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-178.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Зинаида Е.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-12-12">12 декабря 2025</time>
@@ -1951,6 +1967,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-173.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Руслан М.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2025-12-10">10 декабря 2025</time>
@@ -1959,6 +1976,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-181.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Вера Ч.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-08">8 декабря 2025</time>
@@ -1967,6 +1985,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-175.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Георгий Н.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-12-05">5 декабря 2025</time>
@@ -1975,6 +1994,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-185.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Полина С.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-12-03">3 декабря 2025</time>
@@ -1983,6 +2003,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-176.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Иван О.</span>
                             <span class="review-card__stars">★★☆☆☆</span>
                             <time class="review-card__date" datetime="2025-12-01">1 декабря 2025</time>
@@ -1991,6 +2012,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-187.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Дарья Л.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-28">28 ноября 2025</time>
@@ -1999,6 +2021,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-101.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Антон Ц.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-11-25">25 ноября 2025</time>
@@ -2007,6 +2030,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-102.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Маргарита Г.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-22">22 ноября 2025</time>
@@ -2015,6 +2039,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-103.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Валерий Б.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2025-11-20">20 ноября 2025</time>
@@ -2023,6 +2048,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-104.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Алина Я.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-18">18 ноября 2025</time>
@@ -2031,6 +2057,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-105.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Борис Х.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-11-15">15 ноября 2025</time>
@@ -2039,6 +2066,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-106.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Регина В.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-12">12 ноября 2025</time>
@@ -2047,6 +2075,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-107.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Степан Ж.</span>
                             <span class="review-card__stars">★★★☆☆</span>
                             <time class="review-card__date" datetime="2025-11-10">10 ноября 2025</time>
@@ -2055,6 +2084,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-108.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Лилия М.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-08">8 ноября 2025</time>
@@ -2063,6 +2093,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-109.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Вадим Н.</span>
                             <span class="review-card__stars">★★★★☆</span>
                             <time class="review-card__date" datetime="2025-11-05">5 ноября 2025</time>
@@ -2071,6 +2102,7 @@
                     </div>
                     <div class="review-card">
                         <div class="review-card__header">
+                            <img src="../images/avatars/avatar-110.jpg" alt="" class="review-card__avatar" width="40" height="40" loading="lazy">
                             <span class="review-card__name">Александра Ю.</span>
                             <span class="review-card__stars">★★★★★</span>
                             <time class="review-card__date" datetime="2025-11-02">2 ноября 2025</time>
@@ -2098,96 +2130,96 @@
                     </div>
 
                     <div class="faq-block__list">
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">01</span>
                                 <span>Что значит деньги под 0 и как это работает?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Это акция для тех, кто обращается впервые. Ставка 0% действует в рамках льготного периода (7–50 дней). Вернёте вовремя — сверху 0 ₽. Нарушите срок — стандартный процент. Микрофинансовая организация зарабатывает на повторных обращениях.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">02</span>
                                 <span>Какие документы нужны для получения займа?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Паспорт РФ. Справки о доходах не требуются. Для увеличения суммы предлагают подтвердить данные через Госуслуги. Заявка онлайн — от 3 минут.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">03</span>
                                 <span>Можно ли получить заем с плохой кредитной историей?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
-                                <p>Да. Большинство компаний подтверждают запросы при низком рейтинге. Сумма ограничена (3 000–10 000 ₽), но отказ маловероятен. Микрокредитование — лояльнее банковский кредит.</p>
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Да. Большинство компаний подтверждают запросы при низком рейтинге. Сумма ограничена (3 000–10 000 ₽), но отказ маловероятен. Микрокредитование — лояльнее банковского кредита.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">04</span>
                                 <span>Как получить деньги — только на карту?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Нет. Заем можно получить на карту без процентов (Visa, Mastercard, МИР), банковский перевод, наличными через Золотую Корону или электронный кошелёк.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">05</span>
                                 <span>Что будет, если не вернуть заем вовремя?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Кредитор начислит 0,8–1% в день. Информация передаётся в БКИ, кредитная история портится. По закону общая сумма начислений не превышает 1,5x от тела долга.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">06</span>
                                 <span>Какая максимальная сумма под 0%?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>От 1 000 до 30 000 ₽ (в отдельных компаниях — до 100 000 ₽). Зависит от скоринга. При повторных — лимит увеличивается.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">07</span>
                                 <span>Можно ли займ на карту без справок и подтверждения дохода?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Да. Это стандартная практика. Проверка автоматическая по базам Банка России и БКИ.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">08</span>
                                 <span>Есть ли штраф за ранний возврат?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Нет. По ФЗ №353-ФЗ клиент имеет право на досрочное погашение кредита (в т.ч. микрозайм) без штрафов. Проценты пересчитываются за фактические дни.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">09</span>
                                 <span>Как проверить легальность компании?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Проверьте реестр ЦБ РФ на cbr.ru. Все легальные организации в России обязаны состоять в реестре и в СРО.</p>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-item__question" type="button" aria-expanded="false">
+                        </details>
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">10</span>
                                 <span>Правда ли, что 0% — это маркетинговый ход?</span>
-                                <span class="faq-item__arrow">&#9660;</span>
-                            </button>
-                            <div class="faq-item__answer">
+                            </summary>
+                            <div class="faq-block__answer">
                                 <p>Частично. Заем выдаётся под 0%, но только в рамках периода и впервые. Цель — привлечение для повторных обращений со ставкой. Если дисциплинированно возвращаете — получаете реально бесплатно.</p>
                             </div>
-                        </div>
+                        </details>
                     </div>
                 </div>
             </div>
