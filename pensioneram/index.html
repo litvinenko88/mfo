@@ -58,16 +58,16 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "До скольки лет оформляют заем?", "acceptedAnswer": {"@type": "Answer", "text": "Большинство компаний принимают до 75 лет. Отдельные — до 80, 85 и 90 лет."}},
-            {"@type": "Question", "name": "Нужна ли справка?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Достаточно паспорта."}},
-            {"@type": "Question", "name": "Какая ставка?", "acceptedAnswer": {"@type": "Answer", "text": "Первый заем — от 0% на 7–30 дней. Повторный — до 0,8% в день."}},
-            {"@type": "Question", "name": "С плохой историей дадут?", "acceptedAnswer": {"@type": "Answer", "text": "Микрофинансовых организаций лояльнее к рейтингу, чем банки. Шансы высокие."}},
-            {"@type": "Question", "name": "Как быстро придут средства?", "acceptedAnswer": {"@type": "Answer", "text": "За 5–15 минут на карту или наличными."}},
-            {"@type": "Question", "name": "Можно ли погасить раньше?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Без штрафов. Проценты пересчитываются за фактические дни."}},
-            {"@type": "Question", "name": "Нужен ли поручитель?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Компании выдают заем без поручителей."}},
-            {"@type": "Question", "name": "Принимают ли карта мир?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Средства зачисляются за 5–15 минут."}},
-            {"@type": "Question", "name": "Что делать при задержке возврата?", "acceptedAnswer": {"@type": "Answer", "text": "Обратитесь в компанию за реструктуризацией. Не игнорируйте платеж."}},
-            {"@type": "Question", "name": "Какие документы нужны?", "acceptedAnswer": {"@type": "Answer", "text": "Паспорт. Отдельные компании запрашивают СНИЛС."}}
+            {"@type": "Question", "name": "До скольки лет оформляют заем?", "acceptedAnswer": {"@type": "Answer", "text": "Большинство МФО принимают заявки от граждан до 75 лет. Отдельные компании (Займер, МигКредит) работают с заёмщиками до 80, 85 и даже 90 лет."}},
+            {"@type": "Question", "name": "Нужна ли справка о доходах?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Для оформления микрозайма достаточно паспорта РФ. Ни справка 2-НДФЛ, ни пенсионное удостоверение не требуются."}},
+            {"@type": "Question", "name": "Какая процентная ставка?", "acceptedAnswer": {"@type": "Answer", "text": "Первый заём — от 0% на срок 7–30 дней. Повторный — до 0,8% в день. Максимальная переплата ограничена законом: не более 130% от суммы долга."}},
+            {"@type": "Question", "name": "Дадут ли заём с плохой кредитной историей?", "acceptedAnswer": {"@type": "Answer", "text": "Микрофинансовые организации значительно лояльнее банков к кредитному рейтингу. Многие МФО одобряют заявки даже при низком скоринге."}},
+            {"@type": "Question", "name": "Как быстро придут деньги?", "acceptedAnswer": {"@type": "Answer", "text": "Средства зачисляются за 5–15 минут на банковскую карту или через СБП."}},
+            {"@type": "Question", "name": "Можно ли погасить заём досрочно?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Досрочное погашение без штрафов и комиссий. Проценты пересчитываются за фактические дни использования."}},
+            {"@type": "Question", "name": "Нужен ли поручитель или залог?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Все МФО из рейтинга выдают займы без поручителей, без залога и без визита в офис."}},
+            {"@type": "Question", "name": "Принимают ли карту «Мир»?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Все организации из рейтинга работают с картами «Мир». Средства зачисляются за 5–15 минут."}},
+            {"@type": "Question", "name": "Что делать при задержке возврата?", "acceptedAnswer": {"@type": "Answer", "text": "Свяжитесь с МФО до наступления просрочки и запросите реструктуризацию или продление."}},
+            {"@type": "Question", "name": "Какие документы нужны для оформления?", "acceptedAnswer": {"@type": "Answer", "text": "Паспорт гражданина РФ — единственный обязательный документ. Отдельные МФО дополнительно запрашивают СНИЛС или ИНН."}}
         ]
     }
     </script>
@@ -1441,108 +1441,202 @@
         <!-- ======================== 12. Государственные альтернативы: субсидии и соц. помощь ======================== -->
         <section class="section" id="gov-alternatives">
             <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Государственные альтернативы: субсидии и личный кабинет</h2>
-                    <p class="section__subtitle">Прежде чем оформлять заём, рассмотрите бесплатные государственные меры поддержки.</p>
-                </div>
 
-                <div class="gov-alternatives__grid">
-                    <div class="gov-alternatives__card">
-                        <h3 class="gov-alternatives__card-title">Субсидия на оплату ЖКХ</h3>
-                        <p class="gov-alternatives__card-text">Если расходы на коммуналку выше 22% от дохода — оформите субсидию в МФЦ или через Госуслуги. Срок: 6 месяцев с продлением.</p>
+                <!-- Заголовок блока -->
+                <div class="gov-alt__header">
+                    <div class="gov-alt__header-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M9 13h.01"/><path d="M15 13h.01"/></svg>
                     </div>
-                    <div class="gov-alternatives__card">
-                        <h3 class="gov-alternatives__card-title">Адресная материальная помощь (УСЗН)</h3>
-                        <p class="gov-alternatives__card-text">Единовременная выплата от 2 000 до 15 000 рублей. Обращайтесь в соцзащиту по месту жительства.</p>
-                    </div>
-                    <div class="gov-alternatives__card">
-                        <h3 class="gov-alternatives__card-title">Социальный контракт</h3>
-                        <p class="gov-alternatives__card-text">Помощь до 250 000 рублей при выполнении плана. Доступен для старшей аудитории.</p>
-                    </div>
-                    <div class="gov-alternatives__card">
-                        <h3 class="gov-alternatives__card-title">Региональные доплаты</h3>
-                        <p class="gov-alternatives__card-text">Если пенсия ниже прожиточного минимума — положена доплата. Обратитесь в ПФР.</p>
-                    </div>
-                    <div class="gov-alternatives__card">
-                        <h3 class="gov-alternatives__card-title">Компенсация расходов на лекарства</h3>
-                        <p class="gov-alternatives__card-text">Льготные категории получают бесплатные или со скидкой лекарства.</p>
+                    <div class="gov-alt__header-body">
+                        <h2 class="gov-alt__header-title">Государственные альтернативы: субсидии и личный кабинет</h2>
+                        <p class="gov-alt__header-desc">Прежде чем оформлять заём — рассмотрите бесплатные государственные меры поддержки</p>
                     </div>
                 </div>
 
-                <p class="section__text">Государственные альтернативы не требуют возврата и не влияют на финансовую репутацию. Если ваша потребность — ЖКХ, лекарства или продукты — сначала обратитесь в соцзащиту.</p>
+                <!-- Карточки -->
+                <div class="gov-alt__grid">
+
+                    <div class="gov-alt__card">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Субсидия на оплату ЖКХ</h3>
+                        <p class="gov-alt__card-text">Если расходы на коммуналку выше 22% от дохода — оформите субсидию в МФЦ или через Госуслуги. Срок: 6 месяцев с продлением.</p>
+                        <span class="gov-alt__card-tag">МФЦ / Госуслуги</span>
+                    </div>
+
+                    <div class="gov-alt__card">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Адресная материальная помощь (УСЗН)</h3>
+                        <p class="gov-alt__card-text">Единовременная выплата от 2 000 до 15 000 ₽. Обращайтесь в соцзащиту по месту жительства.</p>
+                        <span class="gov-alt__card-tag">до 15 000 ₽</span>
+                    </div>
+
+                    <div class="gov-alt__card">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Социальный контракт</h3>
+                        <p class="gov-alt__card-text">Помощь до 250 000 ₽ при выполнении индивидуального плана. Доступен для старшей аудитории.</p>
+                        <span class="gov-alt__card-tag">до 250 000 ₽</span>
+                    </div>
+
+                    <div class="gov-alt__card">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--orange">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Региональные доплаты к пенсии</h3>
+                        <p class="gov-alt__card-text">Если пенсия ниже прожиточного минимума — положена федеральная или региональная доплата. Обратитесь в СФР.</p>
+                        <span class="gov-alt__card-tag">СФР (бывш. ПФР)</span>
+                    </div>
+
+                    <div class="gov-alt__card">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--teal">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Компенсация расходов на лекарства</h3>
+                        <p class="gov-alt__card-text">Льготные категории получают бесплатные или со скидкой лекарства по рецепту врача.</p>
+                        <span class="gov-alt__card-tag">Поликлиника</span>
+                    </div>
+
+                    <div class="gov-alt__card gov-alt__card--highlight">
+                        <div class="gov-alt__card-icon gov-alt__card-icon--accent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </div>
+                        <h3 class="gov-alt__card-title">Важно помнить</h3>
+                        <p class="gov-alt__card-text">Государственные альтернативы не требуют возврата и не влияют на кредитную историю. Если нужны средства на ЖКХ, лекарства или продукты — сначала обратитесь в соцзащиту.</p>
+                        <span class="gov-alt__card-tag">Возврат не требуется</span>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
         <!-- ======================== 13. Часто задаваемые вопросы ======================== -->
         <section class="section section--alt" id="faq">
             <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Часто задаваемые вопросы: займы для пенсионеров</h2>
-                    <p class="section__subtitle">Ответы на популярные вопросы о займах для пенсионеров.</p>
+
+                <div class="faq-block">
+                    <!-- Заголовок FAQ -->
+                    <div class="faq-block__header">
+                        <div class="faq-block__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="faq-block__title">Часто задаваемые вопросы: займы для пенсионеров</h2>
+                            <p class="faq-block__desc">Ответы на 10 популярных вопросов о микрозаймах для старшей аудитории</p>
+                        </div>
+                    </div>
+
+                    <!-- Список вопросов -->
+                    <div class="faq-block__list">
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">1</span>
+                                До скольки лет оформляют заем?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Большинство МФО принимают заявки от граждан до 75 лет. Отдельные компании (Займер, МигКредит) работают с заёмщиками до 80, 85 и даже 90 лет. Верхняя граница указана на сайте каждой организации.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">2</span>
+                                Нужна ли справка о доходах?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Нет. Для оформления микрозайма достаточно паспорта РФ. Ни справка 2-НДФЛ, ни пенсионное удостоверение не требуются. Некоторые МФО дополнительно запрашивают СНИЛС.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">3</span>
+                                Какая процентная ставка?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Первый заём — от 0% на срок 7–30 дней (акция для новых клиентов). Повторный — до 0,8% в день. Максимальная переплата ограничена законом: не более 130% от суммы долга.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">4</span>
+                                Дадут ли заём с плохой кредитной историей?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Микрофинансовые организации значительно лояльнее банков к кредитному рейтингу. Многие МФО из рейтинга одобряют заявки даже при низком скоринге. Шансы на одобрение — от 70%.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">5</span>
+                                Как быстро придут деньги?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Средства зачисляются за 5–15 минут на банковскую карту (Мир, Visa, MasterCard) или через СБП. Наличные можно получить переводом в Contact или Золотая Корона.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">6</span>
+                                Можно ли погасить заём досрочно?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Да. Досрочное погашение — без штрафов и комиссий. Проценты пересчитываются за фактические дни использования средств.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">7</span>
+                                Нужен ли поручитель или залог?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Нет. Все МФО из рейтинга выдают займы без поручителей, без залога и без визита в офис. Всё оформляется онлайн.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">8</span>
+                                Принимают ли карту «Мир»?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Да. Все организации из рейтинга работают с картами «Мир» — это основной инструмент получения пенсий. Средства зачисляются за 5–15 минут.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">9</span>
+                                Что делать при задержке возврата?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Не игнорируйте платёж. Свяжитесь с МФО до наступления просрочки и запросите реструктуризацию или продление. Большинство компаний идут навстречу.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-block__item">
+                            <summary class="faq-block__question">
+                                <span class="faq-block__num">10</span>
+                                Какие документы нужны для оформления?
+                            </summary>
+                            <div class="faq-block__answer">
+                                <p>Паспорт гражданина РФ — единственный обязательный документ. Отдельные МФО дополнительно запрашивают СНИЛС или ИНН для ускорения проверки.</p>
+                            </div>
+                        </details>
+
+                    </div>
                 </div>
 
-                <div class="faq__list" id="faq-list">
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">До скольки лет оформляют заем?</button>
-                        <div class="faq__answer">
-                            <p>Большинство компаний принимают до 75 лет. Отдельные — до 80, 85 и 90 лет.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Нужна ли справка?</button>
-                        <div class="faq__answer">
-                            <p>Нет. Достаточно паспорта.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Какая ставка?</button>
-                        <div class="faq__answer">
-                            <p>Первый заем — от 0% на 7–30 дней. Повторный — до 0,8% в день.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">С плохой историей дадут?</button>
-                        <div class="faq__answer">
-                            <p>Микрофинансовых организаций лояльнее к рейтингу, чем банки. Шансы высокие.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Как быстро придут средства?</button>
-                        <div class="faq__answer">
-                            <p>За 5–15 минут на карту или наличными.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Можно ли погасить раньше?</button>
-                        <div class="faq__answer">
-                            <p>Да. Без штрафов. Проценты пересчитываются за фактические дни.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Нужен ли поручитель?</button>
-                        <div class="faq__answer">
-                            <p>Нет. Компании выдают заем без поручителей.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Принимают ли карта мир?</button>
-                        <div class="faq__answer">
-                            <p>Да. Средства зачисляются за 5–15 минут.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Что делать при задержке возврата?</button>
-                        <div class="faq__answer">
-                            <p>Обратитесь в компанию за реструктуризацией. Не игнорируйте платеж.</p>
-                        </div>
-                    </div>
-                    <div class="faq__item">
-                        <button class="faq__question" type="button">Какие документы нужны?</button>
-                        <div class="faq__answer">
-                            <p>Паспорт. Отдельные компании запрашивают СНИЛС.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1556,54 +1650,21 @@
             </div>
         </section>
 
-        <!-- ======================== 15. Полезные материалы ======================== -->
-        <section class="section section--alt" id="useful">
+        <!-- ======================== 15. Перелинковка ======================== -->
+        <nav class="interlinks" aria-label="Смежные разделы">
             <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Полезные материалы</h2>
-                    <p class="section__subtitle">Другие категории, которые могут быть полезны.</p>
-                </div>
-
-                <div class="useful-links__grid">
-                    <a href="/zaimy-onlajn/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Займы онлайн</h3>
-                        <p class="useful-links__card-desc">Общий рейтинг с лучшими условиями</p>
-                    </a>
-                    <a href="/zaym-s-plokhoy-kreditnoy-istoriyey/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">С плохой историей</h3>
-                        <p class="useful-links__card-desc">Для тех, кому банки отказали</p>
-                    </a>
-                    <a href="/bez-procentov/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Без процентов</h3>
-                        <p class="useful-links__card-desc">Первый заем под 0%</p>
-                    </a>
-                    <a href="/na-elektronnyj-koshelek/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">На электронный кошелёк</h3>
-                        <p class="useful-links__card-desc">Через QIWI и ЮМани</p>
-                    </a>
-                    <a href="/dolgosrochniy-zaym/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Долгосрочные</h3>
-                        <p class="useful-links__card-desc">На 6–12 месяцев с ежемесячным взносом</p>
-                    </a>
-                    <a href="/kruglosutochno/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Круглосуточно</h3>
-                        <p class="useful-links__card-desc">Оформление в любое время суток</p>
-                    </a>
-                    <a href="/dengi-v-dolg/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Деньги в долг</h3>
-                        <p class="useful-links__card-desc">Варианты срочного финансирования</p>
-                    </a>
-                    <a href="/pod-zalog-pts/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Под залог ПТС</h3>
-                        <p class="useful-links__card-desc">Под залог авто</p>
-                    </a>
-                    <a href="/cherez-gosuslugi/" class="useful-links__card">
-                        <h3 class="useful-links__card-title">Через Госуслуги</h3>
-                        <p class="useful-links__card-desc">С подтверждением ЕСИА</p>
-                    </a>
-                </div>
+                <span class="interlinks__label">Смотрите также:</span>
+                <a href="/zaimy-onlajn/" class="interlinks__link">Займы онлайн</a>
+                <a href="/zaym-s-plokhoy-kreditnoy-istoriyey/" class="interlinks__link">С плохой КИ</a>
+                <a href="/bez-procentov/" class="interlinks__link">Без процентов</a>
+                <a href="/dolgosrochniy-zaym/" class="interlinks__link">Долгосрочные</a>
+                <a href="/kruglosutochno/" class="interlinks__link">Круглосуточно</a>
+                <a href="/na-elektronnyj-koshelek/" class="interlinks__link">На кошелёк</a>
+                <a href="/dengi-v-dolg/" class="interlinks__link">Деньги в долг</a>
+                <a href="/pod-zalog-pts/" class="interlinks__link">Под залог ПТС</a>
+                <a href="/cherez-gosuslugi/" class="interlinks__link">Через Госуслуги</a>
             </div>
-        </section>
+        </nav>
 
     </main>
 
