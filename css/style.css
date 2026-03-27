@@ -1054,6 +1054,223 @@ table {
     margin-top: 8px;
 }
 
+/* ======================== Approval Feed — Лента одобренных заявок ======================== */
+.approval-feed {
+    padding: 16px 18px 14px;
+    max-width: 380px;
+}
+.approval-feed .calculator__title {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+}
+.approval-feed__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.approval-feed__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+.approval-feed__item:last-child {
+    border-bottom: none;
+}
+.approval-feed__status {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-success-light);
+    border-radius: 50%;
+    color: var(--color-success);
+}
+.approval-feed__status svg {
+    width: 14px;
+    height: 14px;
+}
+.approval-feed__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+.approval-feed__name {
+    font-size: 0.78rem;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+.approval-feed__amount {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-success);
+    white-space: nowrap;
+}
+.approval-feed__time {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+.approval-feed .btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    padding: 10px 16px;
+}
+.approval-feed .calculator__disclaimer {
+    margin-top: 6px;
+    font-size: 0.68rem;
+}
+
+/* ======================== Express Wizard — Экспресс-подбор ======================== */
+.express-wizard {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 18px 22px 14px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.express-wizard__row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.express-wizard__field {
+    flex: 1;
+    min-width: 0;
+}
+.express-wizard__field-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+.express-wizard__label {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+}
+.express-wizard__value {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.express-wizard__range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-border);
+    outline: none;
+    cursor: pointer;
+}
+.express-wizard__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 2px solid var(--color-white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+.express-wizard__range::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 2px solid var(--color-white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+.express-wizard__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+.express-wizard__option {
+    padding: 5px 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-main);
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+.express-wizard__option:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+.express-wizard__option--active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+.express-wizard__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border-light);
+}
+.express-wizard__stats {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+}
+.express-wizard__stats strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+.express-wizard__stat-sep {
+    color: var(--color-text-muted);
+}
+.express-wizard__footer .btn--sm {
+    padding: 8px 18px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+@media (max-width: 600px) {
+    .express-wizard__row {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .express-wizard__footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .express-wizard__footer .btn--sm {
+        width: 100%;
+    }
+}
+
 /* ======================== Promo Calc — Калькулятор переплаты 0% ======================== */
 .promo-calc {
     max-width: 600px;

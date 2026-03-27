@@ -187,63 +187,62 @@
                     <!-- Уникальный виджет: Лента последних одобренных заявок -->
                     <div class="calculator approval-feed" id="approval-feed">
                         <div class="calculator__title">Последние одобренные заявки</div>
-
-                        <div class="approval-feed__list" id="approval-feed-list">
-                            <div class="approval-feed__item">
-                                <div class="approval-feed__status">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <div class="approval-feed__info">
-                                    <span class="approval-feed__name">Анна М., Москва</span>
-                                    <span class="approval-feed__amount">15 000 ₽</span>
-                                </div>
-                                <span class="approval-feed__time">2 мин назад</span>
-                            </div>
-                            <div class="approval-feed__item">
-                                <div class="approval-feed__status">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <div class="approval-feed__info">
-                                    <span class="approval-feed__name">Дмитрий К., Санкт-Петербург</span>
-                                    <span class="approval-feed__amount">30 000 ₽</span>
-                                </div>
-                                <span class="approval-feed__time">5 мин назад</span>
-                            </div>
-                            <div class="approval-feed__item">
-                                <div class="approval-feed__status">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <div class="approval-feed__info">
-                                    <span class="approval-feed__name">Елена С., Новосибирск</span>
-                                    <span class="approval-feed__amount">10 000 ₽</span>
-                                </div>
-                                <span class="approval-feed__time">8 мин назад</span>
-                            </div>
-                            <div class="approval-feed__item">
-                                <div class="approval-feed__status">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <div class="approval-feed__info">
-                                    <span class="approval-feed__name">Игорь Р., Екатеринбург</span>
-                                    <span class="approval-feed__amount">50 000 ₽</span>
-                                </div>
-                                <span class="approval-feed__time">12 мин назад</span>
-                            </div>
-                            <div class="approval-feed__item">
-                                <div class="approval-feed__status">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <div class="approval-feed__info">
-                                    <span class="approval-feed__name">Ольга В., Казань</span>
-                                    <span class="approval-feed__amount">20 000 ₽</span>
-                                </div>
-                                <span class="approval-feed__time">15 мин назад</span>
-                            </div>
-                        </div>
-
+                        <div class="approval-feed__list" id="approval-feed-list"></div>
                         <a href="#mfo-rating" class="btn btn--primary">Подобрать займ онлайн ↓</a>
                         <div class="calculator__disclaimer">Данные обновляются автоматически. Все МФО — в реестре ЦБ РФ.</div>
                     </div>
+                    <script>
+                    (function(){
+                        var names = [
+                            'Анна М.','Дмитрий К.','Елена С.','Игорь Р.','Ольга В.','Сергей Н.','Мария Л.',
+                            'Алексей Т.','Наталья П.','Виктор Г.','Ирина Б.','Павел Ш.','Татьяна Ф.',
+                            'Роман А.','Светлана Д.','Михаил Е.','Оксана Ж.','Денис Ю.','Людмила Х.',
+                            'Артём С.','Валентина О.','Константин И.','Юлия Ч.','Владимир Р.','Екатерина Щ.',
+                            'Николай З.','Вероника Н.','Станислав Ц.','Полина М.','Геннадий В.',
+                            'Лариса Е.','Максим У.','Яна Ф.','Борис К.','Зинаида О.','Кирилл С.',
+                            'Вера Т.','Антон Р.','Надежда И.','Юрий А.','Тимур Б.','Лилия Д.'
+                        ];
+                        var cities = [
+                            'Москва','Санкт-Петербург','Новосибирск','Екатеринбург','Казань','Краснодар',
+                            'Нижний Новгород','Самара','Челябинск','Уфа','Ростов-на-Дону','Воронеж',
+                            'Омск','Пермь','Красноярск','Волгоград','Тюмень','Саратов','Тольятти','Барнаул'
+                        ];
+                        var amounts = [5000,8000,10000,12000,15000,18000,20000,25000,30000,35000,40000,50000];
+                        var svgIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+
+                        function rand(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+                        function randInt(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+                        function fmtAmount(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₽'; }
+                        function fmtTime(minutes){
+                            if(minutes<60) return minutes+' мин назад';
+                            var h=Math.floor(minutes/60);
+                            if(h===1) return '1 час назад';
+                            if(h<5) return h+' часа назад';
+                            return h+' часов назад';
+                        }
+
+                        var list=document.getElementById('approval-feed-list');
+                        var usedNames=[];
+                        var times=[];
+                        for(var i=0;i<5;i++) times.push(randInt(13,22*60));
+                        times.sort(function(a,b){return a-b;});
+
+                        for(var i=0;i<5;i++){
+                            var name;
+                            do{ name=rand(names); }while(usedNames.indexOf(name)!==-1);
+                            usedNames.push(name);
+                            var div=document.createElement('div');
+                            div.className='approval-feed__item';
+                            div.innerHTML='<div class="approval-feed__status">'+svgIcon+'</div>'
+                                +'<div class="approval-feed__info">'
+                                +'<span class="approval-feed__name">'+name+', '+rand(cities)+'</span>'
+                                +'<span class="approval-feed__amount">'+fmtAmount(rand(amounts))+'</span>'
+                                +'</div>'
+                                +'<span class="approval-feed__time">'+fmtTime(times[i])+'</span>';
+                            list.appendChild(div);
+                        }
+                    })();
+                    </script>
                 </div>
             </div>
         </section>
@@ -258,92 +257,7 @@
             </div>
         </nav>
 
-        <!-- ======================== 3. ЭКСПРЕСС-ПОДБОР: 3 ШАГА ======================== -->
-        <section class="section" id="express-select">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Экспресс-подбор — 3 шага до займа</h2>
-                    <p class="section__subtitle">Укажите параметры — система покажет подходящие компании. Выберите подходящее предложение и отправьте запрос.</p>
-                </div>
-
-                <div class="express-wizard">
-                    <!-- Шаг 1 -->
-                    <div class="express-wizard__step express-wizard__step--active" data-step="1">
-                        <div class="express-wizard__step-header">
-                            <span class="express-wizard__step-num">1</span>
-                            <span class="express-wizard__step-title">Сумма</span>
-                        </div>
-                        <div class="express-wizard__step-body">
-                            <label class="express-wizard__label" for="wizard-amount">Сколько нужно?</label>
-                            <input type="range" id="wizard-amount" class="express-wizard__range" min="1000" max="100000" step="1000" value="15000">
-                            <div class="express-wizard__value" id="wizard-amount-value">15 000 ₽</div>
-                        </div>
-                    </div>
-
-                    <!-- Шаг 2 -->
-                    <div class="express-wizard__step" data-step="2">
-                        <div class="express-wizard__step-header">
-                            <span class="express-wizard__step-num">2</span>
-                            <span class="express-wizard__step-title">Срок</span>
-                        </div>
-                        <div class="express-wizard__step-body">
-                            <label class="express-wizard__label" for="wizard-term">На какой срок?</label>
-                            <input type="range" id="wizard-term" class="express-wizard__range" min="1" max="365" step="1" value="30">
-                            <div class="express-wizard__value" id="wizard-term-value">30 дней</div>
-                        </div>
-                    </div>
-
-                    <!-- Шаг 3 -->
-                    <div class="express-wizard__step" data-step="3">
-                        <div class="express-wizard__step-header">
-                            <span class="express-wizard__step-num">3</span>
-                            <span class="express-wizard__step-title">Способ получения</span>
-                        </div>
-                        <div class="express-wizard__step-body">
-                            <div class="express-wizard__options">
-                                <button class="express-wizard__option express-wizard__option--active" type="button" data-method="card">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                                    На карту
-                                </button>
-                                <button class="express-wizard__option" type="button" data-method="sbp">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M12 2v20M2 12h20"/></svg>
-                                    СБП
-                                </button>
-                                <button class="express-wizard__option" type="button" data-method="wallet">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
-                                    Кошелёк
-                                </button>
-                                <button class="express-wizard__option" type="button" data-method="cash">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
-                                    Наличные
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Результат -->
-                    <div class="express-wizard__result">
-                        <div class="express-wizard__result-stats">
-                            <div class="express-wizard__result-stat">
-                                <span class="express-wizard__result-value" id="wizard-result-count">24</span>
-                                <span class="express-wizard__result-label">подходящих МФО</span>
-                            </div>
-                            <div class="express-wizard__result-stat">
-                                <span class="express-wizard__result-value" id="wizard-result-rate">от 0%</span>
-                                <span class="express-wizard__result-label">ставка / день</span>
-                            </div>
-                            <div class="express-wizard__result-stat">
-                                <span class="express-wizard__result-value" id="wizard-result-time">5 мин</span>
-                                <span class="express-wizard__result-label">до получения</span>
-                            </div>
-                        </div>
-                        <a href="#mfo-rating" class="btn btn--primary">Показать подходящие МФО ↓</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================== 4. РЕЙТИНГ МФО — ЗАЙМЫ ОНЛАЙН 2026 ======================== -->
+        <!-- ======================== 3. РЕЙТИНГ МФО — ЗАЙМЫ ОНЛАЙН 2026 ======================== -->
         <section class="section section--alt" id="mfo-rating">
             <div class="container">
                 <div class="rating-header">
@@ -384,9 +298,879 @@
 
                 <!-- MFO Cards Grid -->
                 <div class="mfo-grid" id="mfo-grid">
-                    <!-- Карточки МФО будут добавлены -->
+
+                    <!-- 1. Займер -->
+                    <div class="mfo-card" data-rating="4.88" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#1</span>
+                            <img src="../logos/01-zajmer.svg" alt="Займер логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% первый займ</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ПАО МКК «Займер»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: 651303532004088</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.88</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">2 минуты</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">18–75 лет</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/95cecac27d1faca720a8981dbc34748e?source=site&aff_sub1=zaimy-onlajn&aff_sub2=zaymer&erid=2W5zFGRgkqW" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 2. еКапуста -->
+                    <div class="mfo-card" data-rating="4.91" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#2</span>
+                            <img src="../logos/31-ekapusta.svg" alt="еКапуста логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 30 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Кэшдрайв»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.91</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,99% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">QIWI / ЮМани</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s2sanlbasa?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=Ekapusta" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Срочно Деньги -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0" data-term="360">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#3</span>
+                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Срочноденьги»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">2 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–360 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">9 295 отзывов</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?source=site&aff_sub1=zaimy-onlajn&aff_sub2=srochno-dengi&erid=2W5zFJkUBEY" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 4. MoneyMan -->
+                    <div class="mfo-card" data-rating="4.88" data-amount="30000" data-rate="0" data-term="126">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#4</span>
+                            <img src="../logos/20-moneyman.svg" alt="MoneyMan логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «МаниМен»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.88</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–126 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–70 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">8 591 отзыв</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/ssm7xv7ihi?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=Moneyman-VIP" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Доброзайм -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0" data-term="720">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#5</span>
+                            <img src="../logos/12-dobrozajm.svg" alt="Доброзайм логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Саммит»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">4–720 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–90 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Долгосрочный</span>
+                                <span class="mfo-card__tag">Госуслуги</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?source=site&aff_sub1=zaimy-onlajn&aff_sub2=dobrozaym&erid=2W5zFJSXfu2" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Надо Денег -->
+                    <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0" data-term="168">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#6</span>
+                            <img src="../logos/11-nado-deneg.svg" alt="Надо Денег логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Надо Денег»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.8</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–168 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">95%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту / СБП</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?source=site&aff_sub1=zaimy-onlajn&aff_sub2=nado-deneg&erid=2W5zFHdCTFv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 7. Credit7 -->
+                    <div class="mfo-card" data-rating="4.8" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#7</span>
+                            <img src="../logos/04-credit7.svg" alt="Credit7 логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Кредит7»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.8</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">7 минут</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/f676af6bb07f68d706c6053669efcfbe?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Credit7&erid=2W5zFHAu736" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 8. Свои Люди -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#8</span>
+                            <img src="../logos/16-svoi-lyudi.svg" alt="Свои Люди логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Свои люди»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">5 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">3–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">~1 минута</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">Карта / СБП</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/8bae555126c05cbc61c4c2f72d4eb3b6?source=site&aff_sub1=zaimy-onlajn&aff_sub2=svoi-lyudi&erid=2W5zFHDfLCg" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 9. Joymoney -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#9</span>
+                            <img src="../logos/19-joymoney.svg" alt="Joymoney логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 14 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Джоймани»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.70</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">10–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">до 98%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Joymoney&erid=2W5zFK1Gnqv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 10. Быстроденьги -->
+                    <div class="mfo-card" data-rating="4.6" data-amount="30000" data-rate="0" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#10</span>
+                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 10 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">МФК Быстроденьги (ООО)</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: 2110573000002</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.6</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">до 180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">до 98%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">6 000 000+ клиентов</span>
+                                <span class="mfo-card__tag">Госуслуги</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?source=site&aff_sub1=zaimy-onlajn&aff_sub2=bystrodengi&erid=2W5zFHRnKXf" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 11. Деньги Сразу -->
+                    <div class="mfo-card" data-rating="4.67" data-amount="100000" data-rate="0.8" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#11</span>
+                            <img src="../logos/15-dengi-srazu.svg" alt="Деньги Сразу логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Деньги сразу»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.67</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">16–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Большие суммы</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/174ea44bddaf32da6dd1bfe047b83a80?source=site&aff_sub1=zaimy-onlajn&aff_sub2=dengi-srazu&erid=2W5zFGDsBp4" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 12. Kviku -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0" data-term="365">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#12</span>
+                            <img src="../logos/22-kviku.svg" alt="Kviku логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 50 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Эйрлоанс»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">60–365 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">10 секунд</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">Виртуальная карта</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s995xwjrn6?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=Kviku" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 13. Кредиска -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="50000" data-rate="0" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#13</span>
+                            <img src="../logos/17-krediska.svg" alt="Кредиска логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Кредиска»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">98%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Krediska&erid=2W5zFHywXyi" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 14. Займиго -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="50000" data-rate="0" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#14</span>
+                            <img src="../logos/18-zaymigo.svg" alt="Займиго логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Займиго»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">5 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">98%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Zaymigo&erid=2W5zFK44HXE" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 15. Лайк Мани -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#15</span>
+                            <img src="../logos/05-like-money.svg" alt="Лайк Мани логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Лайк Мани»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">2 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">97%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">Госуслуги +90%</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/77307f82112c60903718f3a5208b16e2?source=site&aff_sub1=zaimy-onlajn&aff_sub2=layk-mani&erid=2W5zFJEVzd6" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 16. Boostra (маркетплейс) -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#16</span>
+                            <img src="../logos/06-boostra.svg" alt="Boostra логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">от 0% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">Маркетплейс займов</div>
+                            <div class="mfo-card__reg">Подбор предложений от МФО</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">до 180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">от 0% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Подбор МФО</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/b5b01b9d38dc1fed50cd70ebdb5c05e7?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Boostra&erid=2W5zFHzPkun" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Подобрать займ</a>
+                        </div>
+                    </div>
+
+                    <!-- 17. OneClickMoney -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="200000" data-rate="0" data-term="735">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#17</span>
+                            <img src="../logos/13-oneclickmoney.svg" alt="OneClickMoney логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% первый займ</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «ОнКлик»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">500–200 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">15–735 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">80%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">До 200 000 ₽</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?source=site&aff_sub1=zaimy-onlajn&aff_sub2=OneClickMone&erid=2W5zFH7Qc5v" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 18. Бери Беру -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#18</span>
+                            <img src="../logos/03-beriberu.svg" alt="Бери Беру логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Бериберу МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: 2203392009805</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Промокод авто</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/4e60ee94de113b15d5fbc7bed4e6ed12?source=site&aff_sub1=zaimy-onlajn&aff_sub2=beri-beru&erid=2W5zFGqH8AU" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 19. HurmaCredit -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="50000" data-rate="0" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#19</span>
+                            <img src="../logos/09-hurmacredit.svg" alt="HurmaCredit логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Хурма»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.4</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">Промокод авто</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/bc55d263b3dd36189299a5528d41e2d7?source=site&aff_sub1=zaimy-onlajn&aff_sub2=Hurmacredit&erid=2W5zFH7Yxqn" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 20. До зарплаты -->
+                    <div class="mfo-card" data-rating="4.4" data-amount="20000" data-rate="0" data-term="180">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#20</span>
+                            <img src="../logos/34-do-zarplaty.svg" alt="До зарплаты логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% первый займ</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «До зарплаты»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.40</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 20 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–180 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">1 174 отзыва</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s8uxolnvnr?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=do-zarplaty-ecom" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 21. BelkaCredit -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#21</span>
+                            <img src="../logos/07-belkacredit.svg" alt="BelkaCredit логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «БелкаКредит»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Одобрение</span><span class="mfo-card__term-value">~95%</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/1e72b15a212a832a32c5daa5b4734e25?source=site&aff_sub1=zaimy-onlajn&aff_sub2=BelkaCredit&erid=2W5zFK9wF9A" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 22. Cash To You -->
+                    <div class="mfo-card" data-rating="4.52" data-amount="30000" data-rate="0.8" data-term="31">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#22</span>
+                            <img src="../logos/32-cash-to-you.svg" alt="Cash To You логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «КэшТуЮ»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.52</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">500–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">6–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">до 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">636 отзывов</span>
+                                <span class="mfo-card__tag">Карта / QIWI</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/sqp7uapj7b?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=cash-to-you" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 23. Умные Наличные -->
+                    <div class="mfo-card" data-rating="4.3" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#23</span>
+                            <img src="../logos/10-umnye-nalichnye.svg" alt="Умные Наличные логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">от 0% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Умные наличные»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.3</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">до 30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">от 0% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">2 минуты</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/7d30ad52043887efd2e33ee89ea41e62?source=site&aff_sub1=zaimy-onlajn&aff_sub2=umnyye-nalichnyye&erid=2W5zFJSTEz4" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 24. Вебзайм -->
+                    <div class="mfo-card" data-rating="4.1" data-amount="30000" data-rate="0" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#24</span>
+                            <img src="../logos/26-webzaim.svg" alt="Вебзайм логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 14 дней</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Вебзайм»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.10</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–90 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Госуслуги +40%</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s59sfd2drp?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=vebzaym" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 25. Bunny Money -->
+                    <div class="mfo-card" data-rating="4.12" data-amount="30000" data-rate="0.8" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#25</span>
+                            <img src="../logos/23-bunny-money.svg" alt="Bunny Money логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">до 0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Банни Мани»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.12</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">3–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">до 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">10 минут</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/sgtta83y0f?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=Bunny-Money" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 26. Лайкзайм -->
+                    <div class="mfo-card" data-rating="4.2" data-amount="30000" data-rate="0" data-term="14">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#26</span>
+                            <img src="../logos/21-likezaim.svg" alt="Лайкзайм логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% первый займ</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Лайкзайм»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.2</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–14 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">до 5 минут</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/snuwwxsc8v?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=laykzaym" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 27. Небус -->
+                    <div class="mfo-card" data-rating="4.24" data-amount="50000" data-rate="0.8" data-term="113">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#27</span>
+                            <img src="../logos/33-nebus.svg" alt="Небус логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">до 0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Небус»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.24</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–113 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">до 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">На карту</span>
+                                <span class="mfo-card__tag">199 отзывов</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s7h430n94n?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=nebus" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 28. Гринмани -->
+                    <div class="mfo-card" data-rating="4.2" data-amount="100000" data-rate="0" data-term="364">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#28</span>
+                            <img src="../logos/29-grinmani.svg" alt="Гринмани логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дня</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Гринмани»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.2</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–364 дня</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0% → 0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">До 100 000 ₽</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/stjejc0nuh?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=grinmani-zaym-pod-0" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
+                    <!-- 29. Max.Credit -->
+                    <div class="mfo-card" data-rating="4.1" data-amount="30000" data-rate="0.8" data-term="30">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#29</span>
+                            <img src="../logos/27-max-credit.svg" alt="Max.Credit логотип" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--warning">0,8% / день</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Макс.Кредит»</div>
+                            <div class="mfo-card__reg">В реестре ЦБ РФ</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.1</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">5 000–30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">3–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">~0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Решение</span><span class="mfo-card__term-value">1–2 минуты</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">Круглосуточно</span>
+                                <span class="mfo-card__tag">На карту</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s03s3xmmdj?subid1=site&subid2=click2&subid3=zaimy-onlajn&subid4=Max-Credit" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
+
+        <!-- ======================== 4. ЭКСПРЕСС-ПОДБОР: 3 ШАГА ======================== -->
+        <section class="section" id="express-select">
+            <div class="container">
+                <div class="express-wizard">
+                    <div class="express-wizard__row">
+                        <div class="express-wizard__field">
+                            <div class="express-wizard__field-top">
+                                <span class="express-wizard__label">Сумма</span>
+                                <span class="express-wizard__value" id="wizard-amount-value">15 000 ₽</span>
+                            </div>
+                            <input type="range" id="wizard-amount" class="express-wizard__range" min="1000" max="100000" step="1000" value="15000">
+                        </div>
+                        <div class="express-wizard__field">
+                            <div class="express-wizard__field-top">
+                                <span class="express-wizard__label">Срок</span>
+                                <span class="express-wizard__value" id="wizard-term-value">30 дней</span>
+                            </div>
+                            <input type="range" id="wizard-term" class="express-wizard__range" min="1" max="365" step="1" value="30">
+                        </div>
+                        <div class="express-wizard__field">
+                            <span class="express-wizard__label">Способ</span>
+                            <div class="express-wizard__options">
+                                <button class="express-wizard__option express-wizard__option--active" type="button" data-method="card">Карта</button>
+                                <button class="express-wizard__option" type="button" data-method="sbp">СБП</button>
+                                <button class="express-wizard__option" type="button" data-method="wallet">Кошелёк</button>
+                                <button class="express-wizard__option" type="button" data-method="cash">Наличные</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="express-wizard__footer">
+                        <div class="express-wizard__stats">
+                            <span class="express-wizard__stat"><strong id="wizard-result-count">24</strong> МФО</span>
+                            <span class="express-wizard__stat-sep">·</span>
+                            <span class="express-wizard__stat">от <strong id="wizard-result-rate">0%</strong> / день</span>
+                            <span class="express-wizard__stat-sep">·</span>
+                            <span class="express-wizard__stat"><strong id="wizard-result-time">5 мин</strong> до выдачи</span>
+                        </div>
+                        <a href="#mfo-rating" class="btn btn--primary btn--sm">Показать МФО ↓</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+            (function(){
+                var amountEl=document.getElementById('wizard-amount');
+                var amountVal=document.getElementById('wizard-amount-value');
+                var termEl=document.getElementById('wizard-term');
+                var termVal=document.getElementById('wizard-term-value');
+                var countEl=document.getElementById('wizard-result-count');
+                var rateEl=document.getElementById('wizard-result-rate');
+                var timeEl=document.getElementById('wizard-result-time');
+                var options=document.querySelectorAll('.express-wizard__option');
+
+                function fmtNum(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+
+                function update(){
+                    var a=+amountEl.value, t=+termEl.value;
+                    amountVal.textContent=fmtNum(a)+' \u20bd';
+                    termVal.textContent=t+(t===1?' \u0434\u0435\u043d\u044c':t<5?' \u0434\u043d\u044f':' \u0434\u043d\u0435\u0439');
+                    var base=24;
+                    if(a>50000) base-=4; else if(a>30000) base-=2;
+                    if(t>180) base-=3; else if(t>90) base-=1;
+                    var active=document.querySelector('.express-wizard__option--active');
+                    if(active){
+                        var m=active.getAttribute('data-method');
+                        if(m==='cash') base-=5;
+                        else if(m==='wallet') base-=2;
+                    }
+                    countEl.textContent=Math.max(base,8);
+                    rateEl.textContent=(t<=30&&a<=30000)?'0%':'0.8%';
+                    timeEl.textContent=(active&&active.getAttribute('data-method')==='cash')?'1 \u0447\u0430\u0441':'5 \u043c\u0438\u043d';
+                }
+
+                amountEl.addEventListener('input',update);
+                termEl.addEventListener('input',update);
+
+                options.forEach(function(btn){
+                    btn.addEventListener('click',function(){
+                        options.forEach(function(b){b.classList.remove('express-wizard__option--active');});
+                        btn.classList.add('express-wizard__option--active');
+                        update();
+                    });
+                });
+            })();
+            </script>
         </section>
 
         <!-- ======================== 5. СРАВНЕНИЕ: ОНЛАЙН-ЗАЙМ VS БАНКОВСКИЙ КРЕДИТ ======================== -->
