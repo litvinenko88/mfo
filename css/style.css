@@ -3118,6 +3118,96 @@ table {
 }
 
 /* ============================
+   PENSION CALC RESULT
+   ============================ */
+.pcalc-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.pcalc-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.pcalc-result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.pcalc-result__item {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.pcalc-result__label {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.pcalc-result__value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+.pcalc-result__bar {
+    height: 6px;
+    border-radius: 3px;
+    background: #E2E8F0;
+    margin-top: 6px;
+    overflow: hidden;
+}
+.pcalc-result__bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--color-success);
+    transition: width .4s ease, background .3s ease;
+}
+.pcalc-result__bar-fill--warn {
+    background: var(--color-warning);
+}
+.pcalc-result__bar-fill--danger {
+    background: var(--color-danger);
+}
+.pcalc-result__hint {
+    grid-column: 1 / -1;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    display: none;
+}
+.pcalc-result__hint--good {
+    display: block;
+    background: var(--color-success-light);
+    color: #065F46;
+}
+.pcalc-result__hint--warn {
+    display: block;
+    background: #FEF3C7;
+    color: #92400E;
+}
+.pcalc-result__hint--danger {
+    display: block;
+    background: #FEE2E2;
+    color: #991B1B;
+}
+@media (max-width: 400px) {
+    .pcalc-result {
+        grid-template-columns: 1fr;
+    }
+    .pcalc-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================
    GOV ALTERNATIVES (pensioneram)
    ============================ */
 .gov-alt__header {

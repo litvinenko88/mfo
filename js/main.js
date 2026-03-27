@@ -30,6 +30,7 @@
         initFullCalculator();
         initBenefitCalc();
         initAutoEstimator();
+        initPensionCalc();
     }
 
     /* ============================
@@ -2315,5 +2316,85 @@
         updateCountdowns();
         setInterval(updateCountdowns, 1000);
     })();
+
+    /* ============================
+       Pension Calculator
+       ============================ */
+    function initPensionCalc() {
+        var incomeSlider = document.getElementById('pension-income');
+        var amountSlider = document.getElementById('pension-amount');
+        var termSlider   = document.getElementById('pension-term');
+        if (!incomeSlider || !amountSlider || !termSlider) return;
+
+        var incomeDisplay  = document.getElementById('pension-income-value');
+        var amountDisplay  = document.getElementById('pension-amount-value');
+        var termDisplay    = document.getElementById('pension-term-value');
+        var paymentEl      = document.getElementById('pension-payment');
+        var shareEl        = document.getElementById('pension-share');
+        var barEl          = document.getElementById('pension-share-bar');
+        var hintEl         = document.getElementById('pension-hint');
+
+        function fmt(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function calc() {
+            var income = parseInt(incomeSlider.value, 10);
+            var amount = parseInt(amountSlider.value, 10);
+            var days   = parseInt(termSlider.value, 10);
+
+            incomeDisplay.textContent = fmt(income) + ' \u20BD';
+            amountDisplay.textContent = fmt(amount) + ' \u20BD';
+            termDisplay.textContent   = days + ' ' + declDays(days);
+
+            /* Rate: 0% first loan 30d, else 0.8%/day */
+            var rate = 0.008;
+            var interest = amount * rate * days;
+            var total = amount + interest;
+
+            /* Monthly payment */
+            var months = days / 30;
+            var monthly = months > 0 ? Math.ceil(total / months) : total;
+
+            /* Share of pension */
+            var share = income > 0 ? (monthly / income) * 100 : 0;
+            if (share > 100) share = 100;
+
+            paymentEl.textContent = fmt(Math.ceil(monthly)) + ' \u20BD';
+            shareEl.textContent = share.toFixed(1) + '%';
+
+            /* Bar */
+            barEl.style.width = Math.min(share, 100) + '%';
+            barEl.className = 'pcalc-result__bar-fill';
+            if (share > 50) barEl.classList.add('pcalc-result__bar-fill--danger');
+            else if (share > 30) barEl.classList.add('pcalc-result__bar-fill--warn');
+
+            /* Hint */
+            hintEl.className = 'pcalc-result__hint';
+            if (share <= 30) {
+                hintEl.textContent = '\u2705 Нагрузка комфортная. Платёж не превышает 30% пенсии.';
+                hintEl.classList.add('pcalc-result__hint--good');
+            } else if (share <= 50) {
+                hintEl.textContent = '\u26A0\uFE0F Умеренная нагрузка. Рассмотрите меньшую сумму или больший срок.';
+                hintEl.classList.add('pcalc-result__hint--warn');
+            } else {
+                hintEl.textContent = '\u274C Высокая нагрузка! Платёж превышает 50% пенсии. Уменьшите сумму.';
+                hintEl.classList.add('pcalc-result__hint--danger');
+            }
+        }
+
+        function declDays(n) {
+            var a = n % 10, b = n % 100;
+            if (b >= 11 && b <= 19) return '\u0434\u043D\u0435\u0439';
+            if (a === 1) return '\u0434\u0435\u043D\u044C';
+            if (a >= 2 && a <= 4) return '\u0434\u043D\u044F';
+            return '\u0434\u043D\u0435\u0439';
+        }
+
+        incomeSlider.addEventListener('input', calc);
+        amountSlider.addEventListener('input', calc);
+        termSlider.addEventListener('input', calc);
+        calc();
+    }
 
 })();

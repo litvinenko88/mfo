@@ -205,17 +205,19 @@
                     <div class="calculator pension-calc" id="pension-calc">
                         <div class="calculator__title">Калькулятор пенсионной нагрузки</div>
                         <div class="calculator__body">
-                            <div class="calculator__field">
-                                <label class="calculator__label">Размер пенсии
-                                    <span class="calculator__value" id="pension-income-value">18 000 ₽</span>
-                                </label>
-                                <input type="range" class="calculator__slider" id="pension-income" min="5000" max="60000" step="1000" value="18000">
-                            </div>
-                            <div class="calculator__field">
-                                <label class="calculator__label">Сумма займа
-                                    <span class="calculator__value" id="pension-amount-value">10 000 ₽</span>
-                                </label>
-                                <input type="range" class="calculator__slider" id="pension-amount" min="1000" max="100000" step="1000" value="10000">
+                            <div class="pcalc-row">
+                                <div class="calculator__field">
+                                    <label class="calculator__label">Размер пенсии
+                                        <span class="calculator__value" id="pension-income-value">18 000 ₽</span>
+                                    </label>
+                                    <input type="range" class="calculator__slider" id="pension-income" min="5000" max="60000" step="1000" value="18000">
+                                </div>
+                                <div class="calculator__field">
+                                    <label class="calculator__label">Сумма займа
+                                        <span class="calculator__value" id="pension-amount-value">10 000 ₽</span>
+                                    </label>
+                                    <input type="range" class="calculator__slider" id="pension-amount" min="1000" max="100000" step="1000" value="10000">
+                                </div>
                             </div>
                             <div class="calculator__field">
                                 <label class="calculator__label">Срок возврата
@@ -223,18 +225,22 @@
                                 </label>
                                 <input type="range" class="calculator__slider" id="pension-term" min="5" max="365" step="1" value="30">
                             </div>
-                            <div class="calculator__result">
-                                <div class="calculator__result-row">
-                                    <span>Ежемесячный платёж</span>
-                                    <strong id="pension-payment">—</strong>
+                            <div class="pcalc-result" id="pcalc-result">
+                                <div class="pcalc-result__item">
+                                    <span class="pcalc-result__label">Ежемесячный платёж</span>
+                                    <span class="pcalc-result__value" id="pension-payment">—</span>
                                 </div>
-                                <div class="calculator__result-row">
-                                    <span>Доля от пенсии</span>
-                                    <strong id="pension-share">—</strong>
+                                <div class="pcalc-result__item">
+                                    <span class="pcalc-result__label">Доля от пенсии</span>
+                                    <span class="pcalc-result__value" id="pension-share">—</span>
+                                    <div class="pcalc-result__bar">
+                                        <div class="pcalc-result__bar-fill" id="pension-share-bar" style="width:0%"></div>
+                                    </div>
                                 </div>
+                                <div class="pcalc-result__hint" id="pension-hint"></div>
                             </div>
                         </div>
-                        <a href="#mfo-rating" class="btn btn--primary">Подобрать МФО</a>
+                        <a href="#mfo-rating" class="btn btn--primary pcalc-btn">Подобрать МФО</a>
                     </div>
                 </div>
             </div>
