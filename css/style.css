@@ -4168,9 +4168,14 @@ table {
 /* ============================
    REVIEWS TOGGLE
    ============================ */
-.reviews-grid:not(.reviews--expanded) .review-card:nth-child(n+10),
-.reviews-grid:not(.reviews--expanded) .reviews__card:nth-child(n+10) {
+.reviews__grid:not(.reviews--expanded) .review-card:nth-child(n+10),
+.reviews__grid:not(.reviews--expanded) .reviews__card:nth-child(n+10) {
     display: none;
+}
+
+.reviews__actions {
+    text-align: center;
+    margin-top: 32px;
 }
 
 .btn--show-more {
@@ -12043,5 +12048,470 @@ table {
     .useful-card__icon {
         width: 42px;
         height: 42px;
+    }
+}
+
+/* ========================
+   Age Grid — compact pensioneram
+   ======================== */
+.age-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.age-grid__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    padding: 12px 14px 10px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    width: calc(25% - 8px);
+}
+
+.age-grid__card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.age-grid__card--highlight {
+    border-color: var(--color-success);
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, var(--color-white) 60%);
+}
+
+.age-grid__card--highlight .age-grid__age {
+    background: var(--color-success);
+}
+
+.age-grid__age {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: 20px;
+    margin-bottom: 2px;
+}
+
+.age-grid__name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.age-grid__sum {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    line-height: 1.2;
+}
+
+.age-grid__promo {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #166534;
+    background: #dcfce7;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-top: 1px;
+}
+
+/* ========================
+   Fraud Cards — pensioneram
+   ======================== */
+.fraud-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.fraud-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 20px 20px 18px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    overflow: hidden;
+}
+
+.fraud-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-danger);
+    border-radius: 3px 0 0 3px;
+}
+
+.fraud-card:hover {
+    border-color: var(--color-danger);
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.08);
+}
+
+.fraud-card__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    color: var(--color-white);
+}
+
+.fraud-card__icon--phone { background: #ef4444; }
+.fraud-card__icon--money { background: #f59e0b; }
+.fraud-card__icon--id { background: #8b5cf6; }
+.fraud-card__icon--web { background: #3b82f6; }
+.fraud-card__icon--alert { background: #f97316; }
+.fraud-card__icon--shield { background: #6366f1; }
+
+.fraud-card__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.fraud-card__title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 4px;
+    line-height: 1.3;
+}
+
+.fraud-card__text {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.fraud-card__badge {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-danger);
+    background: #fef2f2;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Safety Checklist */
+.safety-checklist {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, var(--color-white) 100%);
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-lg);
+    padding: 28px 28px 24px;
+}
+
+.safety-checklist__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.safety-checklist__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.safety-checklist__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.safety-checklist__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.4;
+    padding: 10px 14px;
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    border: 1px solid #d1fae5;
+    transition: border-color var(--transition);
+}
+
+.safety-checklist__item:hover {
+    border-color: var(--color-success);
+}
+
+.safety-checklist__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-success);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* ========================
+   Mobile — Age & Fraud
+   ======================== */
+@media (max-width: 680px) {
+    .age-grid {
+        gap: 8px;
+    }
+
+    .age-grid__card {
+        width: calc(50% - 4px);
+        padding: 10px 8px 8px;
+    }
+
+    .age-grid__name {
+        font-size: 0.82rem;
+    }
+
+    .fraud-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .fraud-card {
+        padding: 16px 16px 16px 14px;
+    }
+
+    .fraud-card__icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .fraud-card__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .safety-checklist {
+        padding: 20px 18px 18px;
+    }
+
+    .safety-checklist__item {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================
+   Steps Compact — pensioneram
+   ======================== */
+.steps-compact {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.steps-compact__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 6px;
+}
+
+.steps-compact__item--done .steps-compact__num {
+    background: var(--color-success);
+}
+
+.steps-compact__num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.steps-compact__title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 2px;
+    line-height: 1.25;
+}
+
+.steps-compact__text {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.35;
+}
+
+.steps-compact__arrow {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-top: 6px;
+    padding: 0 1px;
+}
+
+/* ========================
+   Rights Cards — pensioneram
+   ======================== */
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.rights-grid .rights-card:nth-child(-n+3) {
+    grid-column: span 2;
+}
+
+.rights-grid .rights-card:nth-child(4) {
+    grid-column: 1 / 4;
+}
+
+.rights-grid .rights-card:nth-child(5) {
+    grid-column: 4 / 7;
+}
+
+.rights-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 16px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.rights-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.rights-card__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    color: var(--color-white);
+}
+
+.rights-card__icon--rate { background: #3b82f6; }
+.rights-card__icon--cool { background: #8b5cf6; }
+.rights-card__icon--shield { background: #ef4444; }
+.rights-card__icon--ins { background: #f59e0b; }
+.rights-card__icon--early { background: #10b981; }
+
+.rights-card__body {
+    flex: 1;
+    min-width: 0;
+}
+
+.rights-card__title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 4px;
+    line-height: 1.3;
+}
+
+.rights-card__text {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ========================
+   Compare Table wrap — pensioneram
+   ======================== */
+.compare-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+/* ========================
+   Mobile — Steps, Rights, Compare
+   ======================== */
+@media (max-width: 680px) {
+    .steps-compact {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 0;
+    }
+
+    .steps-compact__item {
+        width: 50%;
+        flex: none;
+    }
+
+    .steps-compact__arrow {
+        display: none;
+    }
+
+    .rights-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .rights-card {
+        padding: 14px 14px;
+    }
+
+    .rights-card__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .rights-card__icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .compare-wrap {
+        margin: 0 -20px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
     }
 }
