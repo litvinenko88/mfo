@@ -2476,14 +2476,14 @@
             amountEl.textContent = d.maxAmount;
             termEl.textContent = d.maxTerm;
 
-            /* Filter MFO cards by biz type */
-            var cards = document.querySelectorAll('#mfo-grid .mfo-card');
-            for (var i = 0; i < cards.length; i++) {
-                var types = (cards[i].getAttribute('data-biz-type') || '').split(',');
+            /* Filter MFO list items by biz type */
+            var items = document.querySelectorAll('#mfo-grid .mfo-list__item');
+            for (var i = 0; i < items.length; i++) {
+                var types = (items[i].getAttribute('data-biz-type') || '').split(',');
                 if (types.indexOf(type) !== -1) {
-                    cards[i].classList.remove('mfo-card--dimmed');
+                    items[i].style.display = '';
                 } else {
-                    cards[i].classList.add('mfo-card--dimmed');
+                    items[i].style.display = 'none';
                 }
             }
         }

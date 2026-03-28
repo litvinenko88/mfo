@@ -10875,22 +10875,67 @@ table {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    counter-reset: mfo-rank;
 }
 
 .mfo-list__item {
+    border-radius: var(--radius-md, 12px);
+    overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+    /* Fallback для страниц без .mfo-list__link */
     display: flex;
     align-items: flex-start;
     gap: 16px;
     padding: 20px 24px;
     background: var(--bg-card, #fff);
-    border: 1px solid var(--border-color, #e5e7eb);
-    border-radius: var(--radius-md, 12px);
-    transition: box-shadow 0.2s, border-color 0.2s;
+    border: 1px solid var(--color-border-light, #e5e7eb);
+}
+
+/* Когда внутри есть ссылка-обёртка — убираем стили с <li> */
+.mfo-list__item:has(.mfo-list__link) {
+    display: block;
+    padding: 0;
+    background: none;
+    border: none;
 }
 
 .mfo-list__item:hover {
-    border-color: var(--color-primary, #2563eb);
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 8px 32px rgba(15, 43, 70, 0.12);
+    transform: translateY(-2px);
+}
+
+.mfo-list__link {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--bg-card, #fff);
+    border: 1px solid var(--color-border-light, #e5e7eb);
+    border-radius: var(--radius-md, 12px);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s, background 0.25s;
+}
+
+.mfo-list__link:hover {
+    border-color: var(--color-primary, #0F2B46);
+    background: #f8fafc;
+}
+
+.mfo-list__rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-primary, #0F2B46);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .mfo-list__rating {
@@ -10907,10 +10952,12 @@ table {
 
 .mfo-list__logo {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
     border-radius: var(--radius-sm, 8px);
+    background: #f8fafc;
+    padding: 4px;
 }
 
 .mfo-list__content {
@@ -10929,7 +10976,7 @@ table {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .mfo-list__tag {
@@ -10952,11 +10999,16 @@ table {
     color: #166534;
 }
 
+.mfo-list__tag--term {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
 .mfo-list__desc {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-secondary, #64748b);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .mfo-list__cta {
@@ -10965,22 +11017,59 @@ table {
     white-space: nowrap;
 }
 
+.mfo-list__go {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    align-self: center;
+    padding: 10px 20px;
+    background: var(--color-accent, #FF6B35);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm, 8px);
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.mfo-list__go svg {
+    flex-shrink: 0;
+}
+
+.mfo-list__link:hover .mfo-list__go {
+    background: #e55a28;
+    transform: scale(1.04);
+}
+
 @media (max-width: 680px) {
-    .mfo-list__item {
-        flex-direction: column;
-        align-items: stretch;
+    .mfo-list__link {
+        flex-wrap: wrap;
         padding: 16px;
         gap: 12px;
     }
 
-    .mfo-list__logo {
-        width: 32px;
-        height: 32px;
+    .mfo-list__rank {
+        width: 30px;
+        height: 30px;
+        font-size: 0.78rem;
     }
 
-    .mfo-list__cta {
-        align-self: stretch;
+    .mfo-list__logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .mfo-list__content {
+        flex-basis: calc(100% - 100px);
+    }
+
+    .mfo-list__go {
+        flex-basis: 100%;
+        flex-direction: row;
+        padding: 12px;
         text-align: center;
+        justify-content: center;
     }
 }
 
@@ -11750,6 +11839,11 @@ table {
 }
 
 /* --- ROI Calculator --- */
+.roi-calc {
+    max-width: 720px;
+    margin: 0 auto 24px;
+}
+
 .roi-calc__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -11995,14 +12089,16 @@ table {
 }
 
 /* --- Useful Links Grid --- */
-.useful-grid {
+#useful-links .useful-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+    margin-top: 0;
 }
 
-.useful-card {
+#useful-links .useful-card {
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding: 16px 20px;
     background: var(--color-white);
@@ -12015,7 +12111,11 @@ table {
     transition: all var(--transition);
 }
 
-.useful-card:hover {
+#useful-links .useful-card::before {
+    display: none;
+}
+
+#useful-links .useful-card:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
     box-shadow: var(--shadow-sm);
@@ -12069,8 +12169,8 @@ table {
         grid-template-columns: 1fr;
     }
 
-    .useful-grid {
-        grid-template-columns: 1fr;
+    #useful-links .useful-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .collateral-table {
@@ -12128,9 +12228,16 @@ table {
     .biz-case-card__stat:last-child {
         border-bottom: none;
     }
-}
-        border-width: 2px;
+
+    #useful-links .useful-grid {
+        grid-template-columns: 1fr;
     }
+}
+
+/* ============================
+   RESPONSIVE — Extra Small (<360px) continued
+   ============================ */
+@media (max-width: 360px) {
 
     .term-result {
         padding: 8px 10px;
@@ -13621,7 +13728,7 @@ table {
         text-align: center;
         gap: 8px;
     }
-}
+
     .useful-grid {
         grid-template-columns: repeat(2, 1fr);
     }
