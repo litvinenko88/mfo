@@ -4928,8 +4928,8 @@ table {
 
 .reviews__actions {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 24px;
+    margin-top: 2.5rem;
+    padding-top: 0;
 }
 
 .reviews__toggle-btn {
@@ -15933,6 +15933,33 @@ table {
     flex: 1;
 }
 
+.podium__features {
+    list-style: none;
+    padding: 0;
+    margin: 0.2rem 0 0;
+    text-align: left;
+    width: 100%;
+    flex: 1;
+}
+
+.podium__features li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--color-text-light, #475569);
+    margin-bottom: 0.3rem;
+}
+
+.podium__features li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 0.78rem;
+}
+
 .podium__card .btn {
     margin-top: auto;
     width: 100%;
@@ -16035,6 +16062,82 @@ table {
     line-height: 1.5;
     color: var(--color-text, #1e293b);
     margin: 0;
+}
+
+/* --- Мифы: компактная сетка --- */
+.myth-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.myth-flip {
+    background: var(--color-white, #fff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.myth-flip:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.myth-flip__myth {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    background: rgba(220, 38, 38, 0.04);
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.myth-flip__fact {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    background: rgba(22, 163, 74, 0.04);
+}
+
+.myth-flip__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 0.1rem;
+}
+
+.myth-flip__myth .myth-flip__icon {
+    background: rgba(220, 38, 38, 0.12);
+    color: #dc2626;
+}
+
+.myth-flip__fact .myth-flip__icon {
+    background: rgba(22, 163, 74, 0.12);
+    color: #16a34a;
+}
+
+.myth-flip__myth p,
+.myth-flip__fact p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .myth-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Сравнение: МФО vs Банк (формат таблицы) --- */

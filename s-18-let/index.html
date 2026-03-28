@@ -1390,39 +1390,57 @@
                     <div class="podium__card podium__card--gold">
                         <div class="podium__medal">🥇</div>
                         <div class="podium__rank">1 место</div>
-                        <img src="../logos/01-zajmer.svg" alt="Займер — лучший первый займ" class="podium__logo" loading="lazy" width="110" height="38">
+                        <img src="../logos/01-zajmer.svg" alt="Логотип МФО — лучший первый займ" class="podium__logo" loading="lazy" width="110" height="38">
                         <div class="podium__name">Займер</div>
                         <div class="podium__tags">
-                            <span class="podium__tag podium__tag--accent">0% до 30 дней</span>
+                            <span class="podium__tag podium__tag--accent">0% первый займ</span>
                             <span class="podium__tag">до 30 000 ₽</span>
+                            <span class="podium__tag">18+</span>
                         </div>
-                        <p class="podium__desc">Заем до 30 000 ₽ на 30 дней по ставке 0%. Микрозайм для студентов с быстрым зачислением на карту — круглосуточно.</p>
+                        <ul class="podium__features">
+                            <li>Ставка 0% на первый заём до 30 дней</li>
+                            <li>Решение за 2 минуты, перевод мгновенно</li>
+                            <li>Без справок о доходах, только паспорт</li>
+                            <li>Лицензия ЦБ №651303532004088</li>
+                        </ul>
                         <a href="https://pxl.leads.su/click/b0f6a35bbf66adbad9bb2cfb33fe99fe?source=site&aff_sub1=s-18-let&aff_sub2=Zaymer&erid=2W5zFGSzRTv" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
 
                     <div class="podium__card podium__card--silver">
                         <div class="podium__medal">🥈</div>
                         <div class="podium__rank">2 место</div>
-                        <img src="../logos/17-krediska.svg" alt="Кредиска — первый займ студенту" class="podium__logo" loading="lazy" width="110" height="38">
+                        <img src="../logos/17-krediska.svg" alt="Логотип МФО — высокое одобрение" class="podium__logo" loading="lazy" width="110" height="38">
                         <div class="podium__name">Кредиска</div>
                         <div class="podium__tags">
                             <span class="podium__tag podium__tag--accent">98% одобрений</span>
                             <span class="podium__tag">до 50 000 ₽</span>
+                            <span class="podium__tag">18+</span>
                         </div>
-                        <p class="podium__desc">Высокое одобрение. Студентам на карту без отказа — от 3 минут. Кредитный период до 30 дней.</p>
+                        <ul class="podium__features">
+                            <li>Одобрение 98% — максимальный шанс</li>
+                            <li>Сумма до 50 000 ₽, срок до 31 дня</li>
+                            <li>Перевод на карту от 3 минут, 24/7</li>
+                            <li>Без подтверждения дохода</li>
+                        </ul>
                         <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=s-18-let&aff_sub2=Krediska&erid=2W5zFHywXyi" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
 
                     <div class="podium__card podium__card--bronze">
                         <div class="podium__medal">🥉</div>
                         <div class="podium__rank">3 место</div>
-                        <img src="../logos/04-credit7.svg" alt="Credit7 — заем новичку с 18 лет" class="podium__logo" loading="lazy" width="110" height="38">
+                        <img src="../logos/04-credit7.svg" alt="Логотип МФО — длинный срок возврата" class="podium__logo" loading="lazy" width="110" height="38">
                         <div class="podium__name">Credit7</div>
                         <div class="podium__tags">
                             <span class="podium__tag podium__tag--accent">До 168 дней</span>
                             <span class="podium__tag">до 30 000 ₽</span>
+                            <span class="podium__tag">18+</span>
                         </div>
-                        <p class="podium__desc">До 168 дней возврата. Длительные сроки для комфортного возврата студентам.</p>
+                        <ul class="podium__features">
+                            <li>Срок возврата до 168 дней — комфортно для студентов</li>
+                            <li>0,8% в день, есть акция 0% для новых</li>
+                            <li>Заявка онлайн, деньги на карту мгновенно</li>
+                            <li>Можно погасить досрочно без штрафов</li>
+                        </ul>
                         <a href="https://pxl.leads.su/click/b6fa5fcba82cadf5eb4c6e6fdba20c38?source=site&aff_sub1=s-18-let&aff_sub2=Credit7&erid=2W5zFJE6nfW" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
                 </div>
@@ -1769,7 +1787,9 @@
                     </div>
                 </div>
 
-                <button class="btn btn--outline reviews-more" id="reviews-more" type="button">Показать ещё отзывы</button>
+                <div class="reviews__actions">
+                    <button class="reviews__toggle-btn" id="reviews-toggle" type="button">Показать ещё отзывы</button>
+                </div>
             </div>
         </section>
 
@@ -1780,83 +1800,65 @@
                     <h2 class="section__title">Реальность микрозаймов — мифы и факты</h2>
                 </div>
 
-                <div class="myths-timeline">
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Без работы не одобрят.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Большинство компаний принимают без справки о трудоустройстве.</p>
-                            </div>
+                <div class="myth-grid">
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>Без работы не&nbsp;одобрят</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Большинство компаний принимают без справки о&nbsp;трудоустройстве</p>
                         </div>
                     </div>
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Микрофинансовые организации в России — нелегальные.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Все из рейтинга имеют лицензию ЦБ. Микрокредитование — легальная и регулируемая отрасль.</p>
-                            </div>
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>МФО в&nbsp;России — нелегальные</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Все из&nbsp;рейтинга имеют лицензию ЦБ&nbsp;РФ</p>
                         </div>
                     </div>
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Портит кредитный рейтинг.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Только задержка портит. Возврат в срок — плюс к истории.</p>
-                            </div>
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>Портит кредитный рейтинг</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Только просрочка портит. Возврат в&nbsp;срок — плюс к&nbsp;истории</p>
                         </div>
                     </div>
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Всегда огромные проценты.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Часто 0% для новых клиентов. Заемщик возвращает ровно полученную сумму.</p>
-                            </div>
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>Всегда огромные проценты</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Часто 0% для новых клиентов — возвращаете ровно&nbsp;ту&nbsp;же сумму</p>
                         </div>
                     </div>
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Лучше сразу оформить ипотеку или кредит в банке.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Ипотечный кредит требует стажа от 6 месяцев и подтверждённой зарплаты. Для небольших сумм подходит заем.</p>
-                            </div>
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>Лучше сразу кредит в&nbsp;банке</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Банк требует стаж от&nbsp;6&nbsp;мес. и&nbsp;справки. Для мелких сумм — займ проще</p>
                         </div>
                     </div>
-                    <div class="myths-timeline__item">
-                        <div class="myths-timeline__marker"></div>
-                        <div class="myths-timeline__content">
-                            <div class="myths-timeline__myth">
-                                <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p>Получить средства можно только в офисе.</p>
-                            </div>
-                            <div class="myths-timeline__fact">
-                                <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p>Всё оформляется дистанционно, из любой точки страны.</p>
-                            </div>
+                    <div class="myth-flip">
+                        <div class="myth-flip__myth">
+                            <span class="myth-flip__icon">&#10007;</span>
+                            <p>Получить можно только в&nbsp;офисе</p>
+                        </div>
+                        <div class="myth-flip__fact">
+                            <span class="myth-flip__icon">&#10003;</span>
+                            <p>Всё оформляется онлайн, из&nbsp;любой точки страны, 24/7</p>
                         </div>
                     </div>
                 </div>
