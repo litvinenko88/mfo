@@ -32,6 +32,7 @@
         initAutoEstimator();
         initPensionCalc();
         initStatusChecker();
+        initDocChecker();
     }
 
     /* ============================
@@ -2593,5 +2594,64 @@
 
         calc();
     })();
+
+    /* ============================
+       Doc Checker (по-паспорту)
+       ============================ */
+    function initDocChecker() {
+        var checker = document.getElementById('doc-checker');
+        if (!checker) return;
+
+        var checkboxes = checker.querySelectorAll('input[type="checkbox"][data-doc]');
+        var mfoCount = document.getElementById('doc-mfo-count');
+        var maxAmount = document.getElementById('doc-max-amount');
+        var approvalSpeed = document.getElementById('doc-approval-speed');
+        if (!mfoCount || !maxAmount || !approvalSpeed) return;
+
+        function update() {
+            var docs = [];
+            checkboxes.forEach(function (cb) {
+                if (cb.checked) docs.push(cb.getAttribute('data-doc'));
+            });
+
+            var count = 15;
+            var amount = 30000;
+            var speed = '5–10 мин.';
+
+            if (docs.length >= 3) {
+                count = 15;
+                amount = 100000;
+                speed = '2–5 мин.';
+            } else if (docs.length === 2) {
+                count = 15;
+                amount = 80000;
+                speed = '3–7 мин.';
+            } else if (docs.length === 1) {
+                count = 15;
+                amount = 50000;
+                speed = '5–8 мин.';
+            }
+
+            mfoCount.textContent = count;
+            maxAmount.textContent = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+            approvalSpeed.textContent = speed;
+        }
+
+        checkboxes.forEach(function (cb) {
+            cb.addEventListener('change', function () {
+                var label = cb.closest('.doc-checker__checkbox');
+                if (label) {
+                    if (cb.checked) {
+                        label.classList.add('doc-checker__checkbox--checked');
+                    } else {
+                        label.classList.remove('doc-checker__checkbox--checked');
+                    }
+                }
+                update();
+            });
+        });
+
+        update();
+    }
 
 })();

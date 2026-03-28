@@ -3534,12 +3534,12 @@ table {
 }
 
 .review-card__avatar {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     flex-shrink: 0;
     object-fit: cover;
-    background: var(--color-border);
+    border: 2px solid var(--color-border-light);
 }
 
 .review-card__header > div {
@@ -14438,8 +14438,8 @@ table {
 .passport-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    max-width: 1100px;
+    gap: 14px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -14447,7 +14447,7 @@ table {
     background: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 24px 20px;
+    padding: 18px 14px 14px;
     text-align: center;
     position: relative;
     transition: box-shadow 0.2s, transform 0.2s;
@@ -14460,15 +14460,15 @@ table {
 
 .passport-steps__number {
     position: absolute;
-    top: -14px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: var(--color-accent);
     color: var(--color-white);
     border-radius: 50%;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -14476,52 +14476,52 @@ table {
 }
 
 .passport-steps__icon {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: var(--color-primary);
 }
 
 .passport-steps__icon svg {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
 }
 
 .passport-steps__title {
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-primary);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .passport-steps__text {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--color-muted);
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 .passport-steps__branch {
-    margin-top: 14px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
 }
 
 .passport-steps__branch-option {
     background: var(--color-bg);
     border-radius: var(--radius-sm);
-    padding: 10px;
-    font-size: 0.78rem;
+    padding: 8px;
+    font-size: 0.72rem;
     color: var(--color-text);
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .passport-steps__branch-label {
     display: block;
     font-weight: 700;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 @media (max-width: 900px) {
@@ -14533,6 +14533,7 @@ table {
 @media (max-width: 480px) {
     .passport-steps {
         grid-template-columns: 1fr;
+        max-width: 360px;
     }
 }
 
