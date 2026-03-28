@@ -37,6 +37,7 @@
         initBezOtkazaChecklist();
         initQuizWidget();
         initBudgetPlanner();
+        initDateFilter();
     }
 
     /* ============================
@@ -3074,6 +3075,45 @@
         incomeRange.addEventListener('input', calc);
         expenseRange.addEventListener('input', calc);
         calc();
+    }
+
+    /* ============================
+       Date Filter (novye-mfo page)
+       ============================ */
+    function initDateFilter() {
+        var container = document.getElementById('date-filter');
+        if (!container) return;
+
+        var buttons = container.querySelectorAll('.date-filter__btn');
+        var result = container.querySelector('.date-filter__result');
+        if (!buttons.length || !result) return;
+
+        var messages = {
+            '7': 'За последние 7 дней появились <span class="date-filter__result-count">2</span> новые МФО',
+            '30': 'За последние 30 дней появились <span class="date-filter__result-count">5</span> новых МФО',
+            '90': 'За последние 90 дней появились <span class="date-filter__result-count">8</span> новых МФО',
+            'all': 'Всего в рейтинге <span class="date-filter__result-count">12</span> новых МФО 2026 года'
+        };
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', (function(btn) {
+                return function() {
+                    for (var j = 0; j < buttons.length; j++) {
+                        buttons[j].classList.remove('date-filter__btn--active');
+                    }
+                    btn.classList.add('date-filter__btn--active');
+                    var days = btn.getAttribute('data-days');
+                    result.innerHTML = '<div class="date-filter__result-text">' + (messages[days] || '') + '</div>';
+                };
+            })(buttons[i]));
+        }
+
+        /* Initial state */
+        var activeBtn = container.querySelector('.date-filter__btn--active');
+        if (activeBtn) {
+            var days = activeBtn.getAttribute('data-days');
+            result.innerHTML = '<div class="date-filter__result-text">' + (messages[days] || '') + '</div>';
+        }
     }
 
 })();
