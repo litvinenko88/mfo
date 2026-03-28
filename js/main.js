@@ -33,6 +33,7 @@
         initPensionCalc();
         initStatusChecker();
         initDocChecker();
+        initApprovalGauge();
     }
 
     /* ============================
@@ -2678,6 +2679,164 @@
         }
 
         update();
+    }
+
+    /* ============================
+       Approval Gauge (bez-otkaza)
+       ============================ */
+    function initApprovalGauge() {
+        var amountSlider = document.getElementById('gauge-amount');
+        var ageSlider = document.getElementById('gauge-age');
+        if (!amountSlider || !ageSlider) return;
+
+        var amountDisplay = document.getElementById('gauge-amount-value');
+        var ageDisplay = document.getElementById('gauge-age-value');
+        var fillBar = document.getElementById('gauge-fill');
+        var resultDisplay = document.getElementById('gauge-result');
+        var verdictEl = document.getElementById('gauge-verdict');
+        var mfoCountEl = document.getElementById('gauge-mfo-count');
+        var toggleWrap = document.getElementById('gauge-employment-toggle');
+
+        var employment = 'employed';
+
+        /* Employment toggle */
+        if (toggleWrap) {
+            var toggleBtns = toggleWrap.querySelectorAll('.calculator__toggle-btn');
+            for (var i = 0; i < toggleBtns.length; i++) {
+                toggleBtns[i].addEventListener('click', function () {
+                    for (var j = 0; j < toggleBtns.length; j++) {
+                        toggleBtns[j].classList.remove('calculator__toggle-btn--active');
+                    }
+                    this.classList.add('calculator__toggle-btn--active');
+                    employment = this.getAttribute('data-employment');
+                    updateGauge();
+                });
+            }
+        }
+
+        function formatNum(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+
+        function getAgeWord(n) {
+            var abs = Math.abs(n) % 100;
+            var last = abs % 10;
+            if (abs > 10 && abs < 20) return 'лет';
+            if (last > 1 && last < 5) return 'года';
+            if (last === 1) return 'год';
+            return 'лет';
+        }
+
+        function calcApproval(amount, age, emp) {
+            /* Base approval by amount */
+            var base;
+            if (amount <= 5000) base = 96;
+            else if (amount <= 15000) base = 94;
+            else if (amount <= 30000) base = 91;
+            else if (amount <= 50000) base = 86;
+            else if (amount <= 70000) base = 80;
+            else base = 74;
+
+            /* Age modifier */
+            var ageMod = 0;
+            if (age >= 23 && age <= 55) ageMod = 2;
+            else if (age >= 18 && age <= 22) ageMod = -3;
+            else if (age >= 56 && age <= 65) ageMod = 0;
+            else if (age >= 66 && age <= 70) ageMod = -2;
+            else ageMod = -5;
+
+            /* Employment modifier */
+            var empMod = 0;
+            if (emp === 'employed') empMod = 3;
+            else if (emp === 'self') empMod = 1;
+            else if (emp === 'pensioner') empMod = -1;
+            else empMod = -4; /* unemployed */
+
+            var result = base + ageMod + empMod;
+            if (result > 98) result = 98;
+            if (result < 45) result = 45;
+            return result;
+        }
+
+        function countMfo(amount) {
+            /* Count how many MFO from the rating accept this amount */
+            var cards = document.querySelectorAll('#mfo-grid .mfo-card');
+            var count = 0;
+            cards.forEach(function (card) {
+                var maxAmt = parseInt(card.getAttribute('data-amount') || '0', 10);
+                if (amount <= maxAmt) count++;
+            });
+            /* Fallback: if no cards found or parsed, estimate */
+            if (cards.length === 0) {
+                if (amount <= 30000) return 15;
+                if (amount <= 50000) return 12;
+                if (amount <= 100000) return 9;
+                return 5;
+            }
+            return count;
+        }
+
+        function updateSliderFill(slider) {
+            var min = parseFloat(slider.min);
+            var max = parseFloat(slider.max);
+            var val = parseFloat(slider.value);
+            var pct = ((val - min) / (max - min)) * 100;
+            slider.style.background = 'linear-gradient(to right, #FF6B35 0%, #FF6B35 ' + pct + '%, #E2E8F0 ' + pct + '%, #E2E8F0 100%)';
+        }
+
+        function updateGauge() {
+            var amount = parseInt(amountSlider.value, 10);
+            var age = parseInt(ageSlider.value, 10);
+
+            /* Update displays */
+            if (amountDisplay) amountDisplay.textContent = formatNum(amount) + ' \u20BD';
+            if (ageDisplay) ageDisplay.textContent = age + ' ' + getAgeWord(age);
+
+            /* Calculate approval */
+            var pct = calcApproval(amount, age, employment);
+            var mfoCount = countMfo(amount);
+
+            /* Update gauge bar */
+            if (fillBar) fillBar.style.width = pct + '%';
+
+            /* Update result number with color */
+            if (resultDisplay) {
+                resultDisplay.textContent = pct + '%';
+                if (pct >= 85) {
+                    resultDisplay.style.color = 'var(--color-success, #16a34a)';
+                } else if (pct >= 70) {
+                    resultDisplay.style.color = '#f59e0b';
+                } else {
+                    resultDisplay.style.color = '#ef4444';
+                }
+            }
+
+            /* Update verdict */
+            if (verdictEl && mfoCountEl) {
+                mfoCountEl.textContent = mfoCount;
+                if (pct >= 85) {
+                    verdictEl.textContent = '';
+                    verdictEl.innerHTML = 'Высокие шансы на одобрение — <strong>' + mfoCount + '</strong> МФО готовы рассмотреть заявку';
+                    verdictEl.style.background = 'rgba(22, 163, 106, 0.08)';
+                } else if (pct >= 70) {
+                    verdictEl.textContent = '';
+                    verdictEl.innerHTML = 'Средние шансы — <strong>' + mfoCount + '</strong> МФО могут одобрить. Подайте в 2–3 организации';
+                    verdictEl.style.background = 'rgba(245, 158, 11, 0.08)';
+                } else {
+                    verdictEl.textContent = '';
+                    verdictEl.innerHTML = 'Шансы ниже среднего — попробуйте уменьшить сумму. Доступно <strong>' + mfoCount + '</strong> МФО';
+                    verdictEl.style.background = 'rgba(239, 68, 68, 0.08)';
+                }
+            }
+
+            updateSliderFill(amountSlider);
+            updateSliderFill(ageSlider);
+        }
+
+        amountSlider.addEventListener('input', updateGauge);
+        ageSlider.addEventListener('input', updateGauge);
+
+        updateGauge();
     }
 
 })();
