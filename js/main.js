@@ -2921,6 +2921,9 @@
                 resultText.innerHTML = 'Вам доступно <strong>' + count + ' МФО</strong>, готовых выдать займ прямо сейчас';
             }
             if (resultBlock) resultBlock.style.display = 'block';
+
+            var submitBtn = document.getElementById('quiz-submit');
+            if (submitBtn) submitBtn.style.display = '';
         }
 
         showStep(0);
@@ -2959,12 +2962,12 @@
         var expenseRange = section.querySelector('input[name="expenses"]');
         if (!incomeRange || !expenseRange) return;
 
-        var incomeVal = section.querySelector('.budget-planner__income-val');
-        var expenseVal = section.querySelector('.budget-planner__expense-val');
-        var freeEl = section.querySelector('[data-result="free"]');
-        var limitEl = section.querySelector('[data-result="limit"]');
-        var paymentEl = section.querySelector('[data-result="payment"]');
-        var verdictEl = section.querySelector('.budget-planner__verdict');
+        var incomeVal = document.getElementById('planner-income-value');
+        var expenseVal = document.getElementById('planner-expenses-value');
+        var freeEl = document.getElementById('planner-free');
+        var limitEl = document.getElementById('planner-limit');
+        var paymentEl = document.getElementById('planner-payment');
+        var verdictEl = document.getElementById('planner-verdict');
 
         function fmt(n) {
             return n.toLocaleString('ru-RU') + ' ₽';

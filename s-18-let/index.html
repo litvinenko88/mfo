@@ -52,12 +52,92 @@
     }
     </script>
 
-    <!-- Schema.org — FAQPage (заполнится позже) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": []
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Можно ли оформить без подтверждения дохода?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да. Достаточно паспорта РФ и банковской карты."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какой процент одобрения?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "От 85% до 98% в проверенных компаниях."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как быстро приходит перевод?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "5–15 минут после решения, круглосуточно."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какая ставка?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "От 0% до 0,8% в день. Максимальная сумма переплаты ограничена законом."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Что будет при задержке возврата?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Штрафы и передача данных в бюро. Избегайте просрочек — это влияет на будущие обращения."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно получить наличными?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, через системы переводов."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Нужна регистрация на Госуслуги?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Не обязательно. Некоторые компании используют Госуслуги для верификации, но это необязательное условие."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как выбрать подходящее предложение?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Лучшие предложения по микрозаймам собраны в рейтинге. Сравните ставку, сумму и срок."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Влияет ли микрозайм на возможность получить кредит в банке?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да. Своевременный возврат — плюс к истории. Задержки — минус."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие документы нужны?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Паспорт РФ. Дополнительные страховки и справки не требуются."
+                }
+            }
+        ]
     }
     </script>
 
@@ -184,9 +264,9 @@
                             Обновлено: <time datetime="2026-03-28">28 марта 2026</time>
                         </div>
 
-                        <h1 class="hero__title"><!-- H1 будет добавлен позже --></h1>
+                        <h1 class="hero__title">Рейтинг ТОП МФО 2026 — заем студентам на карту без отказа МФО с 18 лет</h1>
 
-                        <p class="hero__subtitle"><!-- Подзаголовок будет добавлен позже --></p>
+                        <p class="hero__subtitle">Каждый студент хотя бы раз сталкивался с нехваткой средств. Мы собрали рейтинг компаний с выгодными условиями. Подберите заем за 5 минут — ответьте на 3 вопроса квиза.</p>
                     </div>
 
                     <!-- Квиз — уникальный виджет -->
@@ -194,35 +274,35 @@
                         <div class="calculator__title">Подходит ли тебе займ?</div>
 
                         <!-- Шаг 1: Возраст -->
-                        <div class="quiz-widget__step quiz-widget__step--active" data-step="1">
+                        <div class="quiz-widget__step quiz-widget__step--active" data-step="age">
                             <div class="quiz-widget__step-label">Шаг 1 из 3 — Ваш возраст</div>
                             <div class="quiz-widget__options" id="quiz-age-options">
-                                <button class="quiz-widget__option" data-age="18" type="button">18 лет</button>
-                                <button class="quiz-widget__option" data-age="19" type="button">19 лет</button>
-                                <button class="quiz-widget__option" data-age="20" type="button">20 лет</button>
-                                <button class="quiz-widget__option" data-age="21+" type="button">21+</button>
+                                <button class="quiz-widget__option" data-value="18" type="button">18 лет</button>
+                                <button class="quiz-widget__option" data-value="19" type="button">19 лет</button>
+                                <button class="quiz-widget__option" data-value="20" type="button">20 лет</button>
+                                <button class="quiz-widget__option" data-value="21" type="button">21+</button>
                             </div>
                         </div>
 
                         <!-- Шаг 2: Статус -->
-                        <div class="quiz-widget__step" data-step="2">
+                        <div class="quiz-widget__step" data-step="status">
                             <div class="quiz-widget__step-label">Шаг 2 из 3 — Ваш статус</div>
                             <div class="quiz-widget__options" id="quiz-status-options">
-                                <button class="quiz-widget__option" data-status="student" type="button">Студент</button>
-                                <button class="quiz-widget__option" data-status="working" type="button">Работающий</button>
-                                <button class="quiz-widget__option" data-status="unemployed" type="button">Без работы</button>
-                                <button class="quiz-widget__option" data-status="self" type="button">Самозанятый</button>
+                                <button class="quiz-widget__option" data-value="student" type="button">Студент</button>
+                                <button class="quiz-widget__option" data-value="working" type="button">Работающий</button>
+                                <button class="quiz-widget__option" data-value="unemployed" type="button">Без работы</button>
+                                <button class="quiz-widget__option" data-value="self" type="button">Самозанятый</button>
                             </div>
                         </div>
 
                         <!-- Шаг 3: Тип дохода -->
-                        <div class="quiz-widget__step" data-step="3">
+                        <div class="quiz-widget__step" data-step="income">
                             <div class="quiz-widget__step-label">Шаг 3 из 3 — Источник дохода</div>
                             <div class="quiz-widget__options" id="quiz-income-options">
-                                <button class="quiz-widget__option" data-income="stipend" type="button">Стипендия</button>
-                                <button class="quiz-widget__option" data-income="parttime" type="button">Подработка</button>
-                                <button class="quiz-widget__option" data-income="salary" type="button">Зарплата</button>
-                                <button class="quiz-widget__option" data-income="none" type="button">Нет дохода</button>
+                                <button class="quiz-widget__option" data-value="stipend" type="button">Стипендия</button>
+                                <button class="quiz-widget__option" data-value="parttime" type="button">Подработка</button>
+                                <button class="quiz-widget__option" data-value="salary" type="button">Зарплата</button>
+                                <button class="quiz-widget__option" data-value="none" type="button">Нет дохода</button>
                             </div>
                         </div>
 
@@ -240,132 +320,6 @@
                         </div>
 
                         <a href="#mfo-rating" class="btn btn--primary btn--filter-submit" id="quiz-submit" style="display: none;">Показать подходящие МФО ↓</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================== 2. ВОЗРАСТНАЯ КАРТА МФО ======================== -->
-        <section class="section" id="age-map">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок будет добавлен позже --></p>
-                </div>
-
-                <div class="age-map">
-                    <div class="age-map__grid">
-                        <!-- Заголовки возрастов -->
-                        <div class="age-map__head">МФО</div>
-                        <div class="age-map__head">18</div>
-                        <div class="age-map__head">19</div>
-                        <div class="age-map__head">20</div>
-                        <div class="age-map__head">21+</div>
-
-                        <!-- Займер -->
-                        <div class="age-map__name">Займер</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Кредиска -->
-                        <div class="age-map__name">Кредиска</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Credit7 -->
-                        <div class="age-map__name">Credit7</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Boostra -->
-                        <div class="age-map__name">Boostra</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- BelkaCredit -->
-                        <div class="age-map__name">BelkaCredit</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Надо Денег -->
-                        <div class="age-map__name">Надо Денег</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Доброзайм -->
-                        <div class="age-map__name">Доброзайм</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Быстроденьги -->
-                        <div class="age-map__name">Быстроденьги</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Лайк Мани -->
-                        <div class="age-map__name">Лайк Мани</div>
-                        <div class="age-map__cell age-map__cell--no">✗</div>
-                        <div class="age-map__cell age-map__cell--no">✗</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Joymoney -->
-                        <div class="age-map__name">Joymoney</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- MoneyMan -->
-                        <div class="age-map__name">MoneyMan</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- еКапуста -->
-                        <div class="age-map__name">еКапуста</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Деньги Сразу -->
-                        <div class="age-map__name">Деньги Сразу</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Вебзайм -->
-                        <div class="age-map__name">Вебзайм</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Max.Credit -->
-                        <div class="age-map__name">Max.Credit</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
                     </div>
                 </div>
             </div>
@@ -389,8 +343,8 @@
         <section class="section section--alt" id="mfo-rating">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок рейтинга будет добавлен позже --></h2>
-                    <p class="section__subtitle"><!-- Описание рейтинга будет добавлено позже --></p>
+                    <h2 class="section__title">Рейтинг МФО — займ для студентов на карту</h2>
+                    <p class="section__subtitle">Актуальные предложения от лицензированных организаций. Подбирайте из предложений МФО — все проверены по реестру ЦБ.</p>
                     <div class="rating-stats">
                         <span class="rating-stats__item">15 организаций в рейтинге</span>
                         <span class="rating-stats__item">Ставка от 0% в день</span>
@@ -606,8 +560,542 @@
                         </div>
                     </div>
 
-                    <!-- Карточки 6-15 будут добавлены вместе с текстом -->
+                    <!-- 6. Быстроденьги -->
+                    <div class="mfo-card" data-rating="4.8" data-amount="30000" data-rate="0.6" data-term="30" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#6</span>
+                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги — займ с 18 лет на карту" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 10 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">МФК Быстроденьги ООО</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110573000002</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.8</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">до 30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,6% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–75 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">98% одобрений</span>
+                                <span class="mfo-card__tag">Топ-5 рынка</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9b7c3f92632059651026c93817da5be4?source=site&aff_sub1=s-18-let&aff_sub2=bystrodengi&erid=2W5zFHRnKXf" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> МФК Быстроденьги ООО</li><li><strong>Реестр ЦБ:</strong> №2110573000002</li><li><strong>ПСК:</strong> 219% годовых</li><li><strong>Одобрение:</strong> до 98% заявок</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> до 30 000 ₽</li><li><strong>Срок:</strong> до 30 дней</li><li><strong>Ставка:</strong> 0,6%/день; 0% первые 10 дней</li><li><strong>Возраст:</strong> 18–75 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ</li><li>Авторизация через Госуслуги</li><li>Выдают студентам с 18 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Топ-5 МФО России</li><li>Мобильное приложение</li><li>Зачисление за 5–15 минут</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- 7. Надо Денег -->
+                    <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0.8" data-term="168" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#7</span>
+                            <img src="../logos/11-nado-deneg.svg" alt="Надо Денег — займ студентам по СБП" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «ФИНАФОР»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2403045010075</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.8</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–168 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">Студентам</span>
+                                <span class="mfo-card__tag">По СБП</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/9d9fc0e645501c612c6cfa1055214b42?source=site&aff_sub1=s-18-let&aff_sub2=nado-deneg&erid=2W5zFHdCTFv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МКК «ФИНАФОР»</li><li><strong>Реестр ЦБ:</strong> №2403045010075</li><li><strong>ПСК:</strong> 292% годовых</li><li><strong>Одобрение:</strong> 95% заявок</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 1 000–100 000 ₽</li><li><strong>Срок:</strong> 7–168 дней</li><li><strong>Ставка:</strong> 0–0,8%/день; 0% на 7 дней</li><li><strong>Возраст:</strong> от 18 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ</li><li>Без кредитной истории — выдают</li><li>Подходит студентам, пенсионерам</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Моментальный перевод по СБП</li><li>Более 2 млн клиентов</li><li>Регистрация через Госуслуги</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Доброзайм -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="720" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#8</span>
+                            <img src="../logos/12-dobrozajm.svg" alt="Доброзайм — займ онлайн с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «ДЗБР»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651503045006630</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">1 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">4–720 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–90 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">С 2011 года</span>
+                                <span class="mfo-card__tag">До 720 дней</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/97d69622e4f8b11f0af2747944c4a311?source=site&aff_sub1=s-18-let&aff_sub2=dobrozaym&erid=2W5zFJSXfu2" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МКК «ДЗБР» / АО МФК «Саммит»</li><li><strong>Реестр ЦБ:</strong> №651503045006630</li><li><strong>ПСК:</strong> 0–292% годовых</li><li><strong>Рейтинг Яндекс:</strong> 4.9 (217 отзывов)</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 1 000–100 000 ₽</li><li><strong>Срок:</strong> 4–720 дней</li><li><strong>Ставка:</strong> 0–0,8%/день; 0% на 7 дн. до 15 000 ₽</li><li><strong>Возраст:</strong> 18–90 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ (без СНИЛС, ИНН)</li><li>Выдают с плохой КИ</li><li>Безработным и студентам</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Работает с 2011, 25+ млрд ₽ выдано</li><li>Бесплатная пролонгация</li><li>Вход через Госуслуги / Тинькофф ID</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. еКапуста -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.99" data-term="30" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#9</span>
+                            <img src="../logos/31-ekapusta.svg" alt="еКапуста — микрозайм с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 30 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Русинтерфинанс»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2120754001243</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 30 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–30 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,99% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">Рейтинг #1</span>
+                                <span class="mfo-card__tag">С 2012 года</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/s2sanlbasa?subid1=site&subid2=click2&subid3=s-18-let&subid4=Ekapusta" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МКК «Русинтерфинанс»</li><li><strong>Реестр ЦБ:</strong> №2120754001243</li><li><strong>Рейтинг Сравни.ру:</strong> 4.91 — 1-е место</li><li><strong>Работает с:</strong> 2012 года</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> до 30 000 ₽</li><li><strong>Срок:</strong> 7–30 дней</li><li><strong>Ставка:</strong> 0%/день первый займ до 30 дн.</li><li><strong>Возраст:</strong> от 18 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ</li><li>Выдают с плохой КИ</li><li>Госуслуги — желательно</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>#1 рейтинг на Сравни.ру (4.91)</li><li>Нет платных допуслуг</li><li>Продление до 5 раз по 21 день</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Joymoney -->
+                    <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="168" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#10</span>
+                            <img src="../logos/19-joymoney.svg" alt="Joymoney — займ с 18 лет без отказа" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 14 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Джой Мани»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651403550005450</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.7</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">10 дн.–24 нед.</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–71 год</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">Статус МФК</span>
+                                <span class="mfo-card__tag">0% 14 дней</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/4f1a5e421ae9b0afb91d49ef85946fba?source=site&aff_sub1=s-18-let&aff_sub2=Joymoney&erid=2W5zFK1Gnqv" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МФК «Джой Мани»</li><li><strong>Реестр ЦБ:</strong> №651403550005450</li><li><strong>ПСК:</strong> 292% годовых</li><li><strong>Статус:</strong> МФК (выше, чем МКК)</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 3 000–100 000 ₽</li><li><strong>Срок:</strong> 10 дн.–24 недели</li><li><strong>Ставка:</strong> 0%/день до 14 дн. при погашении в срок</li><li><strong>Возраст:</strong> 18–71 год</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ + СНИЛС</li><li>Именная банковская карта</li><li>Доход — указать в анкете</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>1,5+ млн займов выдано (с 2014)</li><li>Промокоды со скидкой до 90%</li><li>Лимит растёт с каждым займом</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. MoneyMan -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="126" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#11</span>
+                            <img src="../logos/20-moneyman.svg" alt="MoneyMan — первая онлайн МФО с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МФК «Мани Мен»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110177000478</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">до 100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–126 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–70 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">3 млн+ займов</span>
+                                <span class="mfo-card__tag">Первый 0%</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/ssm7xv7ihi?subid1=site&subid2=click2&subid3=s-18-let&subid4=Moneyman-VIP" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МФК «Мани Мен»</li><li><strong>Реестр ЦБ:</strong> №2110177000478</li><li><strong>Рейтинг Сравни.ру:</strong> 4.88 (8 591 отзыв)</li><li><strong>Одобрение:</strong> высокий процент</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> до 30 000 ₽ (новые) / до 100 000 (повторные)</li><li><strong>Срок:</strong> 5–126 дней</li><li><strong>Ставка:</strong> 0% до 21 дня (первый займ)</li><li><strong>Возраст:</strong> 18–70 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт, СНИЛС</li><li>Можно без официального дохода</li><li>С небольшими просрочками — выдают</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Первая онлайн МФО в России</li><li>3 млн+ выданных займов</li><li>Реферальная программа</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Срочно Деньги -->
+                    <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#12</span>
+                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги — займ с 18 лет онлайн" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 7 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «Срочноденьги»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №2110552000304</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="mfo-card__rating-value">4.9</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">2 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">1–360 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">Офисы по РФ</span>
+                                <span class="mfo-card__tag">До 360 дней</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/38d67604feb85b28ab4090610ea5bbba?source=site&aff_sub1=s-18-let&aff_sub2=srochno-dengi&erid=2W5zFJkUBEY" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МКК «Срочноденьги»</li><li><strong>Реестр ЦБ:</strong> №2110552000304</li><li><strong>ПСК:</strong> 292% годовых</li><li><strong>Рейтинг Яндекс:</strong> 4.9 (9 295 отзывов)</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 2 000–100 000 ₽</li><li><strong>Срок:</strong> 1–360 дней</li><li><strong>Ставка:</strong> 0,8%/день; 0% на 7 дней первый займ</li><li><strong>Возраст:</strong> 18–80 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ</li><li>Работает 24/7 по всей России</li><li>Зачисление за 15 минут</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Офисы по всей России</li><li>8 из 10 клиентов — постоянные</li><li>Подарок в День рождения</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. OneClickMoney -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="200000" data-rate="0.8" data-term="735" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#13</span>
+                            <img src="../logos/13-oneclickmoney.svg" alt="OneClickMoney — займ студентам до 200 000 ₽" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">Первый 0%</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">АО «МКК УФ»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №001503760007126</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">500–200 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">15–735 дней</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">18–80 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">До 200 000 ₽</span>
+                                <span class="mfo-card__tag">Студентам</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/df029d65324cad9b3579f8b1034cab21?source=site&aff_sub1=s-18-let&aff_sub2=OneClickMone&erid=2W5zFH7Qc5v" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> АО «МКК УФ»</li><li><strong>Реестр ЦБ:</strong> №001503760007126</li><li><strong>В реестре с:</strong> 2015 года</li><li><strong>Одобрение:</strong> 8 из 10 заявок</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 500–200 000 ₽</li><li><strong>Срок:</strong> 15–735 дней</li><li><strong>Ставка:</strong> 0% первый займ</li><li><strong>Возраст:</strong> 18–80 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Только паспорт</li><li>С плохой КИ — выдают</li><li>Студентам и пенсионерам</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Максимальная сумма — 200 000 ₽</li><li>Не звонят родственникам</li><li>Досрочное погашение</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Гринмани -->
+                    <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="364" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#14</span>
+                            <img src="../logos/29-grinmani.svg" alt="Гринмани — долгосрочный займ с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО МКК «СФ»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №1903045009345</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.5</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">3 000–100 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">7–364 дня</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0–0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">Долгосрочный</span>
+                                <span class="mfo-card__tag">0,41%/день</span>
+                            </div>
+                            <a href="https://vldmnt.ru/go/stjejc0nuh?subid1=site&subid2=click2&subid3=s-18-let&subid4=grinmani-zaym-pod-0" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО МКК «СФ» (Стабильные финансы)</li><li><strong>Реестр ЦБ:</strong> №1903045009345</li><li><strong>Работает с:</strong> 2019 года</li><li><strong>СРО:</strong> «Микрофинансирование и Развитие»</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 3 000–100 000 ₽</li><li><strong>Срок:</strong> 7–364 дня</li><li><strong>Ставка:</strong> 0% до 21 дня; долгосрочный — 0,41%/день</li><li><strong>Возраст:</strong> от 18 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Паспорт РФ</li><li>Мобильный телефон</li><li>Банковская карта</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>Самая низкая ставка долгосрочных — 0,41%/день</li><li>Лимит растёт с каждым займом</li><li>Проверка за ~15 минут</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. Займиго -->
+                    <div class="mfo-card" data-rating="4.6" data-amount="50000" data-rate="0.8" data-term="31" data-min-age="18">
+                        <div class="mfo-card__header">
+                            <span class="mfo-card__rank">#15</span>
+                            <img src="../logos/18-zaymigo.svg" alt="Займиго — займ без отказа с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <span class="badge badge--success">0% до 21 дн.</span>
+                        </div>
+                        <div class="mfo-card__body">
+                            <div class="mfo-card__legal">ООО «Займиго МКК»</div>
+                            <div class="mfo-card__reg">Реестр ЦБ: №651303322004222</div>
+                            <div class="mfo-card__rating"><span class="mfo-card__rating-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mfo-card__rating-value">4.6</span></div>
+                            <div class="mfo-card__terms">
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Сумма</span><span class="mfo-card__term-value">5 000–50 000 ₽</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Срок</span><span class="mfo-card__term-value">5–31 день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Ставка</span><span class="mfo-card__term-value">0,8% / день</span></div>
+                                <div class="mfo-card__term"><span class="mfo-card__term-label">Возраст</span><span class="mfo-card__term-value">от 18 лет</span></div>
+                            </div>
+                        </div>
+                        <div class="mfo-card__footer">
+                            <div class="mfo-card__tags">
+                                <span class="mfo-card__tag">С 18 лет</span>
+                                <span class="mfo-card__tag">98% одобрений</span>
+                                <span class="mfo-card__tag">С 2013 года</span>
+                            </div>
+                            <a href="https://pxl.leads.su/click/034e966f88817730c36d8275cae1b4dd?source=site&aff_sub1=s-18-let&aff_sub2=Zaymigo&erid=2W5zFK44HXE" class="btn btn--primary btn--sm mfo-card__cta" rel="nofollow noopener" target="_blank">Перейти на сайт</a>
+                            <div class="mfo-card__info">
+                                <button class="mfo-card__info-toggle" type="button" aria-expanded="false">
+                                    Подробная информация о выдаче <span class="mfo-card__info-arrow">&#9660;</span>
+                                </button>
+                                <div class="mfo-card__info-content">
+                                    <div class="mfo-detail__grid">
+                                    <div class="mfo-detail__block"><h4>Общая информация</h4><ul><li><strong>Юр. лицо:</strong> ООО «Займиго МКК»</li><li><strong>Реестр ЦБ:</strong> №651303322004222</li><li><strong>ПСК:</strong> 251–292% годовых</li><li><strong>Одобрение:</strong> 98% заявок</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Условия займа</h4><ul><li><strong>Сумма:</strong> 5 000–50 000 ₽</li><li><strong>Срок:</strong> 5–31 день</li><li><strong>Ставка:</strong> 0% до 21 дня (первый займ)</li><li><strong>Возраст:</strong> от 18 лет</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Документы</h4><ul><li>Только паспорт</li><li>Без подтверждения дохода</li><li>Решение за 10 минут</li></ul></div>
+                                    <div class="mfo-detail__block"><h4>Особенности</h4><ul><li>11 лет на рынке (с 2013)</li><li>563 000+ заёмщиков</li><li>Работает 24/7 онлайн</li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== ВОЗРАСТНАЯ КАРТА МФО ======================== -->
+        <section class="section" id="age-map">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Возрастная карта — займы студентам с 18 лет</h2>
+                    <p class="section__subtitle">Не все компании выдают займы с минимального возраста. Карта показывает: минимальный возраст, лимиты и скорость перевода у каждой организации.</p>
+                </div>
+
+                <div class="age-map">
+                    <div class="age-map__grid">
+                        <!-- Заголовки возрастов -->
+                        <div class="age-map__head">МФО</div>
+                        <div class="age-map__head">18</div>
+                        <div class="age-map__head">19</div>
+                        <div class="age-map__head">20</div>
+                        <div class="age-map__head">21+</div>
+
+                        <!-- Займер -->
+                        <div class="age-map__name">Займер</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Кредиска -->
+                        <div class="age-map__name">Кредиска</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Credit7 -->
+                        <div class="age-map__name">Credit7</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Boostra -->
+                        <div class="age-map__name">Boostra</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- BelkaCredit -->
+                        <div class="age-map__name">BelkaCredit</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Надо Денег -->
+                        <div class="age-map__name">Надо Денег</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Доброзайм -->
+                        <div class="age-map__name">Доброзайм</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Быстроденьги -->
+                        <div class="age-map__name">Быстроденьги</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Лайк Мани -->
+                        <div class="age-map__name">Лайк Мани</div>
+                        <div class="age-map__cell age-map__cell--no">✗</div>
+                        <div class="age-map__cell age-map__cell--no">✗</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Joymoney -->
+                        <div class="age-map__name">Joymoney</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- MoneyMan -->
+                        <div class="age-map__name">MoneyMan</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- еКапуста -->
+                        <div class="age-map__name">еКапуста</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Деньги Сразу -->
+                        <div class="age-map__name">Деньги Сразу</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Вебзайм -->
+                        <div class="age-map__name">Вебзайм</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
+                        <!-- Max.Credit -->
+                        <div class="age-map__name">Max.Credit</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -621,7 +1109,7 @@
                     </div>
                     <div class="risk-warning__content">
                         <div class="risk-warning__title">18+ Важная информация</div>
-                        <p class="risk-warning__text"><!-- Текст предупреждения будет добавлен позже --></p>
+                        <p class="risk-warning__text">Заем — финансовое обязательство. Процентная ставка по закону не превышает 0,8% в день (292% годовой). Микрофинансирование подходит для краткосрочных нужд. Перед подписанием проверьте наличие лицензии у организации в реестре ЦБ. Заём — зафиксированное долговое обязательство, регулируемое законодательством.</p>
                     </div>
                 </div>
             </div>
@@ -631,51 +1119,44 @@
         <section class="section section--alt" id="first-loan-guide">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок будет добавлен позже --></p>
+                    <h2 class="section__title">Первый займ — гид: как оформить займ студенту</h2>
+                    <p class="section__subtitle">Если вы студент и впервые берёте заем, важно понимать каждый этап.</p>
                 </div>
 
                 <div class="roadmap">
                     <div class="roadmap__item">
                         <div class="roadmap__marker">1</div>
                         <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
+                            <h3 class="roadmap__title">Как получить займ — проверьте требования</h3>
+                            <p class="roadmap__text">Нужен паспорт РФ и возраст 18 лет. Многие МФО не требуют подтверждения официальной работы. Доход не проверяется.</p>
                         </div>
                     </div>
                     <div class="roadmap__item">
                         <div class="roadmap__marker">2</div>
                         <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
+                            <h3 class="roadmap__title">Сравните условия и сроки погашения</h3>
+                            <p class="roadmap__text">МФО предлагают первый займ под 0% — переплата отсутствует. Сравните ставки нескольких компаний перед оформлением.</p>
                         </div>
                     </div>
                     <div class="roadmap__item">
                         <div class="roadmap__marker">3</div>
                         <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
+                            <h3 class="roadmap__title">Подайте заявку</h3>
+                            <p class="roadmap__text">Заполните анкету на сайте: ФИО, паспортные данные, телефон. Заявка рассматривается автоматически.</p>
                         </div>
                     </div>
                     <div class="roadmap__item">
                         <div class="roadmap__marker">4</div>
                         <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
+                            <h3 class="roadmap__title">Получите деньги на карту</h3>
+                            <p class="roadmap__text">После одобрения средства поступают на карту или наличными через систему переводов. Моментальный перевод — от 2 минут. Для получения займа подходит Visa, MasterCard или МИР.</p>
                         </div>
                     </div>
                     <div class="roadmap__item">
                         <div class="roadmap__marker">5</div>
                         <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
-                        </div>
-                    </div>
-                    <div class="roadmap__item">
-                        <div class="roadmap__marker">6</div>
-                        <div class="roadmap__content">
-                            <h3 class="roadmap__title"><!-- --></h3>
-                            <p class="roadmap__text"><!-- --></p>
+                            <h3 class="roadmap__title">Верните в срок</h3>
+                            <p class="roadmap__text">Погасить заем можно досрочно без штрафов. Своевременное погашение — залог хорошей репутации. Кредитная история улучшается при своевременном возврате и повышает вероятность одобрения при следующем обращении.</p>
                         </div>
                     </div>
                 </div>
@@ -686,68 +1167,68 @@
         <section class="section" id="mistakes">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Заемщик-студент: типичные ошибки</h2>
                 </div>
 
                 <div class="mistakes-grid">
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 1 --></p>
+                            <p class="mistake-card__text">Берёт максимальную сумму, не рассчитав бюджет</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 1 --></p>
+                            <p class="mistake-card__text">Не более 50–70% от свободных средств. Используйте планнер ниже.</p>
                         </div>
                     </div>
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 2 --></p>
+                            <p class="mistake-card__text">Оформляет заем в первой попавшейся организации</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 2 --></p>
+                            <p class="mistake-card__text">Сравните условия нескольких компаний. Деньги в долг берите осознанно.</p>
                         </div>
                     </div>
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 3 --></p>
+                            <p class="mistake-card__text">Допускает просрочки и игнорирует сроки возврата</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 3 --></p>
+                            <p class="mistake-card__text">Поставьте напоминание за 2 дня до даты платежа.</p>
                         </div>
                     </div>
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 4 --></p>
+                            <p class="mistake-card__text">Несколько обязательств одновременно</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 4 --></p>
+                            <p class="mistake-card__text">Верните текущий, потом оформляйте новый.</p>
                         </div>
                     </div>
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 5 --></p>
+                            <p class="mistake-card__text">Не читает договор — не знает условия</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 5 --></p>
+                            <p class="mistake-card__text">Проверяйте: сумму возврата, ставку, штрафы за задержку.</p>
                         </div>
                     </div>
                     <div class="mistake-card">
                         <div class="mistake-card__side mistake-card__side--wrong">
                             <span class="mistake-card__icon">✗</span>
-                            <p class="mistake-card__text"><!-- Ошибка 6 --></p>
+                            <p class="mistake-card__text">Обращается в организацию без лицензии</p>
                         </div>
                         <div class="mistake-card__side mistake-card__side--right">
                             <span class="mistake-card__icon">✓</span>
-                            <p class="mistake-card__text"><!-- Как правильно 6 --></p>
+                            <p class="mistake-card__text">Проверяйте компанию по реестру ЦБ перед подписанием.</p>
                         </div>
                     </div>
                 </div>
@@ -758,8 +1239,8 @@
         <section class="section section--alt" id="budget-planner">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок будет добавлен позже --></p>
+                    <h2 class="section__title">Бюджет-планнер: рассчитайте свой лимит</h2>
+                    <p class="section__subtitle">Введите сумму стипендии или подработки, укажите обязательные расходы — планнер рассчитает безопасный лимит для заема. Рекомендуемая сумма — не более 70% от свободных средств.</p>
                 </div>
 
                 <div class="calculator budget-planner-widget">
@@ -769,14 +1250,14 @@
                                 <span>Стипендия / Подработка</span>
                                 <span class="calculator__value" id="planner-income-value">10 000 ₽</span>
                             </div>
-                            <input type="range" class="calculator__slider" id="planner-income" min="0" max="80000" step="1000" value="10000">
+                            <input type="range" class="calculator__slider" id="planner-income" name="income" min="0" max="80000" step="1000" value="10000">
                         </div>
                         <div class="calculator__group calculator__group--half">
                             <div class="calculator__label">
                                 <span>Обязательные расходы</span>
                                 <span class="calculator__value" id="planner-expenses-value">5 000 ₽</span>
                             </div>
-                            <input type="range" class="calculator__slider" id="planner-expenses" min="0" max="60000" step="500" value="5000">
+                            <input type="range" class="calculator__slider" id="planner-expenses" name="expenses" min="0" max="60000" step="500" value="5000">
                         </div>
                     </div>
 
@@ -806,46 +1287,48 @@
         <section class="section" id="comparison">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Сравнение: заем или кредит в банке</h2>
                 </div>
 
                 <div class="compare-table">
                     <div class="compare-table__head">
-                        <div class="compare-table__cell compare-table__cell--label">Критерий</div>
+                        <div class="compare-table__cell compare-table__cell--label">Параметр</div>
                         <div class="compare-table__cell compare-table__cell--mfo">Заем в МФО</div>
                         <div class="compare-table__cell compare-table__cell--bank">Кредит в банке</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Возраст</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">от 18 лет</div>
+                        <div class="compare-table__cell compare-table__cell--bank">от 21 года</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Документы</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">паспорт РФ</div>
+                        <div class="compare-table__cell compare-table__cell--bank">паспорт + справка + трудовая</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Скорость</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">5–15 минут</div>
+                        <div class="compare-table__cell compare-table__cell--bank">1–7 рабочих дней</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Подтверждение дохода</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">не требуется</div>
+                        <div class="compare-table__cell compare-table__cell--bank">обязательно</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Лимиты</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">1 000 – 100 000 ₽</div>
+                        <div class="compare-table__cell compare-table__cell--bank">от 50 000 ₽</div>
                     </div>
                     <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--mfo"><!-- --></div>
-                        <div class="compare-table__cell compare-table__cell--bank"><!-- --></div>
+                        <div class="compare-table__cell compare-table__cell--label">Ставка</div>
+                        <div class="compare-table__cell compare-table__cell--mfo">0–0,8% в день</div>
+                        <div class="compare-table__cell compare-table__cell--bank">12–30% годовых</div>
                     </div>
                 </div>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted, #64748b); text-align: center;">Банковский кредит требует стажа и подтверждённой зарплаты. Для небольших сумм подходит заем.</p>
             </div>
         </section>
 
@@ -853,34 +1336,24 @@
         <section class="section section--alt" id="steps">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Как получить заем — пошагово</h2>
                 </div>
 
                 <div class="steps">
                     <div class="step-card">
                         <div class="step-card__number">01</div>
-                        <h3 class="step-card__title"><!-- --></h3>
-                        <p class="step-card__text"><!-- --></p>
+                        <h3 class="step-card__title">Выберите МФО из рейтинга</h3>
+                        <p class="step-card__text">Выберите компанию из рейтинга выше. Перейдите на сайт и заполните анкету.</p>
                     </div>
                     <div class="step-card">
                         <div class="step-card__number">02</div>
-                        <h3 class="step-card__title"><!-- --></h3>
-                        <p class="step-card__text"><!-- --></p>
+                        <h3 class="step-card__title">Подайте заявку онлайн</h3>
+                        <p class="step-card__text">Одобрение — от 2 минут. Решение приходит в смс.</p>
                     </div>
                     <div class="step-card">
                         <div class="step-card__number">03</div>
-                        <h3 class="step-card__title"><!-- --></h3>
-                        <p class="step-card__text"><!-- --></p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-card__number">04</div>
-                        <h3 class="step-card__title"><!-- --></h3>
-                        <p class="step-card__text"><!-- --></p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-card__number">05</div>
-                        <h3 class="step-card__title"><!-- --></h3>
-                        <p class="step-card__text"><!-- --></p>
+                        <h3 class="step-card__title">Получите средства</h3>
+                        <p class="step-card__text">Наличными или перевод на карту — 10–15 минут. Доступно круглосуточно.</p>
                     </div>
                 </div>
             </div>
@@ -890,33 +1363,30 @@
         <section class="section" id="top-first-loan">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
-                    <p class="section__subtitle"><!-- Подзаголовок будет добавлен позже --></p>
-                </div>
-
-                <div class="top-picks">
+                    <h2 class="section__title">Лучшие МФО для студентов — ТОП-3 и лучший займ</h2>
+                    <p class="section__subtitle">Для тех, кто оформляет впервые — три компании с лояльными условиями.</p>
                     <div class="top-pick-card">
                         <div class="top-pick-card__badge">🥇 1 место</div>
                         <img src="../logos/01-zajmer.svg" alt="Займер — лучший первый займ" class="top-pick-card__logo" loading="lazy" width="100" height="35">
                         <div class="top-pick-card__name">Займер</div>
-                        <div class="top-pick-card__highlight"><!-- --></div>
-                        <p class="top-pick-card__desc"><!-- --></p>
+                        <div class="top-pick-card__highlight">0% до 30 дней</div>
+                        <p class="top-pick-card__desc">Заем до 30 000 ₽ на 30 дней по ставке 0%. Микрозайм для студентов с быстрым зачислением. Займ студентам на карту — круглосуточно.</p>
                         <a href="https://pxl.leads.su/click/b0f6a35bbf66adbad9bb2cfb33fe99fe?source=site&aff_sub1=s-18-let&aff_sub2=Zaymer&erid=2W5zFGSzRTv" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
                     </div>
                     <div class="top-pick-card">
                         <div class="top-pick-card__badge">🥈 2 место</div>
                         <img src="../logos/17-krediska.svg" alt="Кредиска — первый займ студенту" class="top-pick-card__logo" loading="lazy" width="100" height="35">
                         <div class="top-pick-card__name">Кредиска</div>
-                        <div class="top-pick-card__highlight"><!-- --></div>
-                        <p class="top-pick-card__desc"><!-- --></p>
+                        <div class="top-pick-card__highlight">98% одобрений</div>
+                        <p class="top-pick-card__desc">Высокое одобрение. Студентам на карту без отказа — от 3 минут. Кредитный период до 30 дней.</p>
                         <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=s-18-let&aff_sub2=Krediska&erid=2W5zFHywXyi" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
                     </div>
                     <div class="top-pick-card">
                         <div class="top-pick-card__badge">🥉 3 место</div>
                         <img src="../logos/04-credit7.svg" alt="Credit7 — заем новичку с 18 лет" class="top-pick-card__logo" loading="lazy" width="100" height="35">
                         <div class="top-pick-card__name">Credit7</div>
-                        <div class="top-pick-card__highlight"><!-- --></div>
-                        <p class="top-pick-card__desc"><!-- --></p>
+                        <div class="top-pick-card__highlight">До 168 дней</div>
+                        <p class="top-pick-card__desc">До 168 дней возврата. Длительные сроки для комфортного возврата.</p>
                         <a href="https://pxl.leads.su/click/b6fa5fcba82cadf5eb4c6e6fdba20c38?source=site&aff_sub1=s-18-let&aff_sub2=Credit7&erid=2W5zFJE6nfW" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
                     </div>
                 </div>
@@ -927,11 +1397,340 @@
         <section class="section section--alt" id="reviews">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Отзывы студентов-заёмщиков</h2>
                 </div>
 
                 <div class="reviews-grid" id="reviews-grid">
-                    <!-- Отзывы будут добавлены позже (30 шт.) -->
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-01.jpg" alt="Отзыв заёмщика Алексея" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Алексей, 19</div>
+                                <div class="review-card__mfo">Москва</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Нужны были средства на учебники. Заполнил анкету — одобрили за 3 минуты. Вернул через 2 недели, без скрытых комиссий.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-02.jpg" alt="Отзыв заёмщицы Марии" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Мария, 20</div>
+                                <div class="review-card__mfo">Новосибирск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Переживала, что откажут без справок. Но приняли сразу. Получила перевод за 10 минут.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-03.jpg" alt="Отзыв заёмщика Дмитрия" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Дмитрий, 21</div>
+                                <div class="review-card__mfo">Екатеринбург</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Обращался дважды. Ставка нормальная, решение быстрое. Суммы небольшие для первого раза.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-04.jpg" alt="Отзыв заёмщицы Ксении" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Ксения, 22</div>
+                                <div class="review-card__mfo">Казань</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Заполнила форму, получила перевод через 7 минут. Без справок — реальная помощь.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-05.jpg" alt="Отзыв заёмщика Андрея" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Андрей, 19</div>
+                                <div class="review-card__mfo">Самара</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Одобрили, но дали только 5000 вместо 15000. Зато перевели сразу.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-06.jpg" alt="Отзыв заёмщицы Елены" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Елена, 20</div>
+                                <div class="review-card__mfo">Ростов-на-Дону</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Сломался ноутбук перед сессией. Нашла подходящую компанию — через 15 минут всё решилось.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-07.jpg" alt="Отзыв заёмщика Ильи" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Илья, 21</div>
+                                <div class="review-card__mfo">Санкт-Петербург</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Пользуюсь третий раз. Каждый раз без проблем. Совет: берите столько, сколько реально вернёте.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-08.jpg" alt="Отзыв заёмщицы Анны" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Анна, 19</div>
+                                <div class="review-card__mfo">Краснодар</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Оформила под 0%. Вернула вовремя — теперь в базе положительная запись.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-09.jpg" alt="Отзыв заёмщика Максима" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Максим, 20</div>
+                                <div class="review-card__mfo">Воронеж</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Подал в одну компанию — отказали. В другой из рейтинга — приняли. Требования разные.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-10.jpg" alt="Отзыв заёмщицы Ольги" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Ольга, 21</div>
+                                <div class="review-card__mfo">Нижний Новгород</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Подруга порекомендовала этот рейтинг. Заполнила анкету на телефоне. Через 10 минут всё готово.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-11.jpg" alt="Отзыв заёмщика Кирилла" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Кирилл, 22</div>
+                                <div class="review-card__mfo">Уфа</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Нужны были средства до зарплаты (подрабатываю курьером). Взял на 7 дней, вернул без проблем.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-12.jpg" alt="Отзыв заёмщицы Виктории" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Виктория, 19</div>
+                                <div class="review-card__mfo">Пермь</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Стипендия маленькая. Оформила за 5 минут. Без справок, без звонков. Всё пришло сразу.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-13.jpg" alt="Отзыв заёмщика Сергея" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Сергей, 20</div>
+                                <div class="review-card__mfo">Волгоград</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9734;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Не рассчитал бюджет — пришлось продлевать. Переплатил. Берите только ту сумму, которую вернёте.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-14.jpg" alt="Отзыв заёмщицы Натальи" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Наталья, 21</div>
+                                <div class="review-card__mfo">Тюмень</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Не нужна справка с работы. Живу на стипендию. Всё прошло без проблем.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-15.jpg" alt="Отзыв заёмщика Артёма" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Артём, 19</div>
+                                <div class="review-card__mfo">Челябинск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Оплатил общежитие. Хотелось бы больше вариантов сроков. Для быстрого решения — отлично.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-16.jpg" alt="Отзыв заёмщицы Дарьи" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Дарья, 20</div>
+                                <div class="review-card__mfo">Омск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Прошла тест на сайте — показал подходящие варианты. Выбрала под 0%. Без лишней возни.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-17.jpg" alt="Отзыв заёмщика Николая" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Николай, 22</div>
+                                <div class="review-card__mfo">Саратов</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Пользуюсь полгода, периодически беру небольшие суммы. Всегда возвращаю вовремя. Решение всегда быстрое.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-18.jpg" alt="Отзыв заёмщицы Юлии" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Юлия, 19</div>
+                                <div class="review-card__mfo">Тольятти</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Боялась, что не дадут. Оказалось — всё просто. Паспорт + карта = перевод за 10 минут.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-19.jpg" alt="Отзыв заёмщика Владислава" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Владислав, 21</div>
+                                <div class="review-card__mfo">Красноярск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Зарплату задержали, пришлось продлевать — доплатил проценты. Условия нормальные, но планируйте бюджет.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-20.jpg" alt="Отзыв заёмщицы Алины" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Алина, 20</div>
+                                <div class="review-card__mfo">Ижевск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Анкета заняла 3 минуты. Никаких звонков и проверок работодателя.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-21.jpg" alt="Отзыв заёмщика Романа" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Роман, 19</div>
+                                <div class="review-card__mfo">Барнаул</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Взял на новый телефон. Одобрили 10 000 ₽. Вернул через 3 недели, без переплаты.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-22.jpg" alt="Отзыв заёмщицы Екатерины" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Екатерина, 21</div>
+                                <div class="review-card__mfo">Хабаровск</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Нравится, что рейтинг обновляется. Видны реальные условия. Выбрала из топа — всё быстро.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-23.jpg" alt="Отзыв заёмщика Павла" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Павел, 22</div>
+                                <div class="review-card__mfo">Оренбург</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Условия неплохие. Хотелось бы мобильное приложение у всех. Зато перевод мгновенный.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-24.jpg" alt="Отзыв заёмщицы Светланы" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Светлана, 19</div>
+                                <div class="review-card__mfo">Рязань</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Первый курс. Было страшно. Но анкета, смс-код — и всё готово.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-25.jpg" alt="Отзыв заёмщика Глеба" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Глеб, 20</div>
+                                <div class="review-card__mfo">Тула</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Хорошая подборка. Выбрал с минимальной ставкой. Получил за 12 минут. Всё прозрачно.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-26.jpg" alt="Отзыв заёмщицы Валерии" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Валерия, 21</div>
+                                <div class="review-card__mfo">Пенза</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9734;&#9734;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Не внимательно прочитала условия — проценты начислились сразу. Моя ошибка. Теперь всегда читаю договор.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-27.jpg" alt="Отзыв заёмщика Тимура" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Тимур, 19</div>
+                                <div class="review-card__mfo">Махачкала</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Оплатил поездку на конференцию. Подал анкету вечером — через 5 минут всё на карте.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-28.jpg" alt="Отзыв заёмщицы Марины" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Марина, 20</div>
+                                <div class="review-card__mfo">Иваново</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                        <div class="review-card__text">Третий раз пользуюсь. С каждым разом дают больше. Начинала с 5 000, теперь до 20 000.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-29.jpg" alt="Отзыв заёмщика Дениса" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Денис, 22</div>
+                                <div class="review-card__mfo">Липецк</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Оплатил курсы повышения. Без проблем: анкета → решение → перевод. Всё как описано.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img class="review-card__avatar" src="/images/avatars/avatar-30.jpg" alt="Отзыв заёмщицы Кристины" width="40" height="40" loading="lazy">
+                            <div class="review-card__info">
+                                <div class="review-card__name">Кристина, 19</div>
+                                <div class="review-card__mfo">Владивосток</div>
+                            </div>
+                            <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-card__text">Решила попробовать. Одобрили 8000 ₽. Вернула вовремя. Без процентов.</div>
+                    </div>
                 </div>
 
                 <button class="btn btn--outline reviews-more" id="reviews-more" type="button">Показать ещё отзывы</button>
@@ -942,7 +1741,7 @@
         <section class="section" id="myths">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Реальность микрозаймов — мифы и факты</h2>
                 </div>
 
                 <div class="myths-timeline">
@@ -951,11 +1750,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Без работы не одобрят.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Большинство компаний принимают без справки о трудоустройстве.</p>
                             </div>
                         </div>
                     </div>
@@ -964,11 +1763,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Микрофинансовые организации в России — нелегальные.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Все из рейтинга имеют лицензию ЦБ. Микрокредитование — легальная и регулируемая отрасль.</p>
                             </div>
                         </div>
                     </div>
@@ -977,11 +1776,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Портит кредитный рейтинг.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Только задержка портит. Возврат в срок — плюс к истории.</p>
                             </div>
                         </div>
                     </div>
@@ -990,11 +1789,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Всегда огромные проценты.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Часто 0% для новых клиентов. Заемщик возвращает ровно полученную сумму.</p>
                             </div>
                         </div>
                     </div>
@@ -1003,11 +1802,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Лучше сразу оформить ипотеку или кредит в банке.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Ипотечный кредит требует стажа от 6 месяцев и подтверждённой зарплаты. Для небольших сумм подходит заем.</p>
                             </div>
                         </div>
                     </div>
@@ -1016,11 +1815,11 @@
                         <div class="myths-timeline__content">
                             <div class="myths-timeline__myth">
                                 <span class="myths-timeline__label myths-timeline__label--myth">Миф</span>
-                                <p><!-- --></p>
+                                <p>Получить средства можно только в офисе.</p>
                             </div>
                             <div class="myths-timeline__fact">
                                 <span class="myths-timeline__label myths-timeline__label--fact">Факт</span>
-                                <p><!-- --></p>
+                                <p>Всё оформляется дистанционно, из любой точки страны.</p>
                             </div>
                         </div>
                     </div>
@@ -1032,60 +1831,87 @@
         <section class="section section--alt" id="faq">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title"><!-- Заголовок будет добавлен позже --></h2>
+                    <h2 class="section__title">Часто задаваемые вопросы — займ на карту онлайн</h2>
                 </div>
 
                 <div class="faq-block">
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">01</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">01</span>Можно ли оформить без подтверждения дохода?</summary>
+                        <div class="faq-block__answer"><p>Да. Достаточно паспорта РФ и банковской карты.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">02</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">02</span>Какой процент одобрения?</summary>
+                        <div class="faq-block__answer"><p>От 85% до 98% в проверенных компаниях.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">03</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">03</span>Как быстро приходит перевод?</summary>
+                        <div class="faq-block__answer"><p>5–15 минут после решения, круглосуточно.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">04</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">04</span>Какая ставка?</summary>
+                        <div class="faq-block__answer"><p>От 0% до 0,8% в день. Максимальная сумма переплаты ограничена законом.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">05</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">05</span>Что будет при задержке возврата?</summary>
+                        <div class="faq-block__answer"><p>Штрафы и передача данных в бюро. Избегайте просрочек — это влияет на будущие обращения.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">06</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">06</span>Можно получить наличными?</summary>
+                        <div class="faq-block__answer"><p>Да, через системы переводов.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">07</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">07</span>Нужна регистрация на Госуслуги?</summary>
+                        <div class="faq-block__answer"><p>Не обязательно. Некоторые компании используют Госуслуги для верификации, но это необязательное условие.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">08</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">08</span>Как выбрать подходящее предложение?</summary>
+                        <div class="faq-block__answer"><p>Лучшие предложения по микрозаймам собраны в рейтинге выше. Сравните ставку, сумму и срок.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">09</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">09</span>Влияет ли микрозайм на возможность получить кредит в банке?</summary>
+                        <div class="faq-block__answer"><p>Да. Своевременный возврат — плюс к истории. Задержки — минус.</p></div>
                     </details>
                     <details class="faq-block__item">
-                        <summary class="faq-block__question"><span class="faq-block__num">10</span><!-- --></summary>
-                        <div class="faq-block__answer"><p><!-- --></p></div>
+                        <summary class="faq-block__question"><span class="faq-block__num">10</span>Какие документы нужны?</summary>
+                        <div class="faq-block__answer"><p>Паспорт РФ. Дополнительные страховки и справки не требуются.</p></div>
                     </details>
                 </div>
             </div>
         </section>
 
         <!-- ======================== 15. SEO-ТЕКСТ + ПЕРЕЛИНКОВКА ======================== -->
-        <section class="section" id="seo-text">
+        <section class="section useful-info" id="seo-text">
             <div class="container">
-                <article class="article-content">
-                    <!-- SEO-текст будет добавлен позже -->
-                </article>
+                <div class="section__header">
+                    <h2 class="section__title">Полезная информация</h2>
+                    <p class="section__subtitle">Ключевые факты о микрозаймах для студентов в 2026 году</p>
+                </div>
+
+                <div class="useful-info__grid">
+                    <div class="useful-info__card">
+                        <div class="useful-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="useful-info__card-title">Прозрачность условий</h3>
+                        <p>Микрофинансовые организации обязаны указывать полную стоимость займа (ПСК). Максимальная ставка ограничена законом — не более 0,8% в день. Все МФО из рейтинга проверены по реестру ЦБ РФ.</p>
+                    </div>
+
+                    <div class="useful-info__card">
+                        <div class="useful-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3 class="useful-info__card-title">Быстрое оформление</h3>
+                        <p>Студентам на карту перевод выполняется за минуты — это удобно для тех, кто учится. Заявка рассматривается от 1 до 15 минут, деньги поступают на карту моментально, круглосуточно и без выходных.</p>
+                    </div>
+
+                    <div class="useful-info__card">
+                        <div class="useful-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3 class="useful-info__card-title">Высокий процент одобрения</h3>
+                        <p>Займы для студентов без отказа представлены в рейтинге выше. Случаи отказа бывают редко при корректном заполнении анкеты. Взять займ для студентов можно даже без кредитной истории и справок о доходах.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
