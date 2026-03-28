@@ -316,7 +316,8 @@
                             <div class="quiz-widget__result-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             </div>
-                            <div class="quiz-widget__result-text">Вам доступно <strong id="quiz-mfo-count">0</strong> МФО из 15</div>
+                            <div class="quiz-widget__result-text" id="quiz-result-text">Вам доступно <strong id="quiz-mfo-count">0</strong> МФО из 15</div>
+                            <div class="quiz-widget__result-tip" id="quiz-result-tip"></div>
                         </div>
 
                         <a href="#mfo-rating" class="btn btn--primary btn--filter-submit" id="quiz-submit" style="display: none;">Показать подходящие МФО ↓</a>
@@ -359,7 +360,7 @@
                     <div class="mfo-card" data-rating="4.8" data-amount="30000" data-rate="0.8" data-term="30" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#1</span>
-                            <img src="../logos/01-zajmer.svg" alt="Займер — займ с 18 лет на карту" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/01-zajmer.svg" alt="Логотип МФО — займ с 18 лет на карту" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -400,7 +401,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="50000" data-rate="0.8" data-term="31" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#2</span>
-                            <img src="../logos/17-krediska.svg" alt="Кредиска — займ студентам онлайн" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/17-krediska.svg" alt="Логотип МФО — займ студентам онлайн" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -441,7 +442,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="30000" data-rate="0.8" data-term="168" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#3</span>
-                            <img src="../logos/04-credit7.svg" alt="Credit7 — заем на карту с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/04-credit7.svg" alt="Логотип МФО — заем на карту с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -482,7 +483,7 @@
                     <div class="mfo-card" data-rating="4.6" data-amount="30000" data-rate="0.8" data-term="30" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#4</span>
-                            <img src="../logos/06-boostra.svg" alt="Boostra — микрозайм с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/06-boostra.svg" alt="Логотип МФО — микрозайм с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% первый займ</span>
                         </div>
                         <div class="mfo-card__body">
@@ -523,7 +524,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="30000" data-rate="0.8" data-term="30" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#5</span>
-                            <img src="../logos/07-belkacredit.svg" alt="BelkaCredit — займ студентам без отказа" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/07-belkacredit.svg" alt="Логотип МФО — займ студентам без отказа" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% первый займ</span>
                         </div>
                         <div class="mfo-card__body">
@@ -564,7 +565,7 @@
                     <div class="mfo-card" data-rating="4.8" data-amount="30000" data-rate="0.6" data-term="30" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#6</span>
-                            <img src="../logos/02-bystrodengi.svg" alt="Быстроденьги — займ с 18 лет на карту" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/02-bystrodengi.svg" alt="Логотип МФО — займ с 18 лет на карту" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 10 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -605,7 +606,7 @@
                     <div class="mfo-card" data-rating="4.8" data-amount="100000" data-rate="0.8" data-term="168" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#7</span>
-                            <img src="../logos/11-nado-deneg.svg" alt="Надо Денег — займ студентам по СБП" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/11-nado-deneg.svg" alt="Логотип МФО — займ студентам по СБП" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -646,7 +647,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="720" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#8</span>
-                            <img src="../logos/12-dobrozajm.svg" alt="Доброзайм — займ онлайн с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/12-dobrozajm.svg" alt="Логотип МФО — займ онлайн с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -687,7 +688,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="30000" data-rate="0.99" data-term="30" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#9</span>
-                            <img src="../logos/31-ekapusta.svg" alt="еКапуста — микрозайм с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/31-ekapusta.svg" alt="Логотип МФО — микрозайм с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 30 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -728,7 +729,7 @@
                     <div class="mfo-card" data-rating="4.7" data-amount="100000" data-rate="0.8" data-term="168" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#10</span>
-                            <img src="../logos/19-joymoney.svg" alt="Joymoney — займ с 18 лет без отказа" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/19-joymoney.svg" alt="Логотип МФО — займ с 18 лет без отказа" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 14 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -769,7 +770,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="126" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#11</span>
-                            <img src="../logos/20-moneyman.svg" alt="MoneyMan — первая онлайн МФО с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/20-moneyman.svg" alt="Логотип МФО — онлайн займ с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -810,7 +811,7 @@
                     <div class="mfo-card" data-rating="4.9" data-amount="100000" data-rate="0.8" data-term="360" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#12</span>
-                            <img src="../logos/08-srochnodengi.svg" alt="Срочно Деньги — займ с 18 лет онлайн" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/08-srochnodengi.svg" alt="Логотип МФО — займ с 18 лет онлайн" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 7 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -851,7 +852,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="200000" data-rate="0.8" data-term="735" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#13</span>
-                            <img src="../logos/13-oneclickmoney.svg" alt="OneClickMoney — займ студентам до 200 000 ₽" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/13-oneclickmoney.svg" alt="Логотип МФО — займ студентам до 200 000 ₽" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">Первый 0%</span>
                         </div>
                         <div class="mfo-card__body">
@@ -892,7 +893,7 @@
                     <div class="mfo-card" data-rating="4.5" data-amount="100000" data-rate="0.8" data-term="364" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#14</span>
-                            <img src="../logos/29-grinmani.svg" alt="Гринмани — долгосрочный займ с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/29-grinmani.svg" alt="Логотип МФО — долгосрочный займ с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -933,7 +934,7 @@
                     <div class="mfo-card" data-rating="4.6" data-amount="50000" data-rate="0.8" data-term="31" data-min-age="18">
                         <div class="mfo-card__header">
                             <span class="mfo-card__rank">#15</span>
-                            <img src="../logos/18-zaymigo.svg" alt="Займиго — займ без отказа с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
+                            <img src="../logos/18-zaymigo.svg" alt="Логотип МФО — займ без отказа с 18 лет" class="mfo-card__logo" loading="lazy" width="120" height="40">
                             <span class="badge badge--success">0% до 21 дн.</span>
                         </div>
                         <div class="mfo-card__body">
@@ -1026,6 +1027,13 @@
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
+                        <!-- Быстроденьги -->
+                        <div class="age-map__name">Быстроденьги</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+                        <div class="age-map__cell age-map__cell--yes">✓</div>
+
                         <!-- Надо Денег -->
                         <div class="age-map__name">Надо Денег</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
@@ -1040,17 +1048,10 @@
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
-                        <!-- Быстроденьги -->
-                        <div class="age-map__name">Быстроденьги</div>
+                        <!-- еКапуста -->
+                        <div class="age-map__name">еКапуста</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-                        <div class="age-map__cell age-map__cell--yes">✓</div>
-
-                        <!-- Лайк Мани -->
-                        <div class="age-map__name">Лайк Мани</div>
-                        <div class="age-map__cell age-map__cell--no">✗</div>
-                        <div class="age-map__cell age-map__cell--no">✗</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
@@ -1068,29 +1069,29 @@
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
-                        <!-- еКапуста -->
-                        <div class="age-map__name">еКапуста</div>
+                        <!-- Срочно Деньги -->
+                        <div class="age-map__name">Срочно Деньги</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
-                        <!-- Деньги Сразу -->
-                        <div class="age-map__name">Деньги Сразу</div>
+                        <!-- OneClickMoney -->
+                        <div class="age-map__name">OneClickMoney</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
-                        <!-- Вебзайм -->
-                        <div class="age-map__name">Вебзайм</div>
+                        <!-- Гринмани -->
+                        <div class="age-map__name">Гринмани</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
 
-                        <!-- Max.Credit -->
-                        <div class="age-map__name">Max.Credit</div>
+                        <!-- Займиго -->
+                        <div class="age-map__name">Займиго</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
                         <div class="age-map__cell age-map__cell--yes">✓</div>
@@ -1290,45 +1291,48 @@
                     <h2 class="section__title">Сравнение: заем или кредит в банке</h2>
                 </div>
 
-                <div class="compare-table">
-                    <div class="compare-table__head">
-                        <div class="compare-table__cell compare-table__cell--label">Параметр</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">Заем в МФО</div>
-                        <div class="compare-table__cell compare-table__cell--bank">Кредит в банке</div>
+                <div class="vs-compare">
+                    <div class="vs-compare__columns">
+                        <div class="vs-compare__col vs-compare__col--mfo">
+                            <div class="vs-compare__col-header">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                                <span>Заем в МФО</span>
+                            </div>
+                            <div class="vs-compare__col-body">
+                                <div class="vs-compare__row"><span class="vs-compare__label">Возраст</span><span class="vs-compare__val vs-compare__val--good">от 18 лет</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Документы</span><span class="vs-compare__val vs-compare__val--good">паспорт РФ</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Скорость</span><span class="vs-compare__val vs-compare__val--good">5–15 минут</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Доход</span><span class="vs-compare__val vs-compare__val--good">не требуется</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Лимиты</span><span class="vs-compare__val">1 000 – 100 000 ₽</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Ставка</span><span class="vs-compare__val">0 – 0,8% / день</span></div>
+                            </div>
+                        </div>
+
+                        <div class="vs-compare__divider">
+                            <span class="vs-compare__vs">VS</span>
+                        </div>
+
+                        <div class="vs-compare__col vs-compare__col--bank">
+                            <div class="vs-compare__col-header">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M5 6l7-3 7 3"/><path d="M4 10v11"/><path d="M20 10v11"/><path d="M8 14v4"/><path d="M12 14v4"/><path d="M16 14v4"/></svg>
+                                <span>Кредит в банке</span>
+                            </div>
+                            <div class="vs-compare__col-body">
+                                <div class="vs-compare__row"><span class="vs-compare__label">Возраст</span><span class="vs-compare__val vs-compare__val--bad">от 21 года</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Документы</span><span class="vs-compare__val vs-compare__val--bad">паспорт + справка + трудовая</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Скорость</span><span class="vs-compare__val vs-compare__val--bad">1–7 рабочих дней</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Доход</span><span class="vs-compare__val vs-compare__val--bad">обязательно</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Лимиты</span><span class="vs-compare__val">от 50 000 ₽</span></div>
+                                <div class="vs-compare__row"><span class="vs-compare__label">Ставка</span><span class="vs-compare__val">12–30% годовых</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Возраст</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">от 18 лет</div>
-                        <div class="compare-table__cell compare-table__cell--bank">от 21 года</div>
-                    </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Документы</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">паспорт РФ</div>
-                        <div class="compare-table__cell compare-table__cell--bank">паспорт + справка + трудовая</div>
-                    </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Скорость</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">5–15 минут</div>
-                        <div class="compare-table__cell compare-table__cell--bank">1–7 рабочих дней</div>
-                    </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Подтверждение дохода</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">не требуется</div>
-                        <div class="compare-table__cell compare-table__cell--bank">обязательно</div>
-                    </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Лимиты</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">1 000 – 100 000 ₽</div>
-                        <div class="compare-table__cell compare-table__cell--bank">от 50 000 ₽</div>
-                    </div>
-                    <div class="compare-table__row">
-                        <div class="compare-table__cell compare-table__cell--label">Ставка</div>
-                        <div class="compare-table__cell compare-table__cell--mfo">0–0,8% в день</div>
-                        <div class="compare-table__cell compare-table__cell--bank">12–30% годовых</div>
+
+                    <div class="vs-compare__verdict">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        <span>Банковский кредит требует стажа и подтверждённой зарплаты. Для <strong>небольших сумм студентам</strong> подходит заем в МФО.</span>
                     </div>
                 </div>
-
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted, #64748b); text-align: center;">Банковский кредит требует стажа и подтверждённой зарплаты. Для небольших сумм подходит заем.</p>
             </div>
         </section>
 
@@ -1339,21 +1343,36 @@
                     <h2 class="section__title">Как получить заем — пошагово</h2>
                 </div>
 
-                <div class="steps">
-                    <div class="step-card">
-                        <div class="step-card__number">01</div>
-                        <h3 class="step-card__title">Выберите МФО из рейтинга</h3>
-                        <p class="step-card__text">Выберите компанию из рейтинга выше. Перейдите на сайт и заполните анкету.</p>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="how-step__icon how-step__icon--1">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        </div>
+                        <div class="how-step__num">01</div>
+                        <h3 class="how-step__title">Выберите МФО</h3>
+                        <p class="how-step__text">Изучите рейтинг выше. Сравните ставки, сроки и отзывы — выберите лучший вариант.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="step-card__number">02</div>
-                        <h3 class="step-card__title">Подайте заявку онлайн</h3>
-                        <p class="step-card__text">Одобрение — от 2 минут. Решение приходит в смс.</p>
+                    <div class="how-steps__arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </div>
-                    <div class="step-card">
-                        <div class="step-card__number">03</div>
-                        <h3 class="step-card__title">Получите средства</h3>
-                        <p class="step-card__text">Наличными или перевод на карту — 10–15 минут. Доступно круглосуточно.</p>
+                    <div class="how-step">
+                        <div class="how-step__icon how-step__icon--2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                        </div>
+                        <div class="how-step__num">02</div>
+                        <h3 class="how-step__title">Подайте заявку</h3>
+                        <p class="how-step__text">Заполните анкету онлайн — паспорт, телефон, карта. Одобрение от 2 минут.</p>
+                    </div>
+                    <div class="how-steps__arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__icon how-step__icon--3">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+                        </div>
+                        <div class="how-step__num">03</div>
+                        <h3 class="how-step__title">Получите деньги</h3>
+                        <p class="how-step__text">Перевод на карту за 10–15 минут. Доступно круглосуточно, включая выходные.</p>
                     </div>
                 </div>
             </div>
@@ -1365,29 +1384,46 @@
                 <div class="section__header">
                     <h2 class="section__title">Лучшие МФО для студентов — ТОП-3 и лучший займ</h2>
                     <p class="section__subtitle">Для тех, кто оформляет впервые — три компании с лояльными условиями.</p>
-                    <div class="top-pick-card">
-                        <div class="top-pick-card__badge">🥇 1 место</div>
-                        <img src="../logos/01-zajmer.svg" alt="Займер — лучший первый займ" class="top-pick-card__logo" loading="lazy" width="100" height="35">
-                        <div class="top-pick-card__name">Займер</div>
-                        <div class="top-pick-card__highlight">0% до 30 дней</div>
-                        <p class="top-pick-card__desc">Заем до 30 000 ₽ на 30 дней по ставке 0%. Микрозайм для студентов с быстрым зачислением. Займ студентам на карту — круглосуточно.</p>
-                        <a href="https://pxl.leads.su/click/b0f6a35bbf66adbad9bb2cfb33fe99fe?source=site&aff_sub1=s-18-let&aff_sub2=Zaymer&erid=2W5zFGSzRTv" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
+                </div>
+
+                <div class="podium">
+                    <div class="podium__card podium__card--gold">
+                        <div class="podium__medal">🥇</div>
+                        <div class="podium__rank">1 место</div>
+                        <img src="../logos/01-zajmer.svg" alt="Займер — лучший первый займ" class="podium__logo" loading="lazy" width="110" height="38">
+                        <div class="podium__name">Займер</div>
+                        <div class="podium__tags">
+                            <span class="podium__tag podium__tag--accent">0% до 30 дней</span>
+                            <span class="podium__tag">до 30 000 ₽</span>
+                        </div>
+                        <p class="podium__desc">Заем до 30 000 ₽ на 30 дней по ставке 0%. Микрозайм для студентов с быстрым зачислением на карту — круглосуточно.</p>
+                        <a href="https://pxl.leads.su/click/b0f6a35bbf66adbad9bb2cfb33fe99fe?source=site&aff_sub1=s-18-let&aff_sub2=Zaymer&erid=2W5zFGSzRTv" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
-                    <div class="top-pick-card">
-                        <div class="top-pick-card__badge">🥈 2 место</div>
-                        <img src="../logos/17-krediska.svg" alt="Кредиска — первый займ студенту" class="top-pick-card__logo" loading="lazy" width="100" height="35">
-                        <div class="top-pick-card__name">Кредиска</div>
-                        <div class="top-pick-card__highlight">98% одобрений</div>
-                        <p class="top-pick-card__desc">Высокое одобрение. Студентам на карту без отказа — от 3 минут. Кредитный период до 30 дней.</p>
-                        <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=s-18-let&aff_sub2=Krediska&erid=2W5zFHywXyi" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
+
+                    <div class="podium__card podium__card--silver">
+                        <div class="podium__medal">🥈</div>
+                        <div class="podium__rank">2 место</div>
+                        <img src="../logos/17-krediska.svg" alt="Кредиска — первый займ студенту" class="podium__logo" loading="lazy" width="110" height="38">
+                        <div class="podium__name">Кредиска</div>
+                        <div class="podium__tags">
+                            <span class="podium__tag podium__tag--accent">98% одобрений</span>
+                            <span class="podium__tag">до 50 000 ₽</span>
+                        </div>
+                        <p class="podium__desc">Высокое одобрение. Студентам на карту без отказа — от 3 минут. Кредитный период до 30 дней.</p>
+                        <a href="https://pxl.leads.su/click/05d217c2c615daf5286328e1249f9301?source=site&aff_sub1=s-18-let&aff_sub2=Krediska&erid=2W5zFHywXyi" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
-                    <div class="top-pick-card">
-                        <div class="top-pick-card__badge">🥉 3 место</div>
-                        <img src="../logos/04-credit7.svg" alt="Credit7 — заем новичку с 18 лет" class="top-pick-card__logo" loading="lazy" width="100" height="35">
-                        <div class="top-pick-card__name">Credit7</div>
-                        <div class="top-pick-card__highlight">До 168 дней</div>
-                        <p class="top-pick-card__desc">До 168 дней возврата. Длительные сроки для комфортного возврата.</p>
-                        <a href="https://pxl.leads.su/click/b6fa5fcba82cadf5eb4c6e6fdba20c38?source=site&aff_sub1=s-18-let&aff_sub2=Credit7&erid=2W5zFJE6nfW" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить</a>
+
+                    <div class="podium__card podium__card--bronze">
+                        <div class="podium__medal">🥉</div>
+                        <div class="podium__rank">3 место</div>
+                        <img src="../logos/04-credit7.svg" alt="Credit7 — заем новичку с 18 лет" class="podium__logo" loading="lazy" width="110" height="38">
+                        <div class="podium__name">Credit7</div>
+                        <div class="podium__tags">
+                            <span class="podium__tag podium__tag--accent">До 168 дней</span>
+                            <span class="podium__tag">до 30 000 ₽</span>
+                        </div>
+                        <p class="podium__desc">До 168 дней возврата. Длительные сроки для комфортного возврата студентам.</p>
+                        <a href="https://pxl.leads.su/click/b6fa5fcba82cadf5eb4c6e6fdba20c38?source=site&aff_sub1=s-18-let&aff_sub2=Credit7&erid=2W5zFJE6nfW" class="btn btn--primary btn--sm" rel="nofollow noopener" target="_blank">Оформить займ</a>
                     </div>
                 </div>
             </div>

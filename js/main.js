@@ -2887,10 +2887,29 @@
         var steps = widget.querySelectorAll('.quiz-widget__step');
         var progressBar = widget.querySelector('.quiz-widget__progress-bar');
         var resultBlock = widget.querySelector('.quiz-widget__result');
-        var resultText = widget.querySelector('.quiz-widget__result-text');
         var currentStep = 0;
         var answers = {};
         var totalSteps = steps.length;
+
+        /* Рекомендации: ключ = status|income, значение = { ranks: [#1-#15], tip: текст } */
+        var recommendations = {
+            'student|stipend':    { ranks: [1, 2, 5],  tip: 'Студенту на стипендии подойдут займы с 0% на первый раз — берите минимум и возвращайте вовремя' },
+            'student|parttime':   { ranks: [1, 6, 2],  tip: 'С подработкой шансы на одобрение выше — рассмотрите МФО с быстрым переводом и 0% для новичков' },
+            'student|salary':     { ranks: [1, 7, 8],  tip: 'С постоянным доходом доступны суммы до 100 000 ₽ — можно выбирать долгосрочные займы' },
+            'student|none':       { ranks: [2, 4, 5],  tip: 'Без дохода начните с малых сумм под 0% — у Кредиски и Boostra одобрение до 98% заявок' },
+            'working|stipend':    { ranks: [1, 6, 9],  tip: 'Работающим одобряют быстрее — выбирайте самую выгодную ставку и 0% для новичков' },
+            'working|parttime':   { ranks: [1, 6, 11], tip: 'С подработкой все 15 МФО доступны, обращайте внимание на рейтинг и отзывы клиентов' },
+            'working|salary':     { ranks: [1, 8, 11], tip: 'С зарплатой открыты максимальные лимиты — Доброзайм до 720 дней, MoneyMan до 100 000 ₽' },
+            'working|none':       { ranks: [1, 2, 6],  tip: 'Многие МФО не требуют справку о доходах — достаточно паспорта и банковской карты' },
+            'unemployed|stipend': { ranks: [2, 8, 13], tip: 'Доброзайм и OneClickMoney специализируются на лояльных условиях — выдают безработным' },
+            'unemployed|parttime':{ ranks: [2, 8, 13], tip: 'С нерегулярным доходом лучше выбрать МФО с высоким % одобрения — Кредиска (98%)' },
+            'unemployed|salary':  { ranks: [1, 7, 8],  tip: 'Если есть доход — указывайте его в анкете, это повышает шанс одобрения и лимит' },
+            'unemployed|none':    { ranks: [2, 8, 13], tip: 'Начните с 0% займа на малую сумму, чтобы сформировать положительную кредитную историю' },
+            'self|stipend':       { ranks: [1, 14, 3], tip: 'Самозанятым подходят гибкие сроки — Гринмани (0,41%/день на долгосрок), Credit7 до 168 дней' },
+            'self|parttime':      { ranks: [1, 14, 3], tip: 'Самозанятым с нерегулярным доходом выгоднее долгосрочные займы — гибкий график возврата' },
+            'self|salary':        { ranks: [1, 7, 14], tip: 'Со стабильным доходом доступны все МФО — выбирайте по сроку и ставке' },
+            'self|none':          { ranks: [2, 4, 14], tip: 'Самозанятому без текущего дохода подойдут МФО без подтверждения — берите под 0% для начала' }
+        };
 
         function showStep(idx) {
             steps.forEach(function (s, i) {
@@ -2905,22 +2924,44 @@
             steps.forEach(function (s) { s.classList.remove('quiz-widget__step--active'); });
             if (progressBar) progressBar.style.width = '100%';
 
-            // Считаем кол-во подходящих МФО
             var age = parseInt(answers.age, 10) || 18;
+            var status = answers.status || 'student';
+            var income = answers.income || 'none';
+            var key = status + '|' + income;
+            var rec = recommendations[key] || recommendations['student|none'];
+
+            /* Считаем подходящие по возрасту */
             var cards = document.querySelectorAll('.mfo-card[data-min-age]');
             var count = 0;
             cards.forEach(function (c) {
                 var min = parseInt(c.getAttribute('data-min-age'), 10) || 18;
                 if (age >= min) count++;
             });
+            if (count === 0) count = 15;
 
-            // Fallback если карточек нет — общая цифра
-            if (count === 0) count = age >= 20 ? 15 : 14;
-
-            if (resultText) {
-                resultText.innerHTML = 'Вам доступно <strong>' + count + ' МФО</strong>, готовых выдать займ прямо сейчас';
+            /* Результат */
+            var resultTextEl = document.getElementById('quiz-result-text');
+            if (resultTextEl) {
+                resultTextEl.innerHTML = 'Вам доступно <strong>' + count + ' из 15 МФО</strong> — мы подобрали ТОП-3 для вашего профиля';
             }
+
+            var tipEl = document.getElementById('quiz-result-tip');
+            if (tipEl) {
+                tipEl.textContent = rec.tip;
+            }
+
             if (resultBlock) resultBlock.style.display = 'block';
+
+            /* Подсветка рекомендованных карточек */
+            cards.forEach(function (c) { c.classList.remove('mfo-card--recommended'); });
+            var allRanks = document.querySelectorAll('.mfo-card__rank');
+            allRanks.forEach(function (rankEl) {
+                var rankNum = parseInt(rankEl.textContent.replace('#', ''), 10);
+                if (rec.ranks.indexOf(rankNum) !== -1) {
+                    var card = rankEl.closest('.mfo-card');
+                    if (card) card.classList.add('mfo-card--recommended');
+                }
+            });
 
             var submitBtn = document.getElementById('quiz-submit');
             if (submitBtn) submitBtn.style.display = '';
@@ -2937,7 +2978,6 @@
             var name = step ? step.getAttribute('data-step') : '';
             answers[name] = btn.getAttribute('data-value');
 
-            // Отметка выбора
             var siblings = step.querySelectorAll('.quiz-widget__option');
             siblings.forEach(function (s) { s.classList.remove('quiz-widget__option--selected'); });
             btn.classList.add('quiz-widget__option--selected');
@@ -2969,8 +3009,33 @@
         var paymentEl = document.getElementById('planner-payment');
         var verdictEl = document.getElementById('planner-verdict');
 
+        /* МФО-подсказки по лимиту */
+        var mfoTiers = [
+            { max: 0,     names: '' },
+            { max: 5000,  names: 'Займер (0% первый), Кредиска, BelkaCredit' },
+            { max: 15000, names: 'Займер, Быстроденьги, Кредиска, Boostra' },
+            { max: 30000, names: 'Займер, Credit7, еКапуста, Joymoney' },
+            { max: 50000, names: 'Кредиска, Займиго, Надо Денег, MoneyMan' },
+            { max: Infinity, names: 'Доброзайм, Надо Денег, MoneyMan, OneClickMoney, Гринмани' }
+        ];
+
         function fmt(n) {
             return n.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        function fillSlider(slider) {
+            var min = parseFloat(slider.min) || 0;
+            var max = parseFloat(slider.max) || 1;
+            var val = parseFloat(slider.value) || 0;
+            var pct = ((val - min) / (max - min)) * 100;
+            slider.style.background = 'linear-gradient(to right, #2563eb ' + pct + '%, #e2e8f0 ' + pct + '%)';
+        }
+
+        function getMfoTip(limit) {
+            for (var i = 0; i < mfoTiers.length; i++) {
+                if (limit <= mfoTiers[i].max) return mfoTiers[i].names;
+            }
+            return '';
         }
 
         function calc() {
@@ -2986,15 +3051,21 @@
             if (limitEl) limitEl.textContent = fmt(limit);
             if (paymentEl) paymentEl.textContent = fmt(payment);
 
+            fillSlider(incomeRange);
+            fillSlider(expenseRange);
+
             if (verdictEl) {
+                var mfoTip = getMfoTip(limit);
+                var tipHtml = mfoTip ? '<span class="budget-planner__verdict-mfo">Подходящие МФО: ' + mfoTip + '</span>' : '';
+
                 if (free <= 0) {
-                    verdictEl.textContent = 'Расходы превышают доходы — займ сейчас брать рискованно';
+                    verdictEl.innerHTML = 'Расходы превышают доходы — займ сейчас брать рискованно';
                     verdictEl.style.background = 'rgba(220,38,38,0.06)';
                 } else if (free < 3000) {
-                    verdictEl.textContent = 'Свободных средств мало — рекомендуем микрозайм до ' + fmt(limit);
+                    verdictEl.innerHTML = 'Свободных средств мало — рекомендуем микрозайм до <strong>' + fmt(limit) + '</strong>' + tipHtml;
                     verdictEl.style.background = 'rgba(234,179,8,0.08)';
                 } else {
-                    verdictEl.textContent = 'Вы можете комфортно обслуживать займ до ' + fmt(limit);
+                    verdictEl.innerHTML = 'Вы можете комфортно обслуживать займ до <strong>' + fmt(limit) + '</strong>' + tipHtml;
                     verdictEl.style.background = 'rgba(22,163,74,0.06)';
                 }
             }

@@ -15189,27 +15189,60 @@ table {
 
 .quiz-widget__result {
     text-align: center;
-    padding: 1.25rem 0;
+    padding: 1.25rem;
 }
 
 .quiz-widget__result-icon {
     color: var(--color-success, #16a34a);
-    margin-bottom: 0.5rem;
 }
 
 .quiz-widget__result-icon svg {
     width: 40px;
     height: 40px;
+    margin-bottom: 0.5rem;
 }
 
 .quiz-widget__result-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--color-text, #1e293b);
+    margin-bottom: 0.5rem;
 }
 
 .quiz-widget__result-text strong {
     color: var(--color-primary, #2563eb);
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+}
+
+.quiz-widget__result-tip {
+    font-size: 0.85rem;
+    color: var(--color-text-light, #475569);
+    line-height: 1.5;
+    background: rgba(37, 99, 235, 0.06);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Рекомендованная карточка — подсветка после квиза */
+.mfo-card--recommended {
+    border: 2px solid var(--color-primary, #2563eb) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15), 0 4px 16px rgba(37, 99, 235, 0.1);
+    position: relative;
+}
+
+.mfo-card--recommended::after {
+    content: '\2605 Рекомендуем';
+    position: absolute;
+    top: -1px;
+    right: 16px;
+    background: var(--color-primary, #2563eb);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0 0 6px 6px;
+    letter-spacing: 0.03em;
+    z-index: 2;
 }
 
 /* --- Возрастная карта МФО --- */
@@ -15391,6 +15424,40 @@ table {
 }
 
 /* --- Бюджет-планнер --- */
+.budget-planner-widget {
+    max-width: 680px;
+    margin: 0 auto 24px;
+    padding: 28px 28px 20px;
+}
+
+.budget-planner-widget .calculator__row {
+    gap: 28px;
+    margin-bottom: 8px;
+}
+
+.budget-planner-widget .calculator__slider {
+    height: 7px;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--color-primary, #2563eb) 0%, var(--color-border, #e2e8f0) 0%);
+    transition: background 0.1s;
+}
+
+.budget-planner-widget .calculator__slider::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    border: 3px solid #fff;
+    background: var(--color-accent, #ff6b35);
+}
+
+.budget-planner-widget .calculator__slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    border: 3px solid #fff;
+    background: var(--color-accent, #ff6b35);
+}
+
 .budget-planner__results {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15400,19 +15467,30 @@ table {
 
 .budget-planner__item {
     background: var(--color-surface, #f8fafc);
-    border-radius: 10px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: 1.1rem 0.75rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border: 1px solid var(--color-border, #e2e8f0);
+    transition: border-color 0.2s;
+}
+
+.budget-planner__item:nth-child(2) {
+    border-color: var(--color-primary, #2563eb);
+    background: rgba(37, 99, 235, 0.03);
 }
 
 .budget-planner__label {
-    font-size: 0.8rem;
+    display: block;
+    font-size: 0.78rem;
     color: var(--color-text-muted, #64748b);
-    margin-bottom: 0.4rem;
+    line-height: 1.3;
 }
 
 .budget-planner__value {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--color-text, #1e293b);
 }
@@ -15422,13 +15500,27 @@ table {
 }
 
 .budget-planner__verdict {
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
+    margin-top: 1.25rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 10px;
     font-size: 0.9rem;
     text-align: center;
-    background: rgba(37, 99, 235, 0.06);
+    line-height: 1.5;
+    background: rgba(22, 163, 74, 0.06);
     color: var(--color-text, #1e293b);
+    transition: background 0.3s;
+}
+
+.budget-planner__verdict strong {
+    color: var(--color-primary, #2563eb);
+    font-weight: 700;
+}
+
+.budget-planner__verdict-mfo {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--color-text-light, #475569);
 }
 
 /* --- ТОП-3 подборка --- */
@@ -15486,6 +15578,376 @@ table {
     font-size: 0.85rem;
     color: var(--color-text-muted, #64748b);
     line-height: 1.5;
+}
+
+/* --- VS Compare (МФО vs Банк — 2 колонки) --- */
+.vs-compare {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.vs-compare__columns {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    background: var(--color-white, #fff);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.vs-compare__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.vs-compare__col-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 22px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.vs-compare__col-header svg {
+    flex-shrink: 0;
+}
+
+.vs-compare__col--mfo .vs-compare__col-header {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.vs-compare__col--bank .vs-compare__col-header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.vs-compare__col-body {
+    padding: 4px 0;
+    flex: 1;
+}
+
+.vs-compare__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-bottom: 1px solid var(--color-border-light, #f1f5f9);
+}
+
+.vs-compare__row:last-child {
+    border-bottom: none;
+}
+
+.vs-compare__label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #64748b);
+    white-space: nowrap;
+}
+
+.vs-compare__val {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text, #1e293b);
+    text-align: right;
+}
+
+.vs-compare__val--good {
+    color: #16a34a;
+}
+
+.vs-compare__val--bad {
+    color: #dc2626;
+}
+
+.vs-compare__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg, #f8fafc);
+}
+
+.vs-compare__vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-primary, #2563eb);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.vs-compare__verdict {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(22,163,74,0.04));
+    border: 1px solid var(--color-border, #e2e8f0);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text, #1e293b);
+}
+
+.vs-compare__verdict svg {
+    flex-shrink: 0;
+    color: var(--color-primary, #2563eb);
+    margin-top: 2px;
+}
+
+.vs-compare__verdict strong {
+    color: var(--color-primary, #2563eb);
+}
+
+@media (max-width: 640px) {
+    .vs-compare__columns {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-compare__divider {
+        height: 48px;
+    }
+
+    .vs-compare__col-header {
+        padding: 14px 18px;
+    }
+
+    .vs-compare__row {
+        padding: 8px 18px;
+    }
+}
+
+/* --- How Steps (горизонтальные шаги) --- */
+.how-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.how-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    max-width: 260px;
+}
+
+.how-step__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    color: #fff;
+}
+
+.how-step__icon--1 {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.how-step__icon--2 {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.how-step__icon--3 {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.how-step__num {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-primary, #2563eb);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.how-step__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+    margin-bottom: 6px;
+}
+
+.how-step__text {
+    font-size: 0.85rem;
+    color: var(--color-text-light, #475569);
+    line-height: 1.55;
+}
+
+.how-steps__arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 28px;
+    color: var(--color-border, #cbd5e1);
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .how-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .how-step {
+        max-width: 100%;
+        flex-direction: row;
+        text-align: left;
+        gap: 14px;
+        padding: 12px 0;
+    }
+
+    .how-step__icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 14px;
+        margin-bottom: 0;
+    }
+
+    .how-step__icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .how-step__num {
+        margin-bottom: 2px;
+    }
+
+    .how-steps__arrow {
+        transform: rotate(90deg);
+        padding-top: 0;
+    }
+}
+
+/* --- Podium (ТОП-3 карточки) --- */
+.podium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.podium__card {
+    background: var(--color-white, #fff);
+    border-radius: 16px;
+    padding: 1.75rem 1.25rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    border: 2px solid var(--color-border, #e2e8f0);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.podium__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+.podium__card--gold {
+    border-color: #f59e0b;
+    background: linear-gradient(180deg, #fffbeb 0%, #fff 40%);
+}
+
+.podium__card--silver {
+    border-color: #94a3b8;
+    background: linear-gradient(180deg, #f8fafc 0%, #fff 40%);
+}
+
+.podium__card--bronze {
+    border-color: #d97706;
+    background: linear-gradient(180deg, #fef3c7 0%, #fff 40%);
+}
+
+.podium__medal {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.podium__rank {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted, #64748b);
+}
+
+.podium__logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+.podium__name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+}
+
+.podium__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.podium__tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: var(--color-surface, #f8fafc);
+    color: var(--color-text-light, #475569);
+    border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.podium__tag--accent {
+    background: rgba(22, 163, 74, 0.08);
+    color: #16a34a;
+    border-color: rgba(22, 163, 74, 0.2);
+}
+
+.podium__desc {
+    font-size: 0.83rem;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.podium__card .btn {
+    margin-top: auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .podium {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 400px;
+    }
+
+    .podium__card {
+        padding: 1.25rem 1rem 1.25rem;
+    }
 }
 
 /* --- Мифы таймлайн --- */
@@ -15735,22 +16197,29 @@ table {
         grid-template-columns: 1fr;
     }
 
+    .budget-planner-widget {
+        padding: 20px 16px 16px;
+    }
+
+    .budget-planner-widget .calculator__row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
     .budget-planner__results {
         grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .budget-planner__item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1rem;
     }
 
     .top-picks {
         grid-template-columns: 1fr;
-    }
-
-    .compare-table__head,
-    .compare-table__row {
-        grid-template-columns: 1.4fr 1fr 1fr;
-    }
-
-    .compare-table__cell {
-        padding: 0.5rem 0.5rem;
-        font-size: 0.8rem;
     }
 
     .roadmap {
