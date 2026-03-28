@@ -4002,7 +4002,168 @@ table {
     }
 }
 
-/* --- FAQ Header (legacy) --- */
+/* --- FAQ Header --- */
+.faq-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+}
+
+.faq-header__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: var(--color-white);
+}
+
+.faq-header__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.faq-header__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 2px;
+    color: var(--color-white);
+}
+
+.faq-header__desc {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .faq-header {
+        flex-wrap: wrap;
+        padding: 14px 16px;
+    }
+}
+
+/* --- FAQ (button-based) --- */
+.faq__list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq__item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq__item:hover {
+    border-color: var(--color-primary);
+}
+
+.faq__item.faq__item--active {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(15,43,70,0.08);
+}
+
+.faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    list-style: none;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.faq__question:hover {
+    background: rgba(15,43,70,0.02);
+}
+
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq__question::marker {
+    content: '';
+}
+
+.faq__question svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-muted);
+    transition: transform 0.3s ease;
+}
+
+.faq__item--active .faq__question svg,
+.faq__item[open] .faq__question svg {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+.faq__item--active .faq__question,
+.faq__item[open] .faq__question {
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-primary);
+    background: rgba(15,43,70,0.02);
+}
+
+.faq__answer {
+    display: none;
+    padding: 0;
+}
+
+.faq__item--active .faq__answer {
+    display: block;
+}
+
+details.faq__item .faq__answer {
+    display: block;
+}
+
+.faq__answer-inner,
+.faq__answer p {
+    padding: 16px 20px;
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- FAQ (details-based, with faq container) --- */
+.faq {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+details.faq__item > .faq__answer {
+    display: block;
+}
 
 /* --- Regions --- */
 .regions {
@@ -4927,22 +5088,31 @@ table {
    REVIEWS TOGGLE
    ============================ */
 .reviews-grid:not(.reviews--expanded) .review-card:nth-child(n+10),
-.reviews-grid:not(.reviews--expanded) .reviews__card:nth-child(n+10) {
+.reviews-grid:not(.reviews--expanded) .reviews__card:nth-child(n+10),
+.reviews__grid:not(.reviews--expanded) .review-card:nth-child(n+10),
+.reviews__grid:not(.reviews--expanded) .reviews__card:nth-child(n+10) {
     display: none;
 }
 
 .reviews-grid.reviews--expanded .review-card,
-.reviews-grid.reviews--expanded .reviews__card {
+.reviews-grid.reviews--expanded .reviews__card,
+.reviews__grid.reviews--expanded .review-card,
+.reviews__grid.reviews--expanded .reviews__card {
     display: block;
 }
 
-.reviews__actions {
+.reviews__actions,
+.reviews__toggle,
+.reviews__toggle-wrap {
     text-align: center;
     margin-top: 2.5rem;
     padding-top: 0;
 }
 
-.reviews__toggle-btn {
+.reviews__toggle-btn,
+.reviews-toggle,
+.btn--show-more,
+button#reviews-toggle {
     display: inline-block;
     min-width: 280px;
     padding: 14px 32px;
@@ -4954,9 +5124,21 @@ table {
     color: var(--color-primary);
     cursor: pointer;
     transition: var(--transition);
+    margin-top: 2rem;
 }
 
-.reviews__toggle-btn:hover {
+.reviews__toggle > .reviews__toggle-btn,
+.reviews__toggle-wrap > .reviews__toggle-btn,
+.reviews__toggle > button,
+.reviews__toggle-wrap > button,
+.reviews__actions > .reviews__toggle-btn {
+    margin-top: 0;
+}
+
+.reviews__toggle-btn:hover,
+.reviews-toggle:hover,
+.btn--show-more:hover,
+button#reviews-toggle:hover {
     background: var(--color-primary);
     color: var(--color-white);
 }

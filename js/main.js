@@ -618,17 +618,51 @@
        FAQ Accordion
        ============================ */
     function initFAQ() {
+        /* Details-based FAQ (faq-block__item) */
         var items = document.querySelectorAll('.faq-block__item');
-        if (!items.length) return;
-
-        items.forEach(function (item) {
-            item.addEventListener('toggle', function () {
-                if (!item.open) return;
-                items.forEach(function (el) {
-                    if (el !== item && el.open) el.open = false;
+        if (items.length) {
+            items.forEach(function (item) {
+                item.addEventListener('toggle', function () {
+                    if (!item.open) return;
+                    items.forEach(function (el) {
+                        if (el !== item && el.open) el.open = false;
+                    });
                 });
             });
+        }
+
+        /* Button-based FAQ (faq__item with button.faq__question) */
+        var buttons = document.querySelectorAll('.faq__item > button.faq__question');
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var parent = btn.closest('.faq__item');
+                var isActive = parent.classList.contains('faq__item--active');
+
+                /* Close all siblings */
+                var siblings = parent.parentElement.querySelectorAll('.faq__item');
+                siblings.forEach(function (el) {
+                    el.classList.remove('faq__item--active');
+                });
+
+                /* Toggle current */
+                if (!isActive) {
+                    parent.classList.add('faq__item--active');
+                }
+            });
         });
+
+        /* Details-based FAQ (faq__item as details) */
+        var detailsFaq = document.querySelectorAll('details.faq__item');
+        if (detailsFaq.length) {
+            detailsFaq.forEach(function (item) {
+                item.addEventListener('toggle', function () {
+                    if (!item.open) return;
+                    detailsFaq.forEach(function (el) {
+                        if (el !== item && el.open) el.open = false;
+                    });
+                });
+            });
+        }
     }
 
     /* ============================
