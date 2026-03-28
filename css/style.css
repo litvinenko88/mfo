@@ -17654,3 +17654,406 @@ table {
         padding: 2px 10px;
     }
 }
+
+/* ======================================================
+   NA-KARTU PAGE — Unique components
+   ====================================================== */
+
+/* --- Card Type Selector (Hero widget) --- */
+.card-type-selector {
+    background: var(--bg-card, #fff);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    min-width: 300px;
+    max-width: 380px;
+}
+
+.card-type-selector__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.card-type-selector__options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-type-selector__btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 2px solid var(--border-light, #e8e8f0);
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary, #1a1a2e);
+}
+
+.card-type-selector__btn:hover {
+    border-color: var(--accent, #6c5ce7);
+    background: rgba(108, 92, 231, 0.04);
+}
+
+.card-type-selector__btn--active {
+    border-color: var(--accent, #6c5ce7);
+    background: rgba(108, 92, 231, 0.08);
+    color: var(--accent, #6c5ce7);
+}
+
+.card-type-selector__btn svg {
+    flex-shrink: 0;
+    color: inherit;
+}
+
+/* --- Na-kartu Stats (block 3) --- */
+.nakartu-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.nakartu-stats__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--bg-card, #fff);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nakartu-stats__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.nakartu-stats__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(108, 92, 231, 0.1);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    color: var(--accent, #6c5ce7);
+}
+
+.nakartu-stats__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nakartu-stats__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 4px;
+}
+
+.nakartu-stats__label {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #6b7280);
+    line-height: 1.4;
+}
+
+/* --- Timeline (block 6 — Пошаговая инструкция) --- */
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline__item {
+    display: flex;
+    gap: 24px;
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.timeline__number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent, #6c5ce7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline__line {
+    width: 2px;
+    flex: 1;
+    background: var(--border-light, #e8e8f0);
+    margin-top: 8px;
+}
+
+.timeline__content {
+    padding-top: 8px;
+}
+
+.timeline__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 6px;
+}
+
+.timeline__text {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #6b7280);
+    line-height: 1.5;
+}
+
+/* --- Card Types Grid (block 8 — Какие карты подходят) --- */
+.card-types__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-type-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card, #fff);
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s ease;
+}
+
+.card-type-item:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.card-type-item__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(108, 92, 231, 0.08);
+    border-radius: 10px;
+    flex-shrink: 0;
+    color: var(--accent, #6c5ce7);
+}
+
+.card-type-item__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.card-type-item__body {
+    flex: 1;
+}
+
+.card-type-item__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 2px;
+}
+
+.card-type-item__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #6b7280);
+}
+
+.card-type-item__badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.card-type-item__badge--yes {
+    background: rgba(0, 184, 148, 0.12);
+    color: #00b894;
+}
+
+.card-type-item__badge--partial {
+    background: rgba(253, 203, 110, 0.2);
+    color: #e17055;
+}
+
+.card-type-item__badge--no {
+    background: rgba(214, 48, 49, 0.1);
+    color: #d63031;
+}
+
+/* --- Methodology Grid (block 15) --- */
+.methodology__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.methodology__item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card, #fff);
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.methodology__number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent, #6c5ce7);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.methodology__body {
+    flex: 1;
+}
+
+.methodology__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 6px;
+}
+
+.methodology__text {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #6b7280);
+    line-height: 1.5;
+}
+
+/* --- Responsive for na-kartu page --- */
+@media (max-width: 768px) {
+    .card-type-selector {
+        min-width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .card-type-selector__options {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-type-selector__btn {
+        flex: 1;
+        min-width: calc(50% - 4px);
+        justify-content: center;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    .nakartu-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .nakartu-stats__value {
+        font-size: 1.25rem;
+    }
+
+    .nakartu-stats__item {
+        padding: 16px 12px;
+    }
+
+    .timeline__item {
+        gap: 16px;
+        padding-bottom: 24px;
+    }
+
+    .timeline__number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .card-type-item {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .card-type-item__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .card-type-item__icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .methodology__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .methodology__item {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nakartu-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .nakartu-stats__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nakartu-stats__value {
+        font-size: 1.1rem;
+    }
+
+    .card-type-selector__btn {
+        min-width: calc(50% - 4px);
+        padding: 8px 10px;
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .card-type-selector__btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
