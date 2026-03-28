@@ -31,6 +31,7 @@
         initBenefitCalc();
         initAutoEstimator();
         initPensionCalc();
+        initStatusChecker();
     }
 
     /* ============================
@@ -717,6 +718,7 @@
         if (!btn || !extraGrid) return;
 
         var expanded = false;
+        var defaultText = btn.textContent;
 
         btn.addEventListener('click', function () {
             expanded = !expanded;
@@ -725,8 +727,8 @@
                 btn.textContent = 'Скрыть';
             } else {
                 extraGrid.classList.remove('is-visible');
-                btn.textContent = 'Показать ещё 19 МФО';
-                var section = document.getElementById('compare');
+                btn.textContent = defaultText;
+                var section = document.getElementById('mfo-rating');
                 if (section) {
                     section.scrollIntoView({ behavior: 'smooth' });
                 }
@@ -2395,6 +2397,58 @@
         amountSlider.addEventListener('input', calc);
         termSlider.addEventListener('input', calc);
         calc();
+    }
+
+    /* ============================
+       Status Checker (bezrabotnym)
+       ============================ */
+    function initStatusChecker() {
+        var checker = document.getElementById('status-checker');
+        if (!checker) return;
+
+        var buttons = checker.querySelectorAll('.status-checker__btn');
+        var mfoCount = document.getElementById('status-mfo-count');
+        var maxAmount = document.getElementById('status-max-amount');
+        var approval = document.getElementById('status-approval');
+
+        var data = {
+            'unemployed':    { mfo: 24, amount: '30 000 ₽', approval: '89%' },
+            'self-employed': { mfo: 28, amount: '100 000 ₽', approval: '94%' },
+            'freelancer':    { mfo: 26, amount: '50 000 ₽', approval: '91%' },
+            'maternity':     { mfo: 22, amount: '30 000 ₽', approval: '87%' },
+            'student':       { mfo: 20, amount: '30 000 ₽', approval: '85%' }
+        };
+
+        function updateResult(status) {
+            var d = data[status];
+            if (!d) return;
+            mfoCount.textContent = d.mfo;
+            maxAmount.textContent = d.amount;
+            approval.textContent = d.approval;
+
+            var values = checker.querySelectorAll('.status-checker__result-value');
+            for (var i = 0; i < values.length; i++) {
+                values[i].classList.remove('status-checker__result-value--animated');
+                void values[i].offsetWidth;
+                values[i].classList.add('status-checker__result-value--animated');
+            }
+        }
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function () {
+                for (var j = 0; j < buttons.length; j++) {
+                    buttons[j].classList.remove('status-checker__btn--active');
+                }
+                this.classList.add('status-checker__btn--active');
+                updateResult(this.getAttribute('data-status'));
+            });
+        }
+
+        /* Set initial values for default active button */
+        var active = checker.querySelector('.status-checker__btn--active');
+        if (active) {
+            updateResult(active.getAttribute('data-status'));
+        }
     }
 
 })();
