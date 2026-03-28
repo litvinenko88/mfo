@@ -2451,4 +2451,147 @@
         }
     }
 
+    /* ============================
+       Biz Selector — Подбор по форме бизнеса (/dlya-biznesa/)
+       ============================ */
+    (function () {
+        var selector = document.getElementById('biz-selector');
+        if (!selector) return;
+
+        var btns = selector.querySelectorAll('.biz-selector__btn');
+        var countEl = document.getElementById('biz-mfo-count');
+        var amountEl = document.getElementById('biz-max-amount');
+        var termEl = document.getElementById('biz-max-term');
+
+        var bizData = {
+            'ip': { count: 4, maxAmount: '10 000 000 ₽', maxTerm: '60 мес.' },
+            'self-employed': { count: 3, maxAmount: '500 000 ₽', maxTerm: '24 мес.' },
+            'ooo': { count: 3, maxAmount: '20 000 000 ₽', maxTerm: '60 мес.' }
+        };
+
+        function updateBizResult(type) {
+            var d = bizData[type];
+            if (!d) return;
+            countEl.textContent = d.count;
+            amountEl.textContent = d.maxAmount;
+            termEl.textContent = d.maxTerm;
+
+            /* Filter MFO cards by biz type */
+            var cards = document.querySelectorAll('#mfo-grid .mfo-card');
+            for (var i = 0; i < cards.length; i++) {
+                var types = (cards[i].getAttribute('data-biz-type') || '').split(',');
+                if (types.indexOf(type) !== -1) {
+                    cards[i].classList.remove('mfo-card--dimmed');
+                } else {
+                    cards[i].classList.add('mfo-card--dimmed');
+                }
+            }
+        }
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].classList.remove('biz-selector__btn--active');
+                }
+                this.classList.add('biz-selector__btn--active');
+                updateBizResult(this.getAttribute('data-biz'));
+            });
+        }
+
+        /* Init with default active button */
+        var activeBtn = selector.querySelector('.biz-selector__btn--active');
+        if (activeBtn) {
+            updateBizResult(activeBtn.getAttribute('data-biz'));
+        }
+    })();
+
+    /* ============================
+       Biz Accordion — Документы по типу бизнеса
+       ============================ */
+    (function () {
+        var triggers = document.querySelectorAll('.biz-accordion__trigger');
+        if (!triggers.length) return;
+
+        for (var i = 0; i < triggers.length; i++) {
+            triggers[i].addEventListener('click', function () {
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                /* Close all */
+                for (var j = 0; j < triggers.length; j++) {
+                    triggers[j].setAttribute('aria-expanded', 'false');
+                }
+                /* Toggle current */
+                if (!expanded) {
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        }
+    })();
+
+    /* ============================
+       ROI Calculator — Калькулятор окупаемости бизнес-займа
+       ============================ */
+    (function () {
+        var amountSlider = document.getElementById('roi-amount');
+        var termSlider = document.getElementById('roi-term');
+        var profitSlider = document.getElementById('roi-profit');
+        var rateSlider = document.getElementById('roi-rate');
+        if (!amountSlider || !termSlider || !profitSlider || !rateSlider) return;
+
+        var amountValue = document.getElementById('roi-amount-value');
+        var termValue = document.getElementById('roi-term-value');
+        var profitValue = document.getElementById('roi-profit-value');
+        var rateValue = document.getElementById('roi-rate-value');
+        var overpayEl = document.getElementById('roi-overpay');
+        var roiEl = document.getElementById('roi-value');
+        var paybackEl = document.getElementById('roi-payback');
+
+        function fmt(n) {
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+        }
+
+        function calc() {
+            var amount = parseInt(amountSlider.value, 10);
+            var term = parseInt(termSlider.value, 10);
+            var profit = parseInt(profitSlider.value, 10);
+            var rateYear = parseInt(rateSlider.value, 10);
+
+            amountValue.textContent = fmt(amount);
+            termValue.textContent = term + ' мес.';
+            profitValue.textContent = fmt(profit);
+            rateValue.textContent = rateYear + '%';
+
+            var rateMonth = rateYear / 12 / 100;
+            var overpay = Math.round(amount * rateMonth * term);
+            var totalProfit = profit * term;
+            var roi = amount > 0 ? Math.round((totalProfit - overpay) / amount * 100) : 0;
+            var paybackMonths = profit > 0 ? Math.ceil((amount + overpay) / profit) : 0;
+
+            overpayEl.textContent = fmt(overpay);
+            roiEl.textContent = roi + '%';
+
+            if (paybackMonths > 0 && paybackMonths <= term) {
+                paybackEl.textContent = paybackMonths + ' мес.';
+            } else if (paybackMonths > term) {
+                paybackEl.textContent = '> ' + term + ' мес.';
+            } else {
+                paybackEl.textContent = '—';
+            }
+
+            /* Color coding */
+            if (roi >= 30) {
+                roiEl.style.color = '#10B981';
+            } else if (roi >= 10) {
+                roiEl.style.color = '#F59E0B';
+            } else {
+                roiEl.style.color = '#EF4444';
+            }
+        }
+
+        [amountSlider, termSlider, profitSlider, rateSlider].forEach(function (s) {
+            s.addEventListener('input', calc);
+        });
+
+        calc();
+    })();
+
 })();
