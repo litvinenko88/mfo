@@ -34,6 +34,7 @@
         initStatusChecker();
         initDocChecker();
         initApprovalGauge();
+        initBezOtkazaChecklist();
     }
 
     /* ============================
@@ -2837,6 +2838,43 @@
         ageSlider.addEventListener('input', updateGauge);
 
         updateGauge();
+    }
+
+    /* ============================
+       Checklist Progress (bez-otkaza)
+       ============================ */
+    function initBezOtkazaChecklist() {
+        var wrap = document.getElementById('checklist-items');
+        if (!wrap) return;
+
+        var checks = wrap.querySelectorAll('.checklist-item__input');
+        if (!checks.length) return;
+
+        var total = checks.length;
+        var fillBar = document.getElementById('checklist-fill');
+        var percentEl = document.getElementById('checklist-percent');
+
+        function update() {
+            var done = 0;
+            checks.forEach(function (c) { if (c.checked) done++; });
+            var pct = Math.round(done / total * 100);
+            if (fillBar) fillBar.style.width = pct + '%';
+            if (percentEl) percentEl.textContent = pct + '%';
+        }
+
+        checks.forEach(function (c) {
+            c.addEventListener('change', function () {
+                var item = c.closest('.checklist-item');
+                if (item) {
+                    if (c.checked) {
+                        item.classList.add('checklist-item--done');
+                    } else {
+                        item.classList.remove('checklist-item--done');
+                    }
+                }
+                update();
+            });
+        });
     }
 
 })();
