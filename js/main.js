@@ -35,6 +35,8 @@
         initDocChecker();
         initApprovalGauge();
         initBezOtkazaChecklist();
+        initQuizWidget();
+        initBudgetPlanner();
     }
 
     /* ============================
@@ -2875,6 +2877,129 @@
                 update();
             });
         });
+    }
+
+    /* --- Квиз-виджет (s-18-let) --- */
+    function initQuizWidget() {
+        var widget = document.querySelector('.quiz-widget');
+        if (!widget) return;
+
+        var steps = widget.querySelectorAll('.quiz-widget__step');
+        var progressBar = widget.querySelector('.quiz-widget__progress-bar');
+        var resultBlock = widget.querySelector('.quiz-widget__result');
+        var resultText = widget.querySelector('.quiz-widget__result-text');
+        var currentStep = 0;
+        var answers = {};
+        var totalSteps = steps.length;
+
+        function showStep(idx) {
+            steps.forEach(function (s, i) {
+                s.classList.toggle('quiz-widget__step--active', i === idx);
+            });
+            if (progressBar) {
+                progressBar.style.width = Math.round(((idx + 1) / totalSteps) * 100) + '%';
+            }
+        }
+
+        function finish() {
+            steps.forEach(function (s) { s.classList.remove('quiz-widget__step--active'); });
+            if (progressBar) progressBar.style.width = '100%';
+
+            // Считаем кол-во подходящих МФО
+            var age = parseInt(answers.age, 10) || 18;
+            var cards = document.querySelectorAll('.mfo-card[data-min-age]');
+            var count = 0;
+            cards.forEach(function (c) {
+                var min = parseInt(c.getAttribute('data-min-age'), 10) || 18;
+                if (age >= min) count++;
+            });
+
+            // Fallback если карточек нет — общая цифра
+            if (count === 0) count = age >= 20 ? 15 : 14;
+
+            if (resultText) {
+                resultText.innerHTML = 'Вам доступно <strong>' + count + ' МФО</strong>, готовых выдать займ прямо сейчас';
+            }
+            if (resultBlock) resultBlock.style.display = 'block';
+        }
+
+        showStep(0);
+        if (resultBlock) resultBlock.style.display = 'none';
+
+        widget.addEventListener('click', function (e) {
+            var btn = e.target.closest('.quiz-widget__option');
+            if (!btn) return;
+
+            var step = btn.closest('.quiz-widget__step');
+            var name = step ? step.getAttribute('data-step') : '';
+            answers[name] = btn.getAttribute('data-value');
+
+            // Отметка выбора
+            var siblings = step.querySelectorAll('.quiz-widget__option');
+            siblings.forEach(function (s) { s.classList.remove('quiz-widget__option--selected'); });
+            btn.classList.add('quiz-widget__option--selected');
+
+            setTimeout(function () {
+                currentStep++;
+                if (currentStep < totalSteps) {
+                    showStep(currentStep);
+                } else {
+                    finish();
+                }
+            }, 300);
+        });
+    }
+
+    /* --- Бюджет-планнер (s-18-let) --- */
+    function initBudgetPlanner() {
+        var section = document.getElementById('budget-planner');
+        if (!section) return;
+
+        var incomeRange = section.querySelector('input[name="income"]');
+        var expenseRange = section.querySelector('input[name="expenses"]');
+        if (!incomeRange || !expenseRange) return;
+
+        var incomeVal = section.querySelector('.budget-planner__income-val');
+        var expenseVal = section.querySelector('.budget-planner__expense-val');
+        var freeEl = section.querySelector('[data-result="free"]');
+        var limitEl = section.querySelector('[data-result="limit"]');
+        var paymentEl = section.querySelector('[data-result="payment"]');
+        var verdictEl = section.querySelector('.budget-planner__verdict');
+
+        function fmt(n) {
+            return n.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        function calc() {
+            var income = parseInt(incomeRange.value, 10);
+            var expenses = parseInt(expenseRange.value, 10);
+            var free = Math.max(income - expenses, 0);
+            var limit = Math.round(free * 0.7);
+            var payment = Math.round(free * 0.5);
+
+            if (incomeVal) incomeVal.textContent = fmt(income);
+            if (expenseVal) expenseVal.textContent = fmt(expenses);
+            if (freeEl) freeEl.textContent = fmt(free);
+            if (limitEl) limitEl.textContent = fmt(limit);
+            if (paymentEl) paymentEl.textContent = fmt(payment);
+
+            if (verdictEl) {
+                if (free <= 0) {
+                    verdictEl.textContent = 'Расходы превышают доходы — займ сейчас брать рискованно';
+                    verdictEl.style.background = 'rgba(220,38,38,0.06)';
+                } else if (free < 3000) {
+                    verdictEl.textContent = 'Свободных средств мало — рекомендуем микрозайм до ' + fmt(limit);
+                    verdictEl.style.background = 'rgba(234,179,8,0.08)';
+                } else {
+                    verdictEl.textContent = 'Вы можете комфортно обслуживать займ до ' + fmt(limit);
+                    verdictEl.style.background = 'rgba(22,163,74,0.06)';
+                }
+            }
+        }
+
+        incomeRange.addEventListener('input', calc);
+        expenseRange.addEventListener('input', calc);
+        calc();
     }
 
 })();
