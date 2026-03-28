@@ -2608,32 +2608,46 @@
         var approvalSpeed = document.getElementById('doc-approval-speed');
         if (!mfoCount || !maxAmount || !approvalSpeed) return;
 
+        var allCards = document.querySelectorAll('#mfo-rating .mfo-card');
+
         function update() {
-            var docs = [];
+            var selectedDocs = ['passport'];
             checkboxes.forEach(function (cb) {
-                if (cb.checked) docs.push(cb.getAttribute('data-doc'));
+                if (cb.checked) selectedDocs.push(cb.getAttribute('data-doc'));
             });
 
-            var count = 15;
-            var amount = 30000;
-            var speed = '5–10 мин.';
+            var matched = 0;
+            var maxAmt = 0;
 
-            if (docs.length >= 3) {
-                count = 15;
-                amount = 100000;
-                speed = '2–5 мин.';
-            } else if (docs.length === 2) {
-                count = 15;
-                amount = 80000;
-                speed = '3–7 мин.';
-            } else if (docs.length === 1) {
-                count = 15;
-                amount = 50000;
-                speed = '5–8 мин.';
+            allCards.forEach(function (card) {
+                var cardDocs = (card.getAttribute('data-docs') || 'passport').split(',');
+                var hasAll = selectedDocs.every(function (doc) {
+                    return cardDocs.indexOf(doc) !== -1;
+                });
+
+                if (hasAll) {
+                    card.style.display = '';
+                    card.style.opacity = '1';
+                    matched++;
+                    var amt = parseInt(card.getAttribute('data-amount') || '0', 10);
+                    if (amt > maxAmt) maxAmt = amt;
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+
+            var speed = '5–10 мин.';
+            if (selectedDocs.length >= 4) {
+                speed = '2–3 мин.';
+            } else if (selectedDocs.length === 3) {
+                speed = '3–5 мин.';
+            } else if (selectedDocs.length === 2) {
+                speed = '5–7 мин.';
             }
 
-            mfoCount.textContent = count;
-            maxAmount.textContent = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+            mfoCount.textContent = matched;
+            maxAmount.textContent = maxAmt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
             approvalSpeed.textContent = speed;
         }
 
@@ -2650,6 +2664,18 @@
                 update();
             });
         });
+
+        // Кнопка "Показать подходящие МФО" — скролл к рейтингу
+        var showBtn = checker.querySelector('.pcalc-btn');
+        if (showBtn) {
+            showBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = document.getElementById('mfo-rating');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
 
         update();
     }
