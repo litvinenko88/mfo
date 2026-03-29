@@ -17864,17 +17864,24 @@ button#reviews-toggle:hover {
     position: relative;
     max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .timeline__item {
     display: flex;
     gap: 24px;
     position: relative;
-    padding-bottom: 32px;
+    padding-bottom: 0;
 }
 
 .timeline__item:last-child {
     padding-bottom: 0;
+}
+
+.timeline__item:last-child .timeline__line {
+    display: none;
 }
 
 .timeline__marker {
@@ -17902,12 +17909,13 @@ button#reviews-toggle:hover {
 .timeline__line {
     width: 2px;
     flex: 1;
+    min-height: 24px;
     background: var(--border-light, #e8e8f0);
     margin-top: 8px;
 }
 
 .timeline__content {
-    padding-top: 8px;
+    padding: 8px 0 32px;
 }
 
 .timeline__title {
