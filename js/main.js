@@ -38,6 +38,7 @@
         initQuizWidget();
         initBudgetPlanner();
         initDateFilter();
+        initCardTypeSelector();
     }
 
     /* ============================
@@ -3147,6 +3148,54 @@
         if (activeBtn) {
             var days = activeBtn.getAttribute('data-days');
             result.innerHTML = '<div class="date-filter__result-text">' + (messages[days] || '') + '</div>';
+        }
+    }
+
+    /* ============================
+       Card Type Selector (na-kartu)
+       ============================ */
+    function initCardTypeSelector() {
+        var selector = document.getElementById('card-type-selector');
+        if (!selector) return;
+
+        var btns = selector.querySelectorAll('.card-type-selector__btn');
+        var grid = document.getElementById('mfo-grid');
+        if (!btns.length || !grid) return;
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', (function(btn) {
+                return function() {
+                    for (var j = 0; j < btns.length; j++) {
+                        btns[j].classList.remove('card-type-selector__btn--active');
+                    }
+                    btn.classList.add('card-type-selector__btn--active');
+
+                    var type = btn.getAttribute('data-card-type');
+                    var cards = grid.querySelectorAll('.mfo-card');
+                    var visibleIdx = 0;
+
+                    for (var k = 0; k < cards.length; k++) {
+                        var cardTypes = cards[k].getAttribute('data-card-type') || 'all';
+                        var show = (type === 'all') || (cardTypes.indexOf(type) !== -1);
+
+                        if (show) {
+                            cards[k].classList.remove('mfo-card--hidden-wallet');
+                            visibleIdx++;
+                            var rank = cards[k].querySelector('.mfo-card__rank');
+                            if (rank) rank.textContent = '#' + visibleIdx;
+                        } else {
+                            cards[k].classList.add('mfo-card--hidden-wallet');
+                        }
+                    }
+
+                    var target = document.getElementById('mfo-rating');
+                    if (target && type !== 'all') {
+                        var headerH = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
+                        var top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                };
+            })(btns[i]));
         }
     }
 
