@@ -15369,14 +15369,29 @@ button#reviews-toggle:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .rejection-card {
         flex-direction: column;
     }
+
+    .rejection-card__problem,
+    .rejection-card__solution {
+        padding: 1rem;
+    }
+
     .rejection-card__arrow {
         width: 100%;
         height: 28px;
-        transform: rotate(90deg);
+        font-size: 0;
+    }
+
+    .rejection-card__arrow::after {
+        content: '↓';
+        font-size: 1.1rem;
+    }
+
+    .rejection-card p {
+        font-size: 0.82rem;
     }
 }
 
@@ -16285,6 +16300,14 @@ button#reviews-toggle:hover {
     background: linear-gradient(135deg, #16a34a, #22c55e);
 }
 
+.how-step__icon--4 {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+
+.how-step__icon--5 {
+    background: linear-gradient(135deg, #0891b2, #22d3ee);
+}
+
 .how-step__num {
     font-size: 0.7rem;
     font-weight: 800;
@@ -16315,27 +16338,35 @@ button#reviews-toggle:hover {
     flex-shrink: 0;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .how-steps {
         flex-direction: column;
-        align-items: center;
-        gap: 8px;
+        align-items: stretch;
+        gap: 0;
+        max-width: 100%;
     }
 
     .how-step {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 14px;
+        row-gap: 2px;
         max-width: 100%;
-        flex-direction: row;
         text-align: left;
-        gap: 14px;
-        padding: 12px 0;
+        padding: 14px 0;
+        align-items: start;
     }
 
     .how-step__icon {
+        grid-column: 1;
+        grid-row: 1 / 3;
         width: 52px;
         height: 52px;
         min-width: 52px;
         border-radius: 14px;
         margin-bottom: 0;
+        align-self: start;
     }
 
     .how-step__icon svg {
@@ -16344,12 +16375,66 @@ button#reviews-toggle:hover {
     }
 
     .how-step__num {
-        margin-bottom: 2px;
+        grid-column: 2;
+        grid-row: 1;
+        margin-bottom: 0;
+        align-self: end;
+    }
+
+    .how-step__title {
+        grid-column: 2;
+        grid-row: 2;
+        margin-bottom: 4px;
+    }
+
+    .how-step__text {
+        grid-column: 2;
+        grid-row: 3;
     }
 
     .how-steps__arrow {
-        transform: rotate(90deg);
+        justify-content: center;
         padding-top: 0;
+        padding: 2px 0;
+        font-size: 0;
+    }
+
+    .how-steps__arrow svg {
+        transform: rotate(90deg);
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-step {
+        grid-template-columns: 44px 1fr;
+        column-gap: 10px;
+        padding: 10px 0;
+    }
+
+    .how-step__icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 12px;
+    }
+
+    .how-step__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .how-step__num {
+        font-size: 0.65rem;
+    }
+
+    .how-step__title {
+        font-size: 0.9rem;
+    }
+
+    .how-step__text {
+        font-size: 0.8rem;
     }
 }
 
@@ -16853,35 +16938,31 @@ button#reviews-toggle:hover {
 }
 
 @media (max-width: 480px) {
-    .age-map__grid {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .age-map {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -16px;
+        padding: 0 16px;
     }
 
-    .age-map__head:not(:first-child) {
-        display: none;
+    .age-map__grid {
+        min-width: 400px;
+        grid-template-columns: 120px repeat(4, 1fr);
     }
 
     .age-map__name {
-        background: var(--color-primary, #2563eb);
-        color: #fff;
-        font-weight: 600;
-        grid-column: 1 / -1;
+        font-size: 0.75rem;
+        padding: 0.45rem 0.5rem;
+    }
+
+    .age-map__head {
+        font-size: 0.7rem;
+        padding: 0.45rem 0.2rem;
     }
 
     .age-map__cell {
-        display: inline-flex;
-        justify-content: center;
-    }
-
-    .age-map__grid {
-        grid-template-columns: 1fr repeat(4, 1fr);
-    }
-
-    .age-map__name {
-        background: var(--color-bg, #fff);
-        color: var(--color-text, #1e293b);
-        font-weight: 500;
+        font-size: 0.8rem;
+        padding: 0.45rem 0.2rem;
     }
 }
 
