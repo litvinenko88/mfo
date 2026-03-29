@@ -6,6 +6,13 @@ Disallow: /drafts/
 Disallow: /document/
 Disallow: /fonts/
 
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /document/
+Disallow: /fonts/
+
 User-agent: GPTBot
 Allow: /
 

@@ -18361,3 +18361,47 @@ button#reviews-toggle:hover {
         height: 18px;
     }
 }
+
+/* ==============================
+   404 Page
+   ============================== */
+.error-page {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.error-page__code {
+    font-size: 4rem;
+    color: var(--color-accent, #FF6B35);
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.error-page__title {
+    margin-bottom: 24px;
+}
+
+.error-page__desc {
+    max-width: 480px;
+    margin: 0 auto 32px;
+    color: var(--color-text-secondary, #64748b);
+}
+
+.error-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.error-page__sections-title {
+    margin-bottom: 16px;
+}
+
+.error-page__sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
