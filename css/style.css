@@ -2853,6 +2853,15 @@ table {
     margin-bottom: 6px;
 }
 
+.mfo-card__erid {
+    display: block;
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    opacity: 0.55;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+}
+
 .mfo-card__rating {
     display: flex;
     align-items: center;
