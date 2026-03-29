@@ -3,5 +3,8 @@ Allow: /
 
 Disallow: /admin/
 Disallow: /drafts/
+Disallow: /document/
+Disallow: /fonts/
 
+Host: https://zaimtoprf.ru
 Sitemap: https://zaimtoprf.ru/sitemap.xml
