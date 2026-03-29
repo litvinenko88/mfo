@@ -6,5 +6,11 @@ Disallow: /drafts/
 Disallow: /document/
 Disallow: /fonts/
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Host: https://zaimtoprf.ru
 Sitemap: https://zaimtoprf.ru/sitemap.xml
