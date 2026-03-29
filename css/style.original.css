@@ -190,6 +190,17 @@ table {
     color: var(--color-primary);
 }
 
+@media (max-width: 480px) {
+    .rating-stats {
+        gap: 6px;
+    }
+
+    .rating-stats__item {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+}
+
 /* --- Myths Grid (Мифы о займах) --- */
 .myths-grid {
     display: grid;
@@ -261,6 +272,14 @@ table {
     }
     .myths-grid > .myth-card:last-child:nth-child(odd) {
         max-width: 100%;
+    }
+
+    .myth-card__side {
+        padding: 12px 14px;
+    }
+
+    .myth-card__text {
+        font-size: 0.78rem;
     }
 }
 
@@ -412,6 +431,24 @@ table {
 @media (max-width: 520px) {
     .income-sources-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .income-source-card {
+        padding: 16px 10px;
+    }
+
+    .income-source-card__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .income-source-card__title {
+        font-size: 0.82rem;
+    }
+
+    .income-source-card__text {
+        font-size: 0.72rem;
     }
 }
 
@@ -502,35 +539,80 @@ table {
 @media (max-width: 768px) {
     .h-stepper {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 0;
     }
 
     .h-stepper__item {
         max-width: 100%;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 12px;
         text-align: left;
-        gap: 0.75rem;
         padding: 0.65rem 0;
     }
 
     .h-stepper__icon {
+        grid-row: 1 / 3;
+        grid-column: 1;
         flex-shrink: 0;
         width: 48px;
         height: 48px;
         margin-bottom: 0;
+        align-self: start;
     }
 
     .h-stepper__num {
         display: none;
     }
 
+    .h-stepper__title {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+    }
+
+    .h-stepper__text {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
     .h-stepper__connector {
         width: 2px;
-        height: 24px;
-        flex: 0 0 24px;
-        margin-top: 0;
+        height: 20px;
+        flex: 0 0 20px;
+        margin: 0 0 0 23px;
         background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+    }
+}
+
+@media (max-width: 480px) {
+    .h-stepper__item {
+        grid-template-columns: 40px 1fr;
+        gap: 0 10px;
+    }
+
+    .h-stepper__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .h-stepper__icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .h-stepper__title {
+        font-size: 0.82rem;
+    }
+
+    .h-stepper__text {
+        font-size: 0.72rem;
+    }
+
+    .h-stepper__connector {
+        margin-left: 19px;
     }
 }
 
@@ -11462,7 +11544,8 @@ button#reviews-toggle:hover {
 }
 
 @media (max-width: 680px) {
-    .mfo-list__link {
+    .mfo-list__link,
+    .mfo-list__item {
         flex-wrap: wrap;
         padding: 16px;
         gap: 12px;
@@ -11480,7 +11563,17 @@ button#reviews-toggle:hover {
     }
 
     .mfo-list__content {
-        flex-basis: calc(100% - 100px);
+        flex-basis: calc(100% - 60px);
+    }
+
+    .mfo-list__cta {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .mfo-list__cta.btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .mfo-list__go {
@@ -11489,6 +11582,19 @@ button#reviews-toggle:hover {
         padding: 12px;
         text-align: center;
         justify-content: center;
+    }
+
+    .mfo-list__desc {
+        font-size: 0.82rem;
+    }
+
+    .mfo-list__name {
+        font-size: 1rem;
+    }
+
+    .mfo-list__tag {
+        font-size: 0.72rem;
+        padding: 2px 8px;
     }
 }
 
@@ -14420,6 +14526,23 @@ button#reviews-toggle:hover {
     grid-column: 4 / 7;
 }
 
+@media (max-width: 900px) {
+    .rights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .rights-grid .rights-card:nth-child(-n+3),
+    .rights-grid .rights-card:nth-child(4),
+    .rights-grid .rights-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .rights-grid .rights-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
+
 .rights-card {
     display: flex;
     align-items: flex-start;
@@ -14478,8 +14601,25 @@ button#reviews-toggle:hover {
    ======================== */
 .compare-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
+}
+
+.compare-wrap .compare-tbl {
+    border: none;
+    border-radius: 0;
+}
+
+.section__text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-text-light, #64748b);
+    margin: 20px 0 0;
+    padding: 16px 20px;
+    background: var(--color-bg, #f8fafc);
+    border-radius: var(--radius-md, 12px);
+    border-left: 3px solid var(--color-primary, #0F2B46);
 }
 
 /* ========================
@@ -14506,8 +14646,14 @@ button#reviews-toggle:hover {
         gap: 10px;
     }
 
+    .rights-grid .rights-card:nth-child(-n+3),
+    .rights-grid .rights-card:nth-child(4),
+    .rights-grid .rights-card:nth-child(5) {
+        grid-column: auto;
+    }
+
     .rights-card {
-        padding: 14px 14px;
+        padding: 14px;
     }
 
     .rights-card__icon {
@@ -14520,11 +14666,73 @@ button#reviews-toggle:hover {
         height: 18px;
     }
 
+    .rights-card__title {
+        font-size: 0.82rem;
+    }
+
+    .rights-card__text {
+        font-size: 0.78rem;
+    }
+
     .compare-wrap {
-        margin: 0 -20px;
+        margin: 0 -16px;
         border-radius: 0;
         border-left: none;
         border-right: none;
+        overflow-x: visible;
+    }
+
+    .compare-wrap .compare-tbl {
+        border: none;
+    }
+
+    .compare-wrap .compare-tbl thead {
+        display: none;
+    }
+
+    .compare-wrap .compare-tbl,
+    .compare-wrap .compare-tbl tbody,
+    .compare-wrap .compare-tbl tr,
+    .compare-wrap .compare-tbl td {
+        display: block;
+        width: 100%;
+    }
+
+    .compare-wrap .compare-tbl tr {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--color-border, #e5e7eb);
+    }
+
+    .compare-wrap .compare-tbl tr:last-child {
+        border-bottom: none;
+    }
+
+    .compare-wrap .compare-tbl td {
+        border-bottom: none;
+        padding: 3px 0;
+        font-size: 0.84rem;
+    }
+
+    .compare-wrap .compare-tbl td.compare-tbl__label {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--color-primary, #0F2B46);
+        padding-bottom: 6px;
+        white-space: normal;
+    }
+
+    .compare-wrap .compare-tbl td[data-label]::before {
+        content: attr(data-label) ": ";
+        font-weight: 600;
+        color: var(--color-text-light, #64748b);
+        font-size: 0.78rem;
+    }
+
+    .compare-wrap .compare-tbl td.compare-tbl__best-cell {
+        background: rgba(37, 99, 235, 0.05);
+        border-radius: 6px;
+        padding: 4px 8px;
+        margin: 2px 0;
     }
 }
 
@@ -17575,8 +17783,8 @@ button#reviews-toggle:hover {
 
 /* Stats row */
 .rating-header__stats {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-bottom: 24px;
     max-width: 600px;
@@ -17591,7 +17799,6 @@ button#reviews-toggle:hover {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 12px 20px;
-    flex: 1;
     min-width: 0;
 }
 .rating-header__stat-value {
@@ -17604,9 +17811,10 @@ button#reviews-toggle:hover {
     font-size: 0.7rem;
     color: var(--color-text-muted);
     margin-top: 2px;
-    white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* --- Cards container override --- */
@@ -17861,6 +18069,9 @@ button#reviews-toggle:hover {
     .rating-header__stat-value {
         font-size: 1.5rem;
     }
+    .rating-header__stat-label {
+        white-space: nowrap;
+    }
     #mfo-rating .mfo-cards {
         display: flex;
         flex-wrap: wrap;
@@ -17916,15 +18127,14 @@ button#reviews-toggle:hover {
         font-size: 0.82rem;
     }
     .rating-header__stats {
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
     .rating-header__stat {
-        padding: 8px 10px;
-        flex: 1;
-        min-width: 0;
+        padding: 10px 12px;
     }
     .rating-header__stat-value {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
     .rating-header__stat-label {
         font-size: 0.65rem;
@@ -17958,11 +18168,10 @@ button#reviews-toggle:hover {
         font-size: 1.15rem;
     }
     .rating-header__stat {
-        padding: 6px 10px;
-        min-width: 60px;
+        padding: 8px 10px;
     }
     .rating-header__stat-value {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
     #mfo-rating .mfo-card__term {
         padding: 6px 8px;
