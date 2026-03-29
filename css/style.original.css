@@ -3578,6 +3578,18 @@ table {
     display: block;
 }
 
+.review-card__mfo {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: block;
+}
+
+.review-card__date {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    display: block;
+}
+
 .review-card__rating {
     color: var(--color-star);
     font-size: 0.85rem;
