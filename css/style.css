@@ -11257,6 +11257,7 @@ button#reviews-toggle:hover {
 }
 
 .mfo-list__item {
+    position: relative;
     border-radius: var(--radius-md, 12px);
     overflow: hidden;
     transition: box-shadow 0.25s, transform 0.25s;
@@ -11267,6 +11268,7 @@ button#reviews-toggle:hover {
     padding: 20px 24px;
     background: var(--bg-card, #fff);
     border: 1px solid var(--color-border-light, #e5e7eb);
+    cursor: pointer;
 }
 
 /* Когда внутри есть ссылка-обёртка — убираем стили с <li> */
@@ -11393,6 +11395,14 @@ button#reviews-toggle:hover {
     flex-shrink: 0;
     align-self: center;
     white-space: nowrap;
+}
+
+/* Stretched link — вся карточка кликабельна */
+.mfo-list__cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
 .mfo-list__go {
