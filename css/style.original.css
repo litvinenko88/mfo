@@ -974,6 +974,10 @@ table {
     height: 14px;
 }
 
+.hero__content {
+    align-self: center;
+}
+
 .hero__title {
     font-size: 1.8rem;
     font-weight: 800;
@@ -1537,6 +1541,8 @@ table {
 .approval-feed {
     padding: 16px 18px 14px;
     max-width: 380px;
+    align-self: center;
+    justify-self: end;
 }
 .approval-feed .calculator__title {
     font-size: 0.85rem;
@@ -9131,7 +9137,7 @@ button#reviews-toggle:hover {
     .hero__inner {
         grid-template-columns: 1fr 1fr;
         gap: 16px;
-        align-items: start;
+        align-items: center;
     }
 
     .hero__badge {
@@ -17975,6 +17981,8 @@ button#reviews-toggle:hover {
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     min-width: 300px;
     max-width: 380px;
+    align-self: center;
+    justify-self: end;
 }
 
 .card-type-selector__title {
@@ -18282,6 +18290,7 @@ button#reviews-toggle:hover {
         min-width: 100%;
         max-width: 100%;
         margin-top: 20px;
+        justify-self: auto;
     }
 
     .card-type-selector__options {
