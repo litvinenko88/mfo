@@ -6336,6 +6336,10 @@ button#reviews-toggle:hover {
     border-bottom: none;
 }
 
+.comparison-table__highlight {
+    background: rgba(255, 255, 255, 0.15);
+}
+
 @media (max-width: 600px) {
     .comparison-table-wrap {
         border-radius: var(--radius-md);
