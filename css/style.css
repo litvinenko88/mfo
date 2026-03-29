@@ -4351,12 +4351,13 @@ details.faq__item > .faq__answer {
 .footer__top {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 28px;
+    gap: 32px;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
 }
 
 .footer__brand {
-    max-width: 300px;
+    max-width: 280px;
 }
 
 .footer__logo {
@@ -4390,30 +4391,34 @@ details.faq__item > .faq__answer {
 }
 
 .footer__col-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer__links {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .footer__links--grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4px 16px;
+    gap: 6px 24px;
 }
 
 .footer__link {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+    line-height: 1.4;
     transition: color var(--transition);
+    white-space: nowrap;
 }
 
 .footer__link:hover {
@@ -4422,13 +4427,14 @@ details.faq__item > .faq__answer {
 
 .footer__link--current {
     color: rgba(255, 255, 255, 0.3);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     cursor: default;
 }
 
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 16px;
+    padding-top: 20px;
+    margin-top: 4px;
 }
 
 .footer__disclaimer {
@@ -4739,7 +4745,16 @@ details.faq__item > .faq__answer {
     }
 
     .footer__top {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 32px;
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer__col:first-of-type {
+        grid-column: 1 / -1;
     }
 
     .cookie-consent {
@@ -4866,8 +4881,17 @@ details.faq__item > .faq__answer {
     }
 
     .footer__top {
-        grid-template-columns: 1.5fr 2fr 1fr 1fr;
-        gap: 24px;
+        grid-template-columns: 1.2fr 2.2fr 0.8fr 1fr;
+        gap: 32px;
+        align-items: start;
+    }
+
+    .footer__brand {
+        grid-column: auto;
+    }
+
+    .footer__col:first-of-type {
+        grid-column: auto;
     }
 
     .mobile-cta {
@@ -7836,7 +7860,7 @@ button#reviews-toggle:hover {
     }
 
     .footer__top {
-        gap: 14px;
+        gap: 20px;
     }
 
     .footer__desc {
@@ -7844,7 +7868,9 @@ button#reviews-toggle:hover {
     }
 
     .footer__col-title {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
     }
 
     .footer__link {
@@ -8169,11 +8195,12 @@ button#reviews-toggle:hover {
 
     /* Footer */
     .footer__links--grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 16px;
     }
 
     .footer__link {
-        font-size: 0.78rem;
+        font-size: 0.76rem;
     }
 
     /* Overpay table */
@@ -9731,8 +9758,12 @@ button#reviews-toggle:hover {
     }
 
     .footer__top {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer__brand {
+        max-width: 100%;
     }
 
     .footer__desc {
@@ -9740,11 +9771,18 @@ button#reviews-toggle:hover {
     }
 
     .footer__col-title {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
     }
 
     .footer__link {
         font-size: 0.75rem;
+    }
+
+    .footer__links--grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 12px;
     }
 
     .footer__disclaimer {
