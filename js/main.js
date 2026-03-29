@@ -2054,7 +2054,7 @@
             purchase: { amount: 80000, term: 180, label: '80 000 ₽', termLabel: '180 дней' }
         };
 
-        var activeGoal = 'repair';
+        var activeGoal = 'salary';
 
         function filterCards(goalKey) {
             var g = goals[goalKey];
