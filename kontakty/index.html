@@ -21,7 +21,7 @@
     <meta name="author" content="ZaimTop">
     <link rel="preload" href="../fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=7">
 
     <script type="application/ld+json">
     {
@@ -86,6 +86,7 @@
                 <a href="../#compare" class="header__nav-link">ТОП МФО</a>
                 <a href="../#calculator" class="header__nav-link">Калькулятор</a>                <a href="../o-proekte/" class="header__nav-link">О проекте</a>
                 <a href="../#faq" class="header__nav-link">FAQ</a>
+                <a href="../kontakty/" class="header__nav-link">Контакты</a>
             </nav>
             <a href="../#calculator" class="header__cta">Подобрать займ</a>
             <button class="header__burger" aria-label="Меню" type="button">
@@ -95,59 +96,122 @@
     </header>
 
     <main>
-        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <!-- ======================== HERO ======================== -->
+        <section class="hero hero--about">
             <div class="container">
-                <ol class="breadcrumbs__list">
-                    <li class="breadcrumbs__item"><a href="../">Главная</a></li>
-                    <li class="breadcrumbs__item breadcrumbs__item--active"><span>Контакты</span></li>
-                </ol>
+                <nav class="breadcrumbs breadcrumbs--hero" aria-label="Хлебные крошки">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../">Главная</a></li>
+                        <li class="breadcrumbs__item breadcrumbs__item--active"><span>Контакты</span></li>
+                    </ol>
+                </nav>
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Ответим в течение 24 часов
+                    </div>
+                    <h1 class="hero__title">Свяжитесь с нами</h1>
+                    <p class="hero__subtitle">Мы всегда открыты к обратной связи. Вопросы, предложения, сотрудничество — выберите удобный способ связи.</p>
+                </div>
             </div>
-        </nav>
+        </section>
 
+        <!-- ======================== КОНТАКТЫ ======================== -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Как с нами связаться</h2>
+                    <p class="section__subtitle">Выберите подходящий канал связи</p>
+                </div>
+
+                <div class="about-info">
+                    <div class="about-info__card">
+                        <div class="about-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <h3 class="about-info__title">Общие вопросы</h3>
+                        <p class="about-info__text">По вопросам работы сайта, рейтинга МФО, исправления данных и предложениям</p>
+                        <a href="mailto:info@zaimtoprf.ru" class="contacts__email-link">info@zaimtoprf.ru</a>
+                    </div>
+                    <div class="about-info__card">
+                        <div class="about-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 class="about-info__title">Сотрудничество</h3>
+                        <p class="about-info__text">Для МФО, рекламодателей и партнёрских программ. Рассмотрим при наличии лицензии ЦБ</p>
+                        <a href="mailto:partners@zaimtoprf.ru" class="contacts__email-link">partners@zaimtoprf.ru</a>
+                    </div>
+                    <div class="about-info__card">
+                        <div class="about-info__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <h3 class="about-info__title">Ошибка в данных</h3>
+                        <p class="about-info__text">Нашли неточность в условиях МФО или устаревшую информацию — сообщите нам</p>
+                        <a href="mailto:info@zaimtoprf.ru" class="contacts__email-link">info@zaimtoprf.ru</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== FAQ ======================== -->
         <section class="section">
             <div class="container">
-                <div class="legal-page">
-                    <h1 class="legal-page__title">Контакты</h1>
+                <div class="section__header">
+                    <h2 class="section__title">Перед обращением</h2>
+                    <p class="section__subtitle">Ответы на частые вопросы, которые помогут сэкономить время</p>
+                </div>
 
-                    <p>Мы всегда открыты к обратной связи. Если у вас есть вопросы, предложения или замечания — свяжитесь с нами удобным способом.</p>
-
-                    <div class="contacts__grid">
-                        <div class="contacts__card">
-                            <div class="contacts__card-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            </div>
-                            <h2 class="contacts__card-title">Электронная почта</h2>
-                            <p class="contacts__card-text">По общим вопросам и предложениям:</p>
-                            <a href="mailto:info@zaimtoprf.ru" class="contacts__card-link">info@zaimtoprf.ru</a>
+                <div class="about-not__grid about-faq__grid">
+                    <div class="about-not__item about-faq__item">
+                        <div class="about-not__icon about-faq__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         </div>
-
-                        <div class="contacts__card">
-                            <div class="contacts__card-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            </div>
-                            <h2 class="contacts__card-title">Сотрудничество</h2>
-                            <p class="contacts__card-text">Для МФО и рекламодателей:</p>
-                            <a href="mailto:partners@zaimtoprf.ru" class="contacts__card-link">partners@zaimtoprf.ru</a>
-                        </div>
-
-                        <div class="contacts__card">
-                            <div class="contacts__card-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                            </div>
-                            <h2 class="contacts__card-title">Жалобы и исправления</h2>
-                            <p class="contacts__card-text">Нашли ошибку или неточность в данных:</p>
-                            <a href="mailto:info@zaimtoprf.ru" class="contacts__card-link">info@zaimtoprf.ru</a>
+                        <div>
+                            <div class="about-faq__question">ZaimTop выдаёт займы?</div>
+                            <div class="about-faq__answer">Нет, мы информационный сервис. Для оформления перейдите на сайт МФО.</div>
                         </div>
                     </div>
+                    <div class="about-not__item about-faq__item">
+                        <div class="about-not__icon about-faq__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <div class="about-faq__question">Как МФО попасть в рейтинг?</div>
+                            <div class="about-faq__answer">Напишите на partners@zaimtoprf.ru. Рассмотрим при наличии лицензии ЦБ РФ.</div>
+                        </div>
+                    </div>
+                    <div class="about-not__item about-faq__item">
+                        <div class="about-not__icon about-faq__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <div class="about-faq__question">Данные на сайте устарели?</div>
+                            <div class="about-faq__answer">Сообщите нам на info@zaimtoprf.ru — обновим в кратчайшие сроки.</div>
+                        </div>
+                    </div>
+                    <div class="about-not__item about-faq__item">
+                        <div class="about-not__icon about-faq__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <div class="about-faq__question">Как быстро вы отвечаете?</div>
+                            <div class="about-faq__answer">Стараемся отвечать в течение 1–2 рабочих дней.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h2>Часто задаваемые вопросы перед обращением</h2>
-                    <ul>
-                        <li><strong>ZaimTop выдаёт займы?</strong> — Нет, мы информационный сервис. Для оформления займа перейдите на сайт МФО.</li>
-                        <li><strong>Как попасть в рейтинг?</strong> — Напишите на partners@zaimtoprf.ru. Мы рассмотрим МФО при наличии действующей лицензии ЦБ РФ.</li>
-                        <li><strong>Данные устарели?</strong> — Сообщите нам, и мы обновим информацию в кратчайшие сроки.</li>
-                    </ul>
-
-                    <p>Мы стараемся отвечать на все обращения в течение 1–2 рабочих дней.</p>
+        <!-- ======================== CTA ======================== -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="about-cta">
+                    <h2 class="about-cta__title">Выберите лучшую МФО прямо сейчас</h2>
+                    <p class="about-cta__text">31 проверенная компания с лицензией ЦБ. Сравните условия и оформите займ за 5 минут.</p>
+                    <div class="about-cta__actions">
+                        <a href="../#compare" class="btn btn--primary">Смотреть рейтинг МФО</a>
+                        <a href="../o-proekte/" class="btn btn--outline">О проекте</a>
+                    </div>
                 </div>
             </div>
         </section>
