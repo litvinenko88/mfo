@@ -1,4 +1,4 @@
-
+Теперь мне нужно чтоб ты на странице http://127.0.0.1:5500/zaym-na-kartu/ заменил у мфо ссылки, не забывай теги страниц в ссылки менять. На странице мфо могут отсутствовать некоторые, пропускай их просто и убери у них erid метку рекламы, только у тех, где меняешь ссылки 
 
 Joymoney  https://vldmnt.ru/go/sa01k8fqw0?subid1=glavnaya&subid2=click2
 Krediska https://vldmnt.ru/go/snhdsgdx23?subid1=glavnaya&subid2=click2
@@ -23,7 +23,7 @@ OneClickMoney https://vldmnt.ru/go/suhqbizzco?subid1=glavnaya&subid2=click2
 
 
 
-Теперь мне нужно чтоб ты на странице http://127.0.0.1:5500/ заменил у мфо ссылки, не забывай теги страниц в ссылки менять. На странице мфо могут отсутствовать некоторые, пропускай их просто и убери у них erid метку рекламы, только у тех, где меняешь ссылки 
+
 
 
 
@@ -36,3 +36,12 @@ OneClickMoney https://vldmnt.ru/go/suhqbizzco?subid1=glavnaya&subid2=click2
 ---------------------------------
 Альфа Деньги https://vldmnt.ru/go/skw6fpl7u1?subid1=glavnaya&subid2=click2
 Небус https://vldmnt.ru/go/s1611z2zly?subid1=Главная&subid2=click2
+
+
+
+
+
+
+
+также сделай тоже самое http://127.0.0.1:5500/kontakty/ и поработай над дизайном и помести в хедер страницу контактов после 
+FAQ

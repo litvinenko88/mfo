@@ -12,6 +12,17 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
 # ========================================
+# MIME-типы (критично для SVG + nosniff)
+# ========================================
+AddType image/svg+xml .svg .svgz
+AddType image/png .png
+AddType image/webp .webp
+AddType font/woff2 .woff2
+AddType font/woff .woff
+AddType image/x-icon .ico
+AddEncoding gzip .svgz
+
+# ========================================
 # Страница 404
 # ========================================
 ErrorDocument 404 /404.html
