@@ -12,6 +12,30 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
 # ========================================
+# Устранение дублей URL
+# ========================================
+
+# Убираем множественные слэши (// → /)
+RewriteCond %{THE_REQUEST} \s[^\s]*//
+RewriteRule ^(.*)$ /$1 [R=301,L,NE]
+
+# Редирект /index.html → /
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Редирект /any-page/index.html → /any-page/
+RewriteRule ^(.+)/index\.html$ /$1/ [R=301,L]
+
+# Убираем пустой query string (/?  → /)
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{THE_REQUEST} \?\ HTTP
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Добавляем trailing slash (если нет расширения файла)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+# ========================================
 # MIME-типы (критично для SVG + nosniff)
 # ========================================
 AddType image/svg+xml .svg .svgz
